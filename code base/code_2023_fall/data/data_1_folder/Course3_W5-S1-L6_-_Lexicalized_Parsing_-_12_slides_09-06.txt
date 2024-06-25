@@ -1,0 +1,249 @@
+So the next segment is going to
+be about lexicalized parsing.
+So lexicalized parsing is one step
+up from context free parsing,
+because it allows us to capture some
+regularities that are involved with
+specific words and
+specific heads of phrases.
+So why are we even considering it?
+Well, the reason is that, PCFGs and CFGs
+in general, are have some limitations.
+For example, the probabilities
+don't depend on the specific words.
+If we have a verb like give, and
+the verb like see, we know that
+they have different structure.
+So give takes two arguments in the form,
+give someone something,
+versus the verb see which only takes
+one argument, as in see something.
+In context with grammar it's not
+possible to take into account this kind
+of argument structuralism. 
+It's also not possible to disambiguate
+sentences based on semantic information.
+So, for example, the fact that eating
+pizza with pepperoni is very different
+from eating pizza with a fork, because
+pepperoni is a food item where as fork
+is a tool, so we cannot in the context of
+grammar figure out that pepperoni is more
+likely to be associate with low attachment
+versus fork which is high attachment.
+So the basic idea of lexicalized grammar
+is to use the head of a phrase as
+an additional source of information.
+For example, instead of having a rule
+that just says that the verb phrase gets
+transformed into a verb, we're going to
+have a rule that says a verb phrase whose
+head is ate is going to be
+transformed into a verb
+whose head is ate.
+Well, here's an example.
+We have the parse tree from
+the previous segment for the sentence,
+the child ate the cake with the fork.
+We want to convert this
+into a lexicalized form.
+And this is done by starting from
+the lowest level of the parse tree,
+the terminal symbols and the words.
+And by extracting the heads of
+every constituent in the recursive
+way until we reach
+the top of the sentence.
+So we're going to start
+with the individual words.
+So the phrase the cake is a noun phrase,
+and the rule for a noun phrase says that
+the head of the noun phrase is
+equal to the head of the noun.
+So since the head of the noun is cake,
+the head of the entire noun
+phrase two is also cake.
+Something happens with the fork,
+the head of the noun phrase labeled number
+noun phrase three is going to be fork,
+because it's main noun is fork.
+Similarly, the head of the noun
+phrase one is going to be child,
+because the head noun is child.
+So at this point, we still have
+to expand several more heads.
+So the head of the prepositional
+phrase with the fork
+is by definition the preposition itself.
+So forgetting about fork at this point and
+we start,
+we are replacing it as the head of the
+prepositional phrase with the word with.
+The head of a verb phrase is the verb,
+so the verb phrase ate the cake
+is going to have ate as its head.
+And this ate is going to be propagated
+one more level up to the next VP up,
+which is also going to
+have ate as its head.
+And now, we have two choices for
+head for entire sentence.
+Child, which is the head
+of the noun phrase, and
+ate which is the head of the verb phrase.
+And, in this case,
+which one do you think wins?
+Well, the rule is that
+the head of the sentence is
+the head of its main verb phrase.
+So we're going to propagate ate as
+the head of the entire sentence.
+So every production in the grammar can
+now be rewritten as a lexicalized form.
+For example, the rule on
+the top is going to be S headed
+by ate gives us NP headed by child
+followed by VP headed by ate.
+So one of the most popular parsers
+that involve lexicalization is
+the Collins Parser.
+The version from 1999 is the one
+that I'm going to use as an example.
+So this model is generative.
+And it has the foreign types of rules.
+On the left-hand side is turned into
+a sequence of Ls and H a set of Rs.
+Ls are the things that
+appear before the head.
+Rs are the things that
+appear below the head.
+So the generative model goes as follows,
+H gets generated first.
+Then, all the Ls get generated
+right to left from 1 to n.
+And then, finally, all the Rs
+going left to right from 1 to m.
+So the probabilities are estimated
+using maximum likelihood
+estimation from the Penn Treebank.
+So here's an example.
+We want to find the conditional
+probability of the preposition
+of given the verb think often labelled
+as in, as the preposition in.
+And think is labelled as a verb.
+And we just go ahead and
+compute this probability by dividing
+the actual occurrences of the word
+of to the right of the head think,
+divided by the total number of symbols
+that appear out of the head think.
+And we can also do some sort of
+smoothing if the data is sparse.
+So the smoothed probability that
+involves the lexicalized version of of,
+given the lexicalized version of think
+is going to be a linear combination
+of three things.
+One, the actual counts for
+of and think, lexicalized.
+But if those are not available,
+we can also look at the case
+where of is lexicalized, but
+the verb is not, and finally the case
+where none of them are lexicalized.
+So this helps us address some of
+the issues with lexicalized grammar,
+specifically that the training
+data is much more sparse when we
+train the lexicalized grammar,
+because of so
+many different combinations that
+you have to take into account.
+And that leads to
+a combinatorial explosion and
+you need to parametrize the grammar.
+So one thing that I want to bring up
+here is called discriminative reranking.
+It is a technique that is used,
+because very often,
+in a probabilistic context for grammar.
+You can have many parses associated
+with the input sentence.
+And therefore, but
+it is very similar to each other.
+So it's not clear if you
+wanted to pick just one of
+them whether the one with the highest
+probability is the best one.
+Instead what you do is you produce an and
+best list, and you use some additional
+information to pick the parses that
+are most likely to be the best ones.
+So some of the considerations to take
+into account on this end best list,
+is things like the parse tree depth.
+So you want to make sure that
+you don't get sentences that
+have trees that are too deep or
+too shallow.
+You also take into account whether you
+have more instances of left attachment or
+right attachment.
+So for example, in English, it's more
+likely to have right attachments and
+left attachments.
+So you would rule out a parse tree
+that has too many left attachments.
+You can also look at
+the discourse structure.
+So, for example, if a certain sentence
+is the second one in a paragraph,
+you may want to treat it differently,
+because it's more likely to include enough
+word expression that refer
+back to the previous sentence.
+But can you think of some other features
+that can be used in the reranking?
+Well, let's see.
+So the question was,
+what other considerations can you have for
+reranking in addition to parse tree depth,
+attachment, direction,
+and discourse structure?
+Well, some of them
+are consistency across sentences.
+So, for example, you may have a word that
+was interpreted one way in one sentence.
+We want to assure that it's interpreted
+exactly the same way in the next sentence.
+You can also take into account some
+information that comes from some of
+the other stages of
+the natural language pipeline.
+For example, the part of speech sequence,
+or some constraints from
+speech recognition.
+One thing that you may be wondering is,
+how well do parsers work.
+Well, here's some examples.
+The F1 measure computed on sentences
+that are 40 words or less,
+this is a standard evaluation metric for
+our statistical parsers.
+Here's some statistics,
+the ballpark is in the low 90s, so
+the earliest parser that I wanted to
+show here is the Charniak parser.
+In 2000, this one achieves 90.1% F1,
+and there's some modified versions,
+better version of the Charniak parsers
+by Charniak and Johnson from 2005,
+it achieves some of the highest
+possible performance on F1, namely 92%.
+So this concludes the section
+on statistical parsing.
+In the next segment we are going to look
+at a very different type of parsing called
+Dependency Parsing.
+

@@ -1,0 +1,494 @@
+Okay, so welcome back.
+The next few segments of this class
+are going to be all about parsing.
+As you will notice later on parsing is
+one of the most important technologies
+used in natural language processing.
+Many further components such text
+summarization, question answering,
+and machine translation rely on
+successful parsing for them to succeed.
+So let's consider the polar of parsing.
+I'm going to start with an example
+from parsing of programming language.
+So we have here a C program
+to reverse a number.
+You're all familiar with the syntax
+of programming languages.
+They include variables,
+blocks, statements, and so on.
+What is, however,
+very important about computer languages
+is that their syntax is unambiguous.
+This is not the case,
+however, for human languages.
+Human languages are very
+different in many different ways.
+Can you think in what ways they're
+different as far as parsing is concerned?
+So there are no types for
+words, like computer languages,
+where we know that a certain
+string is a variable or a comment.
+In the natural language, we don't know
+whether a certain word is a noun or
+a verb automatically.
+There are no brackets around the phrases,
+unlike programming languages where we
+have four statements and each statements
+that have very explicit bracketing
+around the statement that compose them.
+There's also a lot of ambiguity,
+as we've talked about before.
+So the ambiguity can be at the level
+of the individual words or
+the level of parses.
+And there's also a lot of implied
+information which makes human language
+parsing even more complicated.
+For example, in a given dialog, one of the
+participants in the conversation may be
+referring to an object that was visually
+available, but not part of the text.
+It's also possible to refer to knowledge
+from the outside world that is not
+obvious on the sentences in the text.
+So what is parsing?
+So the parsing problem is essentially
+to associate some sort of a structure,
+often a tree structure with a sentence.
+And this is done usually using a grammar,
+very often a context free grammar.
+There may be exactly one such tree
+structure given a sentence and a grammar.
+There may be many such sentences
+in which case you want to pick
+the one that is most likely or
+most appropriate.
+Or it can also be the case of
+there may be none, in which case,
+that particular sentence would not be
+parsed successfully by that grammar.
+One thing to keep in mind is
+that grammars are declarative.
+This applies to all grammars
+including context free grammars.
+So, what that means is that you can use
+a grammar to describe a sentence, but
+you cannot automatically come
+up with the methods to convert
+a sentence into a parse tree.
+You have to augment
+the grammars using some code.
+So in other words, the grammars are not
+sufficient to specify how the parse tree
+is going to be constructed.
+We talked about some
+tactic ambiguities before.
+Let me just remind you
+of those a little bit.
+So we have prepositional
+phrase attachment.
+So in the sentence,
+I saw the man with the telescope.
+We can have one interpretation where I
+use the telescope to see the man and
+another interpretation where I saw a man
+who himself was carrying a telescope.
+So this is a PP attachment poem
+because the prepositional phrase
+with the telescope can attach to
+either the verb of the sentence so
+or to men which is the direct object.
+We can have gaps.
+So for example, the sentence Mary
+likes Physics but hates Chemistry.
+It is clear that the subject of
+the second verb hates is also Mary.
+However, this is not
+explicit from the structure.
+So a successful parser
+should be able to infer that
+Mary is the subject of both verbs,
+not just the first one.
+Coordination scope is another
+interesting ambiguity.
+If we have a sentence like small boys and
+girls are playing we may have
+two possible interpretations.
+The first one is that the boys
+are small and the girls are of any age
+whereas a second interpretation is that
+both the boys and the girls are small.
+So this is an example of
+a coordination ambiguity and
+it's called that way because and
+is a coordinating conjunction.
+There are many cases where a certain word
+can be considered as either a particle or
+a preposition.
+For example,
+if you say she ran up a large bill,
+the word up here is used as a particle
+in the phrase of verb run up.
+So she ran up a large bill is interpreted
+as she incurred a large bill.
+Where as if we changed this
+to she ran up a large hill.
+In that case up a large hill
+is a prepositional phrase and
+the word up is not attached
+directly to the verb ran, but
+rather it is the head of
+the phrase up a large bill.
+Another example is the use of some
+words as both gerunds and adjectives.
+So a gerund is a verb form whereas
+an adjective is something completely
+different, a different part of speech.
+So a typical example would
+be something like this,
+Frightening kids can cause trouble.
+So there are two interpretations here.
+In one of them, frightening is
+an adjective and just modifies kids.
+In the second example, it's a gerund, in
+which case we have frightening kids as in
+to frighten kids, the action of
+doing that can cause trouble.
+So let's see what kind of
+applications of parsing there are.
+So the first one is in grammar checking.
+So every time you go to
+your favorite editor,
+you will be able to see some feedback.
+So if you type a sentence that
+doesn't look very grammatical,
+you will see it underlined, and
+you will have a chance to correct it.
+For example, if I want to say,
+I want to return this shoes, the grammar
+checker will parse the sentence and
+recognize that this is ungrammatical and
+it will suggest to changes to either,
+I want to return these shoes, or
+perhaps, this shoe, but not this shoes.
+Another example is question answering.
+So if you have a question of this nature,
+How many people in sales make $40K or
+more per year?
+you need a parser to be able to
+recognize that you're looking for
+a record in a database where
+the record is about a person and
+that $40K is an attribute, and so on.
+Another example is machine translation.
+As we know from before, different
+languages have different word order.
+So for example,
+a language that is subject object verb
+when it needs to be translated to
+a language that is subject verb object
+would have to undergo some
+syntactic transformation.
+So we have to do this in parsing.
+The next task is information extraction.
+Information extraction we want to
+recognize different phrases and
+how they relate to each other and
+also what are their types.
+So in the sentence Breaking Bad
+takes place in New Mexico,
+we want to recognize that
+Breaking Bad is a name of a TV show.
+And that New Mexico is a name of a state.
+And there are many other applications for
+example, for speech generation.
+For speech understanding.
+For interpretation of sentences,
+and so on.
+So, the next topic is about context for
+grammars.
+We've mentioned them briefly in the past.
+We are going to go on to a lot
+more detail this time around.
+So what is a context free grammar?
+A context free grammar is a 4 tuple,
+consisting of the following 4,
+symbols, n, sigma, r, and s.
+4 of those.
+Well, n is a set of nonterminal symbols.
+For example symbols for sentences,
+prepositional phrases, verb phrases,
+and so on.
+Sigma is a set of terminal symbols.
+Those are words for example Mary or
+John or like and so on.
+It is assumed that the set of
+terminal symbols is distinct or
+disjoint from the set of
+non terminal symbols.
+There is also a set of rules where on
+the left hand side you have a non-terminal
+symbol A which is part of
+the set of non-terminal symbols.
+On the right hand side you have beta where
+beta is a string that can combine any
+symbols from sigma and N.
+You can have any number of those
+from zero to a large number.
+And finally S is a specific
+designated start symbol in N.
+When you parse entire sentences,
+S happens to be the sentence symbol but
+in general there is no
+reason why context and
+grammar can not be used to parse
+some other syntactic constituents.
+For example non-phrases or
+even entire paragraphs.
+Okay, let's look at an example.
+On the top line of the slide,
+we have a sentence that we want to parse.
+The sentence is,
+the child ate the cake with the fork.
+And the grammar that we have here is
+a context free grammar with eight
+non-terminal symbols.
+S for sentence, NP, PP, and VP for
+non-phrase, prepositional phrase, and
+verb phrase respectively, DT for
+determiner or article, in this example.
+N for noun.
+Preposition, and
+finally we have some past tense verbs.
+You will see that some of
+the rules have options.
+So for example, a noun phrase can be
+either a determiner followed by a noun, or
+it can recursively go itself and turn into
+a noun phrase for bi-prepositional phrase.
+So it is this kind of
+alternative rules that would
+bring us to our multiple parses for
+a given sentence.
+So one thing that I wanted to
+point is that the phrases,
+the things that have a P as
+the last symbol, NP, PP, and VP,
+are all considered to
+be headed constituents.
+What that means is that one of their
+components is more important than
+the others and this is not surprisingly
+the noun for the noun phrase,
+the preposition for the prepositional
+phrase, and the verb for the verb phrase.
+So heads of constituents is a very
+important concept that will come up again
+in the later slide.
+So let's look now at
+some more examples and
+understand why a phrase-structure
+grammars are important in parcer.
+The first thing that we need to realize
+that sentences are not just bags of words.
+So for example,
+the sentence Alice bought Bob flowers,
+is distinct from the sentence,
+Bob bought Alice flowers.
+So clearly, a parser would help us
+understand that in the first sentence,
+Alice is the subject, or the doer of the
+action, whereas in the second sentence,
+Alice is the recipient of the action.
+So phase-structure grammars enforce
+what is known as the context-free
+view of language.
+That's why the expression
+phrase-structure grammar and
+the expression context-free
+grammar mean the same thing.
+So context view of language tells us that
+a prepositional phrase will look the same
+whether it is part of the subject
+non-phrase or part of any verb phrase.
+It will have the same internal structure.
+So constituent order is very important.
+As I said earlier,
+some languages are subject verb object and
+others are subject object verb,
+and there are some that have all
+the other four combinations of subjects,
+verbs, and objects.
+So some grammars can include
+additional constituents.
+For example, auxiliary verbs.
+For example,
+the dog may have eaten my homework.
+So may and have here are auxiliary verbs.
+Imperative sentences are sentences
+that describe orders.
+For example, leave the book on the table.
+The sentence doesn't
+have an explicit subject.
+Interrogative sentences
+end in question marks.
+So for example,
+did the customer have a complaint?
+So there are two types of
+interrogative questions.
+There are yes no questions like this one
+here and there are WH questions, for
+example where, when, and so on.
+They could also be negative sentences
+where the main verb is negated.
+So the customer didn't have a complaint,
+in this case, did not or
+didn't is the expression of negation.
+So let's now look at the longer
+example that incorporates
+some of those types of sentences.
+So we have now a few new rows.
+On the first line,
+we have sentence that used to be
+just a noun phrase, verb phrase.
+Now we have two additional options.
+So can you figure out what changes were
+made to the grammar to make it more
+powerful than the previous example?
+Well, the answer will
+be on the next slide.
+So let's look at some of the changes.
+So one of them is on the first line.
+We have now a new
+rule that turns a sentence into
+an auxiliary non-phrase verb phrase.
+So for example, something like,
+have the children arrived home.
+And we also have a new concept of
+a nominal, which can be either a noun or
+it can be a nominal followed by a noun,
+so this way we can create
+sequences of nouns where the first one
+modifies the second one, and so on.
+And we'd have now moved the prepositional
+phase from under noun phrase to under
+nominal, so it's very different
+structures and tactics.
+What's also new is that the verb
+phrase rules include a row for
+just the VP turning into V.
+So this is an example where
+we have no direct objects and
+no prepositional phrases.
+So that will be what is known
+as an intransitive verb.
+So here's an example of the Penn Treebank.
+The Penn Treebank is
+a very large resource for
+parsing information that was manually
+built in Pennsylvania in the 90s.
+It has extensively been used for
+training parsers over the last 20 years.
+We'll revisit it later on but for
+now I just want to give an example of
+a realistic sentence that was included
+from the Wall Street Journal.
+As you can see there
+are two sentences here.
+The first sentence is marked
+on the top with s and
+the second one is at the bottom half
+of the page also marked with an s.
+The first sentence has
+a noun phrase subject and
+a verb phrase and the second one does too.
+And then you can look at the rest
+of the information on the slide.
+You can see that the first sentence has
+some additional constituents such as
+adjectival phrases, or adj p,
+in this case 61 years old.
+The second sentence has a modal verb, or
+an auxiliary verb like will, and so on.
+So this is just to give you
+an example of a realistic sentence,
+that is very much unlike the two
+examples that we looked at so far.
+Let's now discuss the idea
+of a left-most derivation.
+If you are given a grammar in a sentence,
+there is a unique way in which one
+can parse the sentence by always expanding
+the left-most unexpanded non-terminal.
+So let's look at this example.
+So the leftmost derivation is a sequence
+of strings, S1, S2, all the way to Sn.
+Where s1 is the start symbol,
+for sentences, that would be S.
+And sn, the last thing in this list,
+only includes terminal symbols or words.
+So here's the example.
+We start with S and
+then we replace the S with NP VP by
+applying the row S goes to NP VP.
+Then, we replace the NP, which is
+the leftmost unexpanded symbol so far,
+with determiner noun-verb phrase.
+And so on and so forth until we
+finally get the child ate the cake
+with a fork where everything
+in S is terminal symbols.
+So, let's look at this graphically.
+We have an S at the beginning.
+We want to expand it into a sentence so,
+S is the leftmost symbol.
+S goes to NP, PP.
+Now the leftmost symbol is NP.
+We expand NP, determiner noun.
+The leftmost non-expanded
+symbol is determiner.
+We can place it with a word.
+That's a terminal, so we can stop here.
+Now the leftmost un-expanded symbol is N.
+We replace that with child.
+It's again a terminal symbol, or a word.
+So we can move on to VP.
+The VP now gets expanded to VP and NP.
+Because this is the first rule
+with VP as the left-hand side.
+Now the second VP, that was just created,
+needs to be expanded.
+So that gives us the verb, ate.
+We have one last thing to expand,
+that's noun phrase, NP.
+So the first rule for a noun phrase
+in the grammar is noun phrase,
+prepositional phrase.
+We now expand the newly generated noun
+phrase to get the determiner noun.
+And then we expand the determiner and
+the noun into words.
+And we have now the prepositional
+phrase to expand.
+The rule for prepositional phrase is
+that it's something that starts with
+a preposition and
+is followed by a noun phrase.
+The preposition becomes the word with and
+the non-phrase is a determiner
+followed by a noun and
+then finally we have the determiner turn
+into the and the noun turn into fork.
+So this gives us the leftmost
+derivation given that grammar and
+given the sentence the child
+ate the cake with the fork.
+Now, you should realize that this is
+not necessarily the correct semantic
+interpretation of this sentence.
+This is just the one that comes up first
+when we follow the leftmost derivation
+principle.
+

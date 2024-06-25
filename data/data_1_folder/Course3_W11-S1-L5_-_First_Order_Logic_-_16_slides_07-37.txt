@@ -1,0 +1,208 @@
+Welcome back to
+Natural Language Processing.
+We're going to continue our
+sequence of segments on semantics
+by focusing this time
+on first-order logic.
+So, so far,
+we looked at propositional logic,
+which as I said is essentially
+the simplest form of logic.
+Some of the properties of
+propositional logic include some pros.
+If it's compositional,
+we can define the tools values of long
+sentences based on the tools
+values of their constituents.
+It's declarative.
+But it also has cons.
+It has very limited expressive power.
+And it can only be used
+to represent facts.
+So if we want to go beyond that,
+we have to go to something
+called first order logic,
+which has a lot of additional properties
+that propositional logic doesn't have.
+So first order logic is used to represent
+everything that propositional logic can
+represent but also things like objects.
+So an object can be, for
+example, Martin the cat.
+Relation, for example,
+Martin and Moses are brothers.
+Functions, Martin's age, and so on.
+Okay, now let's talk a little bit
+more about first order logic.
+In BMF format,
+we have this basic concept of a formula.
+So a formula is one of
+the following things.
+Either an atomic formula, or two
+formulas connected with a connective, or
+a sequence of quantifier variable formula,
+or
+a negation of a formula, or
+a formula in parenthesis.
+An atomic formula is a predicate
+that consists of one or
+multiple terms in parenthesis.
+So a predicate is something like, likes.
+And in this case,
+likes can have two arguments,
+the person doing the liking and
+the person being liked.
+A term is either a function of terms or
+constant or variable.
+Connectives are either and,
+or, or implies.
+Quantifiers are either the universal
+quantifier or the existential quantifier.
+A constant is either something like M or
+a name of a person or a name of an object.
+Variables are denoted with
+variable names like x and y.
+You could also have predicates,
+for example, likes and eats.
+Functions, for example AgeOf,
+ColorOf, and so on.
+So there are two common mistakes that
+people make when they use a quantifier.
+So I want to explain how
+the quantifiers work very well.
+The first mistake is that people
+don't realize that implies is
+the main connective with
+the universal quantifier.
+So the mistake that people make instead
+is to use and as the main connective.
+So let me give an example.
+If we say for all x,
+x is a Cat, and x EatsFish.
+Well, this is actually not the right
+representation if we want to say that all
+cats eat fish.
+What this really says is that everyone
+is a cat, and everyone eats fish,
+which is not what we wanted to do.
+Instead, what we need to say is that for
+all x, cat of x implies eats fish x.
+So the second mistake has to do
+with existential quantifier.
+So the rule is that and is the main
+connective with existential quantifier.
+So the mistake that people make
+is to use implies instead of and.
+So here's an example, suppose that we want
+to say there exists a cat who eats fish.
+This representation here actually is
+incorrect because as I said before,
+in the implication operator,
+if the left-hand side is false,
+then anything can go on
+the right-hand side.
+So, what that means is that the statement,
+there exists some x,
+Cat(x) implies EatsFish(x).
+The statement will be true if there
+exists anyone who is not a cat.
+Because for that person or object,
+the right-hand side doesn't matter at all.
+So the correct representation here
+would be, there exists some x,
+such that x is a cat and x eats fish.
+So a little bit more
+about first order logic.
+I'm going to now introduce a NACLO
+problem from 2014, written by Ben King,
+which illustrates some of the interesting
+aspects of first order logic.
+So the problem can be downloaded
+from the NACLO website, and
+I want to show it to you here real quick.
+So, the problem is called Bertrand and
+Russell.
+Again, this is a pun on the name
+of the famous philosopher and
+logician, Bertrand Russell.
+So, this page describes first order logic.
+This is something that we
+already did in this class.
+And then, it explains the different
+connectives, negation,
+conjunction, disjunction, and implication.
+And then the two quantifiers,
+universal and existential quantifier.
+And then, it asks you some questions.
+You have nine or ten formulas, A to J,
+and each of those has to be matched
+to one of the five sentences above.
+So the first sentence is,
+everyone either passed or failed the test.
+So can you figure out which letters A to
+J go into to the five empty boxes in
+part H1?
+The answer will be shown to
+you in the next few slides.
+The second part of the problem is to
+translate now logical expressions and
+first-order logic into
+English language sentences.
+So again, the goal here is to
+find which of the letters A to H
+go into the five boxes
+on the top of the page.
+And here finally the solutions for
+both parts 1 and 2.
+Make sure that you get them right.
+And if you didn't get them right,
+go back and
+try to understand better how
+first order logic works.
+So the next thing that I want
+to introduce in this section is
+the concept of a lambda expression.
+So I'm going to do it by an example.
+Suppose that we want to define
+a function called increment x,
+which takes an argument x and returns
+the value that is one above, so x + 1.
+So the way to represent this in lambda
+notation is to say that there is a lambda
+function, which has one argument x,
+which returns x + 1.
+So if we apply this function,
+lambda x, to the argument 4.
+We can essentially write
+it in the following way.
+Increment 4 is the same as applying
+the lambda function lambda
+x x +1 to the argument 4.
+And the result of applying this function
+to this argument is the number 5.
+You can have lambda functions
+even with multiple arguments.
+So for example, for
+sums we can have the add lambda function
+being represented as lambda x,
+lambda y returning the sum, x + y.
+So if we now want to compute
+the sum of the number 3 and 4,
+we can do it by applying the lambda
+function of two arguments, lambda x,
+lambda y, x + y to the two arguments 3, 4.
+And then we can have this expanded
+form in two different ways.
+We can either first expand lambda x or
+lambda y.
+In this case I chose to
+expand lambda x first.
+So by removing x,
+we can replace the expression with the two
+arguments with a new one, lambda y, 3 + y.
+This lambda function has to
+be applied on the argument 4.
+And that gives us 3 + 4, or 12.
+So lambda expressions are going to come
+in very handy in the next few sections.
+

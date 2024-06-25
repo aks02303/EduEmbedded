@@ -1,0 +1,459 @@
+Okay, the next segment is going to
+introduce some of the linguistic
+background as well as some of
+the mathematical background needed for
+this class.
+So as I told you at the beginning of the
+class, we're going to, look at NLP from
+a slightly more linguistic perspective
+than other courses on this topic.
+So I want first to introduce you to
+the basicals, basics of linguistics.
+A little bit of it is not going to be
+even very useful for this class, but
+I want you to get the coherent picture
+of the main topics in linguistics.
+So let's look at some of the issues that
+arise in NLP that have their origins
+in the linguistic's community, for
+example, the idea of a constituent.
+So what is a constituent in linguistics?
+It is a unit of the syntax of
+a sentence that has a specific role.
+So for example, if I have the sentence,
+children eat pizza, or
+the sentence, they eat pizza,
+in both cases
+I have the underlined fragment
+indicating the subject of the sentence.
+Those can be replaced with each other and
+the sentence would still be grammatical.
+Or I can say,
+my cousin's neighbor's children eat pizza.
+As you can see, all of those
+three underlined expressions can
+be the subject of the sentence.
+Therefore, they have something in common.
+What that turns out to be is
+that they're all noun-phrases
+because they can be all
+subjects of a sentence.
+You can see that the length
+actually doesn't really matter.
+And the fact that the second
+word is not even a noun,
+it's a pronoun, also doesn't matter.
+What's most important is that all those
+three items can be the subjects
+of the same sentence.
+Now you can even have instances where
+the subject of a sentence is not
+explicitly mentioned.
+For example, if I tell you, eat pizza.
+I mean that you should be eating the
+pizza, so you are the implicit subject of
+the sentence, but because of the way I
+formulated the sentence as an imperative,
+as an order,
+the subject is not explicitly marked.
+We also need to know about
+the things about collocations.
+So collocations are groups of
+words that appear more frequently
+together than you would expect by chance
+and typically have some specific meaning.
+For example, even though the word strong
+is a synonym of powerful in most contexts,
+we can say that some beer is strong but
+we cannot say that that beer is powerful.
+So, two synonyms cannot be
+always interchangeable.
+An even funny example, you can say that,
+this is my big sister; but you cannot say,
+this is my large sister, even though
+big and large are often synonymous.
+Now an example that I was looking for
+in the news has to do with
+the word rise versus ascend.
+It turns out that in the past when I first
+did this experiment maybe ten years ago,
+people would never say, stocks ascend.
+Instead they would say,
+stocks rise, all the time.
+The were 225,000 hits on Google for
+the former and only 47 of the latter one.
+But when I did this experiment for
+this class,
+it turns out that stocks ascend is
+now much more acceptable collocation.
+There were in fact 57,000
+instances of that on Google.
+But still, we have a major difference in
+the frequency of those two collocations
+in a ten to one ratio.
+So how do we get this kind of
+linguistic knowledge in the NLP system?
+Well, there are essentially
+two approaches.
+One is some sort of manual rules that
+tell you, well, big sister means this and
+large sister means something
+completely different.
+And you have to encode those as part
+of the knowledge of the system by hand.
+Or you can automatically acquire these
+kinds of rules from large text collections
+also known as corpora.
+So what kind of knowledge
+about language is needed?
+Well those older areas of linguistics,
+phonetics and
+phonology, which are the study of sounds.
+For example, what are consonants and
+vowels and which consonants
+are stops versus fricatives.
+Morphology, which is
+the study of word components.
+For example, in, in the word impossible,
+im is a prefix that means negation,
+and impossible means something
+that is not possible.
+Syntax is the study of sentence and
+phrase structure.
+What is the subject of the sentence?
+What is the object?
+What is the verb?
+Lexical semantics is the study of
+the meanings of individual words.
+Compositional semantics is
+how to combine words and
+segments of sentences and to understand
+the meaning of the combined sentence.
+Pragmatics is how to accomplish goals.
+And then, discourse conventions is
+about dealing with units of text that
+are larger than single utterances or
+single sentences.
+For example,
+you can have a multi-sentential,
+paragraph where each additional sentence
+somehow refers to the first sentence,
+by using pronouns and
+other forms of reference.
+There will be a separate lecture on,
+the different levels of
+language later on this class.
+Now from computer science,
+we can look at some techniques
+like finite-state automata.
+So finite-state automaton is a machine
+that consists of states in transitions.
+One of the states is the start state,
+and you can also have one or
+more final or accept states.
+In this example here,
+state zero is the start state.
+It's indicated by a solid circle,
+solid line circle.
+And state number 13 is an accept state,
+and that is denoted by the double circle.
+The transitions go as follows.
+From state zero to state one,
+you have the letter c.
+From state one to state two,
+you have the letter a.
+From state two to state three,
+you have the letter t.
+Then there is a space from three to four,
+and so on.
+So the whole, automaton here is used
+to encode the sequence of three words,
+cat, space, cats, space, dogs.
+Another automaton known as a transducer
+can be then combined with the previous
+automaton to perform some
+sort of phonological or
+morphological analysis of the sense.
+So, the second automaton here
+starts at state zero, and
+then, it has multiple paths.
+So let's look at them in detail.
+The top path has three consecutive edges.
+The first edge converts c to a zero,
+where zero indicates the empty
+string in this example.
+Then the next edge is from one to two.
+It takes it's input the letter a and
+it produces the empty string as output.
+And finally, the third transition
+goes from state two to state three.
+It reads in a t, the letter t,
+and it produces a capital N.
+And then it goes to state number three
+which is an acceptable final state.
+So if we perform a specific operation
+on the two automata that you can see on
+the screen, that specific
+operation is called composition.
+What is going to happen is that,
+we're going to read the c, the a,
+and the t from the input on the top and
+convert that sequence into
+the sequence empty string followed by
+empty string followed by capital N.
+So in a sense, we did a very simple,
+morphological analyzer slash
+part of speech tagger.
+We labeled the word cat as a noun.
+And if, the input string cat
+had stopped right there,
+we would have been in an accept state,
+number three, and
+we would have just produced
+the noun label and stopped.
+However, our input contains three words,
+and,
+the middle automaton has, the capability
+of processing all of those three words and
+producing the correct labels for that.
+So let's, see if we can trace it.
+So we already did the part where we look
+at C-A-T and we label this as a noun, N.
+Now the next symbol on
+the input is a space.
+Well the space takes us from
+state three to state zero and
+doesn't produce any output, so we can
+essentially go back to the beginning.
+Then we have a C-A-T-S.
+In the second automaton that takes us
+through the same path as before and
+we produce an end going from state
+zero to state one, to state two, and
+to state three.
+But then the s now takes us to state six,
+but
+now we're going to produce
+a P on the output tape.
+And that will tell us that
+the word cats is a noun plural.
+We could stop here but
+since there's more input to process,
+we have to go back from state six
+to the beginning, state zero.
+The input is an empty string,
+like a space in this case, and
+the output is an empty string.
+If we go back to state zero and
+we have now the word dogs, so
+this is processed by going from state
+zero to state four, then to state five,
+then to state three,
+in which case we output the letter N.
+Then, we have one more letter and then for
+the letter s,
+which gets translated into a capital P.
+And now at this point,
+both the input string,
+and the so
+called transducer r in an accept state.
+Therefore we can stop, and
+we can just produce the output that
+you see on the bottom of the screen.
+So let's read it carefully here.
+The output has two labels on each edge.
+The first label comes from the input and
+the second label comes
+from the transducer.
+So, if we did it left to right, by only
+focusing on the first label on each edge,
+we're going to get the original string
+which is, cat space cats space dogs.
+Now if we read the second
+label in this transition,
+we're going to produce the output
+of this toggle speech tagger.
+So let's try to do this here.
+Empty string, empty string, capital N,
+which is the label for cat,
+followed by empty string, empty string,
+empty string, capital N, capital P,
+which is the label for
+the word cats as a noun plural,
+followed a few empty strings,
+followed by a capital N and
+capital P, which is the label for
+the plural noun dogs.
+So, this point in time, the transducer has
+finished it's work and we can just produce
+the output which consists of
+the second labels on every transition.
+So N, NP, NP.
+This was just a small illustration
+how techniques that come from
+theoretical computer science such as
+finite state automata are used in natural
+language processing.
+There are other areas of
+theoretical computer science that find
+that are useful in natural
+language processing.
+In addition to automata, of the kind that
+I just showed you, there's also push-down
+automata which I use to process
+more sophisticated grammars.
+And in a few weeks,
+you will see how they work.
+We also need to import
+some techniques from
+computer science that deal with grammar.
+Specifically regular grammars,
+context-free grammars,
+context-sensitive grammars and
+some other kinds of grammars, which again,
+will be covered in this course
+later on this semester.
+There are also issues related to the
+complexity of the different algorithms and
+the, for example, how long does it take
+to process an input of a certain size?
+And finally, there's aspects of
+programming such as dynamic programming.
+Dynamic programming is a specific
+algorithm that is used to produce
+an output that depends on
+the sequence on the input, and
+it's much more efficient than trying all
+the possible combinations on the input.
+So we will talk about dynamic
+programming later in this class.
+Now in addition to linguistics and
+computer science,
+there are areas in NLP that originate
+in mathematics and statistics.
+The whole use of probabilities
+to indicate that
+different sentences are likely
+to a different extent.
+The use of statistical models,
+hypothesis testing,
+linear algebra, as well as
+optimization and numerical methods.
+We are going to see some of
+those techniques in action
+later this semester as well.
+Some additional mathematical and
+computational tools that are popular in
+natural language processing include
+language models which are used to
+determine the probability of a certain
+sequence of symbols or words.
+Estimation methods,
+context-free grammars for trees,
+Hidden Markov Models or
+Conditional Random Fields for sequences.
+And then, also, different statistical
+models such as different generative and
+discriminative models, and
+maximum entropy models.
+Some techniques in statistics that I
+use in natural language processing
+are briefly mentioned here.
+One is the so-called vector
+space representation for
+word sense disambiguation, which we're
+going to talk about in a couple of weeks.
+The noisy channel model for
+machine translation.
+I'm going to illustration those two
+here at the bottom of the slide.
+The left-hand side shows you how different
+documents can be represented as vectors in
+a vector space.
+So we have here two documents,
+d1 and d2, and a query q.
+Oh, all three of those
+are represented as vectors.
+And we can determine which of
+the two documents, d1 or d2,
+is more similar to the query q by looking
+at the angle between that document and
+the query, so
+the angle between d1 and q is alpha.
+The angle between d2 and q is theta.
+And in this case, it's pretty obvious that
+theta is a larger angle than alpha, and
+therefore document one is actually
+a better match to the query q.
+The example on the right is
+the so-called noisy channel model for
+machine translation.
+It is based on an idea that
+originated in speech processing,
+and the idea is very simple.
+We assume that when we have two languages
+and we want to translate between them,
+we assume that one of the languages is
+an encoded version of the other language.
+So if we want to translate some text from
+French to English, we're going to try
+to identify which string in English is
+most likely, given the French string.
+And this is then converted
+using the Bayesian Theorem into
+the second expression on the right.
+And then, it's also simplified into
+the third expression on the right,
+knowing that the probability of
+the French sentence does not change
+when you change the English sentence.
+So you can just assume that for
+ranking purposes,
+the sentence in English that maximizes
+the conditional probability of E given F.
+It can be computed the same
+way even if you didn't know
+the value of the probability
+of the French sentence.
+And finally, the third technique that is
+used in natural language processing that
+originates in statistics is
+the so-called random walk method.
+A random walk method takes a graph and
+uses what is known as a Monte Carlo
+simulation, to label the nodes of
+the graph using different, values.
+So, this is useful for
+tasks in natural language processing
+such as sentiment analysis
+where you have as input a sentence that
+can be either positive or negative.
+And then, you want to label some
+additional sentences as either
+negative or positive by looking at
+the examples that you have seen so far.
+There are some techniques in natural
+language processing that originate in
+artificial intelligence, and
+I'm going to list just a few here.
+Those include logic, specifically first
+order logic and predicate calculus.
+Those are ways to present
+the meaning of sentences.
+The idea of agents or
+essentially entities that communicate
+with each other using speech acts.
+The idea of planning.
+How do you plan a sentence?
+How do you decide what
+goes into the sentence and
+how do you decide that you want
+to render it in a certain way?
+And also a few more techniques that we're
+going to focus a little bit on later
+in the semester such as constraint,
+satisfaction, and machine learning.
+So, the next topic is going to be
+an introduction to linguistics as
+needed for this class
+

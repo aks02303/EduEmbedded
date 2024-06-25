@@ -1,0 +1,748 @@
+Okay, welcome to
+Natural Language Processing.
+The next topic is text classification.
+So what is text classification?
+We want to assign documents
+to predefined categories.
+For example based on topics
+such as let's say science and
+technology versus music based on
+languages based on different users.
+So we're given a set of
+classes capital C and
+we're given a document x and we have to
+determine which class in C it belongs to.
+There are many different
+ways to do classification.
+The first important
+distinction between them is
+whether you want to do hierarchical
+versus flat classification.
+So in hierarchical classification,
+you have a more general topic, for
+example let's say business.
+Then within business,
+you have some additional subcategories,
+for example finance and
+management and so on.
+In flat-cut classification
+you just have one set of
+categories that is not hierarchical.
+You could also distinguish
+between overlapping and
+non-overlapping classification.
+So an overlapping classification, which
+is also known as soft classification,
+each document can be classified
+in multiple classes.
+For example, a document about
+the business of sports may be classified
+under both business and sports.
+Whereas in non-overlapping classification,
+you have to make a hard decision and
+classify each document
+in exactly one class.
+So there are many different techniques for
+classifications.
+One is to use manual classification
+using a set of rules.
+So you can have, for example,
+a list of all the countries in the world
+or all the states in the United States.
+And then if a document contains
+a mention of those countries or states,
+you can classify them under geography,
+for example.
+So here's an example,
+you can have a rule that says if you have
+the word Columbia and the word University,
+you classify under education because
+Columbia University is a university.
+But if you have Columbia and
+South Carolina, you want to classify this
+document under geography, because Columbia
+is the capital of South Carolina.
+So here are some of the popular
+techniques for classification.
+They fall into two general categories.
+One is the so called generative model,
+which include k nearest neighbors and
+Naive Bayes.
+Then another one is discriminative,
+which includes SVM, or
+Support Vector Machines, and regression.
+So in generative classification you have
+to model the joint probability of x and
+y where x is the document and
+y is the class.
+And then you use Bayesian prediction to
+compute the probability of the class given
+the document.
+In discriminative classification
+you have to model
+the probability of y give x directly,
+without using the joint probability.
+So, for document classification and
+also for
+clustering which is one of the topics
+that we'll cover later on,
+the documents are represented exactly
+the same way as for document retrieval.
+So typically use the vector
+based representation.
+Have words like cat and dog.
+And each of those corresponds to
+a single dimension in the vector space.
+And you can also use as dimensions things
+like document length and author name and
+other method data features in
+addition to the words themselves.
+So each document is represented as
+a vector in an n-dimensional space.
+And the idea is that similar documents
+are going to appear nearby in
+the vector space.
+So you have to use distance measures,
+such as the the ones used for document
+retrieval such as cosine similarity,
+the Jaccard coefficient, and so on.
+So let's look at Naive Bayes and
+classification.
+Naive Bayes and
+classification have a very simple idea.
+We have looked at this example
+before under tech summarization so
+you can skip this slide
+if you remember it.
+Here I am going to describe it
+in a slightly different way.
+That is directly relevant
+to document classification.
+So what is the setup?
+We're given a document d, and
+we want to find out what is the
+probability that this document belongs to
+a certain class C, given that it
+includes features F1 through Fk.
+So according to the Bayesian formula
+we can rewrite this formula as
+the probability of the feature set.
+Given that a document is in the class and
+then normalize
+by the probability of the document
+being in the class in the first place,
+divided by the probability of seeing
+this particular combination of features.
+So now given that we have a joint
+probability distribution of all
+the features,
+we typically run into problems if we
+have a lot of different features.
+So we want to use
+the Naive Bayesian assumption, and
+assume that the features
+are statistically independent so
+in that case the formula
+changes into the one below.
+So the probability of the document being
+in the class, given the features that
+describe it, is just going to be equal
+to the product of all the conditional
+probabilities for each individual feature
+given the doctor is in the class,
+times the probability that
+the doctor is in the class.
+This whole product divided by the product
+of the probabilities of the individual
+features.
+So the features are typically words and
+phrases, and sometimes metadata.
+So some of the issues with Naive Bayes
+that we have to solve are where do we get
+the values?
+Well, for
+example how do we find the probability
+the document is in a particular class?
+So for this purpose we use maximum
+likelihood estimation, which is
+dividing the number of time that is
+appears in the class in the training data,
+by total number of documents
+in the collection.
+So we can also compute the conditional
+probabilities in a similar way.
+We assume that, they're generated
+using a multi-nomial generator and
+the maximum likelihood
+estimator is going to be
+the number of times they appear divided
+by the total number of occurrences.
+So we need to do smoothing just like
+in the statistical parsing section of
+the class if the frequencies are low.
+And one possible type of smoothing that
+can be used is Laplacian smoothing
+where we add one count to
+each of the occurrences, and
+then we divide by a normalized sum.
+So it's very important when you do Naive
+Bayes to implement everything correctly.
+Since you're going to be
+multiplying a lot of small numbers,
+you may run into floating point underflow.
+And in that case, it's much better to take
+the logarithms of each of those values.
+So instead of having something
+like 10 to the minus 30th power,
+you would just have the number minus 30.
+And then if you want to multiply
+multiple values in the numbers space,
+in the logarithmic space,
+you would just have to add the logarithms.
+Let's look at a specific
+example of text classification,
+the problem of spam recognition.
+So, here's a message that many of you
+may have received some years back.
+You get an email sent randomly
+to you that says I'm sick and
+I want you to help me save my investments.
+I'm going to give you a commission, but in
+order to do this you have to first send me
+some deposit so that I can use it
+withdraw the money from my bank.
+Those are very typical
+examples of spam messages so
+how do you recognize spam automatically
+using text classification well
+there are techniques based on your basic
+classification such as spam assassin.
+It's an open source project that's
+part of the Apache foundation.
+So, if you go to the website that
+corresponds to SpamAssassin,
+you can look at the different
+tests that it performs on
+every message that gets sent to,
+emailed to you.
+So, those tests are essentially ways to
+compute features which are then combined
+together to determine
+the score of a message.
+Let me give you some examples.
+Does the body incorporate
+a tracking ID number.
+If yes, then a certain number of points
+will be added to the stamp square for
+that document.
+Looking at the body of the email message,
+are the HTML and text parts different?
+Again, if yes,
+that indicates a larger probability
+that this document is a spam message.
+Header is the date three to six
+hours before the received date.
+So that means that there has been a large
+mailing to many different recipients and
+the messages got delayed.
+So again, this is another feature that
+indicates that the message may be spam.
+So here are some more examples,
+the body or the HTML font size is huge,
+there is an attempt to
+obfuscate words in the subject.
+So for example, you take some common
+word that appears in spam emails and
+you replace the letter i with an
+exclamation point or something like that,
+so the spam filter is just looking for
+that particular word not going to catch.
+And you can also have different sorts of
+regular expressions that correspond to
+some of the most typical spam messages.
+So for example, anything that
+includes urgent, transfer of money,
+warning, reply proposal,
+notification, and so on, and
+dollar amounts,
+is going to be labeled as spam.
+So how do we determine which features
+are important to include in the name based
+classifier?
+Not every feature is important, so
+some features may in fact be completely
+irrelevant to the classification process.
+So one of the techniques that is used
+a lot is the so-called chi-squared test.
+So chi-squared is just
+capital Greek letter chi and
+it's computed in the following way.
+You're given a specific term or
+feature, t, and
+then you want to compute how
+many times that feature appears
+in relation to the number of currencies
+of each of the individual classes.
+So let me explain what
+this table represents.
+C 0 means that the particular
+document is not spam.
+C equals 1 means that
+the document is spam.
+I sub t equals 0 means
+that particular term or
+feature is not present in the document,
+and
+I t equals 1 means that that particular
+feature is present in the document.
+So we have again for
+[INAUDIBLE] in this contingency table.
+So we can check whether the feature
+of the class are independent.
+If the probability of, for example,
+getting the class c= 0 and
+the feature equals 0 is equal
+to the probability of 1 times
+the probability of the other,
+that means that the two are independent.
+The more different the two are are
+the more likely it is that feature is
+informative about that particular class.
+And if the probability of,
+the joint probability is larger than
+the product of the marginal probabilities
+that means that the feature is
+positively correlated with the class.
+And if it is negative, that means that
+the feature is negatively correlated with
+the class positively correlated
+with the negative class.
+So we can compute those probabilities
+on the contingency table.
+So for example, the probability that the
+class is 0 is just the sum of the counts
+for k00 and k01 normalized by n,
+where n is the total number of documents.
+The probability of class
+equals 1 is just the sum of
+the values in the second of O,
+(k10 + k11) / n.
+The probability of I t = 0 is
+equal to (k00 + k10), again,
+normalized by n, and so on.
+So how do we compute the chi-square value?
+Well there's a very simple formula for
+it which is given here.
+You just plug in the values of
+the numbers on the two diagonals,
+k00 and k11 and then k10 and k01.
+And you also plug in n,
+which is the sum of all the different ks.
+So the value that you get here
+is the chi-square score for
+the particular feature.
+High values of chi-square indicate lower
+belief in independence, which also
+means that that feature is important and
+indicative of the positive class.
+Typically chi-square value of five, six,
+or ten means that this feature is very
+good and should be included in
+the classification process.
+So in practice, what you want to do is
+to compute the chi-square value for
+all the words or features and
+to pick the top k among them.
+Another important criterion is,
+since you're computing those
+numbers from the training set,
+you can always run into a risk that those
+words may not even appear in the test set.
+So that's why it's important
+not just to pick the words or
+the features that have
+high chi-square values but
+you also want to pick some that
+have relatively small, yet
+known zero high square values, but which
+are likely to appear in the test set.
+So let's quickly look at some of
+the most well-known datasets used for
+text classification evaluation.
+Those include 20 newsgroups,
+which is a collection of articles
+on the usenet groups on sports,
+and politics, and technology.
+Reuters-21578 which is a collection
+of about 20,000 documents from
+Reuters collected from
+different categories.
+And then those are mostly business
+news articles about future exchanges.
+WebKB, which can be extracted
+from the CMU website,
+has to do with webpages about
+departments and people in courses.
+And RCV1 is a Reuters collection
+which has many more documents
+than the original Reuters-21578.
+So how do we evaluate text classification?
+One possibility is to do microaveraging
+of all the performances for
+each of the classes.
+Or macroaveraging, which just means we
+use a pooled table of the performances.
+So let's look a little bit more
+at vector space classification.
+So we have some other techniques that
+are not based on the [INAUDIBLE].
+We have in this example here,
+x1 as one of the dimensions
+that corresponds to one of the terms in
+the documents and x2 is another dimension.
+And we have documents representing vector
+spaces being of one of the two classes.
+For example,
+topic1 is represented as red circles and
+topic2 is represented as stars.
+So in vector space classification,
+we want to find some decision boundary
+that separates the circles from the stars.
+So one possibility is to just take
+a marker and circle the elements
+that belong to one of the classes and
+decide that this is the decision boundary.
+So the problem is that if you build this
+kind of decision boundary on the trending
+data, it will not be working correctly on
+the test data because of over fitting.
+It will be too specific
+to the training data.
+So it's important to come up with the
+decision surface that has relatively small
+complexity.
+For example, straight line or
+hyper plane rather than something that
+cannot be described in a few parameters.
+So one possibility is to use
+decision trees in vector space.
+So we can have a set of horizontal and
+vertical lines in this example.
+And we can have a classifier that says,
+looking at the vertical dotted line,
+if the document is to the right of that
+dotted line, then classify it as a star.
+Else, now we're starting to look
+at the two horizontal lines.
+If it's above the upper horizontal line,
+classify it as a star.
+If it's below, the lower horizontal line,
+classify it as a star.
+And else, classify it as a circle.
+So in this case, we're going to have
+a decision tree with four nodes.
+And each of the nodes will
+correspond to one of the classes
+on ambiguous either the star or
+the circle.
+So obviously, it's much better to
+come up with a linear boundary so
+that we don't overfit the data.
+So in this example here,
+we have a straight line that
+correspond to the decision boundary and
+as you can probably notice easily,
+it makes a mistake.
+It classifies correctly seven out
+of the eight documents but it
+incorrectly labels one of the documents as
+a circle even though it's actually a star.
+So let's look at some examples of
+different vector space classifiers.
+So one of the techniques that is
+used is to build a centroid for
+each of the cluster, so
+just to imagine a centroid is a vector
+that corresponds to the way that some.
+Of all the vectors that
+belong to the class.
+And then we want to build a line,
+a straight line that is equidistant
+from the two centroids.
+Or hyperplane that's equidistant from the
+two centroids as the decision boundary.
+[COUGH] So if the decision
+boundary is given in the equation,
+w1x1 + w2x2 = b,
+let me explain what are those values.
+So w1 and w2 are weights,
+x1 and x2 are the coordinates
+of the vector in the two dimensions x1 and
+xb and b is a so called bias.
+If b is equal to zero,
+we essentially saying that the two classes
+don't have any prior
+distinction between them.
+And if b is different, then it can be in
+favor of one or two classes by default.
+So w1x1 + w2x2 = b is the equation of
+a line that separates the two classes.
+Then if for any new document,
+we have a value of w1x1 +
+w2x2 > b, that means that it's
+classified in the positive class and
+similarly if it's less than b we
+classify it in the negative class.
+So in a more general case,
+in n-dimensional spaces,
+we have an extension of the same formula.
+We just have the weight
+vector transposed to multiply
+a dot product with the x vector of
+the document and we want to check
+if the result is b in which case the
+document falls on the decision boundary,
+or if it's greater than or less than
+b in which case we can classify it.
+Let's look at an example in two
+dimensional space, the decision boundary
+that corresponds to the two classes and
+here even though it has an error,
+is the dotted line and then it
+corresponds to the normal vector w,
+which is orthogonal to
+the decision boundary.
+So if we have a new document that is for
+example the star that
+appears lowest on this page,
+its dot product with the weighed vector
+is going to be positive because the angle
+is less than 90 degrees and therefore
+it will be labeled as class star.
+And if we have one of the circles,
+each of those is going to
+have an angle greater than 90
+degrees with the weight vector.
+And therefore it will be
+labeled in the circle class.
+So let's see how we can do this in
+practice with some specific numbers.
+So what is the setting?
+The setting is that we already have
+the weight vectors that correspond to
+the decision boundary.
+And we receive a new document, and
+we want to decide how to classify it.
+To hear the weights, we have two columns
+that correspond to the words A to F, which
+have positive weights, because they're
+associated with the positive class.
+And then the set of words,
+G to L, with negative weights that
+correspond to the negative class.
+And let's assume for
+simplicity that the bias is equal to 0.
+So now a new document comes in,
+which has one instance of the word A,
+one instance of word D,
+and one E and one H.
+So how do we classify this document?
+Well, we can essentially compute
+the doc product of this vector with
+the weighed vector, and
+here's how this is done.
+0.6 times 1 means that the word
+A appears once in the document and
+its weight in the decision
+boundary vector is 0.6.
+Then we have 0.4 times 1 for
+D which also appears in
+the left column, and then 0.4 times 1 for
+E, and finally for H which is in the other
+column we have minus 0.5 times 1.
+If we add all those numbers
+together we get a score of 0.9
+which is greater then 0 and therefore we
+are going to classify this document in
+the positive class I mean this should be
+pretty obvious by looking at the table.
+If instead of E we have G,
+then there would be a lot more evidence
+in favor of the negative class and
+we would therefore classify
+the document in the negative class.
+And let's look very quickly at a very
+important algorithm called the perceptron
+algorithm that is used in machine
+learning for classification.
+Obviously this is not the right
+class to discuss it in detail.
+You can take a class on machine
+learning to find out more about it.
+I'm just going to sketch its use.
+So for the Perceptron,
+we have as input the following data.
+S, which is a set of training vectors and
+their classes.
+So x1 is a vector of a document
+that was labeled with y1.
+Y1 being 1 corresponds
+to the positive class,
+y1 equals -1 corresponds
+to the negative class.
+You have n such training examples,
+and we also have a parameter eta
+which is used to determine how fast
+algorithms is going to converge.
+The algorithm itself is just seven or
+eight lines of code.
+Here's how it works.
+Our goal, remember is to
+learn the set of weights, W.
+And we're going to do this
+in an iterative fashion.
+We're first going to assign a value
+of zero to all of the weights.
+Sot that is the zero-th iteration of W.
+And were going to assign zero to K,
+K is just the number of
+steps that we have taken.
+Then, we're going to repeat
+n times the following code.
+We're going to take the i-th
+element in the data, and
+we're going to check if the class
+that is assigned to the document
+y sub i matches the dot product between
+weight and the document itself.
+So, if the two are the same,
+that means that the product is
+going to be greater than zero.
+And if the two are different,
+that means one positive, one negative.
+Then the dot product is
+going to be less than zero.
+So what does it mean if the product
+is less than or equal to zero,
+that means that y1 has a different
+sign than the product w times x,
+which means that we have a mismatch
+in the classification process.
+So in this case what
+we are going to do is,
+we're going to readjust the weight
+vector for the k plus first iteration,
+by starting with a version of
+it in the k-th iteration, and
+adding to it eta times
+y sub i times x sub i,
+and then we're going to increase
+the number k of the number of iterations.
+So once this algorithm stops
+after eight iterations,
+we're going to produce a w sub k.
+So that's the set of weights.
+Now let's see this in practice.
+We have an example here from Chris Bishop.
+So here's how it works.
+We have a decision boundary,
+that is the black line,
+that separates the two classes,
+the red and the blue classes.
+Now, obviously it doesn't do a very good
+job at this point because we have blue and
+red dots on both sides of
+the line we want, somehow.
+To update this line, so
+that all the blue dots are on one side and
+all the red dots are on the other side.
+So we're going to pick one of the dots.
+Let's say the one that
+is circled in green.
+And we realize that for
+this dot the decision boundary
+makes a classification mistake.
+It labels it in the blue cluster,
+whereas the point is red.
+So what's going to happen is that now
+we're going to change the decision
+boundary by moving the vector, by adding
+the red vector to the black vector and
+get a new black vector that corresponds
+to the normal of the decision boundary.
+The new normal vector is now
+shown on the right hand side and
+the corresponding decision boundary has
+all the data from the original one.
+Now we still have mistakes
+we have both red and
+blue dots on both sides of the curve.
+Now we take the next misclassified dot,
+the one again shown in green, and
+we do the same thing.
+We add the vector that corresponds to
+that dot, to the current normal vector.
+So the red arrow that
+points to the green circle,
+we add it to the black vector and
+we get the new red vector.
+So that means we rotate the decision
+boundary one more time.
+And in this case we can stop
+because we have a decision
+boundary that correctly classifies
+the red dots from the blue dots.
+So whatever their normal vector is here,
+those are the sets of weights that we
+want to return as part of this algorithm.
+Okay.
+So this concludes the section about
+the perceptron.
+Let's quickly look at one more
+technique for text classification,
+namely the generated model
+known as K-nearest neighbor.
+In K-nearest neighbors what we want to
+do is to take each of the vectors in
+the training data, and to figure out
+what other vectors it's closest to.
+And then we want to classify each vector
+based on the majority of the vectors
+that are closest to it.
+So it's so called K-nearest neighbors,
+where K is different than all the numbers,
+so that there's no equality.
+So here's how we do this.
+We can compute the score for
+a cluster in a document, c and d.
+Using a sum of a bias for the class,
+some sort of prior belief that a random
+document belongs to that class.
+Plus, the sum of all
+the documents that are in
+the K-nearest neighbors of the document
+that we're trying to classify and
+the similarity of that
+document to those neighbors.
+And then we can rank
+the process based on the score,
+it's very easy to program
+the K-nearest neighbor as algorithm.
+However there are some issue that we
+need to figure out what are the values
+of k and b.
+K again has to be an odd number,
+it shouldn't be one typically.
+The values of 3 and
+5 often work reasonably well.
+And the value of b is the bias which,
+again, corresponds to
+the prior belief that that particular
+class is more frequent than the others.
+And there's a nice online demo of
+K-nearest neighbors at this URL here.
+So I'm going to stop here
+with this segment and
+we're going to continue
+soon with the next one.
+

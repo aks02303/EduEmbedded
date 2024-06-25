@@ -1,0 +1,860 @@
+Okay, welcome back to the course
+on natural language processing.
+Today we are going to start
+the section on syntax.
+I'm going to introduce grammars and
+syntax in the next two segments.
+So one of the fundamental questions
+in linguistics is whether language is
+just a bag of words.
+We know that it is not because
+if you rearrange the words in
+sentence we are going to get,
+most of the time, no sense.
+Syntax turns out to mean that
+grammatical rules exists, and
+then they apply to categories and
+groups of works, not individual words.
+So for example, a sentence can
+include a subject and a predicate.
+The subject can be typically
+a noun phrase, and
+the predicate is a verb phrase.
+So here's some examples of noun phrases,
+the cat, Samantha, or she.
+Some examples of verb phrases.
+For example, arrived,
+went away and had dinner.
+We can combine any of those non phrases
+with any of the verb phrases and
+form a syntactically correct sentence.
+For example we can say the cat
+went away or Samantha had dinner.
+So when people learn a new word before
+they can use it in a sentence they have
+to learn it's syntactic role.
+For example, if I tell it work as a noun,
+it can immediately create
+sentences such as, I can see two
+works here or I don't like words.
+If I doubted cluvious is an adjective,
+you can immediately create a sentence that
+says something like this,
+I don't like cluvious people.
+I'm not saying that those
+sentences make sense, but
+they're at least syntactically correct.
+I actually wanted to come up with
+more examples of artificial words for
+this slide.
+Wug was actually created by Gleason
+many years ago, as an example, and
+cluvious comes from a program that I
+designed from Maclo a few years ago.
+I tried quite a few other words, however,
+it turns out that most of the things I
+came up with, even though they didn't
+sound like words in English turned out
+to exist in some dictionaries of slang.
+And in many cases they
+meant very bad things,
+I don't want to repeat
+them here in front of you.
+So let's see now how we can define parts
+of speech from a syntactic point of view.
+The first thing is nouns,
+those are the most common type of words.
+What do they all have in common?
+One of the properties that most nouns
+typically have is that they can be
+preceded by the word the.
+So I can say, the cat or
+the house, but they're both verbs.
+Well verbs have also different properties.
+One is that they cannot be preceded
+by the verb the, like nouns, but
+they can be preceded by can't.
+So for example sleep is a verb and
+it can be preceded by the word can't.
+I can say can't sleep.
+What are adjectives?
+Well adjectives are the words that
+come between the and the noun,
+I mean this is not the only appropriate
+adjectives but this is one that holds for
+them so I can say the clueless rug.
+Well, this is slightly different
+from the high school definitions or
+the grade school definitions
+that you're familiar with.
+In that case, nouns were defined to
+be things and concepts and ideas,
+and verbs were actions.
+So, from a syntactic point of view,
+we are more interested in the way that
+the words can form sentences rather than
+the meaning of the individual words.
+We can similarly define other
+categories of parts of speech.
+For example, determiners and
+prepositions, which we have seen before.
+So one of the fundamental concepts
+of syntax is called the constituent.
+Constituents are continuous
+pieces of text.
+They're non-crossing.
+So if two constituents share any word at
+all, then one of the two constituents must
+completely contain the other one, and
+then each word is a constituent in itself.
+And the rule of constituents is that,
+any set of any
+sequence of words that is part of the same
+constituent can be replaced with any other
+member of that constituent and still
+form a grammatically correct sentence.
+So for example she, Samantha, and the cat
+can all be considered noun phrases,
+and that is one of the simplest
+types of constituents.
+So there are many types of constituent
+tests that you can find in the linguistics
+literature.
+I'm going to run through some of them
+here and give you examples of them.
+So the first one is the coordination test.
+I need to warn you that all those tests
+are just used as examples and they can all
+be violated, but in principal if two words
+pass multiple tests, chances are very
+high that the two words or phrases I guess
+belong to the same constituent time.
+So the coordination test
+tells us that if we combine
+two constituents with a conjunction
+that means they're for of the same type.
+We can also have the pronoun test.
+If I can replace a small dog,
+a whole unit in this sentence,
+with the word it,
+that means that the unit is a constituent.
+There's also this very interesting
+constituent test called question by
+repetition.
+Suppose that I have the sentence,
+I have seen blue elephants, and
+we want to find out what
+are the constituents of the sentence.
+For example, is the sequence of word,
+seen blue, a constituent, or
+is the sequence of words,
+blue elephants, a constituent?
+Well, the constituent test here
+is going to tell us the answer.
+So let's try this little dialogue.
+I have seen blue elephants.
+Blue elephants?
+Well this sounds like
+a meaningful dialogue.
+Therefore, blue elephants
+is a constituent, but
+now imagine the second dialogue.
+I have seen blue elephants.
+Seen blue?
+Well, this doesn't look like a plausible
+dialogue, seen blue, therefore,
+is not a constituent.
+And finally, a third dialogue would be,
+I have seen blue elephants.
+Seen blue elephants?
+This sounds actually
+fairly grammatical and
+therefore seen blue elephants
+is also a valid constituent.
+There's also a topicalization test which
+allows you to check if something is
+a constituent by fronting it at
+the beginning of the sentence.
+So instead of saying I
+have seen blue elephants,
+you can say blue elephants, I have seen.
+Therefore, blue elephants
+is also constituent.
+There's also the question test.
+If you can replace a phrase
+with some question word,
+like what, that also is an indication
+that the phrase is a constituent.
+I have seen blue elephants.
+What have I seen?
+What meaning blue elephants.
+There are many other constituent tests,
+I'm not going to go through
+them in a lot of detail.
+For example, the deletion test,
+the semantic test and
+finally, the simple intuition test.
+If something looks intuitive and lack
+a constituent, then it probably is one.
+So now let's see how we can use a tree
+structure to generate sentences.
+The simplest algorithm is the following.
+You have a context for your grammar, which
+I'm going to explain in a few slides, and
+then you start on the so
+called start symbol of the grammar.
+You generate a tree structure that
+matches the grammar and the you
+fill the leaf nodes of the tree with
+terminal symbols such as individual words.
+So let's see how we can
+build a sentence like this.
+So the simplest possible
+sentence in English is perhaps
+one that consists of a noun and a verb.
+Something like, Birds fly.
+So the notation on the screen tells you
+that we tried to generate the sentence.
+And then the arrow indicates that
+in order to generate the sentence,
+we first have to produce a noun and
+then a verb.
+So use birds as a noun and fly is a verb.
+That means that birds fly is
+a correct grammatical sentence
+according to this grammar.
+So this is out simplest grammar.
+S transforms into N V.
+N is either Samantha, or Min, or Jorge.
+V is either left, or sang, or walked, and
+we can produce the following sentences.
+Samantha sang.
+Jorge left or Jorge sang, and so on.
+Obviously, this grammar is very simple,
+it's only going to generate
+two word sentences.
+We need to expand it.
+So, so
+far we only have intransitive verbs,
+verbs that don't have any direct object.
+So one possible rule that we
+want to add to the grammar next
+is to allow transitive verbs.
+Remember those are the ones
+that can take direct objects.
+For example, we can say something
+like Jorge saw Samantha,
+where Samantha is the direct
+object of the verb saw.
+We also want to be able to
+include determiners, for
+example say something like the cats,
+where the is a determiner.
+Well it turns out if you
+want to add all the possible
+combinations of constituents
+that you can have in a sentence,
+you're going to end up with a very severe
+case of a combinatorial explosion.
+So there will be just too many rules and
+when you combine them together they will
+produce way too many sentences,
+many of which are not even
+correct in English even though they
+are grammatical according to your grammar.
+So we need to come up with some ways to
+combine the words into constituents and
+then define our syntactic rules in
+terms of the constituents rather than
+the words themselves.
+So for example, we can expand the idea
+of a noun to be that of a noun phrase.
+And we can do the same thing for
+verbs and expand them into verb phrases.
+So verb phrases would include for example,
+the case of individual intransitive verbs
+such as walked, or transitive verbs or
+ditransitive verbs or verbs
+with prepositional phrases, words with
+multiple prepositional phrases and so on.
+So let's now expand our
+grammar a little bit.
+Instead of a noun and a verb,
+we have a noun phrase and a verb phrase.
+So S goes to NP followed by VP.
+NP is the sequence determiner noun.
+And VP is the sequence verb noun phrase.
+The determiners here, those are marked
+with DT R, either the word the or
+the word a.
+The nouns are child, cat, and dog.
+And the verbs are took, saw,
+liked, scared, and chased.
+So now this grammar is going to produce
+only noun phrases that
+start with a determiner.
+For example, it won't allow us
+to produce the word Samantha
+as either the subject or the object.
+Here, two sample sentences
+that this grammar generates.
+One is a dog chased the cat,
+and one is the child saw a dog.
+So there's a way, if the same left-hand
+side of our transformation rule can
+generate multiple righthand sides.
+Instead of writing the rule multiple
+times, we can just write one rule,
+which has the left-hand side constituents,
+an arrow, and then all the possible
+expansions on the right-hand side,
+separated by a vertical bar.
+The vertical bar indicates a choice or
+an alternative.
+So for example, we can have one rule for
+proper nouns and one for common nouns.
+So this way, we can handle both Samantha
+as a proper noun, or PN in this case.
+Or we can have the cats,
+which is DT followed by CN,
+where CN stands for common noun.
+So the grammar that we have so
+far has grown a little bit.
+S can now produce, again NP and VP.
+However, we have two rules for
+noun phrases, a determiner, a common noun,
+or a proper noun.
+The verb phrase includes a verb and
+a noun phrase.
+And now we can have determiners and
+common nouns and
+proper nouns as well as the verbs
+from the previous example.
+So now this grammar allows
+us to produce sentences,
+such as, a child scared Jorge or
+Min took the child.
+There are many optional categories
+in the grammatical rules.
+That means that for example, we can
+have noun phrases with adjectives and
+noun phrases without adjectives.
+In order to take into account all
+the possible optional categories,
+we have to introduce another type
+of notation, which is parenthesis.
+If we put something in parenthesis,
+that means it is optional.
+So let's look at the examples for nouns.
+One observation that we can make is that
+whenever N is allowed in a sentence,
+we can replace it syntactically
+with the following sequences.
+Any one of them, determiner noun,
+adjective noun, or
+determiner adjective noun.
+For example, if we allow cats,
+then we allow the cats,
+we allow small cats, and
+we allow the small cats.
+So now we can use the notation for
+alternatives.
+Noun phrase produces either N,
+or determiner N,
+or adjective N, or
+determiner, adjective N.
+Or we can just use parentheses.
+We can say a noun phrase is a sequence
+that consists of an optional determiner,
+followed by one optional adjective,
+followed by a noun.
+So this rule here can be equivalent
+to four different rules,
+the rule N, the rule DT N,
+the rule JJ N, and the rule DT JJ N.
+Now let's see what we can
+do with verb phrases.
+There are many types of verb phrases.
+We saw some of those
+in an earlier lecture.
+Those can contain intransitive verbs
+such as ran, as in Samantha ran.
+We can have a sentence where we
+have an intransitive verb and
+then a prepositional phrase.
+For example, Samantha ran to the park.
+We can also have a sentence
+which only has a particle.
+Samantha ran away.
+In this case,
+away is just a single preposition.
+We can also have transitive verbs,
+Samantha bought a cookie.
+And we can have a transitive
+verb with a direct object and
+a prepositional phase,
+Samantha bought a cookie for John.
+So the overall structure of the verb
+phrase is going to be something like this.
+It will always start with a verb, but
+then it will have an optional
+noun phrase with a direct object.
+And then it will also have
+an optional preposition, for
+things like away and an optional noun
+phrase that follows the preposition.
+So, if we have both the P and
+the NP that follows it, that means that we
+would have an entire prepositional
+phrase as part of the verb phrase.
+So this grammar can now generate the
+following sentences, Samantha saw the cat,
+but it can also generate
+Jorge gave the cat
+to Min which has
+a prepositional phrase in it.
+So what are prepositional phrases now?
+Let's look at some examples.
+Mary bought a book for
+John in a bookstore.
+The bookstore sells magazines.
+The bookstore on Main St. sells magazines.
+Mary ran away.
+Mary ran down the hill.
+So, in all those sentences, you can
+see that every time we have a noun,
+we can have a prepositional
+phrase that follows it.
+So, John can be followed
+by in a bookstore.
+Bookstore can be followed
+by on Main Street.
+The same thing applies to verbs.
+Every time a verb can be followed
+by a preposition, like ran away,
+it can also be followed by a prepositional
+phrase, ran down the hill.
+So, in order to accommodate
+prepositional phrases,
+we have to allow a new
+constituent called PP,
+which can be embedded in either the NP or
+the VP part of the sentence.
+And the rule is very simple,
+wherever a preposition is allowed,
+it can be followed by a noun phrase.
+For example,
+ran up versus ran up the street.
+A noun phase can contain any number
+of prepositional phrases but
+only after two noun phases.
+So this is only the case
+of that transitive verb
+such as Mary gave John a book.
+So how do we now revise our grammar to
+take into account prepositional phrases?
+Well, so far, the rules that we have are S
+goes to NP VP, followed by a rule for
+noun phrases and a rule for verb phrases.
+And now, we have a rule for
+prepositional phrases.
+So prepositional phrases, a preposition
+followed by an optional noun phrase.
+And now for the very first time,
+we see something that is
+really important in language.
+If you look at rule number two here,
+we can see that a noun phrase can
+generate a prepositional phrase.
+And then if you look
+down at rule number four,
+you will see that a prepositional
+phrase can generate a noun phrase.
+Therefore, we have our first
+instance of recursion in a grammar.
+What that means is that we
+can apply rules two and
+four in an arbitrarily long sequence and
+produce extremely long sentences.
+Here is a good moment to stop for a second
+and explain the difference that is made by
+linguists between something called
+performance and competence.
+I'm not going to go into too much
+detail about this principle,
+but the basic idea is the following.
+Even though a context free grammar can
+produce arbitrarily long sentences
+that have let's say,
+thousands of prepositional phrases
+embedded in noun phrases embedded
+in other prepositional phrases.
+That doesn't mean that human
+sentences are that long.
+People can understand long sentences if
+they spend a lot of time on them, but
+they were never going to put use to them
+or expect other people to put use to them.
+There is usually a limit
+of no more than four or
+five prepositional
+phrases in a noun phrase.
+Anything more than that would make the
+sentence completely incomprehensible, but
+we can certainly say something like this.
+I saw John yesterday in the park and
+perhaps, add a few more prepositional
+phrases at the end, but we're never
+going to see more than four or five.
+So now let's see how the problem of
+prepositional phrase ambiguity, which we
+have alluded to earlier can actually
+be described in a context with grammar.
+Let's look at the sentence,
+the boy saw the woman with the telescope.
+This sentence is ambiguous,
+because it has two interpretations.
+The first one is that the boy used
+the telescope to see the woman and
+the second interpretation
+is that the woman who was
+carrying a telescope was seen by the boy.
+Now in this case,
+we have a real ambiguity,
+because both of those interpretations
+make sense in different contexts.
+Let's look at the grammar that is
+used to generate this sentence.
+A prepositional phrase can produce
+a preposition fold by a noun and
+then a verb phrase can include
+a prepositional phrase and
+a noun phrase can include
+a prepositional phrase.
+So there can actually be two different
+parse trees that correspond to
+the sentence that produce the PP
+either as part of the noun phrase or
+as part of the verb phrase.
+So we'll look at this problem
+later on this semester and
+understand how to deal with it.
+One additional symbol that can be used in
+context with grammar is the Kleene star,
+which is noted in parentheses
+in the header of this slide.
+It is used to denote
+the sequence of constituents.
+So for example, (JJ*) means a sequence
+of zero or more adjectives.
+It can be any number of that.
+It can be seven or ten.
+It turns out that in English, noun
+phrases can have multiple adjectives or
+other so-called premodifiers that
+precede the noun inside the noun phrase.
+For example, we can say,
+the thin blue line.
+In this case, thin precedes blue and
+blue precedes line.
+The general structure of a noun
+phrase can be something like this.
+A determiner like the,
+followed by some number of adjectives
+followed by the noun itself.
+Let's look at a few examples.
+We can say, a big red house, but
+really they cannot say a red big house.
+This sounds really awkward and
+that's why we've marked it with a star.
+It's very interesting to think about
+the order in which adjectives can be
+put in in the premodifier
+section of a noun phase.
+What allows certain sequences and
+not others.
+It turns out that in English,
+adjective ordering
+in the noun phrase depends on semantics,
+on the meanings of the individual words.
+There has been a lot of work
+on this subject and I want to
+run you through an exercise that will help
+you understand how this process works.
+So in this exercise, we're going to
+look at a few titles of famous songs and
+books and we'll try to see
+if we can find the pattern.
+So The Little Red Riding Hood,
+Three Little Pigs,
+The Three Musketeers,
+The Steadfast Tin Soldier,
+The French Connection Old MacDonald,
+Five Golden Rings and The Ancient Mariner.
+If you think about the meaning of each
+individual word, you can figure out that
+there's certain combination of meanings
+that can only appear in a certain order.
+So we saw in the previous slide that
+we can use size before color, but
+we cannot use color before size.
+So what kind of semantic categories
+of adjectives will we have in those
+examples here?
+So little is a size, red is a color,
+riding is something like a purpose or
+designation.
+The is a determiner,
+that's what the adjective and
+the determiner will always
+come before the adjectives.
+Old is about age, golden is material,
+French is nationality,
+steadfast is quality.
+And finally, tin is material.
+So if you try to come up with all the
+possible combinations of those categories,
+you will realize that in most cases,
+you have a very specific ordering of
+the semantic categories of the adjectives.
+So here's an example,
+there may be some exceptions to it, but
+this is as close as it's possible
+to what happens in most sentences.
+So if you have a determiner,
+adjectives and a noun,
+they're most likely to
+appear in this order.
+Determiner.
+First, noun, last and then the adjectives
+in the middle in the following order.
+Number, strength, size, age, shape,
+color, origin, material and purpose.
+And you can actually infer this
+order by looking at the examples
+on the previous slide and by looking at
+the partial order that they are create.
+So now, let's look at
+the problem of nested sentences.
+The nested sentence is
+something like this.
+Birds fly versus I believe that birds fly.
+So in the second example, birds fly
+is nested inside the larger sentence.
+Here are some more examples.
+I don't recall whether I took the dog out.
+Or do you know if the mall is still open?
+So for example, in the first sentence
+here, the embedded sentence or
+the nested sentence is I took the dog out.
+So in order to accommodate
+nested sentences,
+we need to revise our
+grammar a little bit.
+The new rule is this one here.
+A verb phrase produces a verb followed
+by zero, one or two noun phrases.
+And then we have
+an optional sequence of C,
+which is a conjunction followed by an S,
+an entire new sentence.
+So we have again, an instance of
+recursion, because the general
+rule was that S goes to NP VP and now we
+have a rule that VP can produce an S.
+So we can now again,
+recursively alternate between S and VP and
+produce arbitrarily sentences.
+So what are the kind of conjunctions
+that can go into the position of the C?
+Well, those are the so-called
+subordinating conjunctions,
+things like that and whether.
+Okay, so can the sequence of
+a subordinating conjunction sentence
+appear inside of a non phase.
+It turns out that it can, and in that
+case it also means that we can have
+C S sequence as part of
+the subject of the sentence.
+Let's look at the example.
+Whether he will win the elections
+remains to be seen.
+The predicate of this sentence is remains
+to be seen, and the subject is the phrase
+whether he will win the elections,
+and we can even verify the syntacticy.
+What remains to be seen?
+Whether he will win the elections, or
+whether he will win the elections
+remains to be seen, which confirms that,
+whether he will win the elections
+is the subject of the sentence.
+Let's go back now,
+to the topic of Recursion.
+S can generate verb phrases, and
+verb phrases can generate S.
+Noun phrases can generate
+prepositional phrases, and
+prepositional phrases can
+generate noun phrases.
+So essentially, recursion allows us
+to produce really long sentences.
+But, as I mentioned earlier,
+we really cannot designate,
+based on the grammar,
+what is the longest sentence in English.
+In fact, the grammar will allow us to
+produce infinitely long sentences.
+There are other cases of recursion
+appearing grammar for example,
+we can have conjunctions of noun phrases.
+So a noun phrase can be replaced by
+the sequence noun phrase and noun phrase.
+For example, I like apples and oranges.
+Where apples and
+oranges combined is a known phrase and
+also apples by itself is a known phrase
+and oranges by itself is a known phrase.
+We can also have conjunctions
+of prepositional phrases.
+So PP can be transformed
+into the sequence PP and
+PV, and we can do the same thing
+exactly with verb phrases.
+For example, I like walking and running.
+So as you can see,
+there are some meta patterns that emerge.
+I'm only going to mention
+this topic very briefly,
+because it's not really
+germane to this course.
+However, I think it's important
+to understand what the term
+xbar theory means.
+I'm going to introduce it in a second.
+Let's look at this example here.
+The sentence can be transformed into
+a noun phrase, verb phrase sequence.
+The noun phrase, then verb phrase, and
+propositional phrase have their own rules.
+So what is the meta-pattern?
+Well the meta-pattern in all those
+cases is that we have some sort
+of a phrase whether it's a noun phrase,
+a verb phrase or a prepositional phrase,
+XP Is the collective name for
+all of those phrases.
+And then those phrases can be replaced
+by something called a specifier.
+This is what comes before
+the main part of the phrase.
+Followed by x bar,
+which is sometimes denoted
+x opposed to if you like in this example
+here, and then another portion of this
+will tell us that x bar would
+use x followed by a complement.
+So everything before
+the x bar is a specifier,
+everything after it is a complement.
+So for example, in the noun case,
+we can have noun phrase produces
+a determiner, followed by N bar.
+If you're interested in X bar theory in
+more detail, there are websites devoted to
+it, as well as a lot of literature
+in the linguistics community.
+So now let's look at some meta-rules for
+conjunctions.
+We looked earlier at examples of
+noun phrase, and noun phrase and
+verb phrase, and verb phrase, and so on.
+So in the most general case, we have
+a category X that generates X and X.
+This kind of rule can be expanded
+to cover even entire sentences.
+S produces S and S, for example,
+it is sunny today and
+I will go to the park.
+What other things can
+we add to the grammar?
+Well, one category of particular
+importance is that of auxiliaries and
+we want to see now if auxiliaries
+are past any of the constituent tests
+that we looked at earlier.
+So one thing that we
+are interested in this,
+is the sequence auxiliary
+verb a constituent?
+For example, in the sentence,
+I have seen blue elephants and
+will remember them forever.
+We have two sequences of auxiliary verb,
+and
+as you can see from the structure of the
+sentence, it passes the conjunction test.
+I can say,
+I have seen blue elephants, period.
+I will remember them forever, but
+I can also say I have seen blue
+elephants will remember them forever.
+So because have seen blue elephants is
+parallel to will remember them forever,
+that gives us an indication
+that those form constituents.
+So the cursive rule here is
+going to be something like this.
+Verb phrase produces auxiliary
+followed by verb phrase.
+So we can have a sequence of as many
+auxiliaries as we want on the left hand
+side of the verb.
+So we can say Raj may have been sleeping.
+In which case,
+we have three applications of this, so
+each time generating
+an additional auxiliary.
+But is such recursion limited?
+Well it turns out that it is not.
+It is limited to a few
+auxiliaries in a verb phrase.
+Let's look now at an exercise.
+We have a grammar that is slightly
+different from the one that we had most
+recently.
+It has rules for S, NP, VP, PP,
+as well as an embedded phrase.
+So now, I want you to do this yourselves.
+Look at those two sentences and
+try to generate
+descriptions of those sentences
+using the rules in the grammar.
+The small dog of the neighbors brought me
+an old tennis ball, is the first sentence.
+So obviously this is a sentence,
+therefore, we need to
+start with a role for S.
+So which right-hand side are we
+going to use, NP VP, or CP VP?
+Well, why don't you think about it.
+And also do the setting for the other
+two sentences and try to come up with
+the exact set of rules that I used
+to generate those three sentences.
+When you're done you will have
+understood the whole idea of parsing.
+So parsing, which we are going to talk
+about in the next section in more detail.
+Is the process of taking a sentence and
+a grammar, and
+coming up with what is known as
+a parse tree, or which is more or
+less the set of rules that were used from
+the grammar to produce this sentence.
+So this concludes
+the introduction to syntax.
+In the next segment we're going to
+look at parsing in more detail.
+

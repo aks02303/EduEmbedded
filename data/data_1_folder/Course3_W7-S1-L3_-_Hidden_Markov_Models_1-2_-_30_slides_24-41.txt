@@ -1,0 +1,687 @@
+Okay, now we're going to continue with
+a new topic called Hidden Markov Models.
+We're going to be using hidden Markov
+models for many different NLP tasks,
+including part of speech tagging,
+but first let's see how they work.
+So the first concept that I want
+to introduce today is the idea of
+a Markov Model.
+A visible Markov Model,
+not a hidden Markov Model,
+we'll get to hidden models later.
+So, Markov Model is a sequence of random
+variables that are not independent.
+So for example,
+it could be weather reports.
+The weather report, or
+the temperature on a given day depends on
+what the temperature on the previous day.
+It can be text, so
+the probability of the next word or
+the next letter depends on the previous
+word or the previous letter respectively.
+So here's some properties
+of Markov models.
+They have to have a limited horizon, so
+the probability of the observation of time
+T plus one, has to depend only on the
+probabilities of the most recent history.
+So just the most previous word or
+the previous few words.
+It's also time invariant.
+So the probability of seeing
+a certain variable at
+a certain time should not
+depend on the time itself.
+So the definition of a Markov model
+in terms of a transition matrix A,
+which tells us what the probability is
+of moving from one state to another,
+and also an initial
+state probabilities Pi.
+So here's an example with six states,
+a, b, c, d, e, f.
+We now can define
+the probability distribution for
+transitions between those states.
+So here are the specific numbers.
+We start from state d, and then from
+state d, if you look at all the arcs that
+go out of that state, we can go to
+state a with a probability of 0.7,
+we can go to state c with
+a probability of 0.1, and
+you can go up to state f
+with a probability of 0.2.
+If we are in state a, we can go back
+to a with a probability of 0.2 or
+go to state b with a probability of 0.8.
+You can do the same thing for
+the remaining four states.
+And one thing that is pretty obvious here,
+is that given any particular state,
+the sum of the probabilities of all
+the outgoing transitions is equal to one.
+So that makes sure that they're for
+probability distribution.
+So if we want to compute the probability
+of a sequence of states, X1 to Xt,
+we can use the chain that we were
+introduced to in an earlier lecture.
+That gives us the formula P
+of the first observation for
+the first state times the probability of
+the second state, given the first state,
+times the probability of the third state,
+given the previous two, and so
+on, times the probability of the last
+state, given all the states before.
+So this is the most general formula for
+the joint distribution xy to xt.
+Now, but using the mark of assumption and
+using bigram model we can change this to
+the probability of observing X1 times
+the probability of observing X2 given X1,
+times the probability of
+observing XT given only X2.
+At this point, we are ignoring some of the
+history, particularly X1 in this example,
+by only looking at the two most recent
+states, and then the final term is just XT
+given XT minus 1,
+instead of XT given everything before XT.
+So in compact form, this is the product
+of all the xi plus one bigrams for
+the sequence starting from i equals
+one to i equals t minus one.
+So what's the probability in the example
+here that we're going to see the sequence
+d-a-b?
+Well, that's the probability that
+the first state is d times the probability
+that the second state is a,
+given that the first state was d,
+times the probability that the third state
+is b, given that the previous one was a.
+And we can replace those probabilities
+with the numbers from the specific
+example, and you get that the first
+one is one, the second one is 0.7,
+the third one is 0.8, and
+if you multiplied them,
+we can see that the sequence
+d-a-b has a probability of 0.56.
+We can do the same thing for
+any other sequence of probabilities, and
+in this particular example, because we
+assume that the start state is always
+state d, that means that any
+sequence that starts with a symbol
+other than d is going to
+have a probability of zero.
+Okay, now let's look at the hidden Markov
+model, which is something that is much
+more appropriate for language modeling
+than visible Markov model So,
+in part of speech tagging for example,
+we're observing a sequence of symbols, and
+we don't know the sequence of states that
+led to the generation of those symbols.
+So in part of speech tagging the symbols
+that we observe are actual words, and
+the sequence of states are the parts of
+speech that correspond to those words.
+The definition of a hidden Markov model
+is the following, Q is a sequence of
+states observed, or is a sequence of
+observations drawn from a vocabulary,
+Q0 and qf are specific start and
+final states.
+A is the set of state
+transition probabilities,
+just like in the visible model,
+but we now also have a new
+set of parameters called B, which is known
+as the symbol emission probabilities.
+Essentially, if you're in a given state,
+what's the probability that you're going
+to emit a certain symbol from that state,
+and you can also have pi,
+just like with the visible model,
+which is the initial state probabilities.
+Mu, which is the union of A, B, and
+pi, is the complete probabilistic model
+that determines the hidden Markov model.
+And in many of the machine learning
+articles that we're going to look at,
+one of the goals will be to
+find out the values of mu,
+which is equivalent to saying to
+find the values of A, B, and pi.
+So here are marker models they
+use in part of speech tagging,
+in speech recognition, in gene sequencing
+and many other areas of research.
+So they are used to model state sequences
+and also observation sequences.
+For example,
+we want to find out the probability that
+a certain set of states is correlated
+with a certain set of Words.
+And in the bigram model we can essentially
+write this as the product of all
+the bigram probabilities of going from one
+state to the next times the probability of
+emitting a certain symbol,
+W sub I when we are in state S sub I.
+So, here's a very simple example.
+The sequence of states is S0 to SN,
+and when we are in state one,
+we produce W1 as an output symbol, when
+we're in state two, we produce W2, and so
+on all the way to Sn, when we're in state
+Sn we produce the word Wn as the output.
+So the HMM algorithm is
+a generative algorithm.
+We want to start by picking a state
+from the initial distribution pi,
+based on the probabilities in pi,
+then for a set of T consecutive steps,
+capital T consecutive steps.
+We're going to move to another state
+based on the previous state and
+based on the probability given
+by the transition matrix A, and
+then we are going to also emit
+an observation based on B.
+B, just to remind you is the matrix
+of emission probabilities.
+So here's an example.
+We have two states, A and B.
+They are all connected to each
+other with certain probabilities.
+And specifically, the probability of
+going from A to B is 0.2, the probability
+of staying in A is 0.8, the probability
+of going from B to A is 0.6,
+and the probability of staying in B
+when you are already in B is 0.4.
+And just to remind you as before
+the probabilities that come
+out of the same node or
+the same state should add up to one and
+you can verify that this is the case here.
+Now we can also define the start symbol,
+or start state, or starting probability.
+In this case unambiguously we
+are going to start in state A, so
+the probability of starting in B is zero.
+Now, let's look at some specific examples.
+Now, we're interested in the probability
+of a certain sequence of observations at
+time t.
+So what is the probability of
+the observation at time to be equal to k,
+given that we're currently
+in a certain state and
+that the previous state is given as well?
+So this is now our emission
+probability matrix.
+If we are in state A,
+we are much more likely to produce
+symbol x with a probability of 0.7.
+We are less likely to produce y or
+z because their probabilities
+are 0.2 and 0.1 respectively, yet
+it is still possible to produce them.
+From state B,
+we are most likely to produce
+symbol y with a probability of 0.5.
+But we can also produce x and
+z with probabilities of 0.3 and
+0.2, respectively.
+So what are the parameters of the model?
+Well, the initial parameters are the
+probability of A given start is 1.0,
+the probability of B given start is 0.0.
+This corresponds to the start transition
+that I had in the earlier diagram.
+The transition probabilities
+are given here.
+P(A|A) is 0.8.
+P(A|B) is 0.6.
+P(B|A) is 0.2.
+And P(B|B) is 0.4.
+Now the emission probabilities,
+P(x|A) is 0.7, and so
+on just like on the previous slide.
+So you can see that the parameters
+of the model are all shown here.
+We have a total of 12 parameters.
+Later on when we talk about learning the
+parameters with HMM, we're going to refer
+to those parameters collectively as
+the parameter set mu or the model mu.
+Now let's look at an example.
+We want to figure out what's the
+probability that we are going to observe
+the sequence yz from this automaton.
+So we're going to start in state A, and
+we can consider all the possible
+sequences of states.
+We can start in A and go back to A.
+We can start in A, switch to B.
+We can move to B next and then go to A.
+And finally, we can go B and
+then stay in B.
+And each of those sequences of states
+can lead to a certain probability for
+the observation yz.
+So, if we want to consider the probability
+of yz given a sequence of two steps,
+we have to consider the probability of
+yz being generated from the sequence AA.
+The probability of yz being
+generated from the sequence AB.
+The probability of yz
+being generated from BA.
+And finally, the probability of yz
+being generated from the sequence BB.
+The sum of those four is going to give us
+the full probability of the sequence of
+observations yz.
+So the first one of
+those four terms is 0.8.
+That's the probability of staying in A,
+given that we started in A,
+times the probability of emitting the
+character y from state A, which is 0.2,
+times the probability of staying in A for
+a second time.
+That's 0.8, times the probability
+of emitting z from state A,
+which is equal to 0.1.
+The second term, we get 0.8 times 0.2,
+which matches the previous line.
+But now we have also the probability
+of going from A to B, which is 0.2
+times the probability of omitting
+a z from state B, which is also 0.2.
+Then we can do the same thing for
+the rest of the formula.
+I'm going to give you a second
+to think about it and
+try to fill those numbers by yourselves.
+Okay, so now let me give you
+the answers to this question.
+The probability of producing yz,
+given the state sequence BA,
+is equal to 0.2, which is
+the probability of going from A to B.
+Times 0.5, which is the probability
+of producing y in state B,
+times 0.4, which is the probability
+of going from B to A.
+Times 0.2, which is the probability
+of generating z from state A.
+And the last line is very similar.
+It's 0.2 times 0.5 times the probability
+of going from B to B, which is 0.6.
+Times the probability of emitting
+z from state B, which is 0.1.
+If you add up all those numbers here,
+you're going to see that the overall
+probability of the sequence yz
+is equal to 0.0332, about 3%.
+So relatively speaking,
+this is a very unlikely sequence.
+Given that there are nine possible
+sequences of x, y, and z,
+each one on average would be expected
+to appear about 11% of the time.
+This particular one is unlikely.
+It only has a probability of 0.3.
+And this is kind of obvious if you
+look at the original example because
+to produce y and z, none of the states
+A and B gives them a high probability.
+It would have been much more likely
+given that we started in state A,
+that we would produce a sequence
+that contains at least one x.
+So let me finish this example here.
+We can similarly compute the probability
+of the sequence zz or yx or xz and so on.
+And the probability of all those
+sequences will need to add up to 1,
+because those are all the possible and
+disjoint alternatives that we can get
+as observations if we start in state A.
+So a little bit of background,
+the states are essentially used to
+encode the most recent history.
+They don't necessarily have to include
+the most recent part of speech.
+They can include the most
+recent several parts of speech.
+Within the background model they would
+just encode the most recent part
+of speech.
+The transitions encode
+the likely sequences of states.
+So for example,
+we looked at this example before,
+an article cannot be followed by a verb.
+Therefore the probability of
+jumping from the article state to
+a verb state is going to be very low.
+It's much more likely to go
+from an adjective to a noun.
+So the probability of
+the state sequence adjective
+noun is going to be relatively higher.
+It's also possible to have sequences
+of more than two words that have
+high probability.
+For example,
+the sequence article-adjective-noun
+is very likely in English.
+Therefore, we expect that the sequence of
+two background probabilities to be high.
+So how do we estimate
+the transition probabilities?
+Again, we have to use
+a maximum likelihood estimate.
+And one possible way to do this
+is if we have a training corpus.
+For example, for part of speech tagging,
+we can just look at the sequence
+of adjacent parts of speech and
+use that to estimate
+the probability of the transition.
+Now let's consider the case of
+the emission probabilities.
+Estimating the emission probabilities
+is actually a little bit harder
+than transition probabilities,
+because there may be novel uses of
+specific combinations of words and
+parts of speech.
+So a specific word may have appeared
+once in the training data as one
+part of speech, but
+then in the test set it may appear with
+a completely different part of speech.
+So, here's some suggestions
+that can be used.
+It's possible to use standard smoothing
+just like in the previous lecture.
+And it's also possible to use heuristics,
+for example,
+based on the spelling of the words.
+Okay, so now, let's look at
+the sequence of observations.
+So, very often, in the case of an HMM, and
+that's essentially the reason why HMMs
+have been invented is the case that the
+observer can only see the emitted symbols,
+and not the states that
+led to their generation.
+So one thing that you may want to
+compute is the observation likelihood.
+So given the observation sequence and
+the model mu, which again, consists of
+the transition matrix, the emission
+matrix, and the initial state probability.
+We want to compute the probability
+of the sequence, given mu.
+So what's the probability that this
+sequence was generated by that particular
+model.
+So, it turns out that being able
+to compute the probability of
+the observations sequence turns the HMM
+into a language model, because again,
+what is a language model?
+It's a way to compute
+the probability of a sequence or
+a sentence or a sequence of observations.
+So, here are the most
+important tasks with HMMs.
+The first one is,
+given the probabilistic model A, B, pi,
+we want to find the probability of
+the observation, given the model.
+The second task, is given observation,
+or maybe a set of observations, and mu,
+we want to figure out what is the sequence
+of states that led to this observation.
+And finally, given observation of
+the space of all the possible mus,
+we want to find the mu that best
+describes the observations.
+So one of the most important tasks in
+HMM processing is called Decoding,
+and that is the task of finding
+the most likely sequence.
+So we want to tag each token with a label.
+We can also find observation likelihood,
+the classification of sequences, and
+we can learn by training models
+to fit the empirical data.
+So let's look at one of
+those examples first.
+We want to do inference now.
+So the task of inference is to find
+the most like the sequence of tags given
+the sequence of words.
+So this is essentially the same
+idea that we'll be use later on
+in parts of the speech tagging.
+We are looking at
+the sequence of words and
+we want to predict the sequence
+of parts of speech.
+So given all the possible ts, sequences
+of tags, we want to pick the one,
+t* that maximized
+the probability of P(t|w).
+So if know the model mu, it's possible to
+compute the probability of (t|w) using
+the generate model for the hmm,
+for all the values of t.
+But in practice there's too many
+combinations to make this feasible.
+So one possible solution
+is to use beam search.
+Essentially just look at all the partial
+hypothesis after a certain point of time
+in an observation sequence.
+Maybe just take the top ten or
+100 or 1,000.
+And assume that no sequence will
+reach the end of the sentence
+that will have a probability that
+was skipped by the beam search.
+So this method may not work,
+because it's very possible that
+the first few words lead us into
+one state and we have to discard
+a very valuable hypotheses just because
+it has a low probability so far.
+Only to find out that it is actually
+the best hypothesis when we reach the end
+of the sequence.
+So instead of doing this,
+we can come up with a much more important
+algorithm called the Viterbi algorithm.
+This is one of the most fundamental
+algorithms in natural language processing.
+It's based on dynamic programming and
+it is used to find the best path
+up to a specific observation I.
+So if we apply it on the entire sequence,
+it will tell us the observation,
+the probability of the entire sentence.
+But if we apply it only up to
+the first word or the second word,
+it only gives us the best
+path up to that point.
+So, again, it uses dynamic programming and
+it uses memorization.
+Just to remind you what memorization
+means, it's essentially a way to
+store the probabilities of any subsequence
+that has already been computed so
+that you don't have to compute
+it again in the future.
+We use a similar technique in parsing
+when we looked at the CKY algorithm.
+And another important
+characteristic is backpointers.
+So we want to keep track,
+not only of the best path
+that takes us to a certain state,
+but also how we got to that point.
+So here's an example,
+I'm going to introduce a so called,
+HMM Trellis or lattice.
+Here's what it looks like.
+It has, in this example,
+four rows and four columns.
+Each column corresponds to one time unit.
+So we start in state T zero, time T zero.
+Then we go to time T one then T two and
+T three.
+What are the rows?
+Well, the first row corresponds to
+the first possible part-of-speech.
+That's the start symbol.
+The second and third row correspond to two
+of the other parts-of-speech, A and B.
+And finally we have one that
+corresponds to the end state.
+So what we're looking for is a sequence
+that takes us from the start node in
+the lower left-hand corner to the end
+state in the upper right-hand corner,
+and going through a sequence of As and
+Bs in each column.
+So, for example,
+if we have a sequence of two words,
+they will be encoded in the second and
+third column.
+And what we want to find out here is
+whether they were generated by a sequence
+AA or a sequence AB or BA or BB.
+And I have used solid circles for
+the states that can actually be reached at
+any point in time and dotted circles for
+the states that cannot really be reached
+and are just there for completeness.
+So let's see how we're going
+to now define the transitions
+from a given state to another state.
+So the probability of node A in
+the second column is going to be equal to
+the probability of observing the symbol y,
+in the y given that were in state A.
+Then we're going to have
+a transition from state A to state B
+when moving from the y
+observation to the z observation.
+And finally to get to
+the end of the sequence,
+we're going to have a transition
+from state B to state B.
+So let's look at this in more detail.
+So we are going to start the Viterbi
+algorithm by starting in the start state.
+From the start state, we can go to either
+A or B with a certain probability.
+What was the probability of A at time one?
+Well, the probability of A at time one
+is equal to the probability of starting
+times the probability of A,
+given the start state.
+Times the probability of admitting
+the symbol y, given that we're state A.
+Similarly, we can choose to go to B.
+In that case, we want to compute the
+probability of B times one, as the product
+of the starting probability,
+times the probability of getting to B
+from the start states, to probability
+of admitting y from the B state.
+Now, on the next iteration,
+we want to compute the probability
+of B at time equals two.
+Well, there are two
+possible ways to get there.
+We can go from start to A,
+and from A to B.
+Or, we can go from start to B, and B to B.
+So the probability of B at time two
+is going to be equal to the sum
+of the probabilities through
+each of those two paths.
+The first path has a probability of
+A at time one times the probability
+of going from A to B times the probability
+of emitting z when we're in state B.
+And the second path has the product
+of starting at state B at time one,
+then transferring to state B times 2, and
+finally emitting z from state B.
+So, we're going to pick this value and
+assign it to the circle
+that says B times 2.
+And we're going to pick the one
+that is the larger of the two, so
+in this case it's the block arrow.
+So it's more likely to get to state B
+given the observation yz if
+we went first to state B and
+then stayed in state B, then it is if we
+went to A first and switched back to B.
+Okay, so now we can give a back pointer
+that goes from state B at time two to
+state B at time one and
+then back to start at time zero.
+Now at the end, what we want is to
+compute the probability of getting to
+end state of time equals three.
+And as you can see this ladder shows us
+all the possible ways together and their
+algorithm is going to help us compute
+this probability by making it easier.
+So the probability of the end state of
+time three is just going to be the maximum
+of the two possible ways
+to get there from time two.
+Specifically going from
+state A to the end state and
+going from state B to the end state.
+And also in each case we have to
+multiply by the probability of
+emitting an n symbol given A and
+an end symbol given B.
+So whatever path is best,
+is going to be included in the state
+that corresponds to the end symbol,
+times three.
+And that is going to be the overall
+probability of generating the sequence yz,
+end of sentence, given particular HMM.
+And the set of backpointers, is going to
+tell us, in the is particular case,
+it's most likely that we ran
+through the sequence B, B, end.
+This concludes this example here.
+Okay, so we just went over an example of
+the Viterbi algorithms using HMMs and
+the HMM Trellis.
+We're going to continue with
+HMMs in the next segment.
+

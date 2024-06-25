@@ -1,0 +1,328 @@
+Welcome back to natural
+language processing,
+today we're going to start a new section
+on text summarization which is one of
+the most interesting parts in
+natural language processing.
+So here is a very simple
+introduction to text summarization.
+We want to be able to get it's input.
+A set of documents, for
+example about health.
+So here we have a bunch of sentences
+about eating vegetables and
+fruits, and
+the reasons why they're healthy.
+Often, users don't have the time
+to read a lot of details, and
+we want to be able to produce
+a summary of them for two reasons.
+One, so that they can read
+the summary instead of the original
+documents if they don't have enough time.
+Or, even more realistically,
+to show them the summary so
+that they get an idea of what
+the document is all about.
+And once they've the summary
+they can decide whether they
+want to go and
+read the full set of documents.
+In this example,
+the summary that we would like to get,
+although there's no summarization
+system currently that can do this,
+we want to get a short summary like this,
+eating vegetables is healthy.
+Well this is a very extreme example of
+text summarization, which as I said,
+is not practical or
+feasible at this point.
+But there are many instances of existing
+summarization systems that work, and
+could use meaningful summaries that
+are actually useful for users.
+So let's look at some examples, what kind
+of summaries we won't be able to produce.
+One is news summarization,
+we won't get, for example,
+a cluster of documents that
+are related to each other.
+And produce a short summary like the one
+that appears in the middle of the page,
+of everything that happened in
+the set of related documents.
+We can also put as book summaries.
+So here is an example,
+we can have something like Cliff Notes
+which probably everybody knows about.
+Cliff Notes are short descriptions
+of what happens in some large book,
+plus some additional comments
+about the characters,
+and the plot, and
+the techniques used in the book.
+Here's a fun example, there's a website
+called Book a Minute, where people have
+spent time to summarize famous books
+into really, really short versions.
+So here's one,
+can you guess which book it is?
+Some boys crash on an island.
+And then Ralph says repeatedly,
+we need a fire.
+They make a fire, it goes out.
+This happens a few times.
+Then Jack says, forget the fire.
+Let's kill each other.
+The other boys say, yeah.
+And they do kill each other.
+The end.
+But, this is again a tongue in
+cheek summary of a famous book.
+Can you guess which one it is?
+Yeah, so this book is, obviously,
+Lord of the Flies, by Golding, and
+it was author condensed, to use that term,
+by David Packer and
+Samuel Stoddard at rinkworks.com.
+So more examples of summaries.
+Movie summaries, we have some like
+Titanic and short summaries of it.
+For example, beginning with genuine
+footage of the departure of the Titanic on
+it's fateful voyage, this epic movie
+tells the events of that tragic
+night from the perspective
+of fictional survivor Rose.
+As an old lady 100 she recounts
+her story of duty, love and
+disaster to a salvage crew searching for
+a lost gem.
+Obviously there are many different
+summaries that you can produce for us.
+Given more obviously if you
+go to a website like IMDB,
+you can get hundreds of Summaries
+written by different people.
+And as you can see the summaries often can
+look very different from one another and
+yet have the same goal.
+Namely, to capture the gist of
+the movie or book or other piece of.
+Another type of summaries,
+are search engines snippets,
+the difference between those and
+the ones that we looked at previously is
+that those are cookie based, so
+search engines return little
+passages from the retrieved documents
+that are most similar to the query.
+So here's an example.
+I did a search for cloud atlas,
+which is a science fiction book.
+And as you can see the top hits
+that are returned here by Google
+are all accompanied by short passages or
+snippets.
+And the words cloud atlas and
+the name of the author are highlighted.
+There are many different
+genres of summaries.
+We have also headlines,
+as our headline can be construed as
+a very short summary of a document,
+of a new story, for example.
+An outline can be produced from many
+different genres of documents which could be
+an outline of a book,
+an outline of a meeting,
+an outline of an encyclopedia entry or
+paper and so on.
+It can also be minutes of meetings,
+biographies of people from obituaries or
+just plain biographies.
+They can be abridgments.
+Some abridgments of books
+are typically shorter versions.
+For different audiences,
+perhaps for younger children or
+for people who don't have that much time.
+They can be sound bites,
+which are just some small
+snippets of audio from an interview or
+from some event.
+They can be movie summaries,
+chronologies and so on.
+And I want to give credit for this
+taxonomy to Gidget Mani and Mark Maybury.
+From the '99 paper.
+So what types of summaries can there be?
+Well we already saw some of them, but
+how do we distinguish between
+the different types of summaries?
+Well one of the factors
+is what's the input?
+Is it single document or
+multiple documents?
+Is it Grammatical text or
+not, was the output,
+is it a grammatical sentence or
+does it have just a few keywords?
+Is it speech or text?
+What's the purpose?
+Is it intended to replace the original
+document, or is it just indicative,
+in which case, it just tells you what
+the original document is about but
+doesn't give you all of
+the details about it.
+They can also be something called critical
+summaries, where you are summarizing for
+example a book or a movie, but
+you're also giving some subjective
+information about how you feel about it.
+The form can be either extractive or
+abstractive.
+So extracts are usually like a
+representative paragraphs or sentences or
+phrases from a document, where abstracts
+can be reformulated using different words.
+And I in general,
+to quote a Paice paper from 1990,
+A Concise Summary Sample Subject Matter
+of a Document.
+There are other dimensions to take into account.
+What are the document summaries based
+on the single multiple document input?
+The context is very important.
+Is it query specific?
+For example, how is this document related
+to, let's say trade talks versus generic.
+What's generically a good summary of
+this document regardless of the context?
+Okay, so a typical summarization
+system can have up to three stages.
+Typically there are the following.
+The first stage is content identification,
+so given your input document, you have to
+determine what information you want to
+preserve and pass on to the next stage.
+So that could be some specific sentences,
+or named entities, or facts.
+The next thing is how to
+organize this information.
+You want to combine information
+from multiple documents,
+do you want to preserve entire sentences?
+Do you want to reorder them?
+And finally you have realization.
+So in realization you have to
+deal with some additional issues.
+For example, if you take two documents and
+you do one sentence from each of them,
+they may not read nicely
+next to each other.
+So it's possible that the realization
+stage would include the generation of some
+connectives.
+For example, for example, or therefore,
+or in contrast so that the sentences.
+that came from different sources can
+be tied together more coherently.
+Or realization can include the generation
+of some referring expression,
+such as this person or he or she.
+So here's an example of
+an extractive summarizer.
+It takes as input a news story.
+As you can see, the news story
+consists of about ten sentences.
+And then we want the summary to
+include the most important facts
+that are underlined and shown in red here.
+You can see that a purely extractive
+summarizer would just underline those
+passages and sentences and
+present that as the summary.
+So this case realization is practical and
+non-existent because we are just
+preserving information from the original
+documents as it appears in exactly the
+same order One important thing to mention
+here is that extracting summarization
+can come into different kinds.
+The first kind is where you have
+only full sentences, like for
+example the last sentence
+in this example here.
+Or you can have portions of sentences,
+that still counts as an extracted
+summarizor even if you're not
+extracting the entire sentences.
+So it turns out that summarization is
+something humans had been doing for years.
+For example there are professional
+abstractors that read scientific articles
+and create manual abstract of those that
+go into different diplomatic databases.
+And here's a nice quote from many years
+ago from 40 years ago by Ashworth
+about what professional abstractors do.
+Quote unquote.
+To take an original article, understand
+it and pack it neatly into a nutshell
+without loss of substance or
+clarity, presents a challenge
+which many have felt worth taking up for
+the joys of achievement alone.
+These are the characteristics
+of an art form.
+So this passage very clearly indicates
+that summarization is a very difficult
+task that humans may or
+may not be good at.
+But that it involves some very
+significant amount of craftmanship.
+Okay, let's now focus on some specific
+types of summaries, for example,
+extractive summarization.
+So as I mentioned before extractive
+summarization is about selecting
+units of the original text and presenting
+in the order at which they appear there.
+The units are usually sentences with one
+of the most common scenarios there is no
+simplification of the sentences allowed.
+So you're not allowed to skip any portions
+of them or replacing words with others.
+No rewriting is allowed, so it turns out
+that for some genres of documents, this
+is a very important baseline that is very
+hard to meet for extractor summarization.
+And that is the so
+called lead-base baseline.
+So in lead-based summaries
+we have a certain amount of
+text that you are allowed to
+produce as part of the summary.
+For example, let's say the equivalent
+of two sentences or five sentences.
+So the baseline is to
+extract as many sentences for
+the beginning of the document as you
+are allowed to produce in the output.
+So 205 in this example.
+It turns out many of innovation metrics
+and for many genres of text the first
+sentences in the document are in
+fact the most informative sentences.
+Well, luckily for researchers in this
+field, this is not the case in most of
+the other genres, so it's possible to come
+up with techniques that are even better.
+So we're going to now
+continue with some additional
+considerations about some
+organizations in the next segment.
+

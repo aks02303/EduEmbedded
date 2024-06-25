@@ -1,0 +1,264 @@
+Okay, we're now going to to continue
+with some additional techniques for
+text summarization.
+I'm going to go very briefly
+over a few more papers.
+The frist one is by John Conroy,
+Diane O'Leary, from 2001.
+It uses Hidden Markov Models for text
+summarization and the idea is that you
+want to take into account the local
+dependencies between sentences.
+The idea is that you don't want to
+include sentences in the summary
+randomly, independent of one another.
+Very often if you put a sentence, you have
+to decide whether the sentence before or
+after should also be included.
+So the features that I used
+are things like position,
+number of terms,
+the similarity to the document terms, so
+that which is very similar to
+the centroid idea in the Mead paper.
+The HMM alternates between summary and
+non-summary states.
+We have the portability of staying in
+a summary state, or of leaving a summary
+state, going to a non-summary state, and
+so on, all the four possible combinations.
+Here's an example from the Conroy and
+O'Leary paper, you have green and
+blue sentences,
+that tell you whether you want to include
+the sentence in the summary or not.
+Next paper is by By Miles Osborne, 2002.
+He was the first one to take
+into account the fact that
+the features used in previous
+papers were actually dependent and
+techniques like and so on,
+should not be necessarily the best ones.
+So in his case, he used the maxent or
+log-linear model
+to take into account independence is
+between the different features, and
+he got better performance
+than Naive Bayes.
+The features that he used were
+sentence length, sentence position,
+whether the sentence is inside
+introduction of the document,
+whether it's inside a conclusion and
+so on.
+Now the next paper is by Erkan and
+Radev 2004.
+It was published in Journal Artificial
+Intelligence Research or JAIR.
+And this was the first paper
+on metal co-based on random
+walks from multi-document summarization.
+And that technique also works for
+single document summaries.
+Radev used something
+called lexical centrality.
+Lexical centrality means that if
+a sentence is likely to be visited
+during a random process on the similarity
+graph corresponding to all the sentences
+in the set of documents, then that
+sentence is worth putting in the summary.
+So the steps are the following.
+You can present the text as graph,
+with sentences connected to each other
+if they have a lot of words in common.
+And then you just use the standard
+graph centrality metric, for example,
+between the centrality to vector
+centrality to determine the top sentences.
+One of the components of
+Lexrank is graph clustering, so
+before you want to pick
+the most central sentences,
+you want also to segment the graph into
+units that correspond to different themes.
+So, here is an example.
+We have a collection of 10 or
+11 sentences, from different documents,
+that correspond to the same event.
+The first one, d1s1, just means it's
+sentence one from document one.
+The second one is sentence one
+from document two, and so on.
+We have 11 of those in total.
+And we can now build a similarity matrix
+that corresponds to all the different
+pairs of sentences in that input.
+It's obvious that the diagonal
+entries are all ones,
+however we are also very interested in the
+high values that are not on the diagonal.
+So for example, there's a 0.45 value
+here between sentences 1 and 2.
+So sentence 1 and sentence 2 are going to
+be very strongly connected in the graph.
+So now let's see how we can
+compute the cosines centrality of
+this graph using a cosine cutoff of 0.3.
+So, what we have here is 11 notes.
+Each of which corresponds to one
+of the sentences in the note.
+And only those sentence pairs that have
+a similarity above 0.3 are connected.
+As you can see, this graph is
+still fairly disconnected, and
+there's not much useful information
+that can be gained from the structure.
+If we lower the cutoff of
+cosine similarity to 0.2,
+we're going to see much better structure.
+In fact it would be very obvious at
+this point that side notes dS41 is very
+highly connected to the rest of the graph
+whereas sentences like d2s2 and
+d3s1 are not as highly connected.
+If you keep lowering the threshold, we're
+going to get a situation where almost
+everything is connected to everything.
+So we don't want to go that far.
+In the Ekran Radev paper, they found
+that threshold of about 0.15 gives
+you the best information value for
+the graph.
+So there's approximately half of
+the connections are actually present and
+half are not present.
+So in a graph like this, what you want
+is for sentences to vote for the most
+central sentence by essentially passing
+messages along the edges of the graph.
+So if d4s1 is the most central sentence,
+we want to produce that
+as part of the summary.
+So here I'm going to discuss
+a little bit more advanced material.
+You can skip this part if you
+don't feel comfortable with
+the linear algebra used in it.
+So here's how Lexrank works.
+Lexrank is the lexical strategy
+method used in the Ekran Radev paper.
+It's based on a square
+connectivity matrix,
+where each node corresponds to a sentence.
+It can be either directed or undirected.
+Now an eigenvalue for
+a square matrix A is a scalar lambda,
+such that there exists a vector
+X which is not a no vector,
+such that the product Ax of
+the matrix with that vector
+is equal to the product of
+the scalar lambda with that vector.
+So that's some sort of implicit
+direction of the matrix.
+The normalized eigenvector
+associated with the largest lambda
+is called the principal
+eigenvector of alpha.
+And a matrix is called a stochastic matrix
+when the sum of entries in each row sum
+to 1 and none of them is negative.
+So they all form some
+probability distribution.
+And there is a theorem that says
+that all stochastic matrices
+have a principal eigenvector.
+The connectivity matrix in this
+kind of setup is similar to the one
+that is used in PageRank for document
+ranking, that's the system behind Google.
+And it's also known to be reducible.
+So one can use
+an integrative power method,
+to compute the principal eigenvector for
+pretty much arbitrarily large matrices.
+So that eigenvector corresponds to the
+stationary value of the Markov stochastic
+process described by
+the connectivity matrix.
+Since you random walk over
+the north of the matrix in
+proportion to the weight of the edges.
+And the stationary value of the Markov
+matrix's computed by that power method.
+The power method is something
+very straightforward.
+P is the vector of values that correspond
+to the centralities of the nodes.
+E transposed is the transpose
+of the connectivity matrix.
+So if we have the eigenvector
+formula p = E(transposed) * p,
+we can also write this as
+(I- E(transposed)) * p = 0,
+where I is the matrix that has 1s on
+the diagonal and 0s everywhere else.
+And then in PageRank there is also
+an added twist to do with dead end pages.
+So if you end up note that doesn't have
+any outgoing edges then it's possible
+with a probability 1-ɛ to start
+randomly from a different page.
+So the value of a node, p of v of vertices
+equal to 1 minus epsilon divided by n.
+So this is the probability of the
+teleportation a random jump plus epsilon,
+the sum of the normalized
+values of the centrality for
+the adjacent nodes, where PR
+are the nodes that are connected to v.
+The eigenvector centrality is
+computed in the following way.
+The paths in the random
+walk are just weighted by
+the centrality of the nodes
+that the path connects.
+So in general, the Lexon Method was
+found to be very successful for
+the evaluation of summarization based on,
+where doc is the new
+summarization compass.
+And this was an official evaluation
+used for many years in the mid 2000s.
+The next paper that I want to mention
+very briefly is by Gong and Liu, 2001.
+This is the first paper that uses
+latent semantic analysis, LSA,
+something that we have talked
+about in the past in this class.
+It works on both single and
+multi-document summarization cases.
+And doesn't use any explicit semantics or
+linguistics, for example, WordNet.
+So each document is represented
+as a word by sentence matrix,
+where each row corresponds to a word and
+each column corresponds to a sentence.
+The weight of the matrix are based
+on the TF IDF value of the words.
+So LSA,
+as we remember from a previous lecture,
+is based on the singular
+value of decomposition.
+So we want to represent the matrix A as
+the product of U sigma and V transposed,
+where the rows of V T are independent
+topics correspond to the documents.
+And then we want to pick the sentences
+that contain the independent topics.
+That's, in summary how the Gong and
+Liu method works.
+So we're going to continue with evaluation
+of summarization in the next session.
+

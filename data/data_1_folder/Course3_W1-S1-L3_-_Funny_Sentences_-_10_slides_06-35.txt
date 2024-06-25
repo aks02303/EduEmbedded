@@ -1,0 +1,174 @@
+In the next segment we're
+going to have some fun.
+I'm going to show you some sentences that
+have multiple possible interpretations.
+One is literal, and is not funny,
+whereas the second one is not the intended
+one, and can be sometimes very funny.
+So the first such example is,
+children make delicious snacks.
+Imagine this is a headline
+in some newspaper story.
+The point of the author
+was essentially to report
+that some kids were preparing
+some snacks that were very tasty.
+However, because of the way that the
+sentence is constructed syntactically it
+also may be interpreted as children
+are very tasty when you eat them.
+Let me show you a few more such
+sentences that have this kind of
+unintentional meaning that is funny.
+Stolen painting found by tree.
+It's as if the tree found the painting.
+I saw the Rockies flying to San Francisco.
+Here the funny interpretation is one where
+the Rockies are flying to San Francisco.
+Court to try shooting defendant.
+Instead of trying or putting on
+trial a defendant of the shooting
+we actually want to shoot the defendant.
+Ban on nude dancing on Governor's desk.
+Red tape holds up new bridges.
+Government head seeks arms.
+Blair wins on budget, more lies ahead.
+Local high school dropouts cut in half.
+Hospitals are sued by seven foot doctors.
+Dead expected to rise.
+Miners refuse to work after death.
+Patient at death's door,
+doctors pull him through.
+And finally, in America a woman
+has a baby every 15 minutes.
+How does she do that?
+So the previous slide showed
+you some what I called
+classic examples of ambiguous headlines.
+This slide is going to show you some
+examples that I actually collected on
+the Internet recently.
+And the first one is Vancouver Police
+shoot man holding box cutter.
+So the two possible interpretations here
+is that the man who was shot was holding
+the box cutter which is
+probably what was intended.
+And the other interpretation
+is that the box
+cutter was used by
+the police to shoot the man.
+Another example.
+Man armed with box cutters shot by
+officers which is the same story.
+Police shoot man with box
+cutters in Astoria and
+police shoot man yielding box cutters,
+and police shoot man with box cutters.
+In the, third, fourth,
+and fifth example we
+have an instance of what is known
+as prepositional phrase attachment.
+Where a prepositional phrase such
+as with box cutters can refer to
+either the nearest noun,
+man, or to the verb, shoot.
+So in the case when it refers to
+the nearest noun, it modifies it so
+the man was carrying the box cutters.
+If it modifies the verb.
+Then with box cutter modifies,
+the way in which the person was shot.
+And a few more real headlines, just for
+fun, Bulgaria doubles money for parties.
+Motorola to hire 300 Android developers.
+Massachusetts exhales as bill passes,
+heads to Canada.
+US eyes returns to the moon.
+And finally,
+flesh-eating bug survivor goes home.
+All those are real,
+headlines as you can see from, the URLs.
+So, let me now show you some examples
+of ambiguous recommendations which will
+illustrate different,
+issues with natural language.
+So, a funny example here is.
+A man like him is hard to find.
+This is written in reference to
+a chronically absent employee.
+So the intended interpretation of this
+sentence is that this person was so
+difficult to find that,
+because he was absent all the time.
+That the sentence was made to look like a
+real recommendation sentence specifically
+somebody who's so valuable that people
+like him are really difficult to find.
+So here we have an instance of
+what is known as lexico ambiguity.
+So the word hard to find, I'm sorry,
+the phrase hard to find has multiple,
+interpretations.
+In one case it means,
+somebody who is very valuable.
+In the other case it means
+somebody who's hiding.
+Here's some more examples
+of lexico ambiguities.
+For dishonest employee can say
+he's an unbelievable worker.
+He's unbelievable here
+is the ambiguous word.
+It can mean somebody who is so good to
+believe that it's hard to believe that
+person exists or it can also mean that
+this person should never be believed.
+For a lazy employee,
+you can say you would indeed be fortunate
+to get this person to work for you.
+Again, he had ambiguity,
+comes from the word fortunate.
+In one case, it means that he will
+be happy to work with such a person.
+A second case,
+it means that it will be a miracle
+if this person got to work for you.
+There are other categories of linguistic
+construction that can cause ambiguity.
+For example we can have structural
+ambiguity, scope ambiguity, and others.
+So in structure ambiguity I
+will show you one example.
+For chronically absent employee you
+can say it seemed that his career or
+her career was just taking off.
+So here the ambiguity comes from
+the fact that taking off can refer to
+the, the fact that the career
+was just starting.
+Meaning that this person had even
+more good things in their future or
+it means that her career was just
+the business of taking off from work.
+In the scope ambiguity we
+can look at an example of
+one employee who's not worth
+considering as a job candidate.
+We can say, all in all, I cannot say
+enough good things about this candidate or
+recommend him to highly.
+So here the ambiguity comes from the fact
+that say enough good things can mean
+that either you have only a few good
+things to say about this person or
+that you have way too many good
+things to say about this person.
+If you want to find more examples of
+this kind of funny recommendations,
+you can look up Beatrice Santorini's
+collection on the Internet.
+Okay so now in the next
+segment we're going to talk
+about the administration of this class.
+

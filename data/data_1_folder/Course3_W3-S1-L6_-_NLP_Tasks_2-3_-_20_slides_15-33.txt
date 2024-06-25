@@ -1,0 +1,449 @@
+So we looked at some
+interesting NLP tasks already,
+things like part of speech tagging and
+parsing.
+Now we are going to look at a few others.
+Let's start with information extraction.
+So, information extraction is
+the task of reading a sentence and
+extracting named entities,
+such as people and places and
+organizations, and
+also relationships between that.
+For example,
+the CEO of a company and so on.
+Let me run into a specific example now.
+Suppose that you want to build
+a database of companies and
+how different rating agencies see them.
+So in the first example here,
+we have Wells Fargo,
+which is a major bank,
+that cuts PPD Inc to market perform.
+So market perform is a rating for
+a company, and
+this is some very useful information for
+investment people.
+PPD Incorporated is the name of a company.
+Cuts is the actual action
+that is taking place here.
+So Wells Fargo is lowering the rating
+of this company to the next level down.
+Let's look at some more examples.
+China Southern Air upgraded to overweight
+from neutral, according to HSBC.
+So here the bank, again it's shown in red,
+it's HSBC, it has
+upgraded now, that means change the rating
+in the positive direction of a company.
+The company is China Southern Air.
+The new rating is overweight,
+and the old rating is neutral.
+So for the first time,
+we have the old rating.
+So if we look at a few more examples,
+we'll get an idea how this works.
+There is a ratings institution,
+typically a bank,
+that changes a rating of a company
+from a rating to some other rating.
+And you can see that this kind of
+concept can be expressed in many,
+many different ways.
+You see the colors move
+all over the place.
+You can also have things like
+upper case and lower case,
+you can have missing fields.
+For example,
+in the most recent example here about
+Baird Cuts KIOR Incorporated
+to underperform rating.
+We know the new rating, but
+we don't know the old rating.
+And so on.
+So the goal of an information extraction
+system would be to read
+sentences like these,
+to understand the different players, to
+understand the different named entities,
+the different ratings, and to be able
+to represent this whole information in
+the form of a table that can be later used
+by people who understand databases for
+whatever decisions that
+they need to make with it.
+So the output of an information
+extraction would look like this.
+There is a relation that takes,
+in this case, seven arguments.
+A date of time, ticker,
+which is the stock ticker of the company,
+the company name,
+the source of the upgrade or
+downgrade, the old rating, the new rating,
+and then the direction of the change.
+Now, the direction of the change was
+not explicitly listed in the previous
+sentences.
+But it can inferred from the verb,
+like cut or upgrade.
+Okay, so another task in natural
+language processing is semantics and
+semantics analysis.
+So semantics deals with logical
+representations of sentences such as first
+order logic.
+It is also used to represent inference.
+For example,
+we can say that if x is the mother of y,
+that means that x is a parent of y.
+And semantic analysis is one of
+the hottest areas of natural
+language processing these days.
+It will be very interesting to see
+how far it can go in the near future.
+So here's a relevant problem to semantics
+from NACLO, it's called Bertrand and
+Russell, a 2014 problem by Ben King.
+You can download it from this website, and
+when you're done solving it,
+you can check for the solution.
+The solution of the Bertrand and
+Russell problem is shown here.
+Another natural language processing
+task is reading comprehension.
+So here's an example from a paper
+by Anand et al from 2000.
+The task here is to read a document
+such as the one shown here.
+It's titled
+Mars Polar Lander- Where Are You?
+And then it has a couple of short
+paragraphs followed by some reading
+comprehension questions.
+For example, where on Mars was
+the spacecraft supposed to touch down, or
+what did the Mars Global Surveyor do?
+So the goal of this kind of research
+is to build systems that can ask us
+questions like this by understanding
+the meaning of those paragraphs.
+This is another example
+of text understanding.
+You have some sort of a word puzzle.
+Those used to appear on
+the jury tests many years ago.
+So there are four bungalows
+in our cul-de-sac,
+they're made from four
+different materials.
+And then you have some
+constraints like Mr.
+Scott's bungalow is somewhere to
+the left of the wooden one, and
+the third one along is brick,
+and so on and so forth.
+And then you have to answer
+questions like, who lives where, and
+what is their bungalow made from?
+So obviously it takes some sophisticated
+natural language processing to be able to
+solve puzzles like this.
+Another interesting task in natural
+language processing is word sense
+disambiguation.
+As I said earlier, words may have
+multiple senses, and when they're used in
+a particular sentence, you have to figure
+out what sense was intended there.
+So if you see a sentence like,
+The thieves took off with 100 gold bars,
+what does the word bar mean?
+It's pretty obvious to a human that it
+means pieces of gold, or chunks of gold,
+but the computer doesn't know this before
+it performs word sound disambiguation.
+As far as it's concerned, they may have
+stolen 100 drinking establishments or
+perhaps 100 measures of a song.
+So the task of world sense disambiguation
+is to take a word in the sentence,
+look at its context, and determine
+which of the senses in WordNet or
+in a dictionary was meant.
+So, just to remind you,
+words like bar can be very ambiguous.
+Here I have an excerpt from WordNet,
+which we'll discuss in more detail later,
+that shows you all the different
+senses of bar as a noun.
+In addition to the one
+that we just mentioned,
+it can also have a meaning
+as a legal association.
+It can also mean,
+to prevent something from happening,
+or to blockade a route, and so on.
+So word sense disambiguation
+is very important for
+many different other
+natural language tasks.
+For example, for machine translation.
+Because, very often, a word that is
+ambiguous in one language may be
+translated differently
+in the target language.
+So let's look at a few examples.
+In English, the word, play, is ambiguous.
+It can mean to play a sport,
+such as Paul plays soccer.
+If you want to translate
+this sentence in French,
+we would have to use au,
+which is a preposition/article
+combination to indicate that
+the person is playing a sport.
+But if you translate it differently
+from playing a musical instrument,
+you have to use a different
+form of this structure.
+So you have to use the preposition
+de followed by the article la.
+So every time you have an instrument,
+you have to use de.
+Every time you have a sport,
+you have to use au,
+which in this case happens
+to be turned into au.
+Let's look now at the translation
+of an ambiguous word, wall,
+from English to German.
+So in German, the basic translation
+of the word wall is Wand.
+However, in the case of The Great Wall
+of China, the translation is Mauer,
+as in die Chinesische Mauer.
+So we need to know in advance that we have
+this particular sense of wall in English
+to be able to translate this sentence,
+or this phrase properly in German.
+Even in Spanish, the word wall can
+be translated in many different ways
+depending on whether
+it's an internal wall or
+an external wall, like the wall
+that separates several buildings.
+The next task in natural language
+processing is called named entity
+recognition.
+In named entity recognition,
+you have a sentence such as
+the one shown on the left, Wolff,
+currently a journalist in Argentina,
+played with Del Bosque in the final
+years of the seventies in Real Madrid.
+So here what we want to figure out is
+what are the different named entities.
+People such as Wolff and
+Del Bosque, names of organizations,
+in this case the soccer club Real Madrid,
+and also countries such as Argentina.
+So the output of a typical named entity
+recognition system is shown on the right.
+It tells you that Wolff is a person.
+B-PER means that this is
+the beginning of a person.
+The next line has a comma, and the label
+O, which means it's something else,
+other, so that means that
+Wolff is a single word person.
+Argentina is labeled as a location and
+it's again a single word.
+Del Bosque is labeled as a person and
+the labels that the named entity
+recognition system assigns for
+the individual words are B-PER for
+beginning of a person,
+I-PER which means inside a person.
+And then since the next label is O,
+we know that there are no other
+words that are part of this person.
+And finally we have Real Madrid,
+which is an organization.
+The first word is labeled as
+beginning of organization.
+The second word is inside organization and
+then we stop.
+If you are interested in this topic in
+more detail we will cover it later in
+this course.
+But in the meantime, you can look at
+the two URLs below for two online demos of
+data entity recognition systems which
+allow you to type in entire sentences and
+then they will label the output with
+the different named entities involved.
+Here is another demo of a system called
+Abner developed at the University
+of Wisconsin,
+which is specifically used for
+named entity recognition
+in the biological domain.
+You can see that it uses different
+colors to indicate, for example,
+names of genes and cells and
+receptor and proteins, RNA, and so on.
+This information is extremely valuable
+when you want to build a system that can
+understand biomedical papers.
+The next task in natural language
+processing is called semantic role
+labeling.
+It turns out that verbs have arguments,
+some of which are required, and
+some which are not required.
+And those arguments can appear in many
+different orders in the sentence.
+So the verb accept has multiple arguments.
+The most important one, A0, is the
+acceptor, the person doing the acceptance.
+A1 is the accepted thing,
+A2 is from whom the thing was accepted,
+A3 is an attribute, and then you can
+also have additional modifiers for
+modality and for negation.
+So the goal is to start
+with a sentence like,
+he wouldn't accept anything of value
+from those he was writing about.
+To recognize that the main verb here is
+accept and then to identify which other
+words should be connected to each of the
+different arguments of the verb, accept.
+So A0 in this case is the acceptor,
+the word he the thing accepted,
+A1 is anything of value,
+and A2 or accepted from is
+those he was writing about.
+Again we will talk about semantic
+role labeling in more detail later
+in the semester, but in the meantime,
+you can look at an online demo at
+the University of Illinois shown here.
+Another task in natural language
+processing is core reference resolution.
+Core reference resolution has
+to do with understanding when
+two phrases are meant to refer
+to the same person or entity.
+Those are typically used in discourse
+structure, so that you avoid repetition.
+In the first example here, you have
+Barack Obama visited China, period.
+You could have said, Barack Obama
+met with his Chinese counterpart.
+But that would be repetitive and
+instead you say, the US president
+met with his Chinese counterpart.
+And you mean that the US
+president refers to Barack Obama.
+That's why I'm using the same
+color to represent it to you.
+Now, if you want to build a summarization
+system or question answering system,
+you don't want to think that Barack Obama
+and the US president are different people.
+You want those two to be
+linked together so if I ask,
+who met with his Chinese counterpart,
+you would be able to say Barack Obama.
+So the task of coreference
+resolution is to identify
+expressions that refer to the same entity
+in discourse and to link them together.
+This can actually be a very tricky
+task because in addition to pronouns,
+which is the most typical example for
+coreference resolution,
+you can have noun phrases like in
+the first example here, the US President.
+You can have even more
+complicated structures.
+For example, Cynthia went to see
+her aunt at the hospital, period.
+She was scheduled for surgery on Monday.
+She here is a pronoun that could
+corefer to either Cynthia or her aunt.
+Well, you really have to
+use a lot of semantics and
+word knowledge to figure out that it was
+the aunt who was scheduled for surgery.
+It's very unlikely that
+somebody who's scheduled for
+surgery would go visit another
+person in the hospital.
+That would be very counterintuitive.
+So the goal of the coreference
+resolution system here
+would be to look at the ambiguous
+reference for she, and
+relate it back to her
+aunt rather than Cynthia.
+Coreference can be in two forms.
+It can be anaphoric or cataphoric.
+Let me explain what those two words means.
+Anaphoric means that the mention of
+the entity happens first and then another
+expression is used to refer back to
+an entity that has been introduced before.
+So in the previous example,
+she appears after her aunt.
+Now, cataphor, or cataphoric relation,
+is when the pronoun or
+the reference is introduced first,
+before the entity itself is introduced.
+So this happens less
+frequently than an aphora but
+it still exists and computer systems
+have to understand how to deal with it.
+So an example of that is, because he was
+sick, Michael stayed home on Friday.
+In this case, Michael is the entity.
+He refers to it, but
+it is used before introducing the entity.
+So, again,
+those cases can be very tricky for
+natural language processing
+systems to deal with.
+There are many other interesting aspects
+of natural language processing that have
+to be addressed if you want
+to build an entire system.
+So, for example, ellipses, parallelism,
+and under-specification all go together.
+Ellipsis is when a certain word is missing
+from a sentence because it's implied and
+it can be understood from the context.
+So when I say,
+Chen speaks Chinese, period,
+I don't, what I really mean is, Chen
+speaks Chinese, I don't speak Chinese.
+But I'm using ellipsis
+to skip speak Chinese.
+But I can use the parallelism
+between the two sentences
+to understand that those
+words are missing.
+We can also use parallelism
+in the next example.
+Santa gave Mary a book and Johnny a toy.
+So in this case, we can infer that Santa
+gave Johnny a toy, even though that
+is not explicitly said in the sentence,
+because of the parallel structure.
+So this is the end of the second
+section on NLP tasks and applications.
+We are going to continue with
+some more in the next segment.
+

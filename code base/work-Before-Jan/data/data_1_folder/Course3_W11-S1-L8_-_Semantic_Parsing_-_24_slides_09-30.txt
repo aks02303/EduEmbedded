@@ -1,0 +1,232 @@
+Okay, the next segment is
+about semantic parsing.
+Semantic parsing is about converting
+natural language to a logical form.
+For example, to build executable code for
+specific applications such as an airline
+reservation or geographical query system.
+So semantic parsing has two stages.
+The first is to take the input,
+for example a sentence, and
+convert it into a syntactic structure
+using syntactic analysis and
+then perform semantic analysis to come
+up with a semantic representation.
+So what is compositional semantics?
+Well, this is done by adding a semantic
+attachments to context free grammar rules.
+So we first parse the sentence
+syntactically and
+then associate semantics to
+each individual words and
+then use the context free grammar and the
+semantic attachment to build a semantic
+representations of all
+the non terminal nodes.
+And at the end of the day we will get the
+semantics of the full sentence which is
+associated with the root
+of the prior string.
+So here's an example,
+the sentence is Javier likes pizza.
+And what we want to produce as it's output is
+a predicate of this from the first-order
+logic like or likes.
+Javier first argument,
+pizza second argument.
+So here's how we can do this.
+We associate a semantic expression
+with each of the nodes.
+So Javier, likes, and
+pizza are the leaf nodes.
+Each of them is represented as itself.
+In this case, as a noun, another noun,
+and then a lambda expression.
+So here's where lambda
+expressions come in handy.
+What we want to represent
+here is that the verb likes
+get represented as the lambda
+expression of two arguments,
+x and y, that turns them into the
+predicate likes with the two arguments.
+So now, the next thing is to combine
+this node with the node for pizza.
+And now we are going to turn the two
+argument lambda expression into a single
+argument lambda expression, so we're
+going to have one of the variables bound,
+y to pizza, and
+we only have one unbound variable.
+So we have a lambda expression only for x.
+Now we are still missing one argument, so
+if we combine the two remaining uncombined
+nodes, Javier and
+the lambda expression for the verb phrase,
+we're going to get the semantics of the
+entire sentence by applying the remaining
+unbound lambda expression to Javier.
+And, we're going to get the predicate for
+the sentence,
+which is likes, Javier, pizza.
+So for practical purposes, a lot of
+the recent work on semantic parsing has
+been using communitorial
+categorical grammar,
+which was introduced by
+Mark Steidmon in 1996.
+So let me give you some examples of how
+CCG is used to represent semantics.
+For example, adjectives are represented
+along the expressions with one variable.
+So we have lambda x tall x.
+This is the expression that
+represents the adjective tall.
+And now we have a transformation
+rule that says S\NP/ adjective.
+So this is essentially one of
+the constituents in CCGs which corresponds
+to a lambda expression with
+a function f and an argument x.
+And then NP noun phrase.
+So this example I'm going to use the name
+of a basketball player, Yao Ming, so
+the noun phrases get
+represented as themselves.
+They form to represent a sentence
+Yao Ming is tall in CCG.
+Here's how we can do it.
+We start with the words themselves.
+Yao Ming is labeled as a noun phrase.
+Tall is an adjective.
+And is, is SNP adjective.
+That gets translated into CCG
+into a lambda expression, one for
+the function and one for the attribute.
+Then we can combine those two together and
+get an expression that requires a noun
+phrase on the left to form a sentence.
+And then, we can combine those
+together with a noun phrase and
+get expression that Yao Ming is tall.
+So now in relation to this exercise,
+we have a problem from NACLO 2014 from
+Jonathan Kummerfeld,
+Alexa Blackwell, and Patrick Littell.
+It's available in the NACLO web site.
+And it has two parts.
+One is the generic CCG.
+And the second one is 
+specific to language.
+So the first part introduces CCG,
+expanding the meaning of the forward and
+backward slashes.
+And then it gives a little
+grammar using four words.
+And then shows how to combine different
+expressions to form grammatical parses.
+And also gives example
+of ungrammatical parses.
+So the first part of the problem
+asks the following three questions.
+One is to explain how CCG
+works to parse sentence.
+Number two is take the sentence I enjoy
+long books, you have to be able to figure
+out how to parse the sentence
+successfully with the grammar.
+And finally in part three it asks you,
+given a specific grammar
+to come up with sentences that
+cannot be parsed using this grammar.
+Why don't you think about the answers for
+those three questions, and
+then look at the answer on the next slide.
+So here we have the answers to
+the first three parts of the first.
+And now the second part,
+it has to do with a language
+called Tok Psin from New Guinea.
+There are some sentences in that language
+and scrambled is the English translations.
+You have to figure out first how to
+match each of the English sentences
+to the Tok Psin sentences.
+And then in the second part,
+you have to translate
+one sentence from one of the languages
+into the other and vice versa.
+And then in the final part, you have to
+figure out how to map the different words
+in that language to the different CCG
+categories on the right hand side.
+So think about it and
+look at the answer in the next slide.
+Okay, so after you had fun
+with this nice NACLO problem,
+we're going to look at a few more examples
+of recent work on semantic parsing.
+The first one is called geo-query,
+which is one of the earliest semantic
+parsing systems by from 1996.
+It was used to parse and
+semantically represent questions
+about geographical data.
+So for example,
+it took questions like what is the capital
+of the state with the largest population?
+And what are the major cities in Kansas?
+And it was able to represent them
+in first order logic format.
+So here are some of the statements
+that it was able to translate.
+So C is the capital city,
+X is major, P is a place,
+the capital of S is C, B S, and so on.
+Okay, now let's switch from this
+older paper to a more recent one by
+Luke Zettlemoyer and
+Mike Collins from 2005.
+In that paper they use CCG for
+semantic parsing.
+Again in a domain that involves
+geographical questions.
+You can define Utah as a noun phrase,
+Idaho as a noun phrase.
+And borders is something that takes
+one noun phrase on the left and
+one on the right to form a sentence.
+And here's some of the representations
+that they end up with.
+What states border Texas?
+Again, this is a lambda expression,
+where single variable X,
+X has to be a state, and
+x has to border Texas.
+What is the largest state?
+Again, it's a lambda expression for
+X where X is a state and
+we're computing the size of X, and
+we want to find the value of
+the statement that maximizes the size.
+And the final example, what states borders
+the state that borders the most states?
+Again, coming up with that in a much more
+convulated way using two lambda functions,
+one for state and one for
+another type of state.
+So here's how you can do the derivations.
+So Utah borders Idaho, and
+what states border Texas?
+You should take a look
+at the derivations and
+understand how the output in lambda format
+is produced using the CCG derivations.
+And here are some more
+snapshots from this paper.
+So those are some of the items
+that were learned in the system.
+And this is the entire grammar.
+So this conclude the section
+of semantic parse.
+

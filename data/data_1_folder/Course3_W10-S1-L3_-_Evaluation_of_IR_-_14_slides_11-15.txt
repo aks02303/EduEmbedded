@@ -1,0 +1,320 @@
+So the next segment on information
+retrieval has to deal with evaluation of
+information retrieval systems.
+It's very important to evaluate search
+engines because it's very difficult to
+compare them just purely
+based on anecdotal evidence.
+So some of the metrics that I use to
+validate information retrieval systems
+include the size of the index.
+So large engines like Bing and Google
+will get high score in this criteria.
+Speed of indexing is also very important.
+We want, whenever there is a change
+in a document to be indexed and
+added to the index as quickly as possible.
+Speed of retrieval is also very important.
+Users typically don't want to wait more
+than a fraction of a second to get
+their hits.
+Accuracy is very important that we provide
+the correct answers to the users queries.
+Timeliness, do we index the most up
+to date versions of documents so
+that whenever the use wants to
+find out what happened just now,
+we don't want to show them older
+versions of the documents.
+Ease of use is of course
+also very important.
+How easy is it to formulate a query,
+to advise a query, and so on.
+And another important criterion is
+expressiveness of the language.
+Does it allow natural language questions?
+Does it allow searching for
+phrases for words that appear
+together in the same sentence?
+Words in different languages and
+alternatives and so on.
+Let me show you something
+called a contingency table
+that is used very often in
+information retrieval, evaluation,
+and also in many other tasks including
+question answering and summarization,
+as we have seen in some
+other sections of the class.
+So the contingency table has four cells.
+In the first column, we're going to
+present the number of documents that were
+retrieved by the information
+retrieval system given the query.
+In the second column,
+we show the documents that were
+not retrieved by the system.
+The first row includes the documents
+that are actually relevant to the query.
+And the second row is the ones that
+are not relevant to the query.
+So the sum of the numbers in those
+four cells is equal to the number
+of documents in the entire collection.
+So w is the number of two positives.
+So those are the documents that
+were repeated by the system and
+also are relevant to the user's query.
+Z, or the number of two negatives is
+the number of documents that were not
+retrieved by the system but were also not
+supposed to be retrieved because they're
+not relevant to the user query.
+So w and z obviously a good thing.
+So we want a system to have good values,
+high values for w and z.
+In the other diagonal,
+we have x equals the false negative.
+So those are the documents that were
+not retrieved by the system, but
+they were supposed to be retrieved.
+They're misses.
+And we also have similarly y which is
+equal to number of false positives.
+So those are the documents that we
+not supposed to be retrieved, but
+the system returned incorrectly.
+So n2 is the sum of w + y,
+this is the total of retrieved documents.
+n1 is w + x, so
+the number of relevant documents.
+And n was the number of all the documents
+in the collection, w + x + y + z.
+So just like in the text summarization,
+we can define precision and recall.
+Recall is w / W+ x, and
+precision is w / w + y,
+just to refresh your memories.
+Recall means that recall
+is going to be high If
+the system returns as relevant, most of
+the actual documents are then relevant.
+And precision is going to be high if
+almost all of the documents returned
+by the system are indeed relevant.
+Okay, let's look at some of the issues
+involved in evaluating information in
+table systems.
+So one thing that can easily cross
+one's mind is why not just use
+accuracy as the evaluation metric?
+Accuracy would be the sum
+of the two good values.
+W, the number of two positives and
+z, the number of two negatives,
+obviously normalized by N.
+So one problem with this is that in a
+typical case the value of z is much larger
+then the value of w so its completely
+possible to get an accuracy of 99.5% or
+even higher even if w itself is zero close
+to zero which is obviously not something
+that you want we don't want to emphasize
+two negatives over two positives.
+One other issue is how to 
+represent report rather
+the performance of the system
+over a large number of queries.
+While this is typically not just
+by averaging the precision of all
+the possible queries
+given in the evaluation.
+Another thing that is
+typically done is to report
+the value at which precision
+is equal to recall.
+And this is done so that the system
+doesn't artificially inflate P
+at the expense of R or vice versa.
+And finally, one other metric that is
+used to report a single number for
+evaluation is the F measure which
+represents our weighted combination
+of precisions and recall.
+In practice what is more commonly
+used as the F one measure,
+which is 2 / the sum of the reciprocals
+of recall and precision or
+in other words a harmonic
+mean of precision and recall.
+But very often in research
+papers will you see
+F1 measures reported as single metrics.
+So now the next slide is going to
+show us the sample TREC query.
+So you're going to ask me what is TREC.
+So TREC is the text in
+a retrieval conference,
+which has been organized annually by
+the National Institutes of Standards and
+Technology in the United States.
+So it provides assistance with
+the collection of documents, and
+also collection of queries that
+have three different sections.
+So here's an example of those.
+The three sections are the title,
+the description, and the narrative.
+So the title for
+this example is most dangerous vehicles.
+The description is,
+which are the most crashworthy and
+least crashworthy passenger vehicles?.
+And then there is a narrative.
+So the systems that participate in this
+evaluation are supposed to use one, two,
+or all three of those fields.
+And we determine each of those
+settings the most relevant documents
+in the collection.
+So this example here, the IDs on
+the right represent the documents that
+have been considered to be relevant
+to the query by human annotators.
+And here's what a document typically looks
+like in Trec, it's marked up as GML,
+or XML, more recently.
+And it contains markup for metadata
+such as headline, length, and date.
+And then each of the paragraphs
+is marked appropriately.
+So if you're interested in the TREC
+evaluation, you to to the NIST website and
+find all the different Trecs that have
+been used in the different years, and
+there's a set of presentations that
+shows how the different systems compare
+with one another.
+So in addition to the tech evaluation
+corpus people have this other reference
+first collections for
+information retrieval.
+For generic retrieval they
+do things like the OHSUMED,
+which is a collection
+of medical documents.
+Cranfield, CACM which include
+things like manuals and
+also other types of scientific papers.
+For text classification,
+which is one of the topics that we're
+going to look at a little bit later.
+People use the Reuters collection,
+and the 20newsgroups collection.
+For questioning answering, they use
+the TREC question answering collection.
+For web retrieval, they use DOTGOV or
+wt100g which the first block being
+a call of the entire DOTGOV domain.
+And the second one being a 100
+gigabyte collection of the web corps.
+And for blog purposes,
+people use many different datasets
+including the buzzmetric datasets.
+And finally for ad hoc information
+retrieval or document retrieval,
+people use TREC collections, which
+are relatively small in size, 2-6 GB.
+For the web, they use the TREC web
+collections, which have a lot more data.
+So now let's see how we can compare
+the performance of two systems.
+Suppose that one system gives
+you a F measure of 60% and
+then another gives you a F measure of 65%.
+Can you claim that
+the second system is better?
+So we clearly cannot do this over one
+query, because given a single query,
+it's completely possible that one of the
+system just happens to do a really good
+job and the other one can fail.
+Instead what we need to do is
+find the average performance
+over many different query.
+But one thing that we can do even better
+Is to make sure that on every query,
+one of the systems our
+performs the other one okay.
+So one of the common methods that is used
+to find out which system is better than
+another is a so-called sign test.
+This is a technique that comes
+from the statistics community and
+is based on the principle
+of hypothesis testing.
+So we have two systems and each of the
+systems is run on a number of queries and
+we have collected the performance
+on each of those queries.
+And when we want to compare how many
+times system a outperforms system b, how
+many times they got the same performance,
+and how many times B outperformed A.
+For statistical hypothesis testing,
+we have the so called null hypothesis,
+that says that the two
+systems are equally good.
+And based on the data
+that we have observed,
+you want find out the probability
+that the null hypothesis is rejected.
+So that means that system A is
+actually better than system B.
+So if we plug in those numbers
+into a sign test calculator,
+we're going to see that the probability
+in this case is about 3.5%,
+which means that it's very unlikely that
+the two systems are equally good, and
+we have to reject the null hypothesis and
+assume that A is better and then B.
+In another example we have A better then
+B, 18 times, and B better then A, 9 times.
+So in this case the ratio is much
+smaller between the two categories.
+So if we plug in those numbers into
+the calculator we'll see that the public
+is 12%, so that means that we don't
+have enough evidence to reject the model
+hypothesis and therefore we cannot claim
+that system A is better than system B.
+So it's very important when you write a
+research paper, an information retrieval,
+to include statistical
+significant stats like this so
+that you can actually validate your
+claim that your system is superior.
+Here's an external link to
+an actual scientist calculator
+that you can use in your own experiments.
+There's some other tests that are used,
+some of which don't just look at the sign
+of the difference between the two systems,
+so which one is better, but
+they actually look at the difference
+of dividers of the two systems.
+So one of those tests is
+the so-called student t-test.
+And here's another calculator
+that corresponds to that test.
+Another test that is used a lot in
+information retrieval is the so
+called Wilcoxon Matched-Pairs
+Signed-Ranks Test.
+And I'm including here a link
+to a calculator for it too.
+So this concludes the section
+on evaluation of information
+retrieval system.
+

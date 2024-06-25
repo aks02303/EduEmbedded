@@ -1,0 +1,556 @@
+So this new segment is about
+morphology and the lexicon.
+So when people learn new words, they store
+them in what is known in linguistics and
+psychology as the mental lexicon.
+It is used to store the meaning,
+the pronunciation, and the part of speech,
+among other things.
+So if I tell you to store a word like cat,
+you will know that this is a little,
+furry creature that says meow,
+you know that it's pronounced cat,
+that it's a cuh, tuh, and
+you know that it's a noun.
+Sometimes you may not know all
+of this information, and yet
+still be able to store this
+information in the mental lexicon.
+For example, if you see the word wug for
+the first time,
+you may not what it's part of speech is.
+You could probably figure
+out it's pronunciation,
+and you probably don't
+know what it's meaning is.
+But if I told you that wug is a noun,
+and that it means a small creature,
+you can use it in a sentence,
+because you would know the part of
+speech that the meaning can say.
+For example things like,
+I saw a wug today, or a wug walked by.
+Similarly a word like cluvious,
+even if you don't know its meaning,
+you may be able to infer
+some information about it,
+because most words in English that
+have this form are adjectives.
+You can even reason about words
+that you haven't seen before.
+You can compare traftful and
+traftless, and
+figure out that they're
+most likely opposites.
+Because there are many
+pairs of words in English
+that have those particular endings,
+and have autonomy relationship.
+So one of the things that
+we're interested in today,
+is how to interpret those
+words morphologically.
+So if you take a word like, cluvious.
+Can you figure out what it's ending is,
+and why you think that it's an adjective?
+So, people have intuition, they have
+a grammar that they are born with
+that helps them understand words
+that they have not seen before.
+And they can also have this
+property called productivity,
+which allows them to create new words and
+have them different things.
+Let's look now at some of the words
+that you store in your mental lexicon.
+A word like runs.
+Clearly it has two possible
+meanings in English.
+In one of the cases,
+it is a noun plural, and
+in the second case it is a verb
+in third person singular.
+So clearly, its part of speech changes,
+its meaning changes, its pronunciation
+doesn't seem to change in this
+particular case, but it's ambiguous.
+So there has to be a way for people to
+store ambiguous words in their mental
+lexicon, and this disambiguate them on the
+fly when they pronounce or read sentences.
+There are also some special cases of
+words that are stored as what is known as
+allomorphs.
+For example cats is a derivative of cat.
+It means a plural of a singular cat.
+But there are some
+special cases like oxen,
+which is formed irregularly
+as a plural of ox.
+The past tense of play is played, but
+one of the past tenses of swing is swung,
+which is again formed irregularly.
+So those words have to be stored in
+the lexicon somehow, and they may not
+be obtainable directly by following
+some morphological derivation like cats.
+So words have a lot of affixes.
+They include things like prefixes that
+go in front of the stem, suffixes,
+endings, and so on.
+So one of the subjects of morphology
+is called derivation of morphology.
+It has to do with understanding
+how different forms of words
+are created from other words,
+by adding different affixes.
+So if we look at the word drinkable,
+we can say that the whole word
+drinkable is an adjective.
+You remember that JJ is the standard
+label in natural language processing for
+adjectives.
+We also know that drinkable is
+formed by converting the verb drink,
+into an adjective by
+adding the suffix able.
+So we can then represent the whole
+word drinkable as some sort of a tree,
+which has the verb drink first.
+The suffix able, and then those two words
+combined form the new word drinkable.
+So there are many cases in English where
+we have suffixes that change the part of
+speech of a word.
+So er, is one such example.
+So, for example, to sleep is a verb.
+And sleeper, which has multiple
+meanings is a noun derived from sleep,
+by adding the suffix er.
+So we can in many cases, infer
+the meaning of some of the morphemes.
+For example, the morpheme able,
+means capable of doing the verb.
+The suffix, er, may be a person
+who does a certain activity.
+So let's try this with
+a few of those morphemes.
+So ness, for example,
+is used to form nouns.
+For example, we can have sleepy,
+which is an adjective.
+Sleepiness is a noun that
+is derived from sleepy.
+So the affixe ness,
+turns an adjective into a noun.
+Able, we already saw it can turn a verb
+into an adjective, and then we can also
+similarly consider the meaning of some
+other prefixes and suffixes, such as ing.
+Re, for example, is usually used
+at the beginning of a word, and
+it means to repeat something.
+Un, means negation.
+For example do and undo.
+And finally, er for adjectives means
+the comparative form of the adjective.
+So in the example that I showed you,
+we can draw a diagram that tells us that
+the JJ is transformed into a sequence
+of a verb followed by the suffix able.
+And it turns out that morphemic
+rules can be used recursively.
+So, a long word like unconcernednesses,
+is really formed from concerned,
+by adding first the suffix,
+ed, then another suffix, ness,
+and then negating it, and finally,
+adding an extra es at the end for plural.
+So, in some cases, it's very easy
+to look at a complicated word, and
+figure out how it was derived.
+But in other cases,
+we may have ambiguities.
+For example, the word undoable,
+as you will see on the next slide,
+can have two different
+morphological interpretations,
+whereas a word like
+unbelievable may only have one.
+Can you think why this is the case?
+So let's look at the examples
+on the previous slides.
+Undoable, this can be formed
+as unable to be done.
+So something that is undoable, or
+it is something that is able to be undone.
+In this case,
+it would be analyzed as undo-able.
+Now this doesn't apply to unbelievable,
+because one of the interpretation's
+is the same as for undoable.
+It's something that is
+unable to be believed.
+But the second interpretation, able to
+be unbelieved, sounds very unnatural.
+So in this case,
+we don't have any ambiguity.
+Let's look now at some
+morphological examples.
+In different languages we can have
+rules that aren't as simple as
+the ones we have in English.
+Just adding an S for plural, for example.
+So, in the language Pangasinan,
+we can have a duplication
+of some of the morphing.
+So amigo is friend.
+Amimigo is the plural for friends.
+So, in this case we have a reduplication
+of a morphing in the middle of the word.
+Similarly, in Samoan,
+the word savali means, he travels.
+Savavali is the plural for they travel.
+We can have circumfixes.
+For example, in German the word
+spielen is the infinitive
+of the verb to play, and
+gespielt is the past form form it.
+So in this case we have a circumfix,
+because part of the morphing goes
+to the beginning of the word.
+The ge part, in part, goes in the end.
+In this case, the t form.
+We can even look at some
+artificial phenomena.
+For example, a language that kids
+are familiar with is Pig Latin.
+In Pig Latin, you take the first syllable
+of the word and you move it to the end.
+So from happy,
+you get something like appyhay.
+And there are some other fun languages
+like this in other countries.
+For example,
+Verlan which is a French slang language.
+The word Verlan comes from l'envers,
+which in French means in reverse.
+So if you reverse the syllables
+of l'envers you get Verlan.
+And it includes words like cefran
+which is the Verlan form for
+Francais by switching the two syllables.
+As well as ripou, which is the switched
+version of pourri, which means a crook..
+Now let me give an example in English,
+you may have heard this expression.
+Where are you going?
+I'm going to Massa-freakin'-chusetts.
+You can insert the phrase like this
+in the middle of some word, but
+you can not just insert it randomly.
+For example, if you have Massachusetts,
+you wouldn't be able to say
+Ma-freakin'-sachusetts or
+Massachu-freakin'-setts.
+So clearly, freakin' can not be
+inserted in any random place.
+Where would you insert it, for
+example, in the word education?
+Could you say educa-freakin'-tion?
+That doesn't sound natural, okay.
+But you can probably say,
+edu-freakin'-cation.
+So the rule is actually that the freakin'
+infix is inserted to the left of
+the syllable that bears the main stress.
+So, as I said earlier,
+you can say edu-freakin'-cation.
+But you cannot say educa-freakin'-tion,
+or e-freakin'-ducation.
+And there are some exceptions, but
+this rule applies in most cases.
+So as I mentioned before,
+the morphemes of a word are individual
+units of morphological meaning.
+They include the stems and
+the affixes of the words.
+So affixes are prefixes,
+suffixes, and endings.
+There's some languages that
+have concatenative morphology.
+Like English, for example, where
+the affixes are added to the beginning or
+to the end of the word.
+But there are also cases of
+templatic morphology, as well.
+So for example, in Semitic languages.
+Here's an example from Hebrew, and
+the template for learn is lmd.
+It's just a sequence of three consonants.
+But if we want to conjugate it or inflect
+it, we can get different forms of learn.
+For example, lamad,
+which is he studied, limed,
+which is he taught, and lumad,
+which means that he was taught.
+So by inserting different sets
+of vowels in different places,
+we can modify the tense in
+the template and form different words.
+Now let's look at inflectional morphology,
+which is one the main areas of morphology.
+Words can have a different inflection
+based on tense, such as present,
+past and future.
+Number, first and second and
+third, for example.
+I, you, or he or she person.
+In English, that's singular and plural,
+but other languages have other persons.
+For example duo,
+which is used for two people.
+Moods, things like indicative,
+subjunctive, conditional.
+Aspect, for example,
+progressive, and perfective.
+English words have at
+most five verb forms.
+For example, the word to be has am,
+are, was, were, and been.
+There are, however,
+40 different forms in French.
+There are six cases in Russian.
+You can look at the website
+listed here for some examples.
+And there could be as many as 40,000
+forms of the same word in Turkish.
+For example, there can be a special
+form that means you can cause X
+to cause Y to dot, dot, dot, to do Z.
+So it can have a recursive set of
+rules that create really long words.
+Morphological analysis is an area of
+natural language processing that takes
+a word and converts it into
+a morphological representation.
+This is related to stemming, but
+it does more than just stem the work.
+It also gives it a part of speech, and
+any morphological information
+associated with the word.
+So for example, the word sleeps is
+translated as the infinitive sleep.
+Then a label for verb, a label for
+third person, and a label for singular.
+The word done is translated as
+the infinitive for the verb do.
+Followed by a label for
+the verb, V, and PP, for
+which in this case,
+stands for past participle.
+Now, let me show you some
+interesting phenomena
+that are related to morphology
+in different languages.
+So, the first part is an example
+of Turkish vowel harmony.
+As I mentioned before, our vowels
+can be grouped into front and back,
+and high and low.
+In English, this is a very common
+distinction between our vowels.
+In Turkish,
+there's an additional distinction
+between rounded and unrounded vowels.
+So every time you have a vowel that
+is formed by putting your mouth in
+an unrounded position,
+you can round your lips like this.
+And change the sound to a different vowel.
+For example, ee, oo.
+So in Turkish,
+there are eight vowels in total.
+Which form all the possible combinations
+of front and back, high and low,
+and rounded and unrounded vowels.
+So the back vowels are formed
+in the back of the mouth.
+And the front vowels are formed
+in the front of the mouth.
+So in vowel harmony we have a principle
+that says that within the same word,
+you can only have back vowels or
+only have front vowels.
+There are other languages that have this
+property in addition to Turkish, for
+example, Hungarian.
+So, let's look at an example.
+So the suffix da or de in Turkish is used
+to indicate location, in, on, or at.
+But we use da if the rest of
+the vowels in the word are back vowels.
+And we use de if the rest of the vowels
+in the word are front vowels.
+So, let's look at the examples here.
+In the room, is odada.
+Because the word oda, which means room,
+has only back vowels.
+And therefore we add da at the end,
+which is another back vowel.
+Kapi is door, kapida is at the door.
+And now I have the examples
+with front vowels.
+Ev is home, at home is evde.
+Gol is lake, golde is at the lake.
+And finally, kopru is bridge,
+and koprude is on the bridge.
+In fact, I want to point
+you to a NACLO Problem that
+talks about Turkish vowel harmony and
+some other interesting phenomena.
+You can access it from this website.
+And then when you're done solving it,
+you can look at the solution
+which is available here.
+So let's look at another
+example from Turkish.
+Which shows you how complicated
+morphology can be in different languages.
+So this is a slide courtesy
+of Kemal Oflazer from Qatar.
+He shows how one can take an English
+sentence, an entire sentence, and convert
+it to a single English word by following
+the morphological rules of Turkish.
+So here's the word in Turkish,
+it's the one listed at the bottom.
+And it means, if we will be able to make
+something, dot, dot, dot becomes strong.
+So in the first step,
+we start with that sentence.
+And then we label, in different colors,
+the different modifications to strong.
+For example, the future tense will,
+the possibility, be able,
+and the property of becoming something.
+So then we re-order those labels.
+To get them in the order
+they have to be in Turkish.
+So strong is the stem.
+And then all of the other pieces
+form morphological inflections.
+So become is the first that adds las,
+and then to make something is tir,
+be able is abil,
+will is ecek, if is se, and
+finally we goes to the very end and
+that is the final affix ku.
+Which gives us this long
+word at the bottom.
+And here's that example from Japanese,
+which shows you how Japanese
+have imported a lot of words from English,
+and they use katakana,
+which is one of the main alphabets
+in Japanese, to represent different
+sounds and different morphological
+combinations that come from English.
+So for example,
+right in the middle of the slide we
+have [FOREIGN] which stands for coffee.
+So you see that the f sound was changed
+to [SOUND] and we have those macrons or
+bars on top of the two vowels to indicate
+that both syllables are long syllables.
+And let's look at one more example.
+We have, for example, resutoran,
+which stands for restaurant.
+And the reason why the second syllable
+has a vowel in it, resutoran,
+is because in Japanese grammar,
+the only kinds of syllables
+that are allowed are the ones that end
+in a vowel with only one exception.
+The syllables that end in vowel
+followed by the letter n.
+So that's why we have to insert
+this u in the middle of restaurant.
+So now we're going to move on to some
+other levels of linguistic analysis.
+We looked at morphology,
+let's see what comes next.
+So one of the other levels is semantics.
+The semantics is the study of
+the meaning of words and sentences.
+And it can be split into lexical
+semantics and compositional semantics.
+So lexical semantics has to do with
+the meaning of individual words.
+And the relationships between
+the meanings of pairs of words, so
+that includes the specific lexical
+relationships such as synonyms but
+also hypernyms and hyponyms, which
+are special terms for more general and
+more specific concepts,
+antonyms and so on.
+We are going to look at
+those in more detail.
+In one of the future lectures.
+So lexical semantics also deals
+with the senses of words.
+For example, some words that have multiple
+senses are known as polysemous words.
+It also talks about colocation.
+So colocation is a sequence of words that
+appear together more frequently than what
+you would expect if you just combine
+the probabilities of the individual words.
+So for example, stock market appears
+more frequently than stock and
+market, multiplied by each other.
+We also have idioms.
+Those are specific collocations
+that have a meaning that is
+not literally inferable
+from the components.
+So, for example, to kick the bucket, is an
+expression in English that means to die.
+Obviously it doesn't mean to
+kick any particular bucket.
+In addition to lexical semantics, we have
+compositional semantics, which deals with
+understanding the meaning of a sentence
+based on the meaning of its components.
+We will talk about lexical semantics and
+compositional semantics later.
+The next level of studying
+linguistics is called pragmatics, and
+that is the study of how
+knowledge about the world and
+language conventions interact
+with literal meaning.
+It covers things like speech acts,
+resolution of anaphoric relations, for
+example pronouns, and it covers the
+modelling of speech acts in dialogue, so
+later this semester we're going to
+look at pragmatics in more detail.
+And there are many other areas of
+linguistics which are not directly
+related to natural language processing, so
+we'll just list them here very briefly.
+Social linguistics, which is
+interaction of social organization and
+language, historical linguistics,
+which studies the change of languages
+over time, linguistic typology,
+that looks at how languages are related
+to each other and have common properties.
+Language acquisition of first and
+second language.
+And finally, psycholinguistics,
+which is the study of how people produce
+and perceive language in real time.
+

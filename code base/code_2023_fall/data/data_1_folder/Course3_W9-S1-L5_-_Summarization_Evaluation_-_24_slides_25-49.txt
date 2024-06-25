@@ -1,0 +1,710 @@
+Okay, now we're moving on
+to summary evaluation.
+So, summarization is a very interesting
+part of the natural language processing,
+but a sub a of summarization that is
+just as interesting as evaluation.
+So how do we evaluate good summaries?
+Well there are many different criteria.
+Some of them are, is it the right length?
+We don't want something that's
+way too short or too long.
+Is it faithful to the original documents,
+balance and all?
+Does it capture the most
+salient information?
+Is it grammatical?
+Is it non-redundant?
+Is it well-formed referentially?
+That means that is has
+the right connectives and
+doesn't make any false implicatures.
+Is it structured properly?
+Is it coherent?
+All of those are important
+evaluation criteria, and
+there has been work on all those
+in the research community.
+Some of those are not
+specific to summarization.
+For example, grammaticality and coherence
+and so on also apply to text generation in
+general, also to machine translation,
+and even to question answering.
+Whereas length, salience, and some others
+are specific to text summarization.
+So let's step a little bit back here,
+and think,
+what would be an ideal evaluation for
+summary?
+What does a summary really achieve?
+Well, it has to do with the idea of
+a compression ratio and a retention ratio.
+So the compression ratio is essentially,
+what percentage of the original
+document is preserved in the summary?
+And the retention ratio is,
+what percentage of the information in
+the document is preserved in the summary?
+So what we want is to
+compress as much as possible,
+while retaining as much
+information as possible.
+So ideally, what you want is
+the retention ratio to be larger, and
+possibly much larger,
+than the compression ratio.
+So if we can have a 10% summary, which
+preserves 80%-90% of the original content,
+that would be a really good summarizer.
+So what are the different
+evaluation methods used?
+Well there are several categories.
+The first one is extrinsic technique,
+so task-based techniques.
+For example, you give one set
+of users the full documents, and
+you ask them to classify them
+using different categories.
+And then you give another set of users
+summaries of those documents, and
+you give them the same task.
+If the users who have access to
+the shorter documents are able to do
+the classification task
+just as well as those who
+have access to the full documents and
+perhaps take even less time, that means
+that the summary has done a good job.
+And the task could be something different.
+Could be a question answering,
+or routing, and so on.
+There is another category
+of techniques for
+evaluation of summaries
+called intrinsic techniques.
+In that case, you take the output of
+the summarizer and you compare it with
+possibly a golden standard summary or
+with another summary.
+So the most important technique for
+intrinsic evaluation is based
+on precision and recall.
+You probably going to see this
+description multiple times in this class.
+Precision and recall are very
+important for word disambiguation,
+for parsing, for some organization,
+for many other tasks.
+So let me give you a little
+bit of background.
+Here we have a two by two
+table that has two rows.
+The first row corresponds to the cases
+where the system thinks that
+a certain document is
+relevant to the query.
+The second row matches the documents
+that the system thinks are not
+relevant to the query.
+The first column talks about
+the documents that are relevant, and
+the second one is the one
+that are not relevant.
+So the example that I just gave you
+has to do with document retrieval.
+Now how does it relate to summarization?
+Well in that case,
+we have a gold summary, for
+example, two sentences
+speak by human judges.
+And we have a two sentence
+automatic summary that consists of
+possibly some other sentences.
+In this case,
+relevant corresponds to the sentences
+that are in the gold standard summary.
+Non-relevant means the sentences
+that are not there.
+System relevant means that the sentence
+is produced as part of the output
+of the summarizer.
+And system non-relevant corresponds to
+the sentences that are not produced by
+the summarizer.
+So A and D are the numbers
+that give us good performance.
+So the more cases we have where A and
+D are high and B and C are low,
+the better our system is going to be.
+Okay, so the metrics that we're going
+to use here are precision and recall.
+So precision, or P, is A divided by A+B.
+A+B is all of the sentences that would
+produce this part of the summary.
+And we want to see of those how
+many were in the goal standard.
+Recall is A divided by A+C.
+So this is out of the sentences
+that were in the goal standard,
+how many did we pick?
+And we can also define F or F1, which is
+the harmonic mean of precision and recall.
+And the purpose of using F is so
+that we have a single metric, and
+we don't try to optimize either P or
+R at the expense of the other one.
+So another technique used in
+summary evaluation is rouge.
+Rouge was introduced by Chin-Yew Lin and
+Ed Hovy in 2003.
+It's an automatic method.
+It's very easy to prototype.
+Even though it has a number of flaws,
+it has been widely adopted by
+the summarization community because it is
+very convenient and easy to prototype.
+It's based on Papineni's
+2002 paper on BLEU,
+which is another metric based on
+content used for machine translation.
+Let me explain the difference
+between the two.
+In BLEU you're trying to get,
+you will get a high score if your output
+has a high precision
+in terms of one grams,
+bigrams, trigrams, and so
+on compared to the reference text.
+In Rouge you have high score if your
+recall of the original content,
+of the gold standard content is high.
+So the R in Rouge actually stands for
+recall.
+So ROUGE-n is a variant of Rouge
+that is used to measure n-gram
+overlap between an automatic summary and
+a set of reference summaries.
+So the idea is that you don't
+expect that there will be only one
+great gold standard summary.
+You allow for the possibility that
+different human judges are going to
+produce different summaries that are going
+to be different from one another.
+And then you want your system not to
+be exactly the same as any particular
+one of the human reference summaries,
+but rather that It should be similar
+to all of them at the same time.
+So ROUGE-L uses instead of n-gram overlap,
+uses the longest common
+subsequence of words between the automatic
+summary and the reference summaries.
+So Rouge is very useful because it has
+been shown to correlate with manual
+evaluations, at least when it's
+averaged over many different sentences.
+So why is this important?
+Well because manual evaluations are very
+expensive, whereas Rouge is automatic and
+can be computed very easily.
+The only thing that you need to do is
+to have gold standard summaries by
+multiple humans.
+Rouge has some quality that
+it can be easily gamed,
+but this is something that is
+not that much of a concern.
+Another metric related to Rouge and
+precision and recall is relative utility.
+So relative utility takes, again,
+into account the fact that there may
+be multiple correct summaries, or
+multiple goal summaries for
+the same set of documents.
+So let me give an example here.
+Suppose that we have one reference summary
+of two sentences picked out of ten.
+That's the ideal column
+in this example here.
+So S1 and S2 and the gold standard.
+Now suppose that we have two
+systems: system one and system two.
+System one picks the same two sentences,
+one and two.
+System two picks sentences two and four.
+If we use precision and recall, system
+one is going to get 100% precision and
+100% recall because it picks
+exactly the same sentences.
+Whereas system two is going to get only
+50% precision, 50% recall because it picks
+one of the two sentences and one of the
+two sentences that it picks is correct.
+So in a sense, we'll say that system
+two way worse than system one.
+While this may or may not be the case,
+suppose that just hypothetically
+that they do a summary really should
+have consisted of sentence one and
+sentences two and four are about
+the same level of importance.
+Because the ideal summarizer was
+supposed to pick only two sentences,
+she picked one and two.
+But another evaluator, or perhaps
+the same evaluator, if asked again,
+who would have picked a different set.
+Maybe S1 and S4 or S2 and S4.
+So it turns out that this somehow
+be training us in picking two
+sentences out of ten.
+So if this was the case, then we don't
+want to penalize system two that much.
+We just was not lucky, didn't pick exactly
+the same sentences as the ideal summary,
+but it came pretty close.
+So let's look at a more specific Example.
+If we ask the judges to give us,
+not just the plus or minus,
+yes or no decision about each sentence,
+but rather to give us a utility score for
+each sentence,
+how important it is for the summary.
+Let's see how this changes the picture.
+So, now on the right hand side,
+in the left column,
+we have the ideal summary that consists
+of the same two sentences as S1 and S2.
+But the judge has explicitly said that
+their utility of sentence one is ten,
+utility of sentence two is eight.
+And they have also given utility
+scores for sentences three and four.
+Now you can see that S1 and S2 are still
+the best sentences, but if one had picked
+sentence four instead of sentence two or
+maybe instead of sentence one, total
+utilities selected by those two sentences
+would not be as bad as you may think.
+So if you pick sentences one and four,
+you will get a utility of 17 points,
+compared to a utility of 18 points if you
+had picked sentence one and sentence two.
+So you're essentially getting 17
+out of 18, that's pretty good.
+So you shouldn't be penalized if you pick
+sentence four instead of sentence two.
+The only penalty that you should
+get in this case is one point,
+which gets you from eight down to seven.
+So that's the basic idea
+of relative utility.
+So the utility is actually
+the percentage of the ideal
+utility that the system summary picks.
+Now, this utility came up before it
+expanded into a concept of relative
+utility, which takes in to account
+also the difficulty of the task.
+So as in many of the problems,
+we have some sort of a lower bound
+which is their random performance.
+If a system were to pick two
+random sentences out of the ten,
+what score would it get?
+Then we also have an upper bound that
+corresponds to what human judges
+will get on each other's gold standards if
+they had to pick two sentences out of ten.
+Okay so now let's see how we
+can compute relative utility.
+Suppose that we have three judges,
+judge one, two and three, and
+four sentences, and we want each judge
+to pick two sentences for the summary.
+The numbers in the table
+represent the utilities that each
+judge gives to the different sentences, so
+Judge1 gives utilities of ten, eight, two,
+and five respectively.
+So if he were to pick two sentences,
+he would pick sentences one and two.
+Judge3 has scores of five,
+eight, four, and nine.
+So if she were to pick two sentences, she
+would pick sentence two and sentence four.
+So now we can do an experiment.
+If we pick Judge1 as the gold standard,
+we can measure the performance
+of Judge3 against him.
+Or we can pick Judge3 as the reference,
+and
+judge the performance
+of Judge1 against her.
+So let's look at the latter example.
+So, how do we compute
+the relative utility?
+Here's how.
+The best utility that you can get,
+comparing to Judge3 is 17 points, and
+that is if you pick sentences two and
+four.
+Now, if you were Judge 1,
+you would pick sentences one and two.
+However, those two sentences according
+to Judge3's utility judgements
+get a score of 13.
+So the relative utility that Judge1 gets
+against Judge3 is 13 out of 17, or 0.765.
+And since we have three judges,
+we can have six pairs of relativity
+scores computed in this way.
+And now,
+we can compute the performance of each
+judge against each of the other judges.
+There is either Judge1 and
+Judge2 who picked the exact same two
+sentences, therefore their scores are one.
+But Judge1 would get only
+0.765 against Judge3,
+and so would Judge2 against Judge3.
+And then if you average all of those
+values you would get that Judge1's
+average performance is 0.883.
+Same for Judge number two and Judge3 gets
+a slightly lower performance of 0.756.
+And if you average those
+numbers together you get the so
+called inter-judge agreement for
+utility selection.
+So that would give you the upward
+bound on any system's performance.
+You don't expect the system to
+perform better than the judges.
+Okay, so now we get to the punch
+line of relative utility.
+So we're going to compute
+the following formula.
+(S-R)/(J-R), what are those?
+R is random performance.
+I want to explain this on the next slide,
+but
+essentially it's a lower bound on
+the performance of the automatic system.
+S is the system performance, so
+this is the actual utility performance
+of the system on the current data set.
+And J is the average of all
+the judge scores above.
+D now is a normalized system performance,
+so let's see what are some
+of the special cases.
+If S = J, that means that the system is
+as good as the inter-judge agreement.
+S-R/J-R is equal to one.
+So that is the highest possible
+value that you expect to get.
+If S=R, on the other hand, That means that
+the numerator of the formula is zero,
+divided by something that's non-zero.
+We're going to get a normalized
+performance of zero.
+So any system is going to get
+the performance between zero and
+one in most cases.
+If it gets a bit lower than random,
+that's possible in theory.
+We're just going to assume
+that this was not lucky,
+that even worst performance was random.
+And if we get something
+higher than the judges,
+we can also ignore that because we cannot
+evaluate something that works better
+than the judges agree with each other.
+So how do we compute random performance?
+It's very straight forward.
+We just take all the possible
+systems that pick R out of n.
+So this is the average of all
+the systems shown on the top.
+So, for example, for
+a compression rate of 50%,
+that means two sentences out of four,
+we have six possible random outputs.
+The one that responds to sentences is
+(12), (13), (14), (23), (24) and (34).
+And with each of those we
+can compute a utility score.
+An average of all those
+to get the value of R.
+So here's an example.
+The sentence system that picks sentences
+one and four is going to be 0.833.
+That's the utility again.
+The three judges if you pick
+sentences one and four.
+The random performance is 0.732, and
+the inter-judge agreement is 0.841.
+And then according to
+the relativity formula,
+you get an average performance of 0.927.
+Another example if your system was to pick
+sentences 2 and 4 the same formula would
+give it the relativity score of 0.963,
+which is better than quantities 1 and 4.
+And here is a nice way to visualize it,
+for
+the system that picks sentences 1 and 4.
+Its performance is 0.833.
+That's the middle dot on this scale.
+The agreement is the upper dot.
+And the performance is the lower dot.
+So if scale up this range from 0.732
+to 0.841 It was careful 0 to 1.
+The three dots are going
+to appear as follows,
+R is going to be zero,
+J is going to be equal to one and
+S is going to be the relativity,
+normalized relativity of 0.927.
+So this system is actually pretty good.
+It's much more similar to the judges
+than to random performance.
+So let's look at one more issue
+introduced in the mead paper, and
+this is the idea of
+subsumption across doctrines.
+So we have here a news story that has 11
+sentences, and another story that has
+9 sentences on a very similar topic
+from the same day from different source.
+So one thing that we can notice here
+is that some of the sentences on
+the left-hand side somehow match with some
+of the sentences on the right-hand side.
+So here, sentence one of the left
+gives almost the same information
+as sentence one of the right.
+Sentences two, three, and four on the left
+combined give the same information
+the sentence umber two on the right.
+And sentences three and
+four on the right combined give
+the information that is in
+sentence nine on the left.
+So the idea behind this example is that,
+if two sentences contain
+roughly the same information according to
+the diversity of the ranking principle,
+we don't want to include
+both of them in the summary.
+So that's why when people compute the
+performance of information extraction and
+summarization systems,
+they take into account redundancy.
+So let's see how this is related
+to subsumption and equivalence.
+So subsumption is when
+the information content of a sentence
+a is contained within sentence b.
+So A then becomes redundant
+in the context of B.
+So the information content of A is
+subsumed by the information content of B,
+so we can skip sentence A in sentence
+B is included in the summary.
+On the other hand, if sentence B
+is not included in the summary,
+then the value of A is still there.
+And we can also define equivalence.
+If A is subsumed by B and B is subsumed
+by A, we can say that sentences A and
+B are equivalent and either one of them
+would be equally good for the summary.
+Okay, so an example, sentence one.
+John Doe was found guilty of the murder.
+In sentence 2, the court found
+John Doe guilty of the murder of Jane Doe
+last August and sentenced him to life.
+As you can see,
+the second sentence includes four or
+five different facts,
+whereas the first one only includes one.
+But that one fact is definitely included
+in the second sentence as well, so
+we can say that sentence
+2 subsumes sentence 1.
+So how is sentence subsumption
+used in evaluating summaries?
+Let's look at the previous example
+with the speaking 2 sentences, but
+now instead of judges in the columns we
+are going to have 3 different documents.
+So we just have, essentially,
+a set of 12 different sentences.
+And you want to determine which
+ones to pick as the summary.
+If we wanted to pick two sentences
+right now out of those 12,
+which ones would we pick?
+Well, it's pretty obvious that we would
+want to pick sentence 1 from Article 1 and
+sentence 1 from Article 2 for
+a total utility of 20 points out of 20.
+Now but imagine that sentence
+one in article one subsumes
+sentence one in article two.
+And similarly, sentence four in article
+two subsumes both sentences, therefore,
+in article three.
+Or in this case,
+which two sentences are we going to pick
+if we wanted to produce
+a two sentence summary?
+Well, we're probably still
+going to pick sentence one,
+article one with a score of 10.
+But now we don't want
+to pick sentence one,
+article two as the second sentence
+because it's irrelevant and it's useless.
+Instead what we are going to do is pick
+either sentence two, article two, or
+maybe sentence four, article three, which
+would give us nine points, instead of ten,
+but at least that's the best we can get
+in the presence of this redundancy.
+So, modifying the formula for mean,
+we have again the sum of all the different
+features for the sentence, position and
+frequency, but now we want to also
+discount the redundant sentences,
+the ones that are subsumed by the others.
+And so the formula used in mead is
+based on the Jacquard coefficient
+between the two sentences.
+So another metric for evaluating
+summaries is so-called pyramid method.
+The pyramid method was introduced by Ani
+Nenkova and Rebecca Passonneau in 2004.
+And it's used for
+multiple document summarization.
+It's based on the idea on
+Semantic Content Units.
+So, what are Semantic Content Units?
+Well, they have to deal with
+different statements or
+facts that are realized using
+different formulations.
+So they are really two different
+ways to say the exact same thing.
+So here's an example.
+We have four inputs, A1, B1, C1, D2,
+the lines four difference sentences.
+And the text that is
+underlined is repeated.
+So we have one content unit, SCU1,
+which appears in four of the sentences-
+the fact that two Libyans were officially
+accused of the Lockerbie bombing.
+This appears in all the four sentences.
+We have a second SCU, SCU number 2, which
+appears in three of the four sentences-
+the fact that the indictment of the two
+Lockerbie suspects happened in 1981.
+So the weight of SCU1 is 4, and
+the weight of SCU2 is equal to 3.
+So what that means that if we
+want to produce a summary,
+and that summary happens
+to mention the fact that
+two Libyans were officially accused of the
+Lockerbie bombing It will get four points.
+If instead, it just tells you
+that there were indited in 1991,
+you will get three points.
+So everything that you include, any
+unit is included the summary gets points
+in proportion to the number of reference
+documents in which it appears.
+So here's an example from the Nenkova and
+Passonneau paper.
+You have this kind of pyramid
+where the SCUs that appear
+in the most documents are shown
+on the top of the pyramids.
+Then you have the ones It appear below.
+And so the ones at the bottom of
+the pyramid are the ones that only
+appear in one of the reference documents.
+So what are the optimal summaries
+that include four SCUs?
+Well, clearly every optimal
+summary would include the two
+SCUs with a weight of four.
+And since you have room for two more SEUs,
+you would have to pick two of
+the ones that have a weight of three.
+And any two out of the four SEUs with
+a weight of three would be equally good.
+So you shouldn't be penalized
+if you pick a different set
+than the one that was used
+in the reference sum.
+So it's a variant in a sense
+of a relative utility.
+Which is much more knowledge-based
+where because the are based on actual
+understanding of the document.
+Whereas is based on the importance
+of entire sentences.
+Okay, so before we conclude this section,
+I want to mention some of the important
+corpora available for text summarization,
+which are used in many different
+papers for evaluation purposes.
+The first ones to mention
+are the ones used in DUC and TAC.
+So DUC and TAC are niche based
+evaluations similar to trek.
+And if you remember trek was
+a text retrieval conference.
+Whereas DUC is the document
+understanding conference, and
+it has been superseded by TAC
+the text analysis conference.
+Both of which have been very
+popular in the last ten years.
+So the corpora that we use
+now include both single and
+multidocument summarization corpora.
+And they are available in the DUC and
+TAC respective websites.
+Another corpus is SumBank,
+which includes English and
+Chinese language documents and
+summaries, both manual and automatic.
+And the valuations based on relativity.
+Precision and recall and
+many other metrics.
+This one is available
+from summarization.com.
+There's also the SUMMAC corpus and the New
+York Times corpus which is a collection of
+news documents and non extractive
+summaries of those documents.
+That corpus is available from
+the Linguistic Data Consortium at
+the University of Pennsylvania.
+There are many other corpora available for
+text summarization evaluation but I would
+like to focus just on these because I
+think they are the most influential ones.
+So this concludes the section
+on evaluation of summarization.
+The next segment is going to
+be on sentence compression.
+

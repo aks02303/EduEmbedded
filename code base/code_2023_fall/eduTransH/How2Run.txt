@@ -1,0 +1,2 @@
+1. Go Inside the directory eduTransH and run the following command to train eduTransH:
+    C:\eduTransH>python -m latent_features.driver3

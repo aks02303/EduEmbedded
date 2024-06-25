@@ -1,0 +1,237 @@
+Okay, so now we are going to talk
+about the administration of this class.
+I want to tell you what you should 
+expect to see in this class and
+how we're going to interact.
+So
+the course has four major parts.
+The first part covers the basic
+linguistic mathematical and
+computation background for the material.
+[NOISE] The second part covers
+computational models of a morphology
+syntax, semantics,
+discourse and pragmatics,
+which are the main
+components of linguistics.
+The third part will include
+some core natural language processing
+technology, for example, for things
+like parsing, part of speech tagging,
+text generation and others.
+[NOISE] And finally, we're going to
+cover some applications such as text
+classification, machine translation,
+information extraction, and some other.
+[NOISE] There are three major goals in
+this class, one is to learn the basic
+principles and the theoretical issues
+underlying natural language processing.
+Two, is to learn the techniques and the
+tools that are used to develop practical
+robust systems that can understand text
+and communicate with users in one or
+more languages.
+And finally,
+to gain insight into some open
+research problems in natural language.
+[NOISE] There are three books available
+that cover this kind of material in
+different levels of detail.
+The first one is Speech and
+Language Processing by Daniel Jurafsky and
+James Martin.
+[NOISE] The second one is Foundations of
+Statistical Natural Language Processing by
+Chris Manning and Hinrich Schutze.
+And the third one is Natural Language
+Understanding by James Allen.
+[NOISE] There are, courses at other
+places that cover similar material.
+I would list a few here that
+I have liked personally.
+And one of the criteria for including them
+here is that they have slides available
+and other reading materials online.
+So you can always,
+go back to those websites and
+learn more about this material from them.
+I would personally
+recommend the courses at
+Johns Hopkins University
+taught by Jason Eisner.
+Cornell University, taught by Lillian Lee,
+Stanford University by Chris Manning,
+University of Maryland by Hal Daume,
+University of California,
+Berkley by Dan Klein, and
+University of Texas, Austin by Ray Mooney.
+And there are also two courses
+on Coursera in the past.
+One was by Manning and Jurafsky in 2012,
+and one was by Michael Collins in 2013.
+The first one was a survey, and
+the second one was more advanced.
+[NOISE] Now the main association for
+research in this field is called
+The Association for
+Computational Linguistics, or ACL.
+[NOISE] Now there's a difference
+between Computational Linguistics and
+Natural Language Processing, but
+it's usually considered
+a relatively minor difference.
+[NOISE] So I want to explain what some
+of the acronyms that we'll see in this
+course mean.
+The first one is
+Natural Language Processing.
+[NOISE] As I said before,
+this is the study of the computational
+treatment of human language.
+Computational Linguistics comes from
+a slightly different perspective.
+It comes from linguistics, and
+it has traditionally included more [NOISE]
+Mathematical and formal approaches and
+less applied and practical aspects.
+But in the recent years, [NOISE]
+those two fields have become more or
+less interchangeable.
+[NOISE] There are other
+acronyms that we'll hear often.
+Information retrieval is the study
+of finding information in documents,
+whether they're in text or
+spoken form or videos.
+[NOISE] Speech processing deals
+with the understanding and
+generation of spoken signals.
+[NOISE] Human language
+technologies is used for
+the applied component of
+natural language processing.
+[NOISE] Natural language engineering is
+mostly synonymous with human language
+technology.
+[NOISE] And finally one acronym that
+you will see often in this class and
+other related classes is ML,
+which stands for Machine Learning,
+which is the computation,
+statistical study of learning.
+[NOISE] There is a lot of research
+in Natural Language Processing.
+I would like to point to the major
+conferences in this field.
+ACL is the annual conference of the
+Association for Computational Linguistics.
+It alternates with the North American,
+European and
+Asian conferences in
+Computational Linguistics.
+There is also the conference
+called EMNLP which stands for
+Empirical Methods in
+Natural Language Processing.
+It is also one of the top
+tier conferences.
+It focuses more on statistical and
+empirical techniques.
+[NOISE] SIGIR is the ACM Conference
+on Information Retrieval.
+AAAI and IJCAI are the main International
+Conferences in Artificial Intelligence.
+[NOISE] Calling is a bi-annual conference
+in Natural Language Processing.
+HLT is a Human Language Technologist
+conference.
+[NOISE] AMTA, or summit are conferences
+in machine translation,
+and finally ICSLP and Euro Speech
+are the conferences on Speech Processing.
+There are many journals in NLP.
+The most important ones are listed here.
+You should probably, start by looking at
+the Computational Linguistics Journal and
+TACL, Transactions of the ACL,
+both of which are published by the
+Association of Computational Linguistics.
+But I would also recommend the Journal
+of Natural Language Engineering,
+Information Retrieval,
+Information Processing and Management,
+as well as multiple ACM Transactions,
+specifically the ACM Transactions on
+Information Systems, the ACM Transactions
+on Asian Language Information Processing.
+And the ACM Transactions Spoken
+language processing.
+There are many University centers
+that deal with research in NLP.
+I'm going to list just a few based on,
+recent papers in ACL.
+And not in any particular order but
+if you're interested in finding
+out what the state of the art in NLP's
+those are the basis where you should go.
+I would like to list Berkeley,
+Columbia, Stanford, Carnegie Mellon,
+Johns Hopkins, Brown, the University
+of Massachusetts Amherst, MIT,
+the University of Pennsylvania.
+[NOISE] USC, which is the University
+of Southern California, specifically,
+their Information Science Institutes,
+Universities of Illinois,
+Michigan, Washington,
+Maryland, and many others.
+Outside of the United States some of the
+most commonly seen names on papers are,
+the University of Toronto in Canada,
+Edinburgh in Scotland,
+Cambridge and Sheffield in England,
+Saarland in Germany.
+Cento in Italy,
+Prague in the Czech Republic, the Qatar,
+Qatar Computing Research Institute
+in Qatar,
+the National University of Singapore,
+and many others.
+[NOISE] There are many universities, but
+there are also quite a few industrial
+research sites, I will mention a few that
+have the largest number of papers around.
+[NOISE] Those are Google,
+Microsoft Research,
+Yahoo, IBM, SRI, BBM, Mitre and AT&T Labs.
+[NOISE] The best place where you can go,
+to find papers, and
+NLP is the ACL Anthology.
+It is available through the ACL website.
+It was created more than ten
+years ago by Steven Bird, and
+nowadays it's managed by [INAUDIBLE] from
+the National University of Singapore.
+It has more than 40,000 research papers
+in all of the subfields of computational
+linguistics and NLP.
+And finally, there's an experimental
+website called the ACL Anthology Network,
+developed by the University of Michigan.
+Which includes the data from the ACL
+Anthology, as far as citations, and
+citing sentences are concerned.
+You can find, for example,
+which papers have been cited the most, and
+what text has been used to cite them.
+[NOISE] So if you want to find out,
+what was published the year in
+Computational Linguistics those
+are the two places you want to go.
+So in the next segment,
+I'm going to talk about
+some of the specific challenges that
+make natural language processing hard.
+[NOISE]
+

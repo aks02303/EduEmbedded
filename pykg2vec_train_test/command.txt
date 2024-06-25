@@ -1,0 +1,3 @@
+C:\Users\mohan\Documents\Project_data\Navigated Learning Project\nlp>python train.py -mn TransH -ds nlp -dsp ./
+
+C:\Users\mohan\Documents\Project_data\Navigated Learning Project\nlp>python inference.py -mn TransH -ld embeddings/TransH -ds nlp -dsp ./

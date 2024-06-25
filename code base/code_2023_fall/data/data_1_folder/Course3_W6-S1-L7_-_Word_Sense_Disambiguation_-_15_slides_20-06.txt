@@ -1,0 +1,581 @@
+Okay, welcome back to NLP.
+We're going to switch now
+to a very different topic.
+That of word sense disambiguation.
+So what says this ambiguation?
+As you can imagine form the name, is
+about automatically recognizing which of
+multiple meanings of ambiguous words
+is being used in a specific sentence.
+So words have different properties.
+We have seen this before.
+One of them is polysemy.
+Polysemy just means many
+words have multiple senses.
+For this an example,
+let's have a drink in the bar.
+The word bar in this sentence,
+means a drinking establishment.
+However in general,
+the word bar has many other meanings.
+For example, chocolate bar is
+another meaning of the word bar.
+I have to study for the bar.
+Another meaning of bar, in this case
+it means some exam for lawyers.
+And bring me a chocolate bar and so on.
+Another property of word is homonymy.
+So for example if I say, may I come in?
+And let's meet again in May.
+The word may appears in both sentences.
+It's pronounced the exact same way and
+it means something completely different.
+Different books make different
+distinctions between polysemy and
+homonymy.
+So for the purposes of this class,
+we're going to focus on examples
+that are not homonymy by accident.
+So for example, the word may here
+is a verb, an auxiliary verb and
+the word May in the second
+sentence is a month.
+So clearly those words are very different,
+they're different parts of speech and
+so on.
+So we're not going to be
+worrying about them so much.
+We are mostly going to worry about
+words most typically nouns that
+have multiple meanings.
+So we're not going to worry about
+words like round, being a verb or
+an adjective or a noun.
+This is not part of what we'll do.
+So what are all the different
+senses of bar according to WordNet?
+Well, there's the first one here.
+Bar or also barroom or
+saloon, is a room or
+establishment where alcoholic
+drinks are served over a counter.
+The other sense is, a counter where
+you can obtain food or drink, so
+this is the actual physical piece of
+furniture on top of which you get a drink.
+Then bar is a rigid piece of metal or
+wood used for
+fastening or obstruction or weapon.
+They're like a bars in the jail.
+Next thing is a bar in music and
+many, many other senses.
+I won't spend a lot of ten minutes
+going through all of them in detail, so
+let me just show you the list.
+Here as you can see,
+there's more than a dozen of those.
+So let's go back to word senses
+disambiguation, so as I said before it's
+main goal is to take a word like bar that
+has multiple senses that are numbered.
+Let's say 1 through 15 and
+then in a given sentence,
+to tell us which of those
+15 meanings is being used.
+So we see we could have
+to do this in context.
+That's why we typically get
+access to the entire sentence and
+often to the entire paragraph or
+document in which the word appears.
+So word sense disambiguation are very
+important component of natural
+language processing systems.
+Because it's used for example, to come up
+with better semantic representations of
+sentences and also for question answering
+and for things like machine translation.
+Obviously, if a word is
+ambiguous in one language,
+that doesn't mean that it is necessarily
+ambiguous in another language.
+So for example, if you want to translate
+a sentence with the word play in English
+into Spanish, we need to understand
+what is the object being played.
+So for example, in English we say,
+play the violin.
+In Spanish, this is translated
+with the verb, tocar el violin.
+And then in the sentence, play tennis,
+we're going to use a different word,
+jugar al tenis.
+So tocar and jugar are two
+different translations of play.
+And if we couldn't do proper word
+sense disambiguation in English,
+we wouldn't be able to translate those
+sentences into Spanish correctly.
+And then we have the uses of
+word sense disambiguation.
+For example, for accent restoration, so
+the word cote in French means different
+things and it's pronounced differently
+depending on where the accents appear.
+So it could be something
+like cote which is a coast,
+or cote which is side, and so on.
+And other uses, text to speech generation.
+So in this case,
+we may have a word that has multiple
+pronunciations depending on the meaning.
+So for example, lead or lead in English.
+And then spelling correction.
+We want to be able to distinguish between
+words like aid and aide with an e.
+And finally, capitalization restoration.
+So we have a word like Turkey, if we know
+its meaning as a bird or as a country,
+we can properly capitalize it in some text
+that is not capitalized to start with.
+So let me now go over some of
+the common techniques used in
+a word sense disambiguation,
+starting with a very old method by Michael
+Lesk, the so-called Dictionary Method.
+That the idea behind
+the Dictionary Method is that,
+if you have ambiguous words in
+a sentence that appear together,
+you're going to find all the possible
+meanings of each of those words.
+And then look up the dictionary
+definitions of all the senses of
+those words.
+And then look for
+pairs of dictionary definitions, one for
+each of the ambiguous words
+that overlap the most.
+So here's how it works.
+We're going to match the sentence
+to a dictionary definition,
+let's look at the sentence
+that has two ambiguous words.
+The first one of those is plant,
+which according to the Merriam-Webster
+Dictionary has many senses.
+The first one of them is a living
+thing that grows in the ground,
+usually has leaves or flowers and
+needs sun and water to survive.
+And then we have a second interpretation
+of plant which we're going to call plant2,
+which is defined as a building or
+factory where something is made.
+So that example is the word leaf.
+So the two definitions that we're
+going to consider are leaf1,
+which is a lateral outgrowth from a plant
+stem that is typically a flattened
+expanded variably shaped greenish organ.
+Constitutes a unit of the foliage and
+functions primarily in food
+manufacture by photosynthesis.
+And then leaf2 is a part of a book or
+folded sheet containing
+a page on each side.
+So now, supposed that we
+have a sentence like this,
+the leaf is the food making
+factory of green plants.
+So we have the word leaf and
+the word plants and
+we want to determine which of the senses
+of those are used in this sentence.
+So we have four possible combinations,
+leaf1, plant1, leaf1, plant2 and so on.
+So which one of those
+are we going to pick.
+Well, we're going to look for the overlap
+in the dictionary definitions and
+pick the one that has the largest one.
+Okay, so now the method that was
+introduced in the early 90s by
+David Yarowsky who was at UPenn at
+that time is the Decision List Method.
+So here's how it works.
+It is based on the principle,
+one sense per collocation.
+So in the previous lecture we
+talked about collocations.
+So if I say living plant,
+the word plant is ambiguous,
+but the fact that it appears near
+the word living as part of a collocation
+means that we have the first
+sense of the word plant.
+In this study, if we have something
+like manufacturing plant,
+then clearly we have
+the second sense of plant.
+So the question is, can we come up with
+a list of such collocations that can
+give us hints to the disambiguation
+of the ambiguous words.
+The Yarowsky method is based on
+the idea that we are going to look at
+only two senses per word.
+And we're going to try to come up
+with an ordered list of rules.
+Collocation gives sense.
+So if we have a collocation for
+that ambiguous word,
+we can automatically determine
+which sense we have.
+And the formula that is used for
+ordering those rules in
+the decision list is the following.
+We have log of the probability
+of sense A given collocation
+I divided by the probability of
+sense B given collocation I.
+So since this the decision list method.
+We have to sort those words by this
+formula, and then whenever we have
+a new instance of an ambiguous noun,
+we're going to go through the list and
+pick the first item,
+starting from the top, that matches.
+And then label the word accordingly,
+and then stop.
+So here's an example with decision
+lists from the Arovsky paper from 1994.
+It looks not only at that consist
+of two word in a specific order.
+He also looks at words within
+a certain window of many words.
+So, for example,
+if we have to disintegrate a word B-A-S-S,
+which, by the way, can also have multiple
+pronunciations, for example bass or bass.
+We're going to look at
+the following rules.
+If the word fish appears
+within the window,
+we're going to label this as bass1.
+If this doesn't hold, we're going to
+look at the next rule down the list.
+So if you have the collocation
+striped followed by bass,
+we're again going to label
+that of course as bass1.
+The next rule in the list
+is guitar within window,.
+So if you have the word B-A-S-S and the
+word guitar nearby, we now know we have
+the second sense of that word,
+those bass, B-A-S-S-2, and so on.
+So I'll have a few more examples here,
+bass player indicates B-A-S-S,
+sense number two.
+And then play as a verb,
+followed by B-A-S-S.
+This is also basS two, and so on.
+So, we have rules that alternate
+between bass1 and bass2.
+So, now let's look at a more detailed list
+of the type of features that I used in
+the Yarowsky decision list algorithm.
+I mentioned collocations.
+Those are the adjacent words
+on one side or the other.
+The word, for example, for the word bar.
+That could be chocolate bar,
+bar exam, bar stool, bar fight.
+Or for words like aid it could be
+foreign aid, which is one sense,
+versus presidential aide,
+which is not sense.
+We can also look at the position.
+It is important to realize
+that the collocation
+A plant pesticide is different from
+the collocation pesticide plant.
+The first one refers to
+the living thing sense of plant.
+The second one refers to
+the factory sense of plant.
+So position matter.
+We can also look at
+the adjacent parts of speech.
+So we want to know if the word
+that follows is a verb, or
+an adjective, and so on.
+We can also look at all
+the other nearby words,
+let's say within the window of plus or
+five words, or the entire sentence.
+And we can also look at
+syntactic information.
+For example,
+what is the subject of that word and
+what is the object of that word,
+and so on?
+For example, for the word play,
+we can look for the specific object,
+whether it's guitar or tennis, and then
+determine the sense from that information.
+And our topic of the text
+is very important.
+So one of the principles that Jarowski
+introduced in one of the more
+recent papers, was the so called one
+sentence per discourse principle.
+Which said that most of the time,
+if an ambiguous word appears
+in a paragraph or a document,
+it's most likely to continue to keep the
+same sense within this entire discourse.
+So now let's step back for a moment and
+look at some general classification
+methods that can be used for
+word sense disambiguation.
+So word sense disambiguation that
+science is no different from many other
+classification points and naturalized
+points such as name key declassification
+class and type classification that
+we have discussed previously.
+So one of the most common
+techniques used is the K-nearest
+neighbor classification method,
+also known as the memory-based method.
+So the idea is this.
+You look at some current problem, for
+example, what is the sense of this word,
+in this context.
+And then you look in your history of
+training data for similar examples, and
+you figure out what decision
+you made at that time.
+And then that gives you the decision
+to make in the current time as well.
+So typically people use
+a vector representation
+of each instance that needs to be
+classified, and then they measure
+the Euclidean distance between that
+instance and all the other instances.
+So here's an example, we have according
+to the system here, put dimensions again,
+in the more general case,
+this is a much more dimensional vector.
+Then we have red objects here that form
+one cluster, for example, sense one.
+We have blue points that form
+another cluster for sense two.
+Now we are given with a new object here,
+and you want to determine how to classify.
+So in the K-nearest neighbor algorithm,
+we're going to look at its nearest
+neighbor, one nearest neighbor in
+this case it's a red dot, therefore
+we're going to classify it as red.
+It is also possible to increase the
+value of K to some larger odd number, for
+example three or five.
+So in the case of K equals three,
+we're going to look at the three closest
+examples in this vector space to
+the one that we want to classify.
+And then look at the majority
+class among them and
+return that as the correct answer.
+So in this example we have,
+among the three nearest neighbors, we have
+two red examples and one blue example.
+Therefore we're going to label
+the hollow example as red as well.
+Okay, not let's move now to another method
+also introduced by David Garofsky in
+the mid-90s called bootstrapping.
+So bootstrapping is an example of
+something called semi-supervised learning.
+And it has become one of the most
+influential algorithms not only in
+word sentence disambiguation, but also
+on many other machine learning problems.
+So here's how it works.
+We're going to start with one ambiguous
+word, for example, the word plant.
+Two senses, let's say the living thing and
+the manufacturing sense.
+And we're going to come up with one
+very strong collocation that is
+indicative of each of those senses.
+So, for example, for plant one,
+we're going to pick the word leaf, and
+for plant two we're going
+to pick the word factory.
+So now we're going to do that classifier
+that looks at all the labeled data, and if
+it sees that the word plant appears near
+leaf, it will label it as sentence one.
+And if it sees factory,
+it will label it as sense two.
+Now since those are only
+single examples for
+each of the classes, we can only
+label a small percentage of the data.
+Let's say For the sake of the example.
+That one percent is labeled as plant one,
+one percent is labeled as plant two,
+and the last 98% is not labeled yet.
+Okay.
+So, does the boot strapping process works?
+So now we're going to build
+a classifier that is going to look for
+other objects that were
+not classified previously.
+And its going to look for
+additional collocations that
+appear in those labeled examples.
+So for example, if we have a sentence
+where the word plant appears near leaf,
+and near living.
+We use leaf already as a feature,
+but now we can learn that
+living is also a good feature that
+labels that particular sense.
+So, somehow in the process of
+bootstrapping we're going to expand
+the first seeds through some
+small number of labeled
+examples then back to more features that
+are associated with each of those classes.
+And then again,
+by in training of supervised classify,
+we're going to get more labeled data and
+so on.
+And this process is going to
+continue until pretty much
+all of the data ports have been
+classified one way or the other.
+So bootstrapping, to summarize,
+is based on two important principles,
+both introduced by David Yarofsky.
+The principle one sense per collocation.
+So again, given an ambiguous word,
+what word appear nears it may help
+this ambiguate the first one.
+And also one sense per discourse.
+Meaning that all the instances of a word,
+of an ambiguous word in the same discourse
+unit are likely to have the same sense.
+So, some of those methods that I
+mentioned before were trainable.
+So the question comes now,
+where do we get training data for
+word sense disambiguation?
+Well, there are several different
+places where we can go.
+One is to go to
+the Senseval/Semcor datasets,
+which are available from public evaluation
+of sense disambiguation systems.
+This can be obtained from
+the senseval.org website, and
+Senseval is an annual competition that
+was done in two different events.
+The first event was the Lexical Sample
+task, where there was training data for
+a small set of words,
+things like bar and plant and board,
+each of which appear in sentences that
+were annotated with the proper census.
+And the second event, or
+the second task was the so-called
+all words disambiguation task.
+That's where all the words in a given
+document had to be disambiguated.
+Now, in each of those cases,
+the senses in this manual annotation
+were obtained from WordNet.
+So Senseval data, and more recently
+Senseval data is available in
+many different languages in addition to
+English, so languages like Spanish and
+Romanian, and Dutch, and so on.
+Another way to train data for
+word sense disambiguation is through
+the so-called pseudo-words principle.
+The pseudo-words principle says that we
+can take a word that is not ambiguous,
+and another word that is not ambiguous,
+and combine them into a new word that has
+all the instances of both
+of the unambiguous words.
+So for example,
+every time we see the word banana,
+we're going to replace it with a single
+token that stands for banana or door.
+And we're going to do the same thing for
+every occurrence of the word
+door in the document.
+So we have those tokens that
+could be either one or the other.
+And then we can train a classifier
+because we know in each
+instance what was the actual
+word that was used.
+So the word sense disambiguation system
+is going to see this collapsed word,
+and it will try to guess the correct one.
+And there are also multilingual corpora
+that are aligned at the sentence level.
+So for example, if the word play
+in English is aligned to jugar or
+tocar in Spanish, we can use that
+information as training data for
+word sense disambiguation.
+So, some brief results from one of
+the earlier Senseval evaluations.
+The metric that is used in
+word sense disambiguation
+is based on the following quantities.
+A is the number of assigned senses.
+C is the number of words that
+are assigned correct senses.
+T is the total number of test
+words in the evaluation, and
+then precision is C divided by A and
+recall is C divided by T.
+So just a basic precision and
+recall evaluation metrics.
+Then to give you an idea of the results,
+the best performance
+in Senseval-1 was around 77% precision and
+77% recall,
+whereas the best that human lexicographers
+could get was in the high 90 percents.
+And the one interesting heuristic is that
+if you have an ordered list of senses for
+each word, with the most
+common sense appearing first,
+you get some decent performance.
+57% precision, 50% recall,
+which is still not
+close at all to the best automatic systems
+but still gives you a decent baseline.
+One caveat here however,
+is that this method works better
+if the text is relatively homogeneous
+in terms of genre and domain.
+Once you have texts that
+are from multiple genres or
+domains, this method is unlikely to work,
+because the most common sense of that
+word changes according to the domain.
+So, this concludes the section
+on word sense disambiguation.
+

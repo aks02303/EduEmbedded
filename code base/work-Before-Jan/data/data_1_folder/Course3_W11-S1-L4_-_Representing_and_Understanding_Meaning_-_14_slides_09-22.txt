@@ -1,0 +1,255 @@
+So, moving on with some
+additional topics and semantics,
+we're going to talk about representing and
+understanding meaning.
+So what does it mean to understand
+the meaning of a sentence?
+Well, one of the possible definitions is
+that if an agent hears a sentence and
+can act accordingly, we can say
+that the agent has understood it.
+But here's an example.
+If I say, leave the book on the table,
+you have to be able to understand which
+book and which table I'm talking about.
+And if you know both of those,
+you should be able to perform the act and
+understand the sentence.
+So understanding may
+involve some inference, for
+example, maybe the book is wrapped in
+paper so I don't know that it's there.
+I just see some paper and
+I have to infer that the book is inside.
+And it also involves pragmatics.
+So which book?
+Which table?
+Perhaps the agent will need to ask
+some additional questions to clarify
+the answers to those questions but.
+Then after getting the right answers, he
+or she should be able to perform the act.
+So understanding is not necessarily being
+able to directly perform an action.
+It may involve a procedure for
+getting the missing information, and
+then performing the action.
+So some of the properties of semantic
+representation are listed here.
+The first one is verifiability, so
+it should be possible to determine
+if a certain statement is true,
+against a knowledge base.
+So for
+example does my cat Martin have whiskers?
+Again, in the database we can have
+a statement that says that it does, or
+maybe it says that all cats have
+whiskers and that Martin is a cat.
+In both of those cases we can verify
+the truth value of this statement.
+Second property is unambiguousness.
+We want to be able to determine if
+the sentence has only one possible
+semantic interpretation or not.
+So if I say, give me the book,
+in many different contexts this
+would an ambiguous sentence because
+there may be multiple books.
+But if I'm pointing to a specific book or
+the book has already been introduced in
+the discourse,
+then the sentence may be unambiguous.
+We also have to consider something
+about the canonical form of a sentence.
+So there may be multiple ways to
+express the exact same semantics.
+And we also have to consider
+the expressiveness of their presentation.
+So, for example, if we use a specific
+logical formalism to represent meaning.
+Can it be used to express temporal
+relations, and beliefs, and
+events, and so on?
+Is it domain independent?
+Can we use it for
+presenting arbitrary knowledge?
+Okay so the last property that we need to
+take into account is whether the formalism
+that we use for semantic representation
+allows us to have sound inference.
+Let's now consider some specific methods
+that I use for representing meaning.
+The first one is to us
+logical representation, for
+example first order logic.
+I'm going to explain what first order
+logic means in the next few slides.
+We also want to be able to use
+some sort of theorem proving or
+inference to determine whether
+one statement entails another.
+So we're going to start now with
+the simplest logical representation.
+Something called propositional logic.
+So again this is
+the simplest type of logic.
+It involves proposition symbols,
+P1, P2, which correspond to
+what is known as sentences.
+And then we have some rules that
+build more complicated sentences from
+simple ones.
+So if S is a sentence,
+not S is also sentence, if both S1 and
+S2 are sentences, S1 and S2 is also
+a sentence, this is known as conjunction.
+If both S1 and S2 are sentences then S1 or
+S2 are is also sentence,
+this is known as disjunction.
+If both S1 and S2 are sentences then
+S1 implies S2 is also a sentence.
+And finally if both S1 and
+S2 are sentences,
+S1 is equivalent to S2 is also a sentence.
+So this is an example of
+the biconditional relation.
+So propositional logic can
+be expressed in DNF or
+Backus Naur Form in the following way so
+a sentence is either an atomic sentence
+without any operators or complex sentence.
+An atomic sentence is either true or
+false or
+any individual sentence that
+presents a proposition.
+S, T, U, and so on.
+A complex sentence is a sentence in
+parentheses or a negation of a sentence.
+Or a conjunction or a disjunction or
+an implication or a biconditional.
+So there's a different precedence for
+the operators.
+The highest precedence is given
+to the negation, followed by and,
+or, implies, and equivalent.
+So now let's see how we can
+translate propositions to English.
+Suppose that we have
+the following two propositions.
+A, today is a holiday, B,
+we are going to the park.
+What does A implies B mean?
+What about A and not B?
+What about, not A implies B,
+and what about not B implies A, and
+finally what about B implies A?
+Can you translate each of
+those into English sentences?
+Think about it, and
+then I'll show you the answer.
+Answers on the next slide.
+Okay, now let's look at the answers to the
+questions about translating propositions
+to English.
+Just to remind you,
+A is the proposition today is a holiday,
+B is the proposition we
+are going to the park.
+So what does A implies B mean?
+Well, the English translation is if today
+is a holiday, we are going to the park.
+A and not B.
+Today is a holiday and
+we are not going to the park.
+Not A implies not B.
+If today is not a holiday,
+then we are not going to the park.
+Not B implies not A.
+If we are not going to the park,
+then today is not a holiday.
+And finally, B implies A.
+If we are going to the park,
+then today is a holiday.
+So as you can see, oppositional logic
+makes a lot of sense but it can only be
+used for very restrictive types of
+sentences, only things that present single
+facts, and logical connections between
+those, such as negations and implication.
+Okay now let's look at the semantics
+of propositional logic.
+What are the truth values
+of the different operators?
+So, not S is true if and
+only if S is false.
+S1 and S2 is true if and
+only if both S1 and S2 are true.
+S1 or S2 is true if and
+only if either S1 or S2 are true.
+S1 implies S2 is true is true, if and
+only if S if false or S2 is true.
+And that means that it is false if and
+only if both S1 is true and S2 is false.
+Finally, S1 is equivalent
+to S2 is true if and
+only if S1 implies S2 is true and
+S2 implies S1 is also true.
+So recursively, we can compute
+the truth value of much longer
+formulas including parentheses and
+multiple operators.
+So here's the full truth value for
+the different operators.
+So if P and Q are given as
+a statement in propositional logic,
+we can compute the values of not P,
+P and Q, P or Q, P implies Q, and
+P is equivalent to Q using this table so,
+If both P and Q are false,
+then not P is equal to true, P and
+Q is false, P or Q is false,
+P implies Q is true, and
+finally P equivalent to Q is also true.
+So one thing to remember is that P or
+Q is not the same as P implies Q.
+So P implies Q is false only
+if P is true and Q is false.
+Some people get this confused, for
+example they thing that if P is false and
+Q is true then P implies Q is also
+false but this is not the case.
+So if the premise P is false anything
+we put on the right hand side for
+Q can also be true.
+So here's a full table
+of logical equivalents.
+Those are different theorems that can
+be used to simplify some propositional
+logic statements.
+So, for example, the first one is
+commutativity of the conjunction.
+So, a and B is the same as B and A.
+This next one is commutativity
+of this junction.
+So A or B is the same as B or A.
+Then we have two theorems about the
+associativity, both of these junction and
+conjunction.
+Then we have one above double negation.
+So the negation of note A is A.
+Contraposition.
+A implies B is the same
+as note B implies note A.
+Implication elimination and
+A implies B is the same as not A or B.
+And we have some additional ones which I'm
+going to skip biconditional elimination,
+two forms the de Morgan, one for
+disjunction, one for conjunction and
+then two forms distributivity.
+So this concludes the section
+on propositional logic.
+We're going to switch now
+to first-order logic.
+

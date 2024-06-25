@@ -1,0 +1,343 @@
+So, the next segment is going
+to be about statistical parsing.
+So the techniques used in statistical
+parsing are not significantly different,
+at least for the time being, from
+the ones used in deterministic parsing.
+There will be still based on dynamic
+programming and techniques like CKY and Earley.
+But they will be based on
+a different kind of grammar.
+So the grammar that we're going to look
+at now is called the probabilistic
+context-free grammar.
+It looks very similar to a context-free
+grammar,
+but it has probabilities
+associated with each of the rules.
+So, first of all, let's look at
+the need for probabilistic parsing.
+Why do we need to do this?
+The classic example that we had before
+was time flies like an arrow and
+we decided that there are many different
+parses that can be associated with this
+particular sentence.
+However, not all of them are equally
+feasible as English languages,
+English language sentences.
+Some of them are clearly
+more likely than others.
+So we need to have some way to rank them,
+based on the score and
+since we're using the score why
+not just use probabilities.
+And that turns out to
+be the best approach.
+So what is the definition
+of a context free grammar?
+It looks very similar
+to a deterministic one.
+It's a 4-tuple, N, Sigma, R, and S.
+Where N is a set of non-terminal symbols.
+Things like noun, phrase,
+prepositional phrase, and so on.
+Sigma are the terminal symbols.
+Things like the words like cat,
+and eight, and so on.
+And now the rules.
+The rules are different from
+deterministic context with grammar.
+We have A, which is a non-terminal symbol,
+producing beta,
+which is a string that can combine
+both terminals and non-terminals.
+However, we now have probability P
+which is associated with this rule.
+And one important thing to
+keep in mind is that the rules
+that have the same left hand side, should
+have their probabilities add up to one.
+And they'll start somewhere
+in the set of before.
+It's one of the known terminals,
+particularly the sentence S.
+So here's an example of the set of
+the context of grammar that we had before.
+And another example.
+We can now split the rule with the same
+left hand side are separate lines and
+the sample of speech of them.
+This is typically done by one
+of two possible techniques.
+One is by hand, just to look at all of the
+rules and how the same left hand side and
+determine what percentage of those
+should follow on the right hand side.
+Another way to do this
+is by using training
+based on maximum likelihood
+estimates from a corpus.
+So here I have used
+alternate bold face and
+non-bold face to indicate the same
+left hand side of the rows.
+So P zero is going to associated
+with the rule S goes to NP VP.
+And in particular the probability
+here is going to be equal
+to one because there is only rule
+with the same left hand side S.
+P1 and P2 belong to the same category.
+They have the same left hand
+side symbol noun phrase.
+Therefore the sum of those two numbers,
+P1 and P2 should also be equal to one.
+The third set of rules is for
+prepositional phrases.
+The probability P3 here is equal to 1
+because there is only one way to expand
+PP and so on and so forth.
+So now let's see how we can compute
+the probability of a parse tree
+given the sentence and the grammar.
+So the probability of a parse tree t
+is based on all the productions
+used to build it.
+Let's assume there are n such productions.
+So we're just going to
+multiply the probabilities
+of those productions to form
+the probability of the parse tree.
+And the most likely parse of
+a given sentence given a specific
+probability context for
+grammar is determined as follows.
+It's t among all the possible t's
+as associated with the sentence
+that maximizes the probability p(t).
+Or mathematically speaking,
+it's arg max p(t) for
+all the t's in the set of
+trees consisted with s.
+Now, if we want to compute
+the probability of a sentence,
+that would be the sum of
+the probabilities of all of its parses.
+So here is a specific example.
+We have t1,
+is one possible parse tree associated
+with a sentence in this grammar, and
+we have t2, another possible parse.
+Just to remind you, the difference
+between the two is that in the first one,
+with the fork attaches to the verb and
+in the second case attaches to the noun.
+So now we can use the formula on
+the previous slide to determine
+the probability of T1.
+Well T1 is equal to t0, which is the
+probability as going to NP PP times p1,
+which is the probability of np
+going to dtn, times p4, and so on.
+So it's a long sequence of probabilities
+that have to be multiplied together.
+Similarly, the probability of t2 is
+equal to p0, which is the same as in
+the previous example, has both NT VP both
+by p1 because NP goes to DT in both cases.
+But then we have p5 and p7 and so on.
+So you can see that some of those
+probabilities are the same in both cases,
+and some are different.
+Now, if we want to compute the more
+likely of the two parse trees,
+we just have to find out which
+of the probabilities are different.
+Everything else is irrelevant
+to the comparison.
+So, p0 appears in both cases, we can
+drop it from the comparison and so on.
+We can do the same thing for every other
+pair of matching probabilities, p1,
+p4, p7 and so on.
+So after we crossed those out,
+we are going to have only
+two probabilities remaining.
+p2 in the top tree and
+p5 in the bottom tree.
+So, it really hinges on the difference
+between those two to determine which
+of the trees is more likely.
+So p2 is associated with NT cos for
+NTPP production,
+and p5 is associated with VP cost VPPP.
+So whichever one of those is
+more likely the more likely
+the matching parse is going to be.
+So there are many different things that
+we can do with probabilistic context-free
+grammars.
+I'm going to list some of them here and
+later we're going to
+discuss some of the others.
+So given a grammar G and
+a sentence S, let T(s) be all
+the parse trees that correspond to s.
+So task one, is going to be to
+find which tree among all those ts
+maximizes the probability p(t).
+And the second task is to find
+the probability of the sentence p(s) as
+the sum of all the possible
+tree probabilities p(t).
+The second part is very important when
+you train a probability context through
+grammar because you need those numbers to
+estimate some of the maximum likelihood
+probabilities.
+Okay, now let's see, once we have the fun
+probabilistic context with grammars,
+what techniques exist for
+parsing sentences probabilistically?
+Well, we have an early algorithm before,
+for deterministic grammar.
+As we can similarly have
+a probabilistic Earley algorithm
+that is a top-down parser just like
+before, with a dynamic programming table.
+We can also have a probabilistic
+Cocke-Kasami-Younger algorithm,
+which is a bottom-up parser with a dynamic
+programming table, just like before.
+What's new here is that the dynamic
+programming table is going to
+take into account the probabilities
+of the different productions.
+So how do we learn probabilities?
+Well they're typically trained from
+a corpus, like the bank Treebank.
+What is the meaning of
+the different probabilities?
+Well if he have a probability that is
+twice as large as another one that should
+somehow indicate that that specific parse
+for the one that is associated with
+the first probability is twice as
+probable as the one for the second parse.
+And it's now possible to
+do some sort of reranking.
+We can have many different parses
+associated with a given sentence and
+then figure out what additional
+properties those parses would have.
+And we can decide to pick
+one that doesn't have
+the largest probability in
+the generating process.
+And we can combine the output
+of the probabilistic
+parser with some other states.
+For example, we can have an overall
+probability than takes into
+account not just the probability of
+the parse, but also the probability of
+the correct speech recognition, and the
+probability of the machine translation.
+So let's see how we can estimate
+the probabilities from a corpus.
+This is done using a method
+called maximum likelihood.
+We use it in the following way,
+we look at the parsed training set
+to get some counts of this form.
+So the count alpha produces beta
+divided by the count of alpha.
+So for example, there may be ten
+instances of noun phrases, but
+only six of them have noun phrase
+producing n followed by PP.
+So N followed by PP is in the numerator
+here and NP is in the denominator.
+So if we divide 6 by 10,
+we're going to get the maximum likelihood
+estimate of this probability as 0.6.
+Okay, so here's that example.
+In this case, the row is S goes to NP VP,
+we want to divide the number of
+times S produces NP VP by
+the number of times S appears.
+Okay, so this is an example from
+the [INAUDIBLE] grammar from Jurafsky and Martin.
+Is the main of airline reservations.
+As you can see,
+the first three rules on the left hand
+side all have the same left hand side.
+S goes to NP VP with a probability of 80%,
+S goes to auxiliary noun phrase verb
+phrase with a probability of 15%, and
+finally the remaining probability mass of
+0.05 is assigned to the role as most VP.
+So similarly, in every group of
+transitions where the left hand side has
+the same symbol we have some of
+the probabilities equal to one.
+And this also applies to the right hand
+side of this picture where we have
+the Lexicon.
+The Lexicon is also probabilistic, we have
+the category determiner that includes
+three words, the articles the and a with
+abilities of 0.6 and 0.3 respectively.
+And then another determinator of
+that with a probability of 0.1.
+So now, with those probabilities, we can
+compute the probability of a specific
+parse tree using the probabilistic
+version of the CKY algorithm.
+So the chart is exactly
+the same as before.
+We have to start with the parts
+of speech of individual words.
+But we now have to associate their
+probabilities with them as well.
+So let's start with the word
+the the word the is a determiner and
+its probability is 0.75 the probability
+of child as a noun is 0.5.
+And now when we combine these two into
+a noun phrase to determine the noun,
+we're going to have to multiply three
+numbers the probability of the determiner,
+the probability of noun and
+also the probability of noun phrase
+turning into determiner noun.
+So that's 0.8 times 0.5 times 0.75.
+And I'm now going to finish this example,
+but you can fill in the rest of
+the boxes exactly the same way as we
+did in the deterministic example.
+And at the the end of the day we want
+to get an S in the top right hand box.
+And whatever probabilities
+are associated with S there will be
+the corresponding parse trees.
+And if you want to compute the probability
+of the entire sentence is, you would have
+to add the probabilities of the difference
+parse streams that lead to X.
+So here's a question for you.
+Can you compute the probability
+of the entire sentence
+using probabilistic CKY by following
+the steps that I just described?
+And you can do this for
+a homework assignment.
+Just some hints don't forget that
+there may be multiple parses so
+you need to add
+the corresponding probabilities.
+So this is the end of the segment.
+The next segment is going to talk about
+a method called Lexicalized Parsing.
+

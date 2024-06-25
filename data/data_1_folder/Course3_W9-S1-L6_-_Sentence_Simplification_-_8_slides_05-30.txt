@@ -1,0 +1,148 @@
+The next segment is going to
+be on sentence simplification.
+Sentence simplification is one
+the challenges in text summarization.
+So far everything that we have discussed
+involved extractive summarization where we
+take entire sentences and
+put them in the output.
+Now we're going to briefly look at
+going beyond sentence extraction,
+specifically taking entire sentences and
+cutting off some pieces from
+them to make them shorter.
+So some of the parts of the sentences that
+could potentially go in summaries may be
+removed for a variety of reasons.
+One of them is that we want to
+have more space available for
+more important content.
+So in order to do this,
+we have to figure out which portion of
+sentences are the least informative and
+prior research has found that those
+include things like quotes, appositions.
+Just to remind you an apposition is
+something like, Barack Obama, comma,
+president of the United States, comma.
+The second part of the sentence
+is an apposition and
+ultimately can be removed without hurting
+the information content of the summary.
+Other things that can be removed in many
+cases are some adjectives, some adverbs.
+Embedded clauses are often
+some of the first to go.
+Attribution clauses for
+example who said what.
+Why do we want to do
+sentence simplification?
+There are many different applications.
+One is for things like subtitling.
+Very often there's not enough space on
+the screen to include the entire sentence.
+It's possible to include
+just portions of it instead.
+Headline generation, for mobile devices
+you may want to produce a shorter version
+of a sentence to display in large font
+as part of a summary of a mobile device.
+So then if the user wants to read more,
+they can click on the sentence
+instead of the text.
+There are also multiple instances where
+people have built applications for
+the visually impaired people, which
+also involves sentence simplification.
+So I'm going to go over some examples of
+work on sentence simplification starting
+by paper by Kevin Knight and
+Daniel Marcu from 2000.
+So in their paper they use syntactic
+information from the sentences,
+and they compare two different approaches.
+One is a noisy channel base model and
+one is based on decision.
+And the kind of rules that the have
+are based on the constituent tree
+of the sentence.
+So for example they may want to
+convert the rule noun phrase goes to
+determiner adjective noun to
+one that says noun phrase
+goes to determiner noun thereby
+dropping the adjective.
+So, they have a set of rules like this and
+they have used this approach
+on a corpus of simplified
+sentences from a computer manual.
+The so called Ziff Davis corpus.
+So here's some examples from that corpus.
+You have a full sentence like
+the documentation is typical of Epson
+quality; excellent.
+And then you also have a shorter version
+of it that part of the training data.
+Documentation is excellent.
+As you can see here we have
+removed some individual words.
+For example, articles,
+some adjectives, and
+some prepositional phrases in this case.
+Here's some more examples.
+All of our design goals were achieved and
+the delivered performance matches
+the speed of the underlying device.
+This is a full sentence.
+The short sentence is,
+all design goals were achieved.
+So we are missing possessive,
+we are missing
+some portions of conjunctive clause,
+and also some prepositional phrase.
+Okay, so more examples,
+I'm not going to read them all.
+Let me read this one.
+Beyond the basic level, the operations
+of the three products vary widely.
+So here we are skipping the entire
+quote beyond the basic level.
+Get the operations of the three
+products vary widely.
+So one possible source of information for
+building sentence compression,
+or sentence simplification applications,
+comes from a large corpus called
+Simple English Wikipedia.
+So let me show you what it looks like.
+On this slide, I'm going to show
+you an entry about the person,
+taken directly from the English Wikipedia,
+which is full length sentences.
+So you can see that a lot
+of the information in it is
+in long sentences with a lot
+of additional information.
+For example, oppositions and prepositional
+phrases that convey a lot of detail.
+You can spend a little bit of time
+on this slide to understand what
+the general structure of this document is,
+and then you should compare it with
+the matching entry for the same person
+in the Simple English Wikipedia.
+It would be nice to see
+those side by side.
+And you can figure out how often
+it can compare which sentences
+from one of the documents matches
+with sentence from the other one and
+how you can use this alignment
+to simplify sentences automatically.
+So there are many other projects for
+text simplification,
+but for this course we're
+not going to look at that.
+We're going to switch now
+to a different topic.
+

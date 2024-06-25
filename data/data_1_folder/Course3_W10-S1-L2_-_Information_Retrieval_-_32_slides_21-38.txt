@@ -1,0 +1,622 @@
+So the next segment is going to be the
+first one in the sequence of segments on
+Information Retrieval.
+So what is Information Retrieval?
+It's one of the most
+important tasks on the web.
+People search the web daily.
+And as far as our class is concerned,
+natural language processing is very useful
+in a variety of information
+retrieval tasks.
+So search engines,
+things like Google and Bing and Baidu,
+Yandex dominate online communities.
+People send billions of queries every day.
+Information Retrieval is about building
+search engines, and improving them, and
+analyzing their results.
+So here's some examples.
+Yahoo Search is a very
+common search engine.
+Here we have a query, the word ebola, and
+then we have a list of documents
+that are returned by the system.
+Amazon is a different type of search
+engine that involves products.
+They put the product name
+such as Samsung Galaxy.
+The output is a list of products
+that match this description and
+their properties.
+The other types of search engines out
+there, for example the Library of Congress
+website, where you can search for
+books based on topics, and authors,
+and publication years, and
+many other search criteria.
+So, in addition to conventional search
+engine such as library catalogs where you
+can search by keywords,
+titles, and authors,
+you can also have search
+engines based on text.
+For example, Lexis-Nexis,
+Google, and Yahoo!
+You're typically allowed
+to search by keywords, and
+there's a limited support for
+queries in natural language.
+There are also image-based search engines,
+where you can search for
+images based on shapes and colors and
+also the keywords that appear in
+their captions and descriptions.
+And you can also have question
+answering systems for
+example, ask.com that specialize in
+answering natural language questions.
+We will discuss those in
+a different section of this class.
+And there also are some
+experimental clustering systems.
+Some old examples of those
+include Vivisimo and
+Clusty, where the results are shown in
+the form of clusters of related documents.
+If we have a word that
+has multiple senses,
+each of those senses will get
+a separate cluster of results.
+For example, if the word is Jaguar, the
+system doesn't know if you're looking for
+the car or the animal or
+the football team.
+And it will figure out that you have
+multiple senses of that word, and
+then it will give you the results for
+each of them separate.
+And the last type of search engines that I
+want to mention are research systems such
+as Lemur and Nutch, which are mostly
+used for research projects.
+Let's look at what kind of queries
+people ask from the internet.
+For example,
+how to get rid of stretch marks.
+Or, just single words like, Dodge.
+Or names of people.
+Or questions like how many
+calories are in pumpkin pie.
+And with a typo in this example.
+More examples of queries.
+Angelina Jolie and Brad Pitt.
+How to vote.
+Derek Jeter.
+Interstellar trailer.
+This last example shows that they're
+looking for some specific object,
+namely the movie trailer for
+a specific movie, Interstellar.
+They're also asking
+definitional questions.
+For example, what is Ebola?
+So I extracted those from a website
+that's part of Google that shows
+the most commonly asked
+queries on any given day.
+So how large is the web?
+Well, according to world
+wide websites in 2014,
+there are about 45 billion pages indexed
+by Google and 25 billion indexed by Bing.
+So this is a fairly large number.
+And here's some more
+statistics about the web.
+So it has been reported that Twitter
+gets about 400 million tweets per day.
+About 2.5 billion photos are uploaded
+to Facebook every month.
+And that Google's clusters process more
+than 20 petabytes of data per day.
+So what are some of the challenges
+in Information Retrieval?
+For example dealing with things like
+dynamically generate content, for
+pages that are not static, but rather get
+their output based on the user query.
+Any indexing of new pages that get
+added to the web at any point in
+time in the decentralized fashion.
+The increasing number of blog posts.
+It has been said that the size
+of the blogosphere doubles
+about every six months.
+So what kind of queries do
+users post on the internet?
+Well, the result that they're
+usually in the form of sessions, so
+users ask one query and
+then they come back and
+revisit it later because they're
+still interested in the same topic.
+They may replace some of the words, add
+some of the words to get better results,
+or possibly start with
+a completely different query, but
+still within the same session.
+They often asked very short queries,
+the median number of words in the query
+in the internet is about two words long.
+There's a large number of typos, and
+a small number of popular queries,
+so there's a [INAUDIBLE] division
+of the frequency of queries.
+And a very long tale of infrequent
+queries that are only asked once or
+twice in any given time period.
+Even though search engines provide
+advanced query operators such as
+word one near, word two or word one
+immediately adjacent to word two or
+and and or operations,
+most users don't use those except for
+phrases which users have learned
+should be included in double quotes.
+So, what is Information Retrieval?
+It's a very important process that
+involves a collection of documents,
+a user's query, and
+the goal of this process
+is to find the relevant documents
+that match the user's query.
+So here's all the key terms
+used in information retrieval.
+A query is like a presentation
+of what the user is looking for,
+it can be a list of words a phrase.
+A document is some information entity
+that the user wants to retrieve.
+A document doesn't have
+to be a single webpage.
+It can be a passage, or
+it can be an entire website.
+A collection is set of documents.
+And an index is a representation of
+the information that makes the automatic
+process of quarrying easier.
+A term is a word or concept that
+appears in a document or a query.
+So let's look at documents.
+So documents are not just printed paper.
+They can be, as I said,
+any sort of records, pages, entire sites,
+images, people, movies, books, and so on.
+They're often encoded in
+many different formats.
+So there has to be some process
+that converts them to some standard
+representation.
+For example, Unicode.
+Documents have to be represented
+internally in the computer.
+And they have to be preprocessed.
+For example, metadata has to be removed.
+JavaScript and some additional
+notations have to be removed.
+And the documents for it have to be
+segmented into words and terms, and
+also into types and tokens.
+So just to remind you, a type is just
+a set of all the occurrences of the same
+word, and the token is every particular
+instance of that particular word.
+So what does a search engine look like?
+We first have to decide
+what we want to index.
+Then we have to collect that information.
+Index it efficiently.
+And we have to make sure that
+the index is kept up to date.
+And then once we have built the index,
+we have to make sure we provide
+user friendly query facilities.
+So here's the architecture
+of a typical search engine.
+We have our information sources
+in the document collector.
+That creates a document collection.
+Then we have a document processor that
+converts the documents into an index.
+Now on the other side, we have a query,
+that gets processed by the query
+processor to form a query representation.
+And then there is a mapping
+between the documents and
+the queries through a process
+called document ranking.
+Which processes the documents, finds which
+ones are similar to the users query and
+returns search results which are then
+shown to the user in a search interface.
+Then the user looks at those documents and
+decides which ones are relevant and
+which ones are not.
+And then possibly revises
+their information need and
+starting with a completely new query.
+Or they can just go back
+to the search engine and
+go to the next page of hits, for example,
+by essentially saying that the first
+page of hits was not good enough.
+In many search engines,
+it's possible to update the query and
+produce a completely
+different ranking from that.
+So how are documents represented?
+Well, they're represented in
+the form of term-document matrices.
+So we have m terms and n documents.
+Or they can also be represented
+in document document matrices so
+this is a matrix of N documents by N
+documents which represents how similar
+the two documents are.
+So in a medium sized collection we
+would have something like N equals
+three million documents and
+M equals 50,000 terms.
+And if you multiply those two numbers
+together you will get the size of
+a typical term document matrix for
+a medium sized collection.
+In the case of the web,
+however we get something much bigger.
+As we said, there may be as many as
+30 billion documents on the web.
+And the size of the vocabulary or
+the size of the number of different terms
+that we want to index may
+be one million and above.
+So you can see that this is an enormously
+large matrix that cannot be stored
+on most computers.
+So we have to figure out some other
+ways to represent this information.
+One other thing is that we can
+store inside this matrix either
+Boolean values or integer values.
+So Boolean values just say that the
+specific term appears in that particular
+document, whereas an integer value
+represents the number of the times
+that the stream appears in that document.
+So how do we store data for
+information retrieval purposes?
+Let's go back to our example
+with three million documents and
+50,000 words in the vocabulary.
+So how large do you think that
+the term-document matrix is going to be in
+this example?
+Is there any way to do better than that?
+So instead of having this large number
+of cells, is there any heuristic that we
+can use to simplify the amount
+of storage that is necessary.
+It turns out that there is such a
+technique, it's called the Inverted index.
+Instead of an incidence vector, which tell
+us which documents contain a particular
+word, we have something
+called the posting table.
+So posting table just tells us that for
+any given work, restore only the list
+of documents where that word appears.
+So let's say instead of having
+let's say 3 million values,
+most of which are zero, we just.
+Keep the ones that are no zeros.
+So Vermont may appear in document one,
+document two and document six and
+Massachusetts may appear in documents one,
+five, six and seven.
+So we can also use linked lists so
+that we can insert new document postings
+in order to keep the list sorted.
+And we can also use the link list to
+remove existing posting so for example in
+the example above if document five no
+longer contains the words Massachusetts we
+can immediately delete D5 from the sorted
+link list and just keep D1, D6, and D7.
+So this kind of inverted index can be very
+easily used to compute document frequency.
+And one hint is that if you
+keep everything sorted,
+you're going to have a logarithmic
+improvement in access.
+So you can find when a certain element
+is in the list in logarithmic time.
+So what are some of the basic operations
+that we can perform on inverted indexes.
+The first one is conjunction.
+What does that mean?
+We have two words and
+we want to find which documents
+include both of those words.
+It turns out that there's a very
+simple algorithm for this.
+We can iteratively merge the two
+posting lists by going left to right in
+increasing order.
+And the complexity of this is on the order
+of x+y which is the sum of
+the lengths of the two postings.
+The algorithm for
+disjunction is very similar.
+Just a reminder, this junction would be
+finding all the documents that contain one
+or the other of the words.
+Negation is a little bit more difficult
+because we have to deal with the documents
+that don't contain the word and
+there can be a lot more of those
+than the ones that contain it.
+So for example if our query's Vermont and
+Massachusetts or
+a Massachusetts or not Vermont.
+So its possible to build
+a recursive operation so
+that we can deal with parenthesis and
+we can also optimize the inverted indexes
+but starting with the smallest set.
+So for
+example of I have three words a or b or
+c, we may want to start by looking
+at combining a and b into one query,
+so that the result forms
+a smaller set of documents.
+And then we can combine that set of
+documents with the set that corresponds to
+the third one.
+So documents are typically presented
+in the so called vector model.
+We have a many dimensional space that
+has different terms, one, two and
+three for example.
+And then each of the documents
+is presented as a vector in that
+vector space.
+And if you remember from another lecture,
+we can find the similarity
+between two documents in this vector space
+by taking the angle of the two vectors
+that correspond to them, or
+by taking the cosine of that angle.
+So queries are often represented
+the same way as documents and
+this has several important advantages.
+It's mathematically easier to manage.
+So for example, the formulas for computing
+similarity applied to documents and
+queries to just pairs of documents or just
+pairs of queries exactly the same way.
+But there are some problems.
+Queries are, as we said before,
+shorter than documents, so
+there has to be some additional
+processing necessary.
+So, for example, if a query doesn't
+contain any of the words in the document,
+you may want to have some
+additional query expansion so
+that you can actually get
+some matching documents.
+And there are also syntactic differences.
+Documents are typically syntactically
+well-formed whereas queries are not.
+And there's also problem with
+repetitions of words or lack thereof.
+Queries typically don't repeat words
+except in some limited cases of phrasal
+combinations, whereas documents
+have many words that are repeated.
+So let's see we represent the query
+as a vector just like documents.
+We can represent them in vector form for
+the very efficient representation and
+this is what it looks like.
+We have the ten words, for example, in the
+document, and this is labeled W1 through
+W10, and then we also have the counts
+of those words numbered C1 through C10.
+So what's the matching process?
+We have a document space of all
+the documents, and we want to find
+whether a document is similar to a query,
+whether the documents are similar.
+So this can be done using
+several different metrics.
+Some of them are based on distances and
+some are based on similarity.
+So one important thing to realize
+here is that, in case of distances,
+larger distances means less similar.
+Whereas large similarity
+means more similar.
+So some of those are Euclidean distance.
+Euclidean distance is just
+the straight line distance between two
+points in the vector space.
+Manhattan distance is
+also very commonly used.
+It just tells you how many steps you have
+to take in each dimension to get from
+one point to another.
+So for example you can go two steps
+in the direction of the first term.
+Three steps in the direction
+of the second term and
+that gives you a Manhattan
+distance of five.
+Whereas the equivalent
+Euclidean distance would be
+the square root of two
+squared plus five squared.
+A word overlap is just the number of words
+that the two documents have in common, and
+the Jaccard coefficient is
+a normalized version of word overlap.
+Okay, so let's look at some specific
+examples of similarity measures.
+The most commonly used one
+is the cosine measure,
+which is just the normalized dot product.
+Let see how it is computed.
+We have a document and a query or
+we could also have two documents.
+But in this example,
+D is the document, Q is the query.
+So the formula for the cosine similarity
+sigma, between the document D and
+the query Q, is given in the middle,
+we have in the numerator.
+The sides of the intersection of the two,
+so those are the words that
+appear in both of the documents.
+Then divided by the square
+root of the two vectors,
+so we have the length of D times
+the length of Q, the square root of that.
+So, in terms of the actual word counts,
+d sub i is the number of times that
+the word i appears in the document.
+q sub i is the number of times
+the word i appears in the query.
+So we can just use the formula on
+the right-hand side to compute the cosine.
+The Jaccard coefficient is very similar.
+It's just the size of
+the intersection of the two
+divided by the size of
+the union of the two.
+So here's an exercise for you,
+please try to do it on your own.
+Compute the cosine scores
+in the following examples.
+D1 and D2 are two documents, D1 and
+D3 are not a pair of documents given
+the documents D1,
+which is represented as the vector 1,3.
+D2, which is 100,300.
+And then finally D3,
+which is represented as D1 so
+we are interested in two
+of those combinations.
+So which of those compute
+the corresponding Euclidean distance,
+Manhattan distances, and
+Jaccard coefficients and
+figure out why some of them match and
+some of them don't match.
+Okay, so the next thing that we
+need to figure out is how to
+deal with phrase based queries, so
+things like New York or New Mexico.
+In New York City, Ann Arbor,
+Barack Obama are very commonly used query.
+We don't want to be able to match.
+York is a city in New Hampshire,
+even though it contains the exact
+words that appear in New York City.
+So we want to find, not only the document
+that contains the words in the query, but
+also we want those words to
+appear in the right order.
+So this is done using a technique
+called Positional Indexing.
+So we're going to keep track, not just of
+all the words and which documents they
+appear in, but also of the positions
+of those words in the documents.
+So in that case to find a multi word
+phrase, what we need to do is to look for
+the matching words appearing
+next to each other.
+So for example, the position
+New may appear in position 300,
+York in 301 and City in 302.
+Okay, so now let's see how we can
+do document ranking in general.
+While it's a very straightforward process,
+we have to be able to compute
+the similarity between the user's query in
+each of the documents in the collection.
+This is typically done
+using cosine similarity.
+And one thing that we will discuss
+a little bit later is TF*IDF weighting.
+For now, suffice it to say that it's a
+formula that gives more weight to content
+words, such as names and
+other important words.
+Whereas low content words or
+so-called stop words have low TF*IDF so
+that corresponds to prepositions and
+articles.
+So once we have found the documents'
+similarities between the query and
+each of the documents, we just return
+the top K matching documents for the user.
+And it's also possible to do document
+re-ranking where if any document return
+is very similar to the documents that
+have already been returned before that,
+we may want to skip that document.
+So what's the formula for IDF?
+Well, the idea is that IDF is used
+to find which words appear
+in fewer documents.
+If a word appears in too many documents,
+that means that it's
+probably not very useful and
+that corresponds to the prepositions and
+articles as I said before.
+So IDF stands for
+inverse document frequency.
+So we want to have a metric that
+is higher when the word appears in
+many more documents.
+So If N is the number of
+documents in the collection,
+d sub k is the number of
+documents that contain the term k,
+f sub ik is the absolute frequency
+of term k in document i, and
+w sub ik is the weight
+of term k in document i.
+So that is how many times it appears.
+So the idf is,
+then defined for the term k,
+as log base two of n divided by d sub k,
+plus 1.
+So for example,
+if the word appears in all the documents,
+then N divided by N is equal to 1, and log
+base 2 of 1 is 0, then 0+1 is equal to 1.
+So the lowest possible idf
+that we can get is equal to 1.
+If on the other hand, a certain word
+appears in only a small fraction of
+documents, for example, one in 10,000,
+that means that N/D sub
+k is going to be 10,000 and the logarithm
+of that is going to be equal to 4,
+base 10 or about 12 base two.
+So the idf in this example
+is going to be about 13.
+So we are now going to continue with
+the new segment on information.
+

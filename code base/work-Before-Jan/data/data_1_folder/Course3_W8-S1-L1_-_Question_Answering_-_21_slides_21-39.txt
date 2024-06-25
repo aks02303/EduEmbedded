@@ -1,0 +1,620 @@
+Welcome back to
+Natural Language Processing.
+The next lecture is going to be
+on one of the most interesting
+areas of natural language processing,
+specifically question answering.
+You're all familiar with question asking
+from different apps and websites and
+probably from television.
+One of the most popular applications of
+question answering is in speech systems
+like Siri that was created by Apple.
+So here is an interface snapshot for Siri.
+You can ask the question,
+whether in text or in speech.
+As for example,
+what is the population of Sri Lanka?
+And then it gives you
+an answer 20.4 million people.
+There are many other websites and
+systems that deal with question answering
+using natural language processing.
+One of the most popular ones is
+called Ask Jeeves, formerly.
+Now it's more known as ask.com.
+This is a website that allows you to
+ask questions in natural language form.
+For example, who played Linus in Lost?
+And then it gives you some
+information about the person.
+So the Ask Jeeves is somewhere
+between a standard search engine and
+that it returns mostly documents and
+a pure question answering system.
+Because it still allows it to ask
+the questions in the form of natural
+language questions.
+Another example is Wolfram Alpha which
+is used for mathematical computations,
+again in the form of
+natural language dialog.
+You can ask a question such as,
+what is the area of a circle
+with radius five feet?
+And then it will give you the answer and
+it will also give you
+some mathematical derivation, and
+an image that shows you how the answer,
+which is 25 pi square feet, was computed.
+And probably the most famous and
+at least the most relevant to this class,
+is IBM's Watson System.
+So a little bit of background,
+IBM's Watson System is a question
+answering system that was used on
+television to play in the Jeopardy
+game in the beginning of 2011.
+So this is a snapshot from the TV show.
+It shows the two best humans that time,
+who were facing against Watson.
+Watson is not really embodied here at all,
+it's just represented by it's avatar.
+Which is the logo with the globe and
+form of some sort of a light bulb.
+And as you can see from the snapshot,
+after the final question of this round of
+Jeopardy, Watson was
+ahead by a huge margin.
+$77,000 compared to the two
+humans who were way, way behind.
+So how did Watson do on Jeopardy?
+Here's some sample questions for
+example, on December 8,
+2008 this national newspaper raised
+its newsstand price by 25 cents to $1.
+So this is a very typical question for
+Jeopardy, it's formulated slightly
+differently from traditional questions, in
+that it's really formulated as an answer.
+And you're supposed to
+answer using a question.
+So in this case you were
+supposed to say something like,
+what is USA Today which is
+the name of the newspaper.
+And I should notice that the question and
+answer format used in
+Jeopardy is really equivalent to normal
+question and answer, just a little twist
+that is added to formulate the questions
+and the answers in the opposite order.
+Here's a lot of questions that were
+used in the actual Jeopardy round.
+In 2010, this former first lady published
+the memoirs Spoken from the Heart, and
+you're supposed to answer,
+who is Laura Bush?
+And then some other questions
+that you can look at on your own.
+All of those were given in
+the competition between Watson and
+the two human participants in 2011.
+You can see some Watson
+videos on your own.
+Here's some that I recommend,
+they're all available on YouTube and
+other external websites.
+So why do we want to care about question
+answering in a natural language
+processing class?
+Well, first of all,
+because people ask questions online.
+If you analyze some large corpus of
+queries in search engines you will realize
+that many of the queries are in
+the form of natural language questions.
+So one of the earliest analysis
+of query corporal was so
+called excite corpus which had 2.5
+million queries, about one days worth.
+And simple analysis show
+that about 8% of those were
+in the form of natural language questions.
+Even though the search engine
+was not really supposed to
+understand human natural
+language questions.
+So that means that users are expecting
+the search engine to understand human
+language questions even though it's
+not officially designated for that.
+So of those 8%,
+about half are factual questions.
+For example,
+what is the country code for Belgium?
+And it asks for a procedure.
+For example, how to get out of debt or
+other types of questions.
+I should note here, that factual questions
+are much easier to deal with than
+procedure questions because procedure
+questions require a lot of context, for
+example, who is the user?
+What sort of background do they have?
+Where as factual questions typically have
+a single answer that may vary over time.
+But in general, it's a single answer,
+or perhaps one of a small set of possible
+answers that are much easier to find.
+So here's some questions
+from the Excite Corpus.
+In what year did baseball
+become an official sport?
+Again, this is a fairly
+straightforward question,
+the assumption here is obviously that
+this is about the United States.
+If this question were asked
+in a different country,
+perhaps the answer would be different.
+How do I get out of debit?
+I mentioned this one already.
+And here's some others.
+For example, when is the Super Bowl?
+Well as I mentioned before,
+questions of this type have multiple
+answers that depend on time.
+So this year's Super Bowl
+is in a couple of weeks.
+Next year's Super Bowl is going to be in
+a different location on a different date.
+So the answer to this question will
+vary depending on when it is asked.
+Same things goes for the next question.
+Who's California district state senator?
+It's completely possible that the answer
+to this question depends on the location
+and it certainly depends on the time.
+Here's some more sets of
+questions from different systems,
+so one of those systems is called Morax.
+It was one of the first
+research systems that
+was built in the mid 90s by Julian Kupiec,
+XEROX Parc, and
+it was supposed to answer questions
+based on a large encyclopedia.
+So some questions that are appropriate for
+this kind of system or of this nature,
+what US city is at the junction of
+the Allegheny and Monongahela rivers?
+Who wrote Across the River and
+Into The Trees?
+Or who married actress Nancy Davis?
+And so as you can see,
+those are fairly factual questions.
+And they are specifically related
+to the corpus, in this case,
+an encyclopedia in English.
+So a few more examples of corpus of
+questions that have been published.
+One is the so called AOL Corpus that
+was published about 10 years ago And
+again you can see that people ask
+very different types of questions.
+For example,
+what does cerebro-cortical atrophy mean?
+What fraction is closest to pi?
+What is the highest calories consumed
+by a person in a 24 hour period?
+You can notice that some of those
+questions are mis-typed and
+this is very common in query logs.
+People don't always ask the questions
+in the most grammatical way possible.
+So a few more.
+You can look at them on your own.
+So one thing that people in research and
+natural language processing do for
+question answering is called
+Question Type Taxonomy.
+So they want to build an ontology
+of question types, so
+that systems for question answering
+can be built more efficiently.
+So what are the question types?
+Well, the different
+distinctions that can be made.
+One distinction is between the so-called
+yes or no questions, which require,
+as the name says,
+either a yes or no answer.
+For example, is Barack Obama
+the President of the United States?
+Yes or no.
+So those are contrasted with
+the so-called wh- questions.
+The wh- questions are who,
+what, where, how, and so on.
+Another distinction is between factual and
+procedural questions.
+So factual questions
+require usually a short,
+single answer that's factually based.
+Procedural questions usually require a lot
+of understanding about the context and
+the user and typically require a much
+more sophisticated and detailed answer.
+A third dimension is between single
+answer and multiple answer questions.
+So for example if I ask what's
+the state's flower of Oklahoma?
+I'll get one answer.
+But if I ask the question, for example,
+who are the representatives
+from the State of Oklahoma?
+I will have to get,
+by definition, multiple answers.
+So if I ask, which states were
+the first to sign the US Constitution?
+Again, I would get multiple answers.
+Another dimension is between objective and
+subjective questions.
+So for example if you ask which
+movie won the Golden Globe
+you would get an objective answer, versus
+if you asked what was the best movie of
+the year you're probably going
+to get a subjective answer.
+I should note that both of those
+are legitimate types of questions and
+questions that people ask,
+that people expect to get answers
+from a search engine for.
+However, the ways that systems deal with
+those questions can be very different.
+One more dimension is about
+context-specific and generic questions.
+So a generic question may be something
+that doesn't depend on the user or
+the background or the type of queries
+that they've asked most recently.
+Whereas a generic question
+would be the opposite.
+Another dimension is whether there's a
+known answer in the collection, yes or no.
+So, in many of these search
+evaluations of question answering,
+it was assumed that all
+the questions that we used in
+the evaluation have an answer
+somewhere in the collection.
+So the question was,
+can you find this answer,
+perhaps the sentence that contains it?
+Now, in the more general case, the answer
+to a question is not necessarily
+in the collection, so
+you should be able to say
+I don't think that there's an answer
+to this question in the collection.
+And you would get points if you correctly
+say that there's no answer and you would
+lose points if you think that there's
+no answer but in fact there is one.
+So what's the state of
+the art in question answer?
+Most of the work on factual
+short-answer questions.
+The system architectures typically
+include the following components.
+An IR component, so if you have
+a question, it's converted to a query for
+a search engine.
+And then the search engine returns
+documents that are likely to
+contain the answers to those questions.
+Most query systems use statistical
+approaches with lots of data,
+in some cases terabytes.
+They use relatively little knowledge in
+the sense that they don't have detailed
+inference procedures and
+detailed knowledge representation.
+They use mostly surface patterns.
+So now I'm going to go ahead and give you
+an overview of some of the systems that
+have been built over
+the years in question answer.
+And I'm going to start with the oldest
+systems out there and the way that
+I'm going to define oldest is that those
+precede the so called TREC evaluation.
+The TREC evaluation happened in 99 and
+has been going on for
+quite a few years since then.
+So let's start with those old systems now.
+Perhaps the first system that relates
+to question answering is a so-called
+BASEBALL system which was built
+very long time ago in the 1960s.
+It's domain was questions
+about the baseball statistics.
+And it had a very little,
+very small vocabulary and
+very small set of questions
+that it could answer.
+A second system which is only marginally
+classified as a question answering
+system is ELIZA which was introduced
+by Weizenbaum in the 1960s.
+It was a dialogue agent that simulates
+the use of a psychologist, a therapist.
+The third one that I would like to discuss
+in more detail in a few minutes is SHRDLU,
+which was built by
+Terry Winograd in the early 70s.
+That one had to deal with questions
+about the simulated world of Blocks.
+So, you had red blocks and green blocks
+and square blocks and round blocks.
+And the system was able to manipulate out
+where I put in blocks on top of each other
+and by asking and
+answering questions about them.
+The next system that I would like to
+mention is a system created by Bill Woods
+in the early 70s.
+That system is called LUNAR and
+it was based on data from
+expeditions to the Moon that returned
+with a large collection of lunar rocks.
+So the questions that you
+could ask there were, for
+example, how many rocks have certain
+such and such property and so on.
+I will give you some more detail about
+those systems in the next few slides.
+So the first more general
+domain system for
+question answering was left
+by Julian Kupiec in 1993.
+It was based on an encyclopedia.
+It was open domain.
+And I already showed you
+some of the questions that
+it was able to handle a few minutes ago.
+The first web based
+system was called START.
+It was designed by Boris Katz
+at MIT in the mid 90s.
+It was completely open domain, and
+it used the web corpus as the backend.
+And then I want to mention very
+briefly a few more systems.
+For example,
+the system called Deep Red, from Mitre,
+Lynette Hirschman et al in 1999,
+which was used for
+answering reading comprehension
+questions about school level text.
+And I would like to mention also
+one of the first spoken question
+answering systems by Victor Zue and
+his group also at MIT in the late
+90s early 2000s called Jupiter.
+So let's now look at some of those
+systems in a little bit more detail.
+I mentioned that ELIZA, was not really
+a question answering system, but
+I would like to mention it here
+because it's to engage in dialog and
+it was very influential in
+the development of future dialog systems.
+So it plays a therapist and
+doesn't really answer any questions.
+Again, this is a little
+joke on therapists.
+Maybe if you go to a therapist and
+you ask a question, they're not really
+come up with answers, they just
+ask you some further questions and
+ask you to think about your problems more.
+It uses very simple pattern matching and
+then it converts some of the questions
+that the user asks into further
+questions or it asks for clarification.
+For example,
+let's look at this following dialogue.
+ELIZA says I am the psychotherapist.
+Please describe your problems.
+And then the user says, I'm always tired.
+And then the system says,
+why do you say you're always tired?
+Again, doesn't really give
+you any useful information.
+It just asks you some
+additional questions.
+Because I cannot sleep.
+Is it because you cannot
+sleep that you came to me?
+So it has a way to convert some of the
+surface patterns of the user's questions
+into additional questions,
+follow up questions that
+seem to indicate some sort of intelligence
+even though it's really not there.
+Yes, help me please.
+And then at this point, the system doesn't
+know what to do so it starts again a new
+thread in the dialog by reminding the user
+of something that they said earlier.
+Earlier, you said you cannot sleep and
+so on.
+So the next system is LUNAR.
+LUNAR stands for Lunar Sciences
+Natural Language Information System.
+It was based on the collection of moon
+rocks returned to Marth by Apollo 11.
+So Lunar was able to ask questions
+in English about this very
+restrictive domain.
+It included the following components.
+The first component was general purpose
+of meta transition network grammar for
+English or an ATN grammar.
+An ATN is essentially a finite
+state machine with some
+transitions that are labeled so
+that you can jump from one section of
+the finite state machine to another.
+And then it uses a procedural-semantics
+framework for semantic interpretation.
+So it's able to convert the syntactic
+information from the question into some
+sort of a semantic representation
+that is specific to the domain.
+It maps the questions to
+a logical representation.
+And it uses a 3,500 word dictionary.
+It has 13,000 entries
+in the knowledge base.
+And for evaluation,
+I would like to report that
+Lunar was able to answer correctly
+78% of the sentences that humans,
+the actual professional geologists
+wanted to ask of that system.
+And this happened a long time ago back
+in 1971 at the Lunar Rocks conference.
+Here's some of the sample questions
+that Lunar was able to answer.
+How many breccias contain olivine,
+and what are they?
+So, those are specific questions about
+the rocks that were in the collection.
+So just to give an idea
+what an ATN looks like,
+this is a snapshot from
+the Bill Woods paper from 1972.
+You can see that you cannot
+really read the fonts but
+you can get an idea that this is a fairly
+complicated finite state automaton
+that is used to represent
+the user's questions.
+So the next system that I want to mention
+today is SHRDLU by Daniel Winograd.
+It was designed to answer
+questions about the blocks world.
+Here's a simple example,
+the blocks world at that
+point in time was rendered as
+those kind of measures of lines.
+There is a box on the right hand side, and
+there are a lot of blocks in the form
+of pyramids and cubes and other shapes
+that were either in or outside of the box,
+possibly on top of each other.
+So the system simulated a robot that was
+able to recognize some of those shapes and
+be able to place them on top of each
+other, move them into the box or
+remove them from the box.
+So it gives a sample dialogue,
+the person says, pick up a big red block.
+And the system says OK.
+So that means it understood correctly that
+there's only one big red block available
+and it was able to find it and move it.
+The next thing that the person
+says is grasp the pyramid.
+Now the computer says,
+I don't understand which pyramid you mean.
+So in the context of this dialogue
+there may be multiple pyramids and
+the computer needs
+a little bit more context.
+So the person now says, okay,
+forget about this pyramid, now
+find a block which is taller than the one
+that you're holding and put it in the box.
+So as you can see here, the questions
+involve commands but also inference.
+So the system has to be able to identify
+all the blocks that are in the world
+to figure out which ones are taller
+than the ones that it is holding.
+And then determine if this is
+unambiguous and if it isn't unambiguous,
+to actually perform the action and
+move that block to the box.
+Okay, here's what the computer said.
+By it I assume you mean the block which
+is taller than the one that I am holding.
+And that is just a confirmation
+that the computer understands what
+the person was asking.
+And then the computer goes on and says OK.
+So that's exactly what I want it to do.
+And by saying OK, the computer performed
+the action that the person intended.
+Then the person asks,
+what does the box contain?
+And now the computer says,
+well the box contains the blue pyramid and
+the blue block.
+So it has a very good representation
+of the world at any point in time.
+What it is holding, what's on the surface,
+what is on top of another block,
+what's in the box,
+what's outside of the box, and so on.
+Now the last question is,
+what is the pyramid supported by?
+The box.
+What that means is that the box contains
+the blue pyramid and the blue block, but
+the blue pyramid is not
+on top of the blue block,
+instead it is directly
+sitting on top of the box.
+How many blocks are not in the box?
+Four of them.
+Is at least one of them narrower than
+the one which I told you to pick up?
+Yes, the red cube, and so on.
+If you're interested in this system in
+a little bit more detail you can go to
+the official website where there
+are many other transcripts, and
+also simulation software that lets you
+manipulate the blocks with a little bit
+better graphics than the ones
+that were used 40 years ago.
+So the next system that I want to
+discuss today is called Start.
+Here's what it looks like currently.
+It allows you to ask arbitrary
+natural language questions.
+And it keeps some of the most
+interesting ones in a log.
+So you can look at the questions in
+the category geography or science and
+reference.
+An so on,
+that have been asked in the past.
+So, Start is an open domain system.
+And like, for example, Lunar and SHRDLU,
+which were about very specific domains.
+It uses the web as the back end.
+It has been mostly continuously
+online since 1993.
+So that makes it the oldest
+web based system out there.
+So this is a little bit of introduction
+about question answering systems.
+We're going to continue with the next
+set of examples in the next section
+

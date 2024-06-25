@@ -1,0 +1,297 @@
+Okay, so we're going to continue with
+some more system descriptions for
+question answering.
+The next system that I want to discuss
+briefly is the system developed by
+the Language Computer Corporation,
+Harabagiu,
+Moldovan, and others around 2002, 2003.
+So that's one system
+that's very different from
+the others because it involves some
+deep semantic analysis of sentences.
+It converts them into logical forms.
+So here's an example from the paper, a
+sentence like, heavy selling of Standard &
+Poor's 500-stock index futures in Chicago
+relentlessly beat stocks downward.
+So this is going to
+present as a logical form
+using different elements and attributes.
+For example,
+heavy is an adjective that relates to x1.
+Selling is also related to x1.
+Of is a preposition that connects x1 and
+x6, and so on.
+And then the system uses different
+semantic axioms for inference.
+So for example,
+it uses lexical chains from a word net.
+So for example, the word game
+is related to recreation, and
+recreation is related to sport.
+It's able to use this lexical
+chain information to find answers,
+even if they don't contain any of
+the words in the original question.
+One more system from the University
+of Michigan is called QASM from 2001.
+It's also based on a noisy channel model.
+And it is that you want to convert the
+natural language question into a query.
+So this is different from
+the system by Marco and
+Ishihari, where the mapping was
+between a question and a sentence.
+So, for example, if the question is,
+what country is the biggest
+producer of tungsten?
+You want to convert it to something
+like this, biggest or largest,
+where biggest and
+largest are synonyms of each other.
+Keep the content words such as produce and
+tungsten and drop the content words.
+So chasm involves a number of channel,
+noisy channel operators.
+For example, deletions,
+deleting prepositions and stop words,
+for example,
+replacing a noun phrase with a disjunction
+that includes multiple WordNet synonyms,
+and replace.
+So the third system in this segment is
+by Ravinchandran and Hovy from ISI 2002.
+It is based on automatically
+learning surface patterns about
+sentences that are likely to contain
+answers to a given question.
+It starts with a seed, and
+then it queries the web.
+And it finds patterns that contain both
+the question and the answer terms.
+So for example if the question is,
+who wrote Hamlet?
+And it knows that the correct
+answer is Shakespeare.
+It will search for documents that
+contain both the word Hamlet and
+the word Shakespeare.
+And then try to identify patterns that
+contain both of those expressions, and
+look for words that connect them together.
+Here's one more example.
+Mozart was born in 1756.
+The kind of pattern that the system
+is going to recognize is that,
+was born on is an example that links
+together a name of a person and
+his or her birthday.
+Now this takes me to
+a much more recent system,
+the Watson system by David Ferrucci and
+all from IBM.
+That's the system that
+participated in Jeopardy.
+It's by any stretch of the imagination
+the largest Q and A system out there.
+It has been published about extensively.
+It has been covered in the press
+probably more than any other system.
+It won Jeopardy in 2011.
+And some of the interesting features of
+this system are its architecture, first.
+So the architecture is based
+on a technique called DeepQA.
+So that's a technology that enables
+computers to precisely answer natural
+language questions using different
+types of knowledge sources,
+both structured data but also in inference
+engines and knowledge representations.
+It has a very powerful
+hardware implementation.
+It involves 10 racks of
+IBM servers running Linux,
+16 terabytes of RAM,
+just RAM, almost 3,000 cores.
+And it's operating at a backbreaking
+speed of 80 teraflops.
+And most of it is written in Java, but
+also a little bit of it is in C++ and
+Prolog.
+All the components are integrated using
+IBM's constructor data UIMA system.
+So an overview of the Ferrucci et al
+system is in AI magazine from Fall 2010.
+And there's an article about it in
+PC Magazine that includes a lot of
+information about its background and
+performance.
+So, what kind of knowledge
+sources does Watson use?
+It uses 200 million pages of structured
+and unstructured content, for
+a total of four terabytes of disk storage.
+So this includes things like Wikipedia,
+other encyclopedias, dictionaries,
+news articles, and so on.
+It also includes things like WordNet and
+other knowledge representation sources.
+One interesting aspect of the Watson
+system is, not so much related to natural
+language processing, but
+it's certainly worth mentioning here.
+That is that it has a betting strategy.
+So the way that Jeopardy works is that you
+not only have to get the right answer but
+you also have to buzz in
+before everybody else.
+Now if you buzz in,
+you're supposed to answer right
+away if you get selected to answer.
+And if you get the answer wrong, that
+means that you can actually lose points.
+So if you're really certain of the answer,
+your best strategy is to buzz
+in as quickly as possible.
+And if you're not so sure,
+it may be better to wait a little bit and
+maybe let somebody else answer,
+and possibly get it wrong.
+And in that case,
+you get some additional information and
+you can try to be the second
+one to guess and get it right.
+So the way that the betting strategy
+works is that you have some sort of
+confidence associated with every
+answer that you are getting.
+And if you are at least 50% certain,
+you try to buzz in.
+If you are not, then you wait.
+So, how well did it do?
+It was supposed to answer
+about 75 questions.
+It got 66 of them correct and
+9 of them wrong.
+A most famous example of incorrect
+answer was in the category of US cities.
+One of the questions was about, which city
+has two airports named after World War II,
+one named after a battle and
+one named after a person?
+And Watson thought about it and
+buzzed first and
+gave their answer,
+Toronto which was incorrect.
+I guess it missed the fact that
+the category was U.S. cities.
+The correct answer in this
+case was Chicago with
+Midway and O'Hare as the airports.
+However, even though it
+had 9 incorrect answers,
+it still managed to win
+the game by a huge margin.
+The two human performance, again,
+both of which were winners
+in many previous contests.
+Ken Jennings and
+Brad Rutter walked away with really
+small winnings compared to Watson.
+And again, Watson is so
+well covered in the press, I'm not
+going to spend more time on it, but
+I have included here several interesting
+pointers for future reference.
+Okay, so
+some question types that Watson uses.
+There's actually a really
+large taxonomy of those.
+They're 2,500 of them,
+way more than any of the other systems.
+But it turns out that according to
+the law of diminishing returns,
+about 200 of those question
+types are really common.
+And the rest appear just once or
+twice in the entire history of
+Jeopardy games for 50 years or so.
+By the way,
+when I talk about this archive,
+it's actually available on the Internet.
+You can go there and check every single
+Jeopardy question that was asked over
+the last 50 years, including
+the ones that Watson had to answer.
+So now let's switch to
+a slightly different question.
+What are some of the challenges
+in question answering?
+What would need to be solved in
+order to make question answering
+even more successful?
+So one obvious problem is
+word sense disambiguation.
+And so there are many words in English or
+in other languages that
+have multiple senses.
+And we want to be able to use state
+of art word sense disambiguation
+to understand that.
+Next one is co-reference resolution.
+Very often the answer to a question
+maybe in a sentence that doesn't
+contain the original named entity.
+Instead, it maybe the second sentence in
+a paragraph, and it can be introduced by
+means of a pronoun or a named entity,
+an aforenamed entity.
+In which case, we cannot really
+identify this answer easily.
+So obviously,
+advances in co-reference will go a long
+way towards making Q&A systems better.
+A third component is
+semantic role labeling.
+This is a topic that we're going to
+discuss in one of the future segments.
+Semantic role labeling has
+to deal with identifying
+the main predicates in sentences and
+their attributes.
+For example,
+if the action is about buying something,
+then the semantic roles associated with
+buying are the person doing the buying,
+the object being bought, the price,
+the location, and so on.
+So all of those answers are likely
+to improve question answering.
+One other important topic about question
+answering is temporal questions,
+so how to deal with answers
+that change over time.
+So for example,
+who's the President of the United States?
+Currently the answer is Barack Obama.
+A few years ago it was George W Bush, and
+a few years from now it
+will be somebody else.
+So we have to be able to
+understand correctly the time
+when the question was asked and the time
+that the answer was given in the document.
+And Jeopardy's specific concern is
+to use the categories correctly.
+Just as I mentioned,
+Watson made a mistake on a category about
+US cities by giving a Canadian city.
+It is obvious that it didn't
+realize that the answers were
+all supposed to be U.S. cities.
+Okay, so now we are going to switch
+to a slightly different topic, and
+we'll hear by concluding question, answer.
+

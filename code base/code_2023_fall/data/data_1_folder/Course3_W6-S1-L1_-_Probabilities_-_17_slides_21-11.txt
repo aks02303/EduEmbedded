@@ -1,0 +1,605 @@
+Okay, welcome back to
+Natural Language Processing.
+Today, we're going to start
+a new section of the book
+about Probabilistic Natural Language
+Processing and Information Extraction.
+So for those of you who are not familiar
+with probabilities, we're going to start
+with a little overview of probability
+theory and some related material.
+So what is probabilistic reasoning and
+why is it important for
+natural language processing?
+It is very important.
+Let me give an example
+in speech recognition.
+Suppose that you have a system
+that recognizes speech.
+It converts an audio signal into text.
+Most of the time it will
+not be able to find
+the perfect interpretation
+of a speech signal.
+It may come up with
+a number of alternatives,
+some of which are more
+reasonable than others.
+For example, if you say recognize speech,
+it's very possible that your
+system was going to hear
+something like wreck a nice beach.
+Those two strings sound very similar,
+so for our speech recognition system,
+they maybe very easy to confuse.
+But obviously for
+human being they are very different and
+one of them is reasonable,
+the other one is completely nonsensical.
+So, we have to figure out how to build a
+system in natural language processing that
+can take into account, some probabilities
+associated with each of those strings.
+So, we want the probability of
+the first string to be very high, and
+the probability of the second
+string to be relatively low.
+So, even if the speech recognition
+system has to chose between those two,
+it will have an easy time figuring
+out which one is correct.
+So, here's another example
+of machine translation.
+So, we have this translation from
+the French-Canadian [INAUDIBLE].
+The English expression for
+attorney general is attorney general, and
+people have figured out that in French
+the correct translation is avocat general.
+However, this phrase in French
+also can mean the general avocado,
+because in French the word avocat
+means both lawyer and avocado.
+So we want to be able to build the system
+that can favor the attorney general
+over the general avocado, just because
+it's more commonly used in English.
+One additional advantage of using
+probabilities in natural language
+processing is that it's possible to
+combine evidence from multiple
+sources in a systematic way.
+So for example,
+we can have a probability that counts
+from the speech recognition system.
+Then combine it with a probability from
+the text understanding system and so
+on and
+be able to build a better system that way.
+Okay, so now let's look at probability
+theory in a little bit of detail.
+So the purpose of probability
+theory is to predict
+how likely it is that
+something is going to happen.
+One of the basic concepts in probability
+theory is the idea of an experiment
+or trial.
+For example, when we throw a coin,
+let's assume that the coin is fair,
+so that it has a 50% chance of being
+heads and 50% chance of being tails.
+Every time we throw a coin,
+we're performing an experiment.
+Each of those experiments can
+have a different outcome.
+So, for example, the fair coin
+can be either heads or tails.
+If we have a six-sided die, then
+the possible outcomes would be one, two,
+three, four, five, and six.
+So we can also define
+a term of a sample space.
+So the sample spaces is either discrete or
+continuous.
+So in the case of coins and dice,
+it's discrete because we have
+discrete outcomes,
+you get two of them or six of them.
+But we can also have sample
+spaces that are continuous.
+For example, if we want to measure
+something as a real number,
+we can have the probability of
+every particular height, let's say,
+or weight, be a real number.
+So in this case we have
+a continuous sample space.
+So an event in probability
+is defined a foreign way.
+Omega is a certain event, so
+that is something that is
+going to happen for sure.
+For example whether the coin is
+going to be either heads or tails.
+Given that the coin is fair
+there's no third option, so
+the event that the coin is going
+to be heads or tails is certain.
+We also can define the impossible event,
+which is denoted by the symbol phi.
+So the impossible event is that
+the coin will be both heads and
+tails simultaneously.
+It's very clear that a certain
+event has a very high probability.
+In fact, it's going to have
+a probability of one and
+impossible event is going to
+have a probability of zero.
+The event space is just all
+the possible events that
+are associated with a certain experiment.
+So probabilities are defined as
+numbers between zero and one.
+Zero again corresponds to
+an impossible event and
+one corresponds to a certain event.
+We can define a probability distribution
+which takes the probability of one
+throughout the sample space omega.
+So, for example,
+in the case of a fair coin,
+we can have 50% of the probability mass.
+So, 0.5 will be associated with heads,
+and 50% of the probability mass or
+the other 50%, the other 0.5 sorry,
+associated with tails.
+So let's look at a more specific event.
+So the example here is tossing
+a fair coin three times.
+And we are interested in
+the probability of getting three heads.
+So in this case, because of
+an important property of independence,
+each coin throw is going to
+be independent of the others.
+Therefore the probability of getting three
+heads in a row out of three tosses is
+going to be the product of the probability
+of getting head on each of those trials.
+And since each of them has a probability
+of one-half, then the probability of
+getting three heads back to back is
+one-half cubed which is one over eight.
+Now a more complicated question is, what
+is the probability of getting two heads?
+Well it's a little bit more
+complicated as I said,
+because getting two heads out of three
+tosses can happen in three different ways.
+We can have the first two throws be heads.
+The last one can be a tail.
+Or we can have any out of the other
+two combinations where the tail was in
+the middle or the tail was the first out.
+So each of those has a probability
+of one over eight but
+there are three such combinations.
+So the overall probability of getting
+exactly two heads is going to be again
+one-eighth but this time,
+times three so three-eighth.
+And just to conclude this example, the
+probability of getting one head is also
+going to be equal to
+three times one-eighth.
+And finally the probably of getting zero
+heads, or in other words three tails,
+is going to be the same as
+the probability of getting three heads,
+which is one over eight.
+So there are different interpretations
+of the concept of probability.
+The most interesting one is perhaps
+the Frequentist Definition.
+The Frequentist Definition just says that
+we have observed a certain event repeated
+overtime and we measure how many
+times it had a specific outcome.
+So for
+example I can throw a coin ten times and
+then it turns up heads five times.
+So this give me a frequentist
+interpretation of a probability.
+That's the probability of
+the coin turning up heads is 0.5.
+Another interesting
+definition of probability,
+the subjective definition in that case,
+is has to do with some sort of
+personal understanding about
+the reality of a certain event.
+So for example if I believe that
+the coin is fair I should be able to bet
+$0.50 on heads and be sure that I'm not
+going to lose money in the long run.
+If I knew for example that the coin is
+not fair and it has a 60% chance of
+being heads, then I will bet accordingly
+more money on heads than on tails.
+Okay, now let me measure some
+important properties of probabilities.
+I already said that the probability
+of the impossible event is zero.
+The probability of
+the certain event is one.
+And also if we have two events X and
+Y we can say that the probability of X is
+less than or equal the probability of Y.
+If X is a subset of Y.
+So for example, if X is throwing a die
+with six sides and having either a 1 or
+2 or 3 or 4, and
+then the probability of Y corresponds with
+the outcomes one or 2 or 3 or
+4 or 5, since X is included in Y.
+Therefore the probability of X is
+smaller than the probability of Y.
+Another important property is that the
+probability of a union of two events is
+equal to the sum of the probabilities only
+if their intersection is empty set.
+So this is the case of disjoint events.
+So for example, if X is the event
+that the coin is going to be,
+I'm sorry, that the die is going to be 1
+or 2 or 3, and Y is the event that the die
+is going to be 4 or 5 or 6,
+the probability of each of those is 0.5.
+And the probability of the union
+is equal to 0.5 plus 0.5, or 1.
+And again, this is because the two events
+are 1, 2, 3, and 4, 5, 6 are disjoints.
+And therefore,
+the intersection is impossible.
+Another important concept in probability
+theory is conditional probability.
+So the idea is that you could have
+two events, and you can measure
+the probability of one of the events,
+and then you can measure the probability
+of the second event given that you
+know the outcome of the first event.
+So the probability of an event before
+you get this additional information from
+the additional variable is called a prior
+probability and the one that you get after
+you observe some additional information
+is called the posterior probability.
+So the conditional probability
+is defined the following way.
+The probability of A given B
+is equal to the probability of
+the intersection of A and
+B divided by the probability of P(B).
+So, we can use a Venn Diagram to show
+all the possible combinations of events.
+So the left circle shows the event A.
+The right circle shows the event B.
+The intersection of the two
+circles is shown in the middle.
+And then, omega is the entire rectangle
+that corresponds to the certain event,
+which in this case is A or
+B, or none of the above.
+So let's look at an example.
+Suppose that we have a fair,
+six-sided die.
+It has six sides with numbers 1,
+2, 3, 4, 5 and 6.
+And we want to figure out what's
+the probability that D is an even number.
+Well, it's very straightforward.
+There are six possible outcomes.
+Three of them, specifically 2, 4,
+and 6, correspond to even numbers.
+So, on the next slide, we're going to
+see what is the actual number here.
+The next thing that we want to ask is,
+for example,
+what is the probability that the die
+is going to come out 4, or 5, or 6?
+Now, here's a more interesting
+example of conditional probability.
+What is the probability that the die
+is going to be an even number
+given that it's greater than or
+equal to 4?
+Or what about the probability that the die
+is an odd number given that it's greater
+than equal to 4?
+We can even have multiple conditions.
+For example, what's the probability
+that the die is an odd number, given
+that it's true that both D is greater than
+equal to 4 and D is less than equal to 5?
+So in the next line, I want to show
+the answers to those questions.
+So, we are interested in conditional
+probability, and I gave you some questions
+about the probability of
+a die with different numbers.
+So, the first one was, what was
+the probability that D is an even number,
+well it's 3 out of 6, so it's 1/2.
+What is the probability that D
+is greater than or equal to 4?
+It is also 3 out of 6 because three
+possible outcomes, 4, 5 and 6 out of 6.
+So, that's 1/2.
+Now a conditional probability, given
+that the die's number is greater than or
+equal to 4,
+what's the probability that it's even?
+Well, in this case, there are three
+numbers that are greater than or
+equal to 4 and those are 4, 5, and 6.
+And of those three, two,
+specifically 4 and 6, are even.
+So the probability of D even given that
+D is greater than or equal to 4 is 2/3.
+Similarly, given that D is greater than or
+equal to 4, the probability
+that D's an odd number is 1/3,
+because the only number that falls
+into this category is the number 5.
+Now you can notice on the last two lines
+that the sum of those probabilities
+is equal to 1.
+So 2/3 and 1/3 is equal to 1.
+And this is actually not a coincidence.
+Given there are ten sides,
+D greater than or equal to 4,
+the other variable D even or D odd,
+those are two mutually exclusive
+events that form a partition
+of all the possible events.
+So therefore,
+their total probability has to be 1.
+And then let's look at the example
+of multiple conditions.
+If we have the knowledge that D is greater
+than or equal to 4, and it's less than or
+equal to 5, well there are only two
+numbers that fall in this category.
+Those are the numbers 4 and 5.
+Of those, only 5 is an odd number.
+Therefore the probability of D odd
+given the conditions is equal to 1/2.
+One important rule in probability
+theory is called the chain rule.
+It allows us to compute the so-called
+joint probability of multiple variables
+using a simple representation.
+So let's say we want to
+compute the probability of
+n different events happening
+all at the same time.
+While this usually is very
+difficult because we have
+just many different combinations, so
+what we're going to do instead is
+apply the so-called chain rule,
+which works like this.
+If we have to compute the joint
+probability of n variables,
+we can just compute the probability of
+the first variable, so for example, w1.
+And then multiply this with the
+probability of the second variable given
+the first one, that's w2 given w1,
+times the probability of the third
+variable given both of the first two and
+so on, until the last term,
+which is the probability of wn, the last
+variable, given all of the previous ones.
+So this simplifies significantly
+the computation of the joint
+probability for P.
+But it's not practical yet.
+We're going to look at more specific
+methods that simplify this further.
+So this chain rule is used
+a lot in statistical and
+actual language processing,
+more specifically in Markov models,
+which is something we are going to
+talk about in the next lecture.
+So one more important property about
+probabilities is the idea of independence.
+So two events are independent if
+the product of their probabilities is
+equal to the probability
+of their intersection.
+So if unless a P(B) is equal to 0,
+this is equivalent to saying that
+the probability of A is equal to
+the conditional probability of A given B.
+So even if we have knowledge
+about the outcome of B,
+this is not going to affect our posterior
+understanding of the probability of A.
+This is going to be the same
+as the prior probability P(A).
+And just for completion here,
+if two events are not independent,
+we are going to call them dependent.
+So let's look at now at
+an interesting idea about adding and
+removing constraints in
+a probability formula.
+So adding constraints for example, we're
+interested in the following scenario.
+Are we going to walk outside today
+given that the weather is nice?
+So we're considering the probability
+P(walk=yes|weather=nice).
+Let's now look at the slightly
+different version of this one.
+What's the probability that we're
+going to walk outside today, given that
+the weather is nice and that we have free
+time and that it's very crowded outside?
+So we have two additional
+constraints that restrict the space
+of possible outcomes that were
+given in the first equation.
+So the second version is more accurate.
+It is going to give us a better
+prediction, but it's much more difficult
+to estimate, because it's very unlikely
+that in the historical data we're going to
+have enough examples of this particular
+combination of attributes, weather,
+freetime, and crowded.
+The opposite idea is actually something
+that we do more often in statistical
+processing.
+It's the idea of removing constraints or
+backoff.
+So let's start with the more complicated
+formula which is the probability that we
+are going to walk outside given that the
+weather is nice, that we have free time,
+and it's crowded outside.
+Well, we can remove one
+of those constraints.
+We can even maybe remove both of them.
+Now, as you can probably imagine,
+removing constraints makes it less
+accurate to compute the probability.
+And also it makes it more statistical and
+feasible because there may be more
+instances in the trending data that have
+this particular combination of features.
+And one important observation here is
+that it's possible to do adding and
+removing constraints on the right hand
+side of the conditional probability.
+I give those two examples but
+it is not possible to do backoff on
+the left-hand side of the condition.
+So for example, we cannot replace
+probability of walk equals yes comma,
+and then e to the restaurant
+equals yes given some condition.
+And then remove one of the two
+formulas on the left-hand side.
+That's not allowed.
+So one more thing to introduce
+here is random variables.
+So random variables are just
+a function that takes omega,
+the space of possible outcomes, and
+converts it into a set of real numbers.
+So the numbers are generated
+by a stochastic process,
+with a certain probability distribution.
+So here's an example.
+Let's look at the discrete random variable
+X that is the sum of the faces of
+two randomly thrown fair dice.
+So what does that mean?
+We have a die with six sides.
+We throw it once, then we throw it second
+time independently of the first one.
+And we are looking at
+the sum of the two numbers.
+So the smallest possible value
+here is going to be two.
+If both of the throws
+turn out to be ones and
+the largest possible value's going to be
+twelve, if we are lucky and get two sixes.
+So any number in between is also possible,
+so, for example, we can get a score of
+ten by throwing two fives, or
+six and a four, or a four and a six.
+So the random variable here, which
+corresponds to the sum of the two dice,
+again can be plotted on
+the range from 2 to 12.
+And then it's going to look like
+a curve that corresponds to
+the probability that any of those
+outcomes is going to happen.
+Now, we can also define something called
+the probability mass function that
+tells us the probability that the random
+variable has specific numeric values.
+So, for example,
+the probability of little x.
+That's, let's say, the probability
+of the sum of the two dice being 10
+is equal to the probability of capital X,
+which is the probability distribution,
+equals the specific number 10.
+And this is going to be equal
+to the number of times that
+this sum is equal to 10 divided by
+the total number of outcomes which is,
+in this case six times six, 36.
+So, one more definition.
+If a random variable is distributed
+according to the probability mass function
+p of x then we write x then tilde,
+which is a representation for
+distributed as p of X.
+So, there can be two different
+versions of random variables.
+One is discrete random variables.
+In that case the sum of the probabilities
+of the individual outcomes is
+equal to the probability of
+the certain event, or one.
+And then in the example of continuous
+distribution we're going to
+have the integral of all
+the possible outcomes, or
+the probabilities of all the possible
+outcomes also equal to one.
+So it gives an example of
+a discrete distribution.
+The probability of throwing a one
+with a fair die is one in six.
+The probability of throwing a two
+is also one in six, and so on.
+So what is the probability distribution,
+capital D, of all the possible outcomes?
+Well, it's just going to be
+the so-called uniform distribution.
+One, six, one, six, and so on.
+Six times that corresponds to each of the
+possible values on the side of the dice.
+That was the conditional probability
+distribution of D given that we know
+that we threw an odd number.
+Well in this case there
+are three possible odd numbers.
+One, three and five, and each of them
+obviously has a probability of one third.
+So the prior distribution in this case is
+the one shown on the second from
+the bottom line, 1/6 everywhere.
+And the conditional of
+the posterior probability
+distribution is going to be
+the one shown on the bottom line.
+Okay so lets go across the example
+about probability distributions.
+Now let's talk a little
+bit about Baye's theorem.
+Which is one of the fundamental techniques
+used in statistical processing.
+

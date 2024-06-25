@@ -1,0 +1,507 @@
+So welcome back to
+the Natural Language Processing course.
+The next section is going to
+be on Dependency Parsing.
+Everything that we talked about parsing so
+far had to deal with constituent
+parsing and interestingly enough for
+many years, perhaps for decades,
+that was the prevalent kind of parsing.
+In the last few year, maybe ten years or
+so, it has become more fashionable to
+use instead of constituency parsing,
+something called Dependency Parsing.
+It's a simpler method and
+it achieves very good accuracy for
+many different NLP tasks.
+So what is Dependency Parsing?
+Before I can talk about
+dependency parsing,
+let me explain what is the dependency
+structure of a sentence.
+Let's consider a simple noun
+phrase such as blue house.
+This is a noun phrase and
+it's head is the noun house.
+And blue somehow modifies house.
+But the entire phrase is a type of house.
+It's not a type of blue.
+So we have a dependency between house and
+blue where house is the root of the tree.
+And blue is a modifier,
+some sort of additional information
+that gets added to house, a specifier.
+So the terminology used in
+linguistics is the following.
+The word blue in this example
+is called either a modifier or
+a dependent or a child or a subordinate.
+And the word house which is the head.
+It can also be called the governor,
+the parent or the regent.
+So you can see all those terms used
+in the different kinds of literature.
+Let's look at the more specific,
+more complicated sentence.
+We have unionized workers
+are usually better
+paid than their non-union counterparts.
+We want to build an entire structure for
+the centers based on the dependencies
+between adjacent awards.
+So the word paid is considered to be
+the most important word in the sentence.
+It's the main predicate, so the main verb.
+It's subject is workers, so
+there's a dependency between paid and
+workers, with paid as the head and
+workers as the dependent.
+Workers itself is modified
+by the word unionized
+which shows what kind of
+workers we are talking about.
+And so on,
+you can fill out the entire chart
+by adding dependencies that
+cover all of the words.
+And as you can see,
+the word paid doesn't have any parent
+because it's the root of the sentence.
+There's another notation that
+people use for dependencies.
+You can have the verb on top,
+VBN in this example paid.
+And then it's children, labeled with
+the different types of dependencies.
+For example, prepositional phrase,
+add verbal modifier, no subject and so on.
+So you can also notice that there is
+some connection between the dependency
+structure of the sentence and
+the phrase structure of the sentence.
+So I'm going to alternate between
+those two slides for a second.
+This is the phrase structure where
+the sentence turns into a noun phrase and
+a verb phrase.
+Here's the equivalent dependency
+structure where the verb is at the top.
+It turns out that there are some
+methods which can take a structure like
+this one here and use the so
+called Head Rules to convert it into
+a dependency structure automatic.
+So what is a Dependency Grammar?
+It's a grammar that
+captures lexical/syntactic
+dependencies between words.
+And the top level predicate of
+the sentence becomes the root of
+the parse tree.
+And they're much simpler to parse
+than context free grammars.
+And they're very useful for
+languages that have free word
+order such as Czech and Latin.
+So how do we identify
+the heads in a pair of words?
+Well let's use this terminology,
+H for head, M for modifier.
+So in general, if you have to
+choose which one is the head,
+you can use the following principles.
+H determines the syntactic
+category of the construct, or
+H determines the semantic
+category of the construct.
+H can be required,
+whereas M can be skipped.
+So in the example, blue house,
+house cannot be skipped, that's the head.
+M or blue can be skipped.
+And they may also be given
+a specific type of dependency or
+there maybe a fixed linear position of
+the modifier with respect to the Heads.
+For example, an adjective can
+modify the noun right next to it.
+So the case in example of
+a list of rules that come from
+Michael Collin's Future Dissertation.
+You can see that in every case you have
+a paramount terminal and
+a list of priority children.
+So let's look at an example.
+For example, for S, we may have
+the following children constituents.
+To and In, which are different kinds
+of prepositions, a verb phrase.
+Another sentence,
+s bar adjectival phrase, and so on.
+And then, the rules,
+according to Collins, are to pick
+the first one on this list that appears.
+So, for example, if we can choose
+between a verb phrase and a preposition,
+we're going to pick the preposition.
+If there are no prepositions,
+if we have to choose let's say
+between a verb phrase and a sentence,
+we'll pick the verb phrase because it
+appears on the left here and so on.
+Now you should also notice
+that some of those,
+the actions are going the other way.
+So for example, for adjectival phrase,
+we go left to right but
+for verbial phrase we go right to left.
+So if there's more than one candidate
+with the same label among the children,
+we're going to pick the one that comes
+from the right instead of the one that
+comes from the left.
+So here's some of the main techniques for
+dependency parsing.
+The first type are based
+on dynamic programming.
+They use methods similar to CKY,
+and they have cubic complexity.
+There was one famous paper by
+Jason Eisner is column 96 which
+shows why this was the case.
+Here's an example of a sentence
+in dependency representation,
+Mary likes cats.
+So the predicate of the sentence is likes,
+and the two arguments, or
+the two modifiers of likes,
+are Mary and cats.
+So we can build this kind of tree
+by using dynamic programming,
+starting with the equivalent
+of a CKY parser, and
+in each case propagate the head
+to the top of the production.
+So for example,
+this nsubj dependency here and
+direct object dependency would be
+mapped to the labels of the parse tree.
+Another set of techniques for
+dependency parsing are based
+on constraint satisfaction.
+This kind of technique was introduced
+in the early 90s by Maruyama,
+Karlsson and others.
+So, here's an example.
+We have some set of constraints
+between words and their labels and
+their dependencies.
+In this particular case, the rules says
+that a determiner modifies the noun
+on the right, and its label has to be
+NMOD, because again, in the previous line,
+you see that the position of
+the part of speech has to be before.
+So in general constraint-based methods
+are problematic because constraints of
+this function are an NP
+complete problem and
+you need a significant number of
+heuristics to make it work in practice.
+So in general, the idea is to base,
+to represent a sentence in
+the form of a constraint graph
+that includes a core grammar with domains,
+nodes, and constraints.
+And to find an assignment that doesn't
+contradict any of the constraints.
+And if more than one assignment exists,
+then you should add some additional
+constraints to further narrow
+down your choices for the parse.
+A third type of category of dependency
+parsing techniques are based
+on deterministic parsing.
+So this was done by many different
+people including Covington.
+But most recently by the MaltParser
+created by Joakim Nivre and
+his colleagues.
+So the MaltParser method is very
+similar to a shift/reduce parser for
+context free grammars.
+And the reduce operator creates
+dependencies with the head on
+either the left or on the right.
+So that essentially creates dependency
+arcs to the left and to the right.
+These are also techniques based on graphs.
+More specifically the techniques
+based on maximum spanning trees that
+were pioneered by McDonald M Pereira and
+some others around 2005.
+So one issue with dependency parsing
+is projectivity and non-projectivity.
+So if you look at the sentence here,
+where did you come from last year?
+You will see that according
+to one of the parses,
+the one that is shown above the sentence,
+you don't have any crossing links.
+Whereas the parse on the bottom
+has come connected to year and
+from connected to where.
+So if you allow your dependency trees to
+include causing dependencies like this,
+you have what is known as
+a non-projective dependency tree.
+It turns out that this is more important
+for languages with three word orders such
+as Russian and Czech and
+not so much for English.
+So that's why in English there's quite
+a lot of literature that includes only
+projective parts as in addition
+to the non-projective ones.
+So let's talk about some of the specific
+examples about dependency parsing,
+for example the McDonald
+et al paper from 2005.
+So the idea in the McDonald paper is that
+the dependency parsing problem is reduced
+to the equivalent problem of searching for
+maximum spanning tree in a directed graph.
+And there already exist one of
+those methods by Chu, Liu, and
+Edmonds that work efficiently to find
+Maximum spanning tree on directed graphs.
+So here's an example,
+we have the sentence John saw Mary.
+We can present this as a graph where
+we have the three words John, saw, and
+Mary plus an additional root word.
+Represented as nodes in the graph and
+then we can have weights that can
+be determined from training data.
+And then when you perform the maximum
+spanning tree algorithm on this graph
+you're going to get the parse which
+looks like this root pointing to saw
+which is the main verb and
+then saw in turn pointing to it's
+two dependents John and Mary.
+So one of the most popular techniques for
+dependency parsing in the last few years
+is the so called MaltParser that
+was introduced by Joakim Nivre.
+It has undergone many different
+changes over the years.
+So the version that I'm going
+to describe is just one of many.
+So it's a very similar method
+to shift-reduce parsing.
+It includes the same
+components shift-reduce parse,
+specifically a stack and a buffer.
+But it also includes a set of dependencies
+that correspond to the dependency arcs.
+So the reduce operations combines
+an element from the stack and
+one from the buffer.
+And the arc-eager, which is one of
+the versions of the MaltParser,
+includes shift reduce,
+plus a left-arc and a right-arc operation.
+So, here's some examples
+of those four operations.
+In the shift example, the word
+gets removed from the sentence and
+added to the stack.
+In reduce the word from the top
+of the stack gets converted.
+And in the left and
+right arc examples we have the word
+that is first in the remaining buffer
+combined with the words on the top of
+the stack to combine the new dependency.
+So here's an example.
+We have the sentence
+people want to be free.
+At the beginning we start with a style
+that just contains the symbol root.
+The buffer contains
+people want to be free.
+And the list of arcs is empty.
+So the first operation
+here is a shift operation.
+We would take the word people and
+we move it from the buffer to the stack
+leaving the rest of the words
+want to be free in the buffer.
+The next operation is
+a left-arc operation where we
+remove the word people from the top of
+the stack and we combine it with the first
+word in the buffer want to create
+a new arc called nsubj and labeled A1.
+The next iteration is to combine
+the word want with the root.
+So that's a right-arc operation.
+We are removing the word
+want from the stack and
+combining it with the root note and so on.
+So each of the actions here is
+selected using a classifier.
+Looking at features that
+are local to the current work.
+So there's no search involved which
+makes the algorithm very efficient and
+the final list of arcs that is returned
+at the end of the parse is the full
+dependency tree of the sentence.
+So let's look at evaluation metrics for
+dependency parsing.
+We can have label dependency accuracy,
+which is similar
+to the labeled constituent accuracy for
+traditional parsing methods.
+So it's just the number of correct
+dependencies divided by the number of
+dependencies that could be there.
+So here's an example,
+here we have an output of
+a dependency parser with the following
+standard representation.
+The first column is the word number,
+the second word is the word
+in the sentence,
+the third is the head of the dependency.
+And then you have the part
+of speech of the word, and
+then the number of the head, and
+the label of the dependency.
+So in the first example, we have
+unionized modifies workers, so that's
+word number one modifying word number two,
+and the name of this dependency is NMOD.
+So what are the complexities of
+the different algorithms for
+dependency parcing?
+Well, the projective CKY method
+is order n to the fifth power.
+A better version by Eisner is cubic,
+a non projective method like MST, using
+the Chu-Liu-Edmonds method for maximum
+spanning trees has a quadratic complexity.
+And finally,
+the MaltParser has a linear complexity.
+So, it turns out that dependency
+information is very useful for
+information extraction tasks.
+It can define different rules
+that tell you what sort of
+dependency subtrees are connected
+with specific relations.
+So here's an example from
+a paper by Eric Canedo in 2007.
+Where the goal was to identify
+interactions between proteins in
+the medical literature.
+So you have the dependency
+tree of the sentence.
+So on top, starting with demonstrated.
+Then it's two children be results and
+interacts and so on.
+So the full sentence is
+the results demonstrated that KAIC
+interacts arithmetically with KAIA,
+KAIB and SasA.
+So you can see that in order to identify
+all the important interactions here for
+example between KaiC and
+KaiA or between KaiC and SasA.
+You can look at the paths that
+connects them in the dependency parse.
+So for example, KaiC is connected
+to KaiA using the following paths.
+First there is a dependency named and sub,
+then there's a node called Interacts,
+then there's a dependency called
+Prep With, and finally goes to SASA,
+and finally it gets to another
+dependency called Conjunction and
+finally to the node of the target KaiA.
+So you can train a system
+that has already labeled
+what independencies to identify some new
+pairs of what independencies in new text.
+And the system would learn
+patterns of this kind.
+Another application of depedency is
+in the so called Dependency kernels.
+A Dependency Kernel as described in one of
+the previous segments is a technique that
+decides how similar two
+sentences are based on
+how similar their
+dependency structures are.
+So here we have an example from Bunescu
+and Mooney 2005 where they wanted to
+figure out what relations
+appear in different sentences.
+So for example, one of the relations
+was protesters located at stations.
+And the shortest path between those
+two words in the dependency graph
+goes from protesters
+to seized to stations.
+So those sets of
+dependencies can be used in
+identifying how similar
+two sentences can be.
+So I'm going to conclude this
+segment with a few pointers,
+some external links are to resources
+related to dependency parsing.
+The first one here, is the data set and
+evaluation methodology for
+the CONLL-X Shared task,
+on Multilingual Dependency Parsing.
+There's another interesting pointer
+which is one of the earliest dependency
+tree banks, the so
+called Prague Dependency Treebank.
+The next is a Wiki page about all kinds
+of methods for dependency parsing.
+And then there is a pointer to
+the MaltParser method from Nivre.
+And some of the earlier dependency
+parsers, such as Dekang Lin's Minipar,
+and the link parser from Carnegie
+Mellon's Dan Sleator and Davy Temper.
+And just to give an illustration of
+one of them, this sentence here shows
+the first sentence of the Penn Treebank
+presented as a dependency structure.
+It's extracted from the viewer that comes
+with the Prague Dependency Treebank.
+So the sentence here is Pierre Winken,
+61 years old, who joined the board as
+a non executive director November 29th.
+As you can see the
+root is connected to join, which is
+the main predicate of the sentence, and
+then all of the modifiers of
+join are listed as its children.
+For example, will, bored, and November.
+And then recursively you can have all of
+the other dependencies shown in the tree.
+So for example, 29,
+here modifies November.
+Non-executive modifies director and so on.
+So this is a little bit of
+an introduction to Dependency parsing.
+We're going to continue in the next
+set of slides with a topic on
+alternative syntactic representations.
+

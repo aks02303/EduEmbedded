@@ -1,0 +1,330 @@
+So, welcome back to
+Natural Language Processing.
+The next segment is going to be about
+extracting collocations from text.
+So collocations are phrases that have
+dictionary definitions of their own.
+And those definitions are different from
+the meaning of the individual words.
+For example,
+if we say that somebody kicked the bucket,
+that doesn't mean that the person
+actually, literally kicked the bucket.
+That just means that the person has died.
+So there's a famous saying by Firth
+from 1935 that says you should know
+a word by the company that it keeps.
+So what that means is that
+words have meanings that
+depend on the words that surround them.
+So in general phrases have many different
+uses and many different categories.
+So here's some examples.
+A dead end is a street
+that doesn't have an exit.
+It's not somebody who has died.
+Strong tea, the example here is to
+indicate that even though the word strong
+and the word powerful are synonyms,
+we don't say powerful tea, but
+we always say strong tea.
+So those two words form a collocation
+that is different from the meaning of
+the individual words again.
+Names of people and names of diseases
+are other examples of such phrases.
+Collocations have different properties.
+They are commonly used.
+They are not just one time occurrences.
+There are no general syntactic or
+semantic rules about them.
+And they're very important for
+non-native speakers when they
+learn a language fluently.
+Collocation acquisition, or
+learning collocation from text is very
+important for natural language
+processing applications and
+things like question answering and
+machine translation.
+There's no common agreement on
+what exactly forms a collocation.
+So I'm going to try to give you some
+examples here of different multi-word
+sequences and what makes them different.
+So one of those categories
+is called idioms.
+The second one is called
+free-word combination.
+And the third one is called collocations.
+So here's some example of those.
+Idiomatic expressions include things like,
+to kick the bucket, dead end, and
+to catch up.
+Collocations include things that
+consist in this case of common words
+which when combined have a meaning that
+is slightly different from the meaning
+of the individual words.
+So for example, to trade actively,
+a table of contents, or
+terminology like orthogonal projection.
+And the third category,
+just free word combinations.
+We have again common words, but combining
+them together is very compositional.
+And it doesn't convey any
+special meaning to the phrase.
+For example, to take the bus
+just means there's a bus and
+you take it, and you go somewhere.
+The end of the road or to buy a house, and
+we're not interested in
+free-word combinations.
+We are mostly interested in idioms and
+collocations and in particular,
+collocations.
+So what are some properties of those?
+So they are arbitrary so
+substitutions are not usually allowed.
+For example,
+we can say to make an effort, but
+we cannot say to make an exertion, even
+though effort and exertions are similar.
+We can say running commentary, but
+we cannot say running discussion.
+And we can say commit treason, but
+we cannot say commit treachery.
+Collocations are language and
+dialect specific.
+So if we go from one language to another,
+we will notice that the collocations don't
+necessarily get translated by
+translating the individual word.
+So for example in French, to say to direct
+traffic, we'll say regler la circulation,
+which is something like regulate traffic.
+In other languages for example Russian or
+German or Serbo-Croatian,
+it's actually the word regulate
+that is used for directing traffic.
+Another example is in American English,
+people say to set the table or
+to make a decision.
+Whereas in British English,
+people say mostly to lay the table and
+to take a decision.
+Here's one more example in French,
+semer le dessaroi means to wreak havoc,
+and the actually translation
+is to sow disarray.
+So semer means to sow.
+And so collocations are common
+in technical language, and
+they are recurrent in context.
+So there are many uses for collocations.
+They can be used for example for
+disambiguation if we have some
+ambiguous word like the word bank.
+If we have another word near it, for
+example, loan or river as part of
+a collocation, we should be able to
+disambiguate the word bank very easily.
+They're also very useful for
+translation and also for type generation.
+So grammatically speaking,
+there are multiple types of collocations.
+Some of them are grammatical which
+include things like phrasal verbs.
+For example, come to, put on,
+afraid that, fond of, and
+so on, and preposition phrases
+like by accident, and so on.
+They can also be semantic, but
+only certain synonyms are allowed.
+And the others that are very flexible
+in terms of the physical location of
+the words that form.
+For example,
+we can say find something by chance, and
+those words don't have to be
+necessarily near each other.
+There could be an intermediate
+set of words in between.
+So find, followed by an entire clause,
+by chance.
+So one important distinction in
+collocation analysis is between
+the so-called base and the collocator.
+So the base is defined to be what bears
+most of the meaning of the collocation.
+So writers think of the base first, and
+foreign language speakers search for
+an expression in the dictionary
+based on the base.
+For decoding or for
+understanding purposes,
+it's actually more appropriate to store
+collocation under the collocator.
+So here are some examples of bases and
+collocators.
+You can have nouns and verbs,
+such as set the table.
+The base here is the noun, table,
+and the collocator is the verb.
+Noun and adjective, the base would be the
+noun and the collocator is the adjective.
+For cases where you have adverbs and
+prepositions, the adverb and
+preposition are always the collocator.
+So how do we extract collocations
+automatically from text?
+Do we just take the most common bigrams or
+perhaps trigrams and fourgrams?
+It turns out that this is not
+the right approach because very often,
+those correspond to just
+free-word combinations.
+What if we just drop some
+of the function words?
+That turns out not to give
+us any additional mileage.
+One other possibility is to look at part
+of speech sequences, but as I said before,
+collocations are fairly arbitrary.
+And there's no reliable way to extract
+them based on part of speech sequences.
+Okay, so let's look at some techniques for
+extracting collocations that work.
+So one of the most common techniques
+is based on mutual information.
+Just to remind you the mutual information,
+we turn to random variables.
+I is the log of the ratio
+of the joint probability
+divided by the product of
+the individual probabilities.
+So for example, larger values of I
+means that the collocation is stronger.
+And if the mutual information is equal
+to 0, that means that there is no
+correlation between the two words,
+and they don't form a collocation.
+And if the value of the mutual information
+is negative, that means that those words
+are actually less likely to appear
+together than you would expect by chance.
+Okay, so one of the techniques that is
+used to extract collocation is based on
+the so-called Yule coefficient,
+which is very simple to compute.
+Suppose that we have two words w and x.
+I'd like to use the following notation,
+capital W and
+capital X means that those particular
+words appear in the given background, and
+little w and little x means
+that those words don't appear.
+So A is the frequency of pairs
+that involve both words.
+B is the frequency of pairs, or bigrams
+that involve just one of the words.
+C is the other one, and D is neither.
+So the Yule coefficient is computed
+by taking the diagonal of this
+contingency matrix.
+AD- BC divided by the sum of
+the same numbers, AD + BC.
+And this gives us numbers in the range,
+again, from -1 to +1, where 1
+indicates a very strong collocation.
+Let's look at an example now.
+So in the top-left corner of
+the spreadsheet, we have A = 800.
+So those are the cases
+where both words appear.
+Then we have B and C, 160 and 180.
+And finally D=80 are the cases
+where none of the words appear.
+And then we can compute the formula, and
+we get a score of 0.38,
+which is mildly strong collocation.
+So here's an example from
+the Hansard Corpus of
+Canadian Parliamentary proceedings,
+that include both French and English text.
+A technique like this was used to extract
+collocations that translate from
+one of the languages to the other.
+So the word prime,
+as in prime minister was translated as
+the following words in French
+based on the mutual information in
+sentences that are aligned
+between the two languages.
+One other thing to think about is whether
+a collocation is flexible or rigid.
+So here's an example from
+a paper by Frank Smarger.
+p+1 means that the second word of
+the collocation appears exactly after
+the first one.
+p+2 means that it appears two words later.
+p+3 means that it appears
+three words later and so on.
+p-1 means that it appears right before.
+As you can see in this case,
+we have a pair of words that
+appear together 8,031 times.
+And in most of those cases, 7,900,
+they appear right next to each other.
+But there are still some cases where they
+appear with a small number of words in
+between.
+So this would be an example of a fairly
+rigid collocation which only has
+a few examples where it doesn't work.
+But there are cases
+where you can have even
+more rigid collocations where all of
+the numbers would be at p-1 or p+1.
+So this is the pair free and trade.
+So Xtract was a system
+developed by Frank Smadja.
+And it was able to extract collocations
+like Dow Jones Industrial Average or
+flexible collocations like the NYSE's
+Composite Index of all its listed
+common stocks fell,
+then some number to some other number.
+Now let's see how we can
+translate collocations.
+So as I mentioned before,
+translating collocations is not trivial.
+We don't want to translate
+them one word at a time.
+Here's an example,
+brush up a lesson in French.
+It gets translated as repasser une lecon,
+repasser means to go over.
+Bring about, which is an expression in
+English that is written by a phrasal verb.
+In Russian it's translated
+as a single word, [FOREIGN].
+And some examples from
+the Hansard's Corpus,
+late spring Is translated fin du
+printemps, which means end of spring.
+And Atlantic Canada Opportunities Agency
+gets translated as Agence de promotion
+economique du Canada atlantique, which
+is a slightly different translation, so
+Economic Promotion of Atlantic Canada.
+So here's some examples for websites
+that contain phrasal collocations and
+English language idioms.
+And there's a large website that includes
+many more of those, called idiomsite.com.
+So this concludes the section
+on collocation extraction.
+

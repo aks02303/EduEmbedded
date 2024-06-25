@@ -1,0 +1,540 @@
+So we recently talked about
+one type of text similarity,
+specifically the one that is
+computed after stemming the words.
+We're now going to look at a different
+kind of spelling similarity of added
+distance.
+So very often people make mistakes
+when they go to search engines.
+For example, they may want to be looking
+for pictures of Britney Spears and
+they type her name as Brittany Spears.
+Or they often spell a name like
+Katherine Hepburn incorrectly or
+spell the word receipt with
+i before e even though
+they are well aware of the rule when
+you should use it one way or the other.
+There are also variances in
+spelling that I mentioned before.
+So theater can be spelled with E-R or R-E.
+We want to be able to capture
+the similarity between those spellings.
+So that if a user types Brittany Spears,
+we should be able to know that
+they meant Britney Spears, because
+the two spellings are similar enough, and
+return the documents about her.
+So let me share now, a little funny
+example from a different language.
+I want you to be exposed to examples
+from as many languages as possible.
+Now, those of you who know Arabic can
+probably read this without any problem.
+But those who cannot,
+I want to give you some hints.
+I want to ask you can you guess,
+with successive hints on my behalf,
+who this person is?
+Arabic is spelled right to left.
+The symbol that I marked
+is pronounced [SOUND].
+This one is pronounced [SOUND], F.
+This combination of symbols
+is pronounced [SOUND], or AL.
+So, there's a reason I'm
+showing you this example.
+Can you figure out who this person may be?
+Well, it is Muammar Gaddafi,
+the former leader of Libya, who was
+deposed and killed a few years ago.
+So what is interesting
+about this example is that
+there are no common conventions on how to
+transliterate certain words like this.
+So this name has been rendered
+in the media as Muammar,
+M-U-A-M-M-A-R, or Moamer,
+with one M and an O instead of a U.
+The word Gaddafi, his last name
+has been rendered as g or kh,
+one d or two d's, and so on.
+And then the middle al, can be omitted
+without changing the meaning of the name.
+So that results in a variety
+of different transliterations.
+So, we can have the first name
+spelled in the following set of ways.
+M followed by either u or o,
+followed by a, followed by one or
+two m's, followed by an a or
+an e, followed by r.
+The middle box shows you
+the different options for Al.
+That could either lowercase el,
+uppercase El, al, uppercase Al, or blank.
+And then the third box shows you
+the spelling of the last name.
+So that gives us a total
+of eight times five
+time 360 a total of 14,400
+different combinations.
+Now not all of those
+are used in the media but
+I have seen more than 60 different
+ways of spelling this name.
+So if you want to find documents that
+contain references to the same person,
+we have to take transliteration and
+its issues into account.
+So in all the examples that I showed
+you so far, Gaddafi, theater, and
+Britney Spears, and so on, you may realize
+that the changes between the different
+versions of the word are not random or
+arbitrary.
+They are typically of the following form.
+They can be insertions or deletions.
+For example,
+the word behaviour in British English is
+spelled with I-O-U-R at the end and then.
+In American English,
+it's spelled with just I-O-R.
+So, here,
+if we start on the British version and
+we want to convert to the American
+version, we would have a deletion.
+And then, we would go the other
+way around if we go from
+American English to British English.
+This also applies to
+the word Al in Al Qaddafi.
+Now, the other type of operation that
+is common in editing is substitution.
+So string and
+spring are very similar words,
+they have only one letter difference.
+So, if we want to transform string into
+spring, we would have one edit operation.
+Specifically, one substitution.
+So, in the Qaddafi example,
+this would be the swap of a k with a q.
+Now, if we want to convert sleep to slept,
+we would need multiple edits.
+So think about the minimum number for
+edits to convert sleep to slept.
+If we are only allowed to have insertions,
+deletions and substitutions, so
+one possible way to convert sleep to slept
+is to drop one of the e's and insert T.
+So that's two operations.
+Or we can even possibly replace
+the second E in sleep with a P and
+to replace the P with a T.
+That's still two operations but
+in some sense the second one
+is less likely to make sense
+because you are inserting a P in one
+place and deleting a P in another place.
+One specific type of operation that is not
+shown here is a swap of adjacent letters.
+I'm going to talk about that in
+a few minutes but, in the mean time,
+let's stick to insertions, deletions and
+substitutions of single characters.
+The method that is used to compute
+the added distance between two words or
+two strings is often referred
+to as the Levenshtein Method,
+there are other names for it as well.
+It's based on dynamic programming.
+So it starts by computing the added
+distance between two empty strings.
+And then recursively it computes
+the added distance between longer and
+longer substrings of the original words.
+And it uses costs of one for
+all insertions, deletions, and
+substitutions of length one.
+Let's look at an example.
+I picked two words, trend and strength.
+And I want to show you how the Levenshtein
+method is going to compute
+the similarity between the two.
+So the way that it works is that you have
+to create a two dimensional chart, and
+then have four empty boxes in
+the upper left corner, and
+then you start by spelling
+one of the words across,
+starting with cell where s of strength
+is located, going to the right.
+And then spelling the second word in
+the first column in position three.
+And then the second row in the second
+column are numbered from zero
+up until the length of those words.
+In the first case, it's zero to eight.
+In the second case, zero to five.
+So Levenshtein's Method works like this.
+We're going to first compute
+the added distance between
+the leftmost substring of strength,
+specifically the letter S, and
+the leftmost one character
+substring of trend, namely T.
+So if S and T are those two letters,
+we're going to have an added distance
+of 1 because they don't match.
+If they were the same,
+Then we will have added distance of zero.
+Then we're going to compute the value of
+each of the cells in the table by making
+sure that we have previously computed
+the cell that is immediately above,
+immediately to the left, and
+immediately above to the left of
+the one that we want to compute.
+So at this point here, we can compute
+either the distance between s and t,
+or any other cell for which we have
+those three labels already computed.
+But in this example, there aren't any.
+So we can not really do anything but
+compute the distance for s and t.
+So the recurrence relation used
+in the Levenshtein method uses
+the following definitions.
+So s1(i) is the ith
+character in string s1.
+s2(j) is the jth character in string s2.
+D(i,j) is the edit distance between
+a prefix of s1 of length i and
+a prefix of s2 of length j.
+t(i,j) is the cost of aligning the ith
+character in string s1 with
+the jth character in string s2.
+And let's see how those are computed.
+On the right hand side of the slide
+you'll see the bases cases.
+D(i,0) = i.
+So essentially the cost of
+aligning any string of length
+i with a string of length zero
+is equal to i, because we need
+i insertions to turn the empty string
+into the string of length of i.
+So by symmetry, the edit distance
+between the empty string and
+the string of length j is equal to j,
+because we need
+j definitions to convert a string of
+length j to a string of length zero.
+And then finally we have
+the recursive case.
+So to compute the edit distance
+between the sub-string s1(i) and
+the sub-string s2(j),
+we need to compute the values of D for
+the cell above, the cell to the left and
+the cell above to the left.
+And then, figure out which of
+the three expressions shown in the min
+gives us the smallest value and
+pick that one as the new edit distance.
+So, in a sense,
+we can start from the cell, to the left.
+And add one.
+We can start from the cell above,
+and add one.
+That would correspond to an insertion or
+a deletion.
+Or we can start with
+the cell that is above and
+to the left, and then add either one or
+zero, depending on whether the ith
+character of string s1 matches
+the jth character of string s2.
+So, the edit distance at the bottom
+part of the right hand side,
+tells you that t(i,j)=0 if, and
+only if the ith character of si is
+equal to the jth character of s2.
+It's equal to 1, otherwise.
+Why?
+Because that would give us either a match,
+which has a cost of zero,
+or a substitution,
+which we agreed earlier,
+would have a cost of one.
+So, let's look at that example again.
+To compute the edit distance between s and
+t, we said that it would be
+either the one above plus one,
+which is two.
+On the one to the left, plus one, which
+is also two, or the one diagonally to
+the left and above, zero, plus the cost
+of substituting an s with a t.
+So of those three expressions,
+we have a two, a two and a one.
+The minimum one of those is one.
+And therefore we're going to produce
+this new value of one in the new cell.
+And now we can continue
+filling the table recursively.
+So the edit distance between s t and
+t, what is it?
+Well, we can either add one to the two
+above which would give us a three, or
+we can add one to the one to the left,
+which gives us two,
+or we can start with the 1
+that is diagonally above and
+to the left, and add to it
+the edit distance between t and t.
+Now, t is the same character as t.
+Therefore, their edit distance is zero.
+So to summarize,
+the smallest possible value of the cell
+that we are computing right now is one.
+And we can do this, now,
+for the rest of the table.
+And, at any point in time,
+we have to keep track
+of which path to that cell was used
+to compute the smallest distance.
+Let's look at one more example.
+If we have computed the table so far, and
+we want to compute the edit
+distance of s t r and t r,
+we can have the minimum of two plus one,
+or two plus one, or one plus zero.
+Because there are rs in both strings
+in those particular locations.
+So we have a choice between the numbers,
+three, three, and
+one, so clearly we are going
+to pick one as the new value.
+And then at the end of the day,
+when we have filled the entire table,
+the number in the bottom right-hand corner
+is going to give us the edit
+difference between the two words.
+So in our case, that is four.
+So strength is converted to trend by
+a minimum of four edit operations.
+And one possible way to do
+this is by dropping the s,
+replacing the g with the d, and
+then inserting a t and an h.
+There are other ways as well.
+So, the edit transcript keeps track of the
+order in which the cells were computed and
+we can use it to reconstitute
+the sequence of operations that converts
+one of the strings to the other.
+Now people have proposed modifications
+to the Levenshtein method.
+For example, Damerau proposed that
+swaps of two adjacent characters also
+have a cost of one.
+And this is reasonable, in fact Damerau
+modification is commonly used in
+computing edit distance because it
+is linguistically motivated and
+also it's motivated by user status.
+People are likely to swap
+adjacent characters by accident.
+So the Levenshtein edit distance
+between cats and cast would be 2,
+because we would either have to do two
+substitutions, or we would need to delete
+the t from one location and
+then insert it in a different location.
+So that gives us two operations,
+whereas the Damerau modification of this
+edit distance just has a score of one,
+because it swaps st for ts,
+which counts as one operation.
+Now, there may be some other distance
+operations that can be very specific
+to different tasks.
+Let me as you the following question.
+Can you figure out why the edit distances
+for the pairs shown here are as indicated?
+So the first example is,
+why is the distance between sit clown and
+sit down equal to one?
+So clearly based on either
+the Levenshtein or Damerau method,
+we would have a cost of two.
+We would need to drop the C and
+replace the L with a D.
+Well in this case, according to
+some not yet specified edit metric,
+the distance is only
+going to be equal to one.
+The second example, the distance
+between the word Q-E-A-T-H-E-R and
+weather is equal to one,
+which is understandable because we
+have one substitution from Q to W.
+But then the distance between leather and
+weather is equal to two.
+Now why do you think you would need to
+have a distance metric that makes this
+kind of assignments to the value?
+Well I'll give you an answer in a second.
+Well, it turns out that those two
+edit distances are actually motivated
+by the process by which
+people create text.
+So in the first example the distance
+between sit down and sit clown is
+very small because in optical
+character recognition, or OCR,
+it is possible to mistake the D
+character for a sequence of C and L.
+If you look at the two,
+they look pretty similar, and
+very often OCR software will
+make this kind of mistake.
+So if we want to recover
+from mistakes in OCR,
+we want to assign a relatively low edit
+distance between sit down and sit clown.
+There are other instances where OCR
+makes frequent mistakes, for example,
+the lower case m, in English,
+can sometimes be interpreted as
+a little i followed by a little n.
+And there are many others such examples.
+Now in the second example here,
+the distance between Q-E-A-T-H-E-R and
+weather is smaller than the distance
+between leather and weather.
+Because we want to model the way that
+people introduce spelling errors by using
+their fat fingers, essentially clicking
+on an adjacent key of the keyboard,
+instead of the one they
+wanted to click on.
+So Q and W are adjacent on the keyboard,
+whereas L is far away.
+So if you want not to penalize people for
+making typos, we
+want Q-U-E-A-T-H-E-R to be considered
+relatively close to weather,
+because this is a very likely
+mistake that a user can make.
+Whereas substituting weather for
+leather is unlikely to have been
+caused by this fat finger process.
+So we want, in this case,
+to say that there is really
+a distance between those two words.
+Okay now another quiz question.
+The Levenshtein algorithms or
+similar algorithms based on dynamic
+programming are used not only for
+languages like English and
+Arabic and French but also for
+other kinds of languages.
+Look at the sequence and think if you
+can recognize maybe from high school or
+from some other source
+what language it is in.
+You will see the answer on the next slide.
+All the answer is that this
+is a genetic sequence.
+It's not human language in the same
+sense as English or Arabic.
+It is still human or a natural sequence,
+it can appear also in animals obviously.
+The nucleotides that are encoded in the
+genetic sequence can only be one of four
+letters, A, G, C, or
+T in the DNA sequences.
+So this particular sequence that I
+showed you is a well-known sequence,
+and I cannot even pronounce
+the name of what it represents.
+But it's something that you can look up
+in an encyclopedia of genetic sequences.
+So the method that I just described
+is based on dynamic programming, and
+it was used for aligning text sequences.
+But similar methods can also be used for
+aligning non-textual sequences.
+For example,
+nucleotide sequences like in the previous
+example where you have either DNA or
+RNA sequences consisting of symbols
+like ACGT for DNA and ACGU for RNA.
+But you can also have some special wild
+cards such as dash, which stands for
+gap of any length and N which stands for
+either one of the nucleotides.
+Similarly one can use dynamic
+programming techniques for
+aligning amino acid sequences.
+For example, FMELSEDG and so on, where
+each of the letters represents a specific
+amino acid such as aspartate or
+glutamate or glutamine and so on.
+In this particular case,
+there are also wild cards.
+X stands for any amino acid.
+Z stands for either glutamate or
+glutamine, and so on.
+And the costs of alignments here
+are determined empirically.
+They reflect the evolutionary divergence
+between the different protein sequences.
+For example, aligning V and
+I Is lower cost than aligning V and H.
+And for those of you who
+have a biology background,
+you can probably recognize
+the molecules of those amino acids.
+You can see that the valine and
+isoleucine molecules look very similar,
+where the histidine looks very different.
+So a few external demos, Levenshtein demo
+is available at the URL shown on the top.
+And then I provide you here
+with a bunch of links to
+external sites that perform different
+forms of biological sequence alignment.
+And, the NACLO problem related to
+this segment is called Nok-Nok.
+It was spelled N-O-K-N-O-K.
+It's a NACLO 2009 problem by Eugene Fink.
+You can look at it on
+the external website, and
+then once you try to solve it,
+you can come back here.
+And now the solution for
+the Nok-Nok problem.
+It's again,
+available on the external website.
+You can compare your solutions with
+the one that was officially accepted.
+And one more problem from NACLO
+related to sequence alignment.
+It's The Lost Tram problem part of
+which I showed you earlier today.
+It's a NACLO 2007 problem by Boris Iomdin.
+And its solution is
+shown on the next slide.
+So this concludes the segment on edit
+distance using dynamic programming.
+We're going to continue soon with
+the next chapter of semantic similarity.
+Specifically we're going to
+look at lexical similarity,
+synonomy, and
+other lexical semantic relationships.
+

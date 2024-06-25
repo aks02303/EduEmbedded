@@ -1,0 +1,568 @@
+So one of the most important aspects
+of natural language processing is how
+it is related to the study
+of linguistics or language.
+So the next segment I'm going to
+go over the basics of language and
+language analysis and
+linguistics as they relate to this class.
+So linguistics is the study of language
+and it covers many aspects of language.
+For example, its sound system,
+its syntactic system, its use,
+its change over time.
+Let me start now by showing
+you some slides that relate to
+the sounds of the language.
+The first chart is the IPA or
+International Phonetics Association Chart
+of consonants.
+So, each consonant sound can be
+characterized by two properties.
+One is the so-called
+place of articulation.
+Which are organs, which portions
+of organs I use to produce it, and
+one is the manner of articulation,
+which is the way the air goes through your
+mouth and nose to pronounce that sound.
+So let's look at some examples.
+The first column includes
+the sounds like puh, buh and
+muh, which are known
+collectively as bilabials.
+Bilabial stands for two lips, you use
+both lips to pronounce puh, buh, muh.
+You also have sounds that are pronounced,
+for example,
+with your soft palate like velar
+sounds like kuh and guh and ung.
+And you also have a velar sounds and
+palatal sounds and uvular sounds.
+Uvular sounds are sounds that
+are pronounced using your uvula,
+which is this little portion of your
+palate all the way in the back.
+Now the manner of
+articulation can be pulsive.
+Will likely have a flow of air
+that suddenly stops when you
+say it sounds like pu, bu, tu, du, ku, gu,
+it can also be nasal if it goes through
+the nose like the [SOUND] sounds.
+It can also be fricative if there
+is friction when it is pronounced,
+for example that covers the sounds
+like [SOUND] [SOUND], and
+the third property of consonants is
+whether they're voiced or voiceless.
+So, for example,
+in each pair, in each box,
+you have as many as two
+different consonants.
+For example, pu and bu.
+They're pronounced exactly the same way
+as far as the pace of articulation and
+the manner of articulation are concerned,
+but
+they differ in whether they are voiced or
+not.
+So, if you put your finger on your
+throat and you try to pronounce pu and
+bu, you will realize that,
+when you say bu, your vocal chords
+vibrate and when you say puh they don't.
+So the same things applies to all
+the pairs of sounds like tuh and
+duh, kuh and guh, and
+shuh and juh, and so on.
+Now in addition to constants,
+there can be vowels, and
+vowels are characterized
+by two properties again,
+one is where they are formed in the mouth,
+the front the back, or in the middle.
+And also whether your mouth is open,
+closed, or somewhere in the middle.
+So for example the e sound is front
+vowel that is pronounced with
+a relatively closed mouth,
+whereas is much more open than e or
+a and it's still pronounced
+in the front of the mouth.
+And then sounds like oh and oo
+are pronounced in the back of the mouth.
+So this chart, just like the previous one,
+includes vowel sounds that are not only in
+English, but in other languages as well.
+Now, the other thing that you want
+to hear about linguistics is that
+languages are related.
+Not all languages are related
+to all other languages,
+but many languages
+are related to each other.
+So if you look at the slide here,
+you will see that the word for
+night in English is very similar
+to words in other languages,
+such as French and German, all the way
+to Albanian and Latin and Sanskrit.
+The words don't look exactly the same,
+but they have the same origin.
+They come from a language
+called Popioeuropean, or PIE,
+from which all of the currently existing
+in New York PIE languages originate.
+So Popioeuropean doesn't exist anymore,
+yet some of the words in that language
+still survive to these
+days like in this example.
+So let's just look at how different they
+can be, night in English, nuit in French,
+nacht in German, noch in Russian,
+nosht in Bulgarian,
+noite in Portuguese and Galician,
+notte in Italian, noapte in Romanian,
+nakts in Latvian.
+They all look relatively different and
+yet they have something in common,
+they all have the form that starts with
+the letter n, followed by a vowel,
+and then some specific consonant or
+pair of consonants that
+are somewhat related to each other.
+So all the words in this
+category are known as cognates.
+A cognate is a term in linguistics that
+means that words have a common ancestry.
+So the language in
+the European language family
+that survive to this day can be grouped
+into smaller categories, for example.
+Bengali and
+Urdu both descend from Sanskrit,
+Farsi descends from Old Persian,
+and both Old Persian and
+Sanskrit are part of the so-called
+Indo-Iranian group of languages.
+Greek is descended of
+the Hellenic group of languages.
+Romanian, French, and
+Catalan all descend from Latin,
+which is a form of an Italic language.
+Lithuanian, Russian,
+and Polish are all part of
+the Balto-Slavic group of languages.
+Modern English descends from Old English,
+which is a Germanic language.
+German descends from Old High German,
+which is another Germanic language,
+and so on.
+There are some non-Indo-European
+languages that exist in the world.
+Some of them are even spoken in Europe and
+nearby countries.
+For example,
+Turkish is a non-Indo-European language,
+it's part of the so-called Altaic family.
+Finnish and Hungarian are part
+of the Finno-Ugric family.
+Arabic and Hebrew are part of the Semitic
+family and to cover the rest of the world,
+there can be also language families
+from Africa and the Americas,
+such as Uto-Aztecan which is spoken in
+portions of North and Central America.
+So this chart here shows you relative
+distribution of the language families in
+the world.
+It's a little bit hard to
+see on the screen, but
+you can get the original
+version from Wikipedia.
+You can see that there are many
+different families and
+that they're distributed
+all over the world.
+And to give an idea of the language
+diversity that exists now a days,
+I would like to refer to
+a website called the Ethnologue,
+which covers 7,300 languages in the world,
+which are grouped into all those different
+families that you can see on the screen.
+You see some of the families
+can be very large, for
+example the Austronesian
+family has 1,257 languages.
+Those Tunisian family of languages
+are languages spoken in Australia and
+islands of the Pacific.
+Other large groups include Sino-Tibetan
+languages, which include Chinese and
+other related languages.
+Languages from Papua New Guinea
+are very common,
+in fact Papua New Guinea is one of the
+places in the world, along with Indonesia,
+that has the largest number
+of different languages.
+Another subject that linguists study
+is the change of language over time.
+So I'll give you some examples here.
+One specific example is Grimm's Law.
+Grimm's Law tells you how
+words in a wide range of
+languages changed over the years
+in a very systematic way.
+So what used to be voiceless stops
+turned into voiceless fricatives.
+What used to be voiced stops
+became voiceless stops.
+And finally,
+what used to be voiced aspirated stops,
+aspirated are the ones that I pronounce
+with an aspiration like [SOUND],
+those changed to either voiced stops or
+fricatives.
+So, there are two examples here.
+So, Example 1 shows you how
+one of those changes occurred
+in a variety of languages.
+For example, the pu sound that
+appeared in Ancient Greek, Latin, and
+Sanskrit changed into an F
+sound in English, German,
+and Swedish, so the word foot
+is listed in all those examples.
+The second example is the word for
+dog, which used to start
+with the letter K in Ancient Greek,
+Latin, and even Welsh nowadays, but
+it has changed in English, Dutch,
+and German to the sound huh.
+Now is a good time to show you a NACLO
+problem about related languages and
+language cognates.
+The name of this problem
+is All in the Family, and
+it was used in the 2012 contest.
+So when you have time,
+try to solve this problem,
+and then on the next slide you
+will see a link to the solution.
+So here is the solution to
+the problem All in the Family,
+which has to deal with related
+families of languages and cognates.
+Now, going back to the idea
+of language change,
+I'm going to show you a very
+ancient piece of text.
+And I'm going to ask you if you can guess
+the source of this text, the language, and
+its period.
+You will see the solution
+on the next slide.
+Well, the answer is that this is Beowulf,
+which is an epic poem
+that was written in the 8th to
+11th century in Old English.
+And it's a little hard to
+read the manuscript, so
+instead what I would do is show you
+the text in a way that is easier to read.
+The left-hand side of the slide shows you
+the text as it appeared in Old English,
+and the right-hand side shows
+you an approximate translation
+into modern English.
+You can see that even though modern
+English descended from Old English,
+it is very different from it, and
+it's very difficult to recognize
+most of the words in Old English.
+Now I should also say that modern English
+did not just descend from Old English.
+It also borrowed many words from related
+languages, such as French and German and
+so on, over the years after that.
+The only word that is easy to
+recognize here is still fairly arcane.
+This is the word aerest as
+in erstwhile in English.
+It means first, and
+that is highlighted in boldface in
+the middle of each of the two texts.
+If you're interested in how English
+changed from Old English to modern
+English, you can go through the list
+of links at the bottom of the page.
+This slide shows you just a few of the
+examples of the words that used to exist
+in Old English but are not commonly
+used these days in modern English,
+or have changed their meanings completely.
+For example, a settle, S-E-T-T-L-E,
+used to mean a seat or bench, but
+nowadays we use the verb to settle,
+but we don't use settle as a noun, and it
+certainly it does not mean seat or bench.
+So languages in different families and
+even languages within the same
+family can be very diverse.
+For example, some languages
+have articles and some don't.
+This why native speakers of Russian often
+have a hard time when they speak English
+because there is no concept of an article,
+words like the and a, in Russian.
+So for Russian speakers, it can be
+sometimes very difficult to say whether
+you should say, I have an apartment,
+or you should say, I have apartment.
+Different languages can also have cases.
+So case is an indication that the word
+can be used in different
+syntactic roles in the sentence.
+For example, in Latin, you can have
+a sentence like the one shown here,
+Puer puellam vexat, where puer means boy,
+puellam means girl, and vexat is
+a form of the verb to vex or to annoy.
+So here, the order of the words in
+the sentence is not really important.
+What is more important is that first word,
+puer, appears in the so-called
+nominative case, which indicates
+the subject of the sentence.
+Whereas the middle word, puellam,
+indicates that puella is
+in the accusative case or is the object of
+the verb, and finally vexat is the verb.
+So here, by combining all
+this information together,
+we know it is the boy who is annoying
+the girl and not the other way around.
+In English, the only way to
+express this is to use word order.
+In Latin, you can replace the order of
+those words with a different word order,
+and you will still get the same
+semantics because the meaning
+of the semantic roles is carried
+by endings of the cases.
+Languages can also differ
+in their sound systems.
+For example, some languages have
+what is known as a glottal stop.
+So this is the middle sound in uh-oh.
+So this is something that appears in
+some of the languages and not in others.
+There are other sounds that don't
+exist in English, for example,
+the so-called velar fricatives.
+They are articulated with the back
+of the tongue at the soft palate.
+So, examples of those sounds include
+the voiceless velar fricative, [SOUND],
+which is used in languages like Russian,
+and the voiced, [SOUND], which is used
+in languages such as Modern Greek.
+Both of those don't exist in English.
+Examples in English would include
+the two th sounds, the voiceless
+the and the voiced the, which don't
+appear in many other languages.
+And again, that can be a problem for
+native speakers of other languages.
+And that's why, sometimes,
+people make fun of the way French
+people speak when they say zis and zat
+because they are not used to pronouncing
+the th sound in English proper.
+Languages can also differ in the way that
+they refer to people in
+the structure of a family.
+For example, otousan in Japanese
+means somebody else's father,
+and chichi means somebody's own father.
+This can be very problematic for
+an English speaker who goes to Japan and
+wants to refer to somebody
+else's father as chichi.
+This would be considered rude, or
+at least a sign that this
+person is not a native speaker.
+Kinship systems in general
+can be very complicated.
+So English has uncles and aunts and
+daughters-in-law and so on, but
+some languages have more than 100
+different ways to refer to your relatives.
+In fact, one of the most complicated
+kinship systems comes from a language
+called Warlpiri.
+And this brings us to the next
+NACLO problem by Alan Chang,
+which is listed on this website.
+If you go and
+try to solve this problem on your own,
+you will realize that this language
+is related to a specific community of
+people that has different
+castes which can intermarry.
+But then the descendants of people from
+the different caste can have different
+names depending on how many generations
+have happened since the intermarriage.
+And the solution to this problem is here.
+The next topic in linguistics that I would
+like to talk about is the concept of
+language universals.
+So those are properties that are valid
+across all languages in the world.
+There are two types of language
+universals, unconditional and conditional.
+And I'm going to go through some of
+the examples of those Language Universals.
+For example,
+an example of an unconditional
+Language Universal is that all
+languages have both verbs and nouns.
+Or that all spoken languages
+have both consonants and vowels.
+There are no languages that
+only have consonants or
+languages that only have vowels.
+And then two examples of
+conditional language universals.
+They both come from Greenberg who's
+one of the founders of the theory of
+language universals.
+Rule number 1 on his
+list is the following.
+In declarative sentences,
+those are sentences that end with periods,
+as opposed to question marks and
+exclamation points.
+So in declarative sentences with
+a nominal, or noun subject and object,
+the dominant order is always one in
+which the subject precedes the object.
+So if the subject and
+the object are both nouns,
+then its much more common to have
+the subject precede the object.
+In rule number 29 on Greenberg's list
+is if a language has inflection,
+it must also have derivation.
+So what do those words mean?
+Inflection deals with
+the fact that you can change
+a word by changing its morphology,
+and keeping the part of speech.
+For example,
+if the take the world to sleep, sleep, and
+you change it to sleeps, you
+are inflecting it for the third person.
+Has to deal with changing
+the part of speech of a word by
+changing its morphology.
+For example, if you take the word
+drink which is a noun or a verb,
+you can change it to drinkable Which is
+an adjective by adding a suffix able.
+So to summarize rule number
+29 on Greenberg's list
+if a language has inflection
+it always has derivation.
+It's a directional or
+conditional universe so
+it doesn't apply in
+the opposite direction.
+So one website that I would recommend for
+you is WALS the World Atlas
+of Language Structures.
+It's available online at wals.info.
+It's a relatively recent project that
+covers several hundred languages and
+almost 200 features.
+The features include things like
+the order of the object and the verb.
+It turns out that object receives verb
+in 713 languages in the database.
+Verb receives objects in 705 cases and
+101 languages don't have any
+particularly predominant order.
+Some of the other features that
+are covered in this database
+are features 18 and 67.
+So 18 is the absence of common consonants.
+It turns out that in the database,
+5 languages have been enumerated
+as having no bilabial sounds, 49 have
+no fricatives and 12 have no nasals.
+Rule number 67 is about
+the inflectional future tense.
+Let me explain what that means.
+In English if you want to express that
+the certain verb is in the future tense we
+need to use an external word like will or
+shall.
+So if I want to say, I sleep now,
+versus I will sleep in the future,
+I have to add this additional word,
+I will.
+Other languages, for
+example, French or Latin,
+actually use inflection on the verb,
+just like we do inflection in English for
+plural with S, or
+third person for verbs in S.
+In French, for example,
+you can add a specific ending to the verb
+to indicate that it will
+happen in the future.
+So based on this feature,
+it turns out that you can split languages
+evenly into yes and
+no categories with about 110 of each.
+Some of the other websites I
+recommend about world languages
+are included on this slide.
+The first one is Ethnologue, it's a very
+large website that covers about seven
+thousand languages in the world.
+Includes a lot of statistics and
+examples of their usage.
+The next site is a very long list of
+the common number words like 1, 10,
+100 and so on in many different languages.
+And then I would like to
+use this opportunity to
+raise the issue of endangered languages.
+It turns out there are many languages
+in the world, about 7,000 of them,
+but every year a few dozen
+of them tend to disappear.
+And by disappear, I mean that the last
+speakers of that language either die
+out or stop using that language altogether
+and switch to a different language.
+If language extinction
+continues at this rate,
+in 100 years, a majority of
+the world's languages will have died.
+So there's an effort to save
+dying languages by preserving
+records of them in oral and written form,
+and also by producing technology that will
+help people who speak or understand
+those languages to continue to use them.
+So this was the adult
+introduction to linguistics.
+The next section is going to
+talk about pattern speech.
+

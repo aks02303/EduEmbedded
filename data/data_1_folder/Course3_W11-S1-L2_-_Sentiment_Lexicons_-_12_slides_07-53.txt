@@ -1,0 +1,219 @@
+Okay, the next segment is going to be
+about the automatically building sentiment
+lexicons.
+So, there are some manually built
+sentiment lexicons, such as SentiWordNet.
+And the general inquirer, and LIWC, and
+the multiperspective question
+answer subjectivity lexicon.
+So, those are used a lot in
+research of sentiment analysis, but
+it is also important to learn sentiment
+lexicons automatically, whether
+this is in English or in a specific
+domain or perhaps in a foreign language.
+Let's look at some of those.
+General inquirer is a very large data
+set that includes annotations.
+Not just for polarity but also for many
+different effects and other information.
+So, for example, powerful versus weak,
+active versus passive,
+pleasure versus pain, and so on.
+So, it's available at the website
+of the University of Maryland and
+a small section of it is specifically
+about positive and negative words.
+So, it includes words like able, accolade,
+accuracy, adept, adequate as positive and
+words such as addiction, adversity,
+adultery, affliction and
+aggressive as negative.
+So now let's look a some
+automatic methods.
+We'll start first with
+dictionary based methods.
+And again the goal is to identify
+additional concept words as
+either positive or negative.
+So, the way those methods work is by
+starting from a set of known seeds.
+For example, happy is a positive work and
+angry is a negative word.
+Then we expand each of those sets,
+the positive and
+the negative set using WordNet.
+So, we add synonyms of happy to
+the positive set, synonyms of angry to
+the negative set, and leave the center for
+things like hypernyms and hyponyms.
+And many of those techniques
+are based on random-walk methods.
+You take your new words, for
+example, the word sleepy, let's say.
+And you perform a random walk on WordNet
+until you reach one of
+the known seed words.
+And, then you look at the distance
+between the current word and
+all the known labeled words.
+And, based on this distance,
+you label it either way.
+So, in addition to dictionary methods
+you also have semi-supervised methods.
+So, the first one of those was
+developed by Hatzivassiloglou and
+Mckeown in an ACL paper from 97' and this
+is also going to give us an opportunity to
+look at another naclo problem which incorporates
+some of the ideas in this method.
+So here's how it works, we have The
+following naclo problem, called molistic.
+By the way, this point is
+about adjective polarity, and
+all the adjectives here
+are not real English words.
+Again, it's very easy to
+figure out the polarity of
+English words just by looking at them,
+but if you have unknown words,
+then the problem becomes
+much More infrastructional.
+So, here is what we're given as input.
+We have a set of 11 sentences
+that include an adjective such as
+molistic, cluvious, and blitty.
+And so on, which again,
+are not real english.
+And each of the sentences talks
+about some person or people,
+and those people are described
+as some sequence of adjectives
+connected with different conjunctions,
+such as and and but.
+Can you figure out which of those
+adjectives are positive and
+which ones are negative?
+Now the ideas are the following.
+First of all,
+you have to realize that some conjunctions
+relate words to the same variety, for
+example and, relates words that
+are both positive or are both negative.
+Where as but
+relates words from different varieties.
+So blitty but cloovy means that one
+is positive and one is negative.
+So it is possible to build
+a graph where each of
+the nodes corresponds to an adjective,
+And then you have two types of agents.
+Either positive agents which means that
+the two words belong to the same cluster.
+Or negative agents which means that the
+two words belongs to different clusters.
+But even if you do this correctly and
+there are no inconsistencies.
+You still have to figure which of
+the two clusters is positive and
+which ones is negative.
+And, luckily in this example here,
+you have one sentence.
+Sentence number eight, which in addition
+to the other things that it says,
+says also that,
+Diane was a pleasure to watch.
+So, the idea here is that the adjectives
+that appear in that sentence
+are also positive.
+So, lets see if we can solve
+this problem on your own.
+So, again, you're given 11
+sentences with adjectives and
+the two questions you asked are A one and
+A two.
+A one is asking you whether those
+sentences, ABC, makes sense.
+For a sentence to make sense,
+it has to have adjectives that
+are correctly connected together.
+So for example, A here, the sentence
+will be considered correct if blitty and
+brastic have the same polarity based on
+the training data, and false otherwise.
+Then, in part A2,
+you have to determine whether
+the adjectives listed here are positive or
+negative.
+So try to do this on your own.
+So, here is a graph that helps
+to figure out the solution.
+Each number here corresponds
+to one of the sentences.
+So on the left-hand side, in the top, we
+have sentence 1 that connects molistic and
+slatty with a positive edge.
+Which means they are in the same cluster.
+Number three connects,
+molistic and donty, with and
+dashed line,
+which means they are different clusters.
+Four connects donty and cloovy as
+members of the same cluster and so on.
+And finally the same as number
+eight connects stuffy strungy and
+pleasure to watch in the same cluster.
+The numbers that appear, the dashed lines
+across the graph, like 11, 3, 5, 10, 9 and
+7 indicate that the two end
+points are in different clusters.
+So what you can do here is create a
+decision boundary that goes through all of
+the dashed lines Therefore clustering the
+graphic into one cluster of five words,
+and one cluster of eight words.
+And now the last thing that we need to
+figure out is, which is the positive one,
+which is the negative one.
+And as I said before...
+Pleasure to watch, grounds the two
+adjectives that it is connected to,
+and therefore makes the right hand
+side cluster to be the positive 1.
+And then by extension,
+the ones on the left are negative.
+Okay.
+So the next thing that we want to look at
+is the so-called PMI method that was
+introduced by Peter [INAUDIBLE] for
+identifying the polarity of words based
+on the core currents of the words with
+known positive and negative words in
+the large web based corpus. So
+PMI stands for
+pointwise mutual information.
+Which is something that we have
+looked at before in this class.
+So, given a word,
+we want to see how many times it
+appears near a known positive word.
+For example, excellent.
+And how many times it appears near
+a known negative word, such as poor.
+So the pointwise mutual information
+return two words in general.
+Let's say the word that we are trying to
+classify and the word excellent is just
+the logarithm of the number of hits of
+the search engine, which has both words,
+divided by the individual counts for
+one of the words and the other one.
+And there's another interesting
+data set that you can download from
+the Johns Hopkins website that was created
+by Mark Dredze and his colleagues,
+which contains a large number of
+training data for sentiment analysis.
+So, this concludes the section
+on sentiment lexicons.
+

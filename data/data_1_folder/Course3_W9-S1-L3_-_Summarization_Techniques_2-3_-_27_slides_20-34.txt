@@ -1,0 +1,549 @@
+Okay, so
+we're going to continue with some more
+papers on summarization from the '90s.
+The first one is by Mitra/Allen
+a group from Cornell University.
+It was the first paper to use graph-based
+summarization techniques using for
+the first time,
+a corpus of encyclopedia articles.
+So the idea was that you want to represent
+each sentence in the encyclopedia article
+as a node in the graph and
+connect the nodes using semantic
+hyperlinks when the content
+of those sentences overlaps.
+So the idea of overlap here is defined as
+some lexical similarity above a threshold.
+For example, multiple words in common.
+So, the idea was that the paths that link
+highly connected paragraphs are more
+likely to contain information central
+to the topic of the articles.
+So you have this kind of representation.
+And if you start from the first
+sentence of the document and
+you only follow paths that connect
+you to highly connected paragraphs,
+you're going to produce a reasonable
+summary of the encyclopedia article.
+Okay, so we're going to continue with
+some more techniques from the late '90s.
+Next one is by Mani and
+Bloedorn from Miter '97 and '99.
+So this was essentially the second
+time people looked at multi-document
+summarization.
+So they also use the graph-based methods
+for identifying similarities and
+differences between documents based on
+a single event or sequence of events.
+The nodes in the document are entities and
+the relations correspond to edges.
+The different relation types, for
+example Same, when the entity's the same,
+Adjacent, when it appears near each other,
+Alpha, which is related to
+semantics in WordNet, and
+Coref when the two are coreferent.
+So here's an example here.
+We have an entity in the second paragraph
+between leader, an entity called Leaders.
+Another on called Tupac Amaru, and
+those are connected by adjacency.
+Chief and
+Victor Polay are connected by adjacency.
+Chief and Leader are connected by
+an alpha relation type and so on.
+So, this kind of graph was used to
+identify if two documents contain
+the same entities and
+should be summarized separately or not.
+And they used a technique
+called spreading activation,
+very similar to the one used by
+Mitra/Allen to identify the most important
+nodes that need to be
+highlighted in the summaries.
+The next paper is by Yvgeny Barzilay and
+Michael Elhadad, 1997,
+based on the idea of lexical chains.
+What's a lexical chain?
+Lexical chain is a sequence of words
+that are semantically connected.
+So, because they are synonyms or hyponyms
+who appear together or just the same.
+So here's an example from the paper.
+Mr. Kenny is the person that
+invented anesthetic machine,
+which uses microcomputers to control
+the rate at which an anesthetic is
+pumped into the blood.
+Period.
+Such machines, as you can see machines is
+just for the second time are nothing new.
+But his device, so now we have device
+which is a word similar to machine,
+uses two micro-computers,
+again a word that was used before,
+to achieve much closer
+monitoring of the pump.
+So again, pump is similar to pump before,
+feeding the anesthetic,
+which is related to the word that
+was in the previous sentence.
+And finally, we have into the patient,
+where patient is related to person.
+So, we have several lexical chains here.
+One is consistent of machine,
+machines and device.
+Another one is pumped and pump, and so on.
+So the idea was to identify
+the longest lexical chains, so
+then to pick the sentences that contain
+as many of those chains as possible.
+So the relations count for more than that.
+Some of them are extra strong.
+That corresponds to extra
+repetitions of the exact same word.
+Others are considered strong, for
+example pseudonyms and hypernyms.
+And others are medium-stong.
+Those are just links between some synsets
+when the link is longer than one.
+So for scoring the chains, the very simple
+formula was used based on the length and
+the homogeneity index.
+So the homogeneity index tells you how
+many of the words come from the same
+lexical chain.
+And then the sentences that contain
+the highest scores are produced as
+part of the output.
+That interesting work was by
+Daniel Marco as part of his PhD
+thesis at the University of Toronto and
+later at ISI in the late '90s.
+So his approach to summarization
+is based on text coherence.
+Specifically based on the so called
+Rhetorical Structure Theory by Mann and
+Thompson from 1988.
+In the Rhetorical Structure Theory,
+you have connections between adjacent
+utterances or adjacent sentences which
+have some sort of rhetorical connection.
+So for example if I say I like cats,
+period.
+They make me feel happy.
+The second sentence,
+they make me feel happy,
+gives some additional information
+about the reasons why I like cats.
+So, in rhetorical structure theory,
+these kinds of relationships
+are called rhetorical relations.
+And they usually consist of a nucleus and
+satellite.
+So, the nucleus is an important
+piece of the relation and
+the satellite is an optional
+piece of the relation.
+So an example here is evidence.
+Do we have a nucleus in the first
+few words followed by a satellite?
+So the nucleus here is, the truth is
+that the pressure to smoke in junior
+high is greater than it will be
+in any other time of one's life.
+That's the claim.
+And then we know that 3,000
+teens start smoking each day.
+That is the satellite.
+So we can easily see that the nucleus
+contains the more important information,
+the one that cannot be
+omitted in the summary.
+Whereas the satellite is the optional
+information that can be omitted if
+necessary.
+So based on this kind of framework,
+Marco built his rhetorical boxer and
+used it for text summarization.
+So, in this example here,
+we have the tenant of Rhetorical Structure
+Theory that says that the nucleus and
+satellite combination increases
+the reader's belief in the nucleus.
+So the purpose of the satellite
+is to make the nucleus stronger.
+Now let's see how we can use this
+technique for automatic summarization.
+So here we have a short article about
+the weather conditions on Mars.
+And it has been separated
+into ten individual chunks.
+Honesty doesn't work on
+the level of sentence,
+it rather works on the level of clauses or
+utterances.
+So that's why here in this example,
+we have sentences split
+into multiple utterances.
+So you can read the story left to right,
+just by going one to ten, and
+you will see what it is about.
+But now what we want to do here is
+to build a rhetorical parse tree
+that corresponds to this document and
+see how we can use it to summarize it.
+So what is the summary going to look like?
+We want to pick the one or
+two or three or perhaps more
+utterances that contain the most important
+information in this document, and
+we're going to use the rhetorical
+structure of the document to determine
+which ones are the most important.
+Okay so here's a slightly heavy
+shuffled version of this document.
+I did it so that we can more
+easily build our rhetorical tree.
+But it's still the same idea.
+We can read the document left to right,
+by numbers.
+Okay.
+So, now what's the connection between
+utterance 1 and utterance 2?
+Well, it turns out that we have an
+instance of background or justification.
+And number 2,
+sentence number 2 is the nucleus.
+Sentence number 1 is the satellite.
+Similarly, sentences five and
+six can be combined using evidence
+of cause, and the nucleus is five.
+When we have contrast,
+which is a binuclear relation.
+That's why we propagate both four and
+five to the next level,
+because in a binuclear relation,
+both of the input clauses are nuclei.
+Then we have an elaboration that consists
+of centers number three as the nucleus,
+and what's left in four, five,
+and six, as the satellite.
+Then we join two and
+three, again using an elaboration
+relation, with two as the nucleus.
+Now on the right hand side, we combine
+seven and eight using concession,
+where eight is the nucleus.
+We combine nine and ten using antithesis
+as the relation, with ten as the nucleus.
+Then we combine the concession
+eight with antithesis ten,
+into an example relation
+with eight as the nucleus.
+And finally, we'll combine the two
+existing topmost nodes, two,
+elaboration, and eight, example,
+using another instance of elaboration and
+just as with the previous one,
+the nucleus is number two.
+So you can see that now, the root of
+this document is sentence number two.
+And if you wanted to produce a summary
+that consists of only one sentence,
+you would just go and reverse this tree,
+starting from the root going down.
+And we're going to pick sentence
+number two as the summary.
+So in this case, that's the sentence Mars
+experiences frigid weather conditions.
+So according to this model, this sentence
+contains the most information, and
+is the one that should be picked if we
+are limited to a summary of size one.
+Let me explain this in
+a little bit more detail.
+I've used now the following notation.
+A dashed box or dashed line
+indicates a satellite relation and
+solid boxes,
+solid line indicates nucleus relation.
+So the first sentence that will be
+picked if you want to produce a one
+sentence summary as we said
+was sentence number two and
+we get to that sentence just by traversing
+only nucleus edges starting on the root.
+Now if you want to pick
+the next sentences,
+we can do this by allowing one
+satellite in addition to the nuclei.
+So that takes us to sentences
+number three and number eight.
+Why those?
+Because sentence three is
+the satellite of a nucleus,
+and sentence number eight is
+the nucleus of a satellite.
+So those sentences are the second most
+important in the document and so on.
+Okay, the next type of
+approaches to summarization
+have to deal with noisy channel models.
+We mentioned noisy channel
+models in a different section,
+we're just going to briefly
+remember them here.
+In the Noisy Channel model,
+you have the concept of a source and
+a target language, for example,
+English and French, and
+you want to consider one as to be
+a garbled version of the other one.
+So the garbled version is obtained
+through some kind of a coding process.
+For example,
+it converts English to French, and then,
+if you want to translate
+back from French to English,
+you have to decode the same string
+to get back to the original sentence.
+So we have English to a noisy channel,
+becomes French, and
+then you recover or decode and
+get the most likely English
+sentence that corresponds
+to the French sentence.
+So there were a few papers around 99,
+2000 by Vigumita and Berger and
+Michael Woodblock and a few other people,
+on something called ultra summarization or
+headline generation, where they consider
+the document to be one of the languages.
+And then the headline or the title of
+the document to be a shorter version or
+a translated version of that document.
+One of the systems,
+called OCELOT, was used for
+this type of summarization called gisting.
+And again the idea was to find the gist
+that maximizes the probability
+of the gist given the document.
+And again using a Bayesian model that
+corresponds to the product of two models.
+One is the language model of the gists.
+So you want a gist that is
+a grammatical English sentence, but
+you also want the gist to be highly
+correlated with the document, therefore
+it should contain the words that are
+important and indicative of the document.
+In the other paper of the same idea, there
+was a training set of 100,000 summary and
+document pairs,
+testing on a thousand pairs,
+using Viterbi decoding for
+that defined the most likely translation.
+And the valuation that was used was word
+overlap over the original headlines of
+the documents for the test sent.
+So here's an example of an output
+of the summarizations system,
+given a document about
+the birding society in Savannah.
+Again this is a headline produced from a
+fairly large document by keeping the most
+important words and yet still preserving
+as grammatical and output as possible.
+So one other paper from that same time
+period was by Harvey Carbonell and
+Jay Goldstein, circa 1998,
+which introduced the idea of
+maximal marginal relevance, or MMR,
+not to be confused with MRR which
+is a metric for question answering.
+So MMR tells you that even if you have two
+documents that are relevant to the same
+query, if the two documents are very
+similar to each other, you don't want to
+show both of them to the user, because
+once you've shown one of them to the user
+the value, the marginal value of
+the second one is actually very small.
+You don't want to get, for example,
+ten copies of the same document as
+output of your query, even though each
+of them are fairly relevant just because
+they are too similar to each other.
+You would rather have some
+different documents which
+individually may not be as relevant, but
+would still be different enough from the
+previous ones to give some more diversity.
+MMR is essentially greedy selection
+method it applies query-based summaries,
+and its based on the idea
+of diminishing returns law.
+So you don't want to get too many good
+documents that are too similar to
+each other.
+So here's an example.
+Suppose that C is a collection of
+documents, Q is the user query, and
+R is a like a relevance based on a search
+engine, given the query of the collection,
+and S,
+are documents have already been retrieved.
+For example let's say you have already
+retrieved the one most relevant document,
+you want to decide what other
+document you want to retrieve.
+And when I say document,
+that is essentially any information in
+the scenario, but same metric applied for
+summarization deals with sentences.
+So in this case we will have the first
+sentence that is more similar to
+the query, and now we are going to
+the stage where we are going to
+pick the second sentence to return.
+In both cases, document or
+sentence, we want to pick something
+that is both relevant to the query and
+different from the sentences or
+documents that have already been produced.
+So the MMR value is actually
+computed as it looks like here.
+It's the documents D sub i that
+belongs to the relevant set
+R given the documents that have
+already been retrieved S and
+as you can see it's a mixture
+of two different scores.
+One is how similar that document
+is to the original query,
+that's sim 1 of D sub I to the query.
+And the second one is how similar that
+sentence is from all the sentences in S
+that have already been selected.
+And by varying the product,
+alpha one can put more or
+less emphasis on the diversity value.
+Again, this is a very important principle
+that has been very influential in
+the information retrieval, summerization,
+and many other applications, and
+has resulted in this whole research
+area of diversity based re-ranking,
+which also appears in the machine
+learning community and user retrieval
+communities, and so on.
+Another paper from that time period
+is Mead, was developed around 2000.
+It's a general purpose framework for
+extractive summarization
+based on salience.
+So by salience, Mead means the idea of
+a centroid of a collection of sentences.
+I'm going to explain this
+in the next few slides.
+I want to say that because
+Mead is extractive,
+it works very well in
+many different languages.
+So here's how the centroid
+based method works.
+Suppose that you have a set of statuses on
+different documents that are presented as
+dots in some vector space.
+Then, you want to plaster
+them into topics.
+They have, let's say one cluster on
+the left, one cluster on the right.
+And the red circles represent the so
+called centroids, centers of
+mass of the individual clusters.
+Then you pick from each cluster
+the sentences that are most similar
+to the centroid.
+And then possibly after performing some
+diversity based re-ranking using MMR,
+you pick the sentences that remain that
+are both similar to the centroids and
+different from one another.
+So this method works both with single and
+multi-document summarization.
+And Mead in general uses
+some additional features.
+Not just centroid.
+It also uses position.
+For example, whether the sentence
+is the first one in the document.
+Length.
+If the sentence is too short,
+you don't want to include it, and so on.
+It also uses a technique called
+the cross-document structure theory,
+which I want to explain
+a little bit later.
+By the way, Mead is one of
+the most commonly used methods for
+extracting summarization.
+And it includes an open source library
+that can be downloaded from
+www.summarization.com.
+So let's see how the centroid
+works in principle.
+Have a vector space or presentation
+of the documents and sentences.
+And alpha is a measure of the similarity
+between a given document or
+sentence and the centroid of the cluster.
+And then the similarity is measured using
+a standard cosine similarity formula
+between the document and the centroid.
+So that is the essentially
+the normalized doc product of the vector
+corresponding to the document and
+the vector corresponding to the centroid.
+So the input for Mead is a cluster
+of d documents with n sentences and
+a compression rate, which is equal to r.
+And the output is (n*r),
+sentences from the cluster,
+the ones that have the highest scores.
+So it's a linear combination of the
+centroid, positional, and other features.
+So Mead was used in the early
+2000s in NewsInEssense,
+which was a system for
+summarized news articles on the web.
+This is a snapshot from the system
+as it appeared in 2001.
+As you can see, on the left,
+it contains a summary, right,
+in the large block of white
+background text in the middle.
+And then, on the right hand side, you have
+all the different clusters that correspond
+to the different topics of the day.
+There are other systems around
+that time that were built for
+web based news summarization.
+I'm going to show you some of
+them in the next few slides.
+One of them is Newsblaster from
+Columbia McKeown et al., which is
+still in existence, and another one which
+started around that time was Google News,
+which is also still in
+existence to this day.
+Okay, so with this we're going to
+conclude this current segment of text
+summarization.
+There will be more segments later on.
+

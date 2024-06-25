@@ -1,0 +1,66 @@
+Okay, so the final segment on information
+retrieval is going to be a quick summary
+of existing information retrieval
+toolkits, and data sets.
+So there's a number of
+open source IR toolkits.
+Some of them are here just for
+historical reasons.
+For example, the Smart system which
+has been around for 30 plus years.
+There's MG from Australia and New Zealand.
+There's Lemur from Carnegie Mellon
+University, University of Massachusetts.
+There's Terrier from
+the University of Glasgow,
+and Clairlib from
+the University of Michigan, and
+also a very large open source project
+called Lucene from the Apache foundation.
+So let's look at some of those.
+So smart is the most influential
+information retrieval system that
+was developed by Gerard Sartin
+many years ago, since the 60s.
+It's based on a vector space model and it
+has a lot of different weighting options.
+It's written in the C Language, and it has
+been improved over the years to the point
+where in some of the tech evaluations,
+it actually won the first place.
+It's still available for download and
+it is used in a lot of information
+retreival classes as a teaching tool.
+MG is a highly efficient toolkit for
+retrieval of both text and images.
+Was developed in the 90s by people
+at the universities of Waikato and
+Melbourne and RMIT in Australia.
+It's also written in C and
+is based on the vector spaced model, but
+it uses a lot of tricks for efficient
+compression and data representation.
+It also has achieved
+good TREC performance.
+More recently, some systems called
+Lemur and Indri based on language
+model based informational
+retreival have been developed.
+They're written in C++ and
+are highly extensible.
+They're based on both vector space and
+probabilistic models, and they have also
+achieved very good TREC performance.
+And finally Lucene is an open source
+Information Retrieval toolkit
+that is written in Java.
+It's distributed by the Apache foundation
+and has been ported to multiple languages.
+It's very good for building practical
+IR and web applications from scratch.
+And there are many applications out there
+that have been built on top of Lucene for
+example, Nutch and SOLR.
+So this concludes the section
+on information retrieval.
+

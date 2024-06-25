@@ -1,0 +1,603 @@
+Okay so, in the previous segment,
+we talked about question
+answering systems in general.
+In the new segment,
+I'm going to talk about evaluation
+of question answering systems.
+How do we figure out that the system
+works well, and how can we improve it?
+So let me start first by focusing on
+a specific type of question answer
+evaluation, the so-called TREC evaluation.
+So TREC is the text retrieval
+evaluation conference.
+It has been going on for
+more than 20 years now.
+It includes many different
+competitions every year.
+Some of them involves document retrieval,
+others involve log retrieval,
+spoken document retrieval, and so on.
+Starting in '99,
+there was a new evaluation called Q&A,
+which spearheaded a lot of the research
+and question answering systems for
+the next 10 to 15 years.
+So, TREC is run by NIST, which is
+the National Institute for Standards and
+Technology in the United States, and
+a very nice description of the system
+is available in the papers by
+Alan Voorhees and
+Don Tice from 1999 and 2000.
+The evaluation was specifically designated
+to deal with factual question and
+answer using a specific corpus,
+so not using the web.
+So, the corpus was of news
+about 2GB worth of it.
+That corpus was known as
+the AQUAINT corpus eventually.
+And for the evaluation the first year,
+there were 200 fact based questions.
+The next year, there were 693.
+So the work for this evaluation
+essentially involved fact extraction,
+and it dealt with questions of this
+kind that had unambiguous answers.
+For example,
+who was Lincoln's secretary of state, or
+what does the Peugeot company manufacture?
+So the assumptions were the following,
+that the questions are based on text, so
+the corpus was graded by human analysts
+who actually read those documents and
+found sentences that contain
+answers to the questions.
+So, the systems were told in
+advance that the answers were
+guaranteed to be inside the corpus.
+So, the systems were supposed
+to return short passages,
+not necessarily the exact answer,
+but very short passages.
+In one of the tasks, 50 consecutive bytes,
+and in the other task,
+they had to return 250 consecutive bytes.
+After a few years, starting in 2002,
+there was only single passage of 50 bytes.
+It was supposed to be returned, but it
+had to annotated with a confidence score,
+which was used in computing a confidence
+based evaluation of the system.
+Or it was also possible that the system
+could return the answer NIL for a specific
+question if it was sure that there was
+no answer to the question in the corpus.
+In all those evaluations, there was no
+inference required, although some of
+the systems, a small set of the systems,
+use some sort of inference.
+So let's look at TREC 1999 first.
+Here are some more
+questions from that corpus.
+I'm just going to go through
+them real quick here.
+What date in 1989 did East Germany
+open the Berlin Wall?
+So again, there's a single
+unambiguous answer, November 9th.
+Who was Johnny Mathis'
+high school track coach?
+This is a famous question that has
+shown up in many papers on this topic,
+somebody called Lou Vasquez.
+What is the shape of a porpoises' tooth,
+spade shaped and so on.
+And as you can see there are different
+wh type of questions, who, what, where,
+when, why and so on.
+And the answers are very short
+passages that don't change over time.
+So you can look at some of those
+other questions on your own.
+So now some of the test questions,
+again just for your information.
+Who is the author of the book the Iron
+Lady, a biography of Margaret Thatcher?
+What was the monetary value of
+the Nobel Peace Prize in 1989, and so on.
+By the way, this entire corpus is
+available from the TREC website at
+nis.gov.
+If you're interested in doing research and
+evaluating your system against that
+corpus, you can download it from there.
+Okay so, I introduced the corpus and
+the general task description,
+let's now focus on the evaluation
+metric that was used.
+So the most important metric used here was
+something called MRR, which stands for
+mean reciprocal rank of the correct
+answer among a ranked list of answers.
+So here's the formula for MRR.
+You take the rank of the correct answer,
+you take the reciprocal of that rank.
+So one point for first place,
+half a point for second place, and so
+on, and you average this over
+all the questions in the corpus.
+So this metric was first
+introduced by TREC in '99 and
+has been very popular in the Q&A
+community for all those years.
+So here's an example.
+Suppose that the question is
+what is the capital of Canada?
+And you have a system that returns the
+following five answers in ranked order.
+First answer, Toronto, second answer,
+Ottawa, third answer, Albany,
+fourth, Philadelphia and
+fifth, Ottawa again.
+So, in MRR you're only looking at
+the highest ranked correct answer.
+So in this case it would
+be the second answer.
+At this point you would get a score
+of 1 over 2, which is 0.5 points.
+You don't get any additional credit for
+Getting Ottawa a second
+time in fifth place.
+There's a different version of MRR
+called TRR, or total reciprocal rank,
+which gives you extra credit for
+additional correct answers.
+In this case it's a little difficult,
+because the answers are the same,
+but there are questions that
+have multiple correct answers,
+in which case it makes more sense to
+get credit for all the correct answers.
+So in this case, Ottawa being
+in both second and fifth place,
+the system would get a TRR score
+of 1/2 + 1/5 = 0.7 points.
+In this case the maximum
+is larger than 1 obviously.
+So in later years, the confidence-weighted
+score was prevalent.
+In that case, you were getting more
+points if you got a correct answer and
+you were also certain of it.
+You wouldn't get that many points
+if you got the right answer and
+you weren't certain, and
+you could lose, potentially,
+a lot of points if you gave a high
+confidence to the wrong answer.
+So let's look at some of the performances.
+I wanted to show you the best systems that
+were participating in that evaluation over
+the first three years.
+So in '99, the best systems
+were by Cymphony, from Buffalo,
+SMU, AT&T, IBM, Xerox Europe,
+University of Maryland.
+2000 was again, SMU, ISI,
+University of Waterloo,
+IBM, Queens College.
+2001, InsightSoft from Russia, LCC,
+the group that was spun off from SMU,
+Oracle and ISI, 2002.
+Again, same ones including, and
+you ask which is the National University
+of Singapore and so on.
+So those were the first few systems that
+participated in each of those years, and
+every year, there were more
+than 30 participating systems.
+So what other types of
+questions were possible?
+In latter evaluations under check,
+the following were introduced,
+definitional questions, for
+example, what is a boll weevil?
+List questions for example, which states
+signed the US Declaration of Independence?
+And also cross-lingual questions,
+for example,
+the questions could be in Spanish,
+and the documents could be in English.
+And finally series questions, where you
+have one initial question, and then
+depending on the answer to that question,
+you get different follow up questions.
+And if you get one of them wrong,
+you're essentially unlikely to get
+the rest of them correct, because you're
+essentially going off on a tangent.
+So here's some examples
+of series questions.
+The first question in the first series is,
+what are prions made of?
+Well you have to answer this question, and
+then the next question is
+who discovered prions?
+So again,
+it's a question in the same thread.
+What researchers have worked with prions,
+and so on.
+The next category is, who is
+the lead singer/musician in Nirvana,
+and then who are the band members?
+At this point, the question doesn't
+even mention Nirvana anymore.
+You have to figure out that this
+is part of the same thread.
+When was the band formed?
+What is their biggest hit?
+What are their albums?
+What style of music do they play?
+A third series,
+what industry is Rhom and Haas in?
+Where is the company located?
+What is their annual revenue?
+How many employees does it have,
+and so on, and
+finally what kind of
+insect is a boll weevil?
+What type of plant does it damage?
+What states have had problems
+with boll weevils, and so on.
+So now let's move on to the next topic,
+within question number six specific.
+What is the typical architecture of
+a system that answers questions.
+So one observation that I would like to
+start with is that many questions can
+be answered by traditional search engines.
+For example, I can go to Yahoo search
+engine and ask a question such as,
+what is the capital of Nicaragua.
+Even though the Yahoo search engine is not
+officially a question answering engine,
+it can understand this question and
+it will give me the answer,
+which is that Capital of Nicaragua
+is Managua as one of the answers.
+Even if a search engine cannot necessarily
+retrieve the answer to a question,
+its still possible that it can return
+a document that contains the answer, or
+maybe a snippet of a document
+that contains the answer.
+As you can see, each of the hits in modern
+search engines is associated with a short
+snippet that in many cases contains
+the answer to the question directly.
+So let's see what other approaches
+there are to question answering, and
+what components are involved
+in the system building.
+Here's a question.
+What is the largest city
+in Northern Afghanistan?
+So, how would you answer
+a question like this?
+Well, first of all, you could probably
+look at the map, figure out what way is
+Afghanistan, figure out which cities are
+in the Northern part of the country, and
+then go, perhaps,
+to a table with their populations.
+And figure out the populations of all
+the cities in Northern Afghanistan, and
+then, figure out which one of those
+is the largest by population, or
+we can go to a search engine and
+just type this directly as a question.
+What is the largest city
+Northern of Afghanistan?
+In this case, let me show an example.
+I sent this query to a search engine and
+I was able to get the top seven documents
+and the snippets that the system picked
+as representative of those documents
+given the query on the top of the page.
+So, you can see very easily that this set
+of snippets contains a lot of answers,
+some of the correct,
+some of them incorrect, and
+certainly it contains a lot of city names.
+So here's one.
+Kabul, which is the capital
+of Afghanistan,
+which is not the right answer
+to this question, by the way.
+Here's some more, Panama City,
+which is not even in Afghanistan.
+Kano, which is also not in Afghanistan,
+somewhere in Nigeria.
+One more instance of Kabul and one of
+Gudermes, which is a city in Russia.
+So all those are incorrect answers,
+even though they are cities, and
+then for
+the first time in the fifth passage,
+we have Mazari Sharif which is
+the correct answer, and it also appears,
+albeit with a different spelling,
+in the seventh passage, okay.
+So the question here is, once we have
+run our query to the search engine and
+it gives those passages, can we come
+up with a learning algorithm that will
+classify the candidate answers into good
+ones and bad ones, or at the very least,
+rank them based on how likely they are to
+answer the question that was asked.
+So can the components that
+the typical system includes in
+addition to the IR component.
+So far the first step is
+the source identification.
+So what database should you be looking at?
+Should you be using a general web corpus,
+or perhaps something more specific?
+So if a question comes about movies and
+actors, maybe it's better to just go and
+send this question to something like IMDB,
+or Wikipedia rather than the entire web.
+It depends also on whether the answers
+is likely to be contained in a textual
+source or in a semi structured,
+or perhaps a structured source.
+For example, a database.
+So questions about, for example,
+the population of a certain city or
+the unemployment rate in a certain country
+in a certain year are probably better
+obtained from certain sort of semi
+structured, or structured data set.
+Whereas more general questions are
+probably better answered by plain text,
+unstructured data or text sources.
+So query modulation is
+a very important step.
+I want to describe it in more
+detail in the next two slides.
+Here's the basic idea, we want to
+convert the natural language question
+in to a query for that search engine,
+because most search
+engines are actually not good at
+answering natural language questions.
+For example they can easily get confused
+by the fact that there are wh words
+such as who, they may also automatically
+drop some important stop words such as,
+of and the, whereas they can actually
+be very important for the answer.
+Was I to ask a question such as
+who said to be or not to be?
+The string to be or
+not to be consists entirely of stop words.
+So a search engine is very likely to drop
+them all, before answering the query,
+in which case we're not going to
+get any correct answers at all.
+So query modulation is also concerned
+with the correct syntax for
+the specific search engine.
+So for example,
+if a search engine allows you to include
+alternative ways to ask the same words.
+For example, using vertical bars.
+You can convert the question who
+wrote Hamlet into either author,
+or wrote, followed by Hamlet.
+So in this case, we can figure out that if
+a person wrote a certain book, that person
+is the author of the book, and therefore
+we're going to be looking for documents
+that contain the name of the book, but
+also contain one of the multiple ways,
+at least one of the multiple ways in which
+one can describe the author of a book.
+So document retrieval is just finding
+the documents that match the queries.
+Sentence ranking means that once you have
+identified a document that contained
+the answers, you want to find which
+passages, possibly sentences, or
+paragraphs are most likely
+to contain the answer.
+So this is usually done
+by some sort of end gap,
+overlap, or some form of a formula,
+such as don't copy formula,
+which we're going to discuss in
+the information retrieval section.
+The next thing is once you have
+identified the right passages or
+sentences, you want to
+identify the answers
+to the original questions somewhere
+through the sentences in those passages.
+Answer extraction involves a process
+called question type classification.
+So if the question if about a person,
+you want to identify the names of persons
+in the possible answer sentences.
+It also involves something
+called phrase chunking.
+So for example, if you have let's
+say something about New York,
+then you don't want to separate
+the word New from the word York.
+You want to keep them together
+as part of the answer, and
+finally have answer ranking.
+So in answer ranking,
+you have a bunch of candidate answers
+that satisfy the criteria so far.
+They are of the correct type, but
+they appear in sentences in documents that
+are relevant to the query, and so on,
+and now, you want to figure out in
+what order to present them to
+the user to score the most points.
+So in the example before,
+You don't want Kabul and canno and
+good airmask to appear in the top of the
+list, you want Mazar-e-Sharif to be there.
+So some of the features that I use to find
+the answers include the question type,
+the proximity to the recruiting words,
+and also very importantly the frequency.
+So if you get, let's say, 20 passages
+returned by the search engine as relevant
+to the query and six of them contain
+the exact same answer independently, well,
+chances are that this is
+a very likely correct answer,
+as opposed to something
+that appeared just once.
+So let's now go through this entire
+pipeline with the example before,
+the question is what is the largest
+city in Northern Afghanistan?
+We go through first query modulation.
+We converted this into largest or biggest.
+We keep the word city.
+We drop the stop words for
+example in, is, and the.
+And we add quotation marks around Northern
+Afghanistan to indicate that this is
+a phrase.
+We don't want cities that are in
+the northern part of Southern Afghanistan,
+or the northern neighbor of Afghanistan,
+we want the actual phrase
+Northern Afghanistan to appear.
+Okay, now we send this modulated
+query to a search engine and
+we will perform document retrieval and
+we get a bunch of URLs.
+Then we rank the sentences
+in those documents and
+we get the ones that are most likely
+to contain the correct answer first.
+Then we perform answer extraction.
+We identify the candidate
+non phrases in this case,
+which are most likely
+to contain the answer.
+And finally we perform answer
+ranking using machine learning.
+We identify that Mazer-e-Sharif
+is actually the better
+candidate to lead
+Gudermes in second place.
+Again this is just an ideal
+representation of the pipeline.
+Let's look at some of those stages
+in a little bit more detail.
+The first one is question
+type classification.
+So question type classification,
+we want to identify
+the type of named entity that will
+match the question that was asked.
+For example, if the question is about the
+author of a book we're going to be looking
+for answers that are people or authors or
+writers, and so they're not going to be
+looking for names of organizations or
+names of football teams and so on.
+So here's an example,
+who wrote Anna Karenina?
+We're looking for a person or
+an individual or a writer, not for
+any of the other categories.
+Let's look now at two different
+taxonomies of question types.
+The first one is the so
+called syn-classes from IBM's
+answer selection system or Ansel.
+It includes about 20 categories
+which are categorized as QA token or
+question answering tokens, the first some
+place, it answers the question where.
+And an example of this category
+is in the Rocky Mountains.
+The next is country so, country can
+be the answer to a question where?
+Or a more specific question
+such as what country?
+And, in that case,
+an answer could be United Kingdom.
+You can see that the mapping
+here is actually ambiguous.
+So where questions in the input can be
+mapped to either places or countries or
+states and perhaps some other category.
+Who questions can be mapped to persons,
+roles, organizations, and so on.
+So even though you can
+look at the question word,
+you still don't know exactly which
+category of question you're looking for.
+So you have to allow for
+multiple possible categories to be
+included in the answer selection process.
+So let me show you one more
+taxonomy real quickly.
+This is the University of Illinois
+Urbana Champagne question-type taxonomy.
+So it includes quite a few more
+question types than the IBM system.
+The first major category's entities and
+that includes things like animals,
+body organs, colors, and so on.
+Then there's another category of
+abbreviations, then descriptions,
+then different types of humans, locations,
+and finally different numeric expressions.
+For example, dates and distances,
+and money, and ranks and so on.
+So some examples from
+the University of Illinois corpus.
+When did Rococo painting and
+architecture flourish?
+Well this category is numerical,
+and then subcategory date.
+What country's national passenger
+rail system is called Via?
+Well this is automatically
+classified as a location country.
+Who invented Make-up?
+Well, this is again a human,
+specifically an individual, and so on.
+So you can look at some of
+the other examples here.
+And for more details about the way that
+the classification is actually done,
+you can look at the UIUC papers
+on question classification.
+I specifically recommend the ones
+that are listed on this page here.
+Li and Roth And one more by Li and Roth,
+and then both of those referred to
+a specific data set that think there's
+both a training set and a test set of
+a few thousand different questions
+with their labels manually selected.
+And this corpus has been used in a lot of
+other papers for comparative evaluations.
+So we're going to stop here and
+continue in the next segment with some
+techniques for question classification.
+

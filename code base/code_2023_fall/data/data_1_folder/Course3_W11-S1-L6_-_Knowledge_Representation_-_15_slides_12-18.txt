@@ -1,0 +1,337 @@
+Moving on to the next topic,
+knowledge representation.
+So what is knowledge representation?
+Well, it's essentially anything
+that has to do with storing
+semantic information and
+being able to reason about it.
+So one of the important concepts in
+knowledge representation is the idea of
+an ontology.
+So ontology may be, for example,
+the relation between different objects.
+Which object is a type of another object.
+So for example,
+a table is a type of furniture and
+a furniture is a type of object.
+So in knowledge representation we have
+to deal with categories and objects.
+Those are very different things.
+A category is a set of objects and
+categories can be nested in one another.
+Whereas objects cannot be
+nested in one another.
+But objects can be part of categories.
+The other thing that we want to
+represent is events, times, and beliefs.
+So let's look at some examples.
+Objects.
+An example of an object
+can be Martin the cat.
+Category may be cat.
+And an ontology may have
+the following levels.
+A mammal category that includes
+the categories cats, dogs, and whales.
+And cat can include its own subcategories,
+for example Persian cat or manx cat.
+Now we can define two relations.
+The ISA relation,
+which is between an object and a category.
+So we can say that Martin is a cat, so
+Martin is an object, cat is a category.
+And you can also define a relation AKO,
+which stands for A Kind Of, which is
+defined between two different categories.
+So we can say that PersianCat
+is a category, is a kind of cat.
+There are other relations that can
+be defined, for example, HASA,
+which is also known as [INAUDIBLE]
+relation, for example has a cat tail.
+That means that all objects in
+the category Cat have tails.
+Now let's look at the semantics
+of first order logic.
+So first order logic sentences can be
+assigned a value of true and false.
+So I can say Milo is a cat.
+This sentence is true.
+Milo is younger than Martin.
+I can say it in the following way,
+Age of Milo, Age of Martin,
+and then connect those two
+with the last and symbol.
+And this entire predicate has the value of
+true whenever Milo is younger than Martin.
+I can also say the age of Milo is not
+equal to the age of Martin in this case.
+And now let's look at some
+examples with quantifiers.
+Suppose that we want to represent
+a statement, all cats eat fish.
+One way to do this is to say for all X,
+if X is a cat, that implies X eats fish.
+We can also want to represent events.
+Suppose that we want to represent
+a statement that Martin ate.
+We have to figure out how to do this.
+But we may also want to represent
+the statement Martin ate in the morning,
+Martin ate fish,
+Martin ate fish in the morning, and so on.
+So one possible representation is to
+represent each of those sentences
+completely independently
+of each of the other ones.
+So we can do this in First Order Logic.
+We can define a predicate for Eating1,
+which is the first
+species of eating events.
+And we have Eating1 with one argument,
+which namely is the eater.
+So every time that we
+know that somebody ate,
+we can represent that fact as an eating
+predicate with that person's name or
+object's name as the first argument.
+Now suppose we would want to represent
+the fact that Martin ate in the morning.
+We cannot use the same predicate, Eating1,
+because that one only
+has an additive of one.
+That means it has only one argument.
+We now have to define a new predicate,
+Eating2, where two is not
+actually the number of argument.
+It's just the second version
+of the eating predicate.
+In this particular version takes two
+arguments where the first argument is
+the eater, and the second argument
+is the time of the eating.
+If want to present a third sentence,
+Martin ate fish,
+we have the final third predicate
+which also has two arguments, but
+then they're different
+from the previous two.
+The first one is still the same,
+the person or object doing the eating,
+but the second one is object being eaten.
+Now if we want to represent
+a fourth sentence,
+we have to define a fourth predicate,
+Eating4, which now has three arguments,
+the eater, the eaten, and the time.
+So now it's very difficult to reason
+with these kind of predicates.
+First of all because there's an infinite
+number of such predicates even for
+the same type of event.
+And second because we want somehow to
+be able to represent it more compactly.
+So one way to do this is by using
+the so-called meaning postulates.
+The meaning postulates
+is something like this.
+We can have a statement in our knowledge
+base that says whenever we have
+an instance of Eating4 with the arguments
+x, y, and z, that implies that we also
+have a statement Eating3,
+with the arguments x and y.
+So we're skipping argument z.
+And Eating4 with arguments x, y, and z
+implies eating two with arguments x and z,
+and also Eating4 x, y,
+z implies Eating1 with argument x.
+So this is a partial solution to the
+problem, but it's still not going to be
+a very nice one, because we are going
+to have a large number of meaning
+postulates and their interpretations
+can get in each other's way.
+So this second possible interpretation,
+so the way it works is this.
+Suppose we have the Eating4
+predicate with arguments x y and z.
+We can just say that we always have
+to represent all eating events
+as instances of Eating4 and just leave
+some of the arguments unspecified.
+So if we have just Eating1, we're going
+to say that y and z are unspecified.
+This seems to work but it has problems.
+First of all, there are too many
+commitments that we have to make,
+because we cannot know the values
+of all the different arguments.
+It's very difficult to combine
+Eating4 where argument z is missing,
+and Eating4 where argument y is missing.
+We cannot combine those two into
+an Eating4 instance with both Fish and
+Morning specified.
+So we're going to go to a third
+possible representation.
+That's the one where we represent Eating
+as an event, as a special object.
+This process is called reification.
+And this is an example
+of how we can do it.
+We can now define an event, e, where e is
+an instance of a categorical Eating event.
+And then there is a Eater for event e.
+The Eater's name is Martin.
+And the Eaten argument for
+event e is the Fish.
+So now let's look at
+ways to represent time.
+Here's an example.
+We want to be able to say Martin
+went from the kitchen to the yard.
+So one possible way to do this is to say,
+there is an event e where e is
+an instance of a going event.
+Going takes the argument a Goer,
+an Origin, and a Target.
+The Goer in this case is Martin,
+the Origin of e is kitchen and
+the Target is yard.
+However this representation doesn't
+take into account anything about time.
+We cannot say, that for example,
+we went from the kitchen to
+the yard in that particular order.
+So this representation doesn't give us any
+information whether the sentence is in
+the present or in the past or
+in the future.
+So let me introduce now an important
+term in semantics called the fluents.
+A fluent is a predicate that
+is true at a given time.
+So for example if I have
+the predicate T it can be to
+a time So here's now a slide that
+shows you how to represent different
+relations between tempo events.
+So two events are set to meet
+if the end point of an event
+coincides with the starting
+point of another event.
+Before is defined when the endpoint
+of an event is before, but
+not equal to the starting
+point of another event.
+During is when the start point of an event
+is after the start point of another event
+and its endpoint is before
+the endpoint of that other event.
+And similarly we can define overlap.
+That's when the starting point of the
+first event is before the starting point
+of the second event.
+And end point of the first event is
+before the end point of the other event.
+And you can see that overlap can be
+defined asymmetrically between i and j.
+It's possible that i overlaps
+with j in this definition,
+but j doesn't overlap with i.
+Starts is when two events start at
+the same time, finishes is when they
+end at the same time, and equals is when
+they both start and finish each other.
+So this is an example from Russell and
+Norvig.
+And one more issue related to
+knowledge representation is the so
+called theory of time which takes into
+account three different points in time.
+The point of the event, the point of
+the entrance, and the point of reference.
+So if we want to represent
+the sentence I had eaten,
+we want to say that utterance is done now,
+that's the U point.
+There is a reference point in the past,
+and
+there's an event that is
+even further in the past.
+So I had eaten as the event time,
+this happens before the reference point,
+which happens before the tense.
+So simple past I ate is when the reference
+point and the event time are the same,
+and they both occurred
+before the tense now.
+Present perfect is I have eaten,
+that's when the event is in the past but
+the reference point is in the present and
+coincides with utterance time.
+The present time is when all of the three,
+utterance,
+reference point and event, are the same.
+And now we have two
+instances of future tenses.
+Simple future is when the reference point
+is equal to the utterance time which is
+now, but the event happens in the future.
+And finally, we have future perfect.
+That's when utterance is now.
+There is a reference
+point in the future but
+the event happens somewhere between
+now and the reference point.
+This is an example from Jurafsky and
+Martin.
+So the final thing that we
+want to represent is beliefs.
+Let's look at an example.
+I want to say that Milo
+believes that Martin ate Fish.
+So one possible representation is
+to say that there are two events.
+One event named e,
+which is an instance of Eating, and
+another event called b,
+which is an instance of Believing.
+And then we can have an entire
+first order representation.
+ISA is eating, and Eater of e is Martin,
+the Eaten of e is fish.
+And then we have some information
+about the believing event.
+B is an instance of a Believing event.
+The Believer of b is Milo, and
+Believed takes as its second
+argument an object of type Eating.
+So the second argument of Believed is e,
+the event of eating.
+So one problem of this
+representation is the following.
+In first order logic,
+if you have conjunction of multiple
+statements the truth value doesn't
+change if you drop some of them.
+So if you drop some of the terms above,
+you can infer that Martin ate fish.
+Which is not correct because we don't
+know for sure if Martin ate fish.
+We only know that MIlo
+believes that Martin ate fish.
+So representing beliefs in this kind of
+first order logic format is just not going
+to work because of this problem.
+So what people do instead and again you
+can look at this in more detail if you
+take a course in philosophy or logic,
+is to use something called modal logic.
+So modal logic allows you to
+represent higher order operators for
+possibility, time, and beliefs.
+So this concludes the section
+on knowledge representation.
+

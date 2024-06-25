@@ -1,0 +1,592 @@
+Welcome back to natural
+language processing.
+Now we're going to continue our topic on
+information extraction by focusing on
+relation extraction.
+So what is Relation extraction?
+Well, if we have entities,
+we can often be interested in
+the links between those entities.
+For example, a certain person works for
+a certain company, or
+a certain company manufactures
+a certain product, or
+a certain company is located at
+a certain location, and so on.
+So one of the earliest research challenges
+that were done in this area is called MUC.
+MUC stands for
+Message Understanding Conference,
+it had multiple iterations in the '90s and
+early 2000s.
+So it was an annual competition, and
+it was about extracting
+events from news stories.
+So the events were things
+like terrorist events,
+joint ventures,
+management changes, and so on.
+There was a different scenario
+pretty much every year.
+So the Evaluation metrics were things like
+Precision and Recall, and F-measure and
+filling out the slots of
+the different fields.
+So here's an example of a MUC story.
+This is from the MUC-5 English
+joint ventures tasks, so
+it talks about Bridgestone Sports
+Corporation said Friday that it has
+set up a joint venture in
+Taiwan with a local concern and
+a Japanese trading house to produce
+golf clubs to be shipped to Japan.
+So in this particular implementation
+of the MUC challenge,
+the participants were given a set
+of articles like those, and
+they had to identify the companies
+that were having a joint venture,
+and then fill in a set of slots
+about the particular event.
+This slide is a little
+bit difficult to read.
+But if you look at it in more detail,
+you will see that it includes things like
+the name of the company that is
+initiating the joint venture,
+the name of the partner company,
+the location of the joint venture, and
+the day that it is effective and so on.
+So this is the expected output, and as I
+mentioned before, systems were evaluated
+based on how often they correctly
+identified the slots and their values.
+So other examples of information
+regulation extraction are things like Job
+announcements.
+So for Job announcements, we want to find
+out things like the location of the job,
+the title of the job, starting date,
+possibly the list of qualifications,
+the starting salary.
+Seminar announcements, we are interested
+in filling out slots like Time, the title,
+the location, the speaker.
+For Medical papers, we want to be able to
+extract things like the Drug, the disease,
+a gene/protein, a cell line,
+a species, or a substance.
+So fill in the templates.
+So some of the fields have to be
+filled by text from the document.
+So say as you're extracting an entire
+string of text, for example,
+the name of a company or the name of
+a gene directly from the document.
+Others can be pre-defined values,
+for example,
+whether a certain attempt
+was successful or not.
+Was it a successful merger or
+was the merger unsuccessful?
+Some fields allow for just one value,
+some allow for multiple values, and so on.
+So what are the common Approaches that
+I used in information extraction, and
+specifically relation extraction?
+Well, information extraction is viewed
+as a sequence labeling problem, and
+people use HMMs.
+You can also use patterns, for
+example, regular expressions.
+So regular expressions is something
+that comes up a lot in natural language
+processing, so I would like to spend a
+little bit of time to talk about it here.
+I will do this in the next set of slides.
+People will also use Features.
+For example,
+the capitalization of the words.
+Is it in caps initial or all caps,
+does it contain digits, what
+kind of suffixes it contains, what kind
+of punctuation it contains, and so on?
+So here's some regular expressions that
+are used in the Perl programming language,
+there are similar expressions in other
+common languages like Java and Python.
+So the caret, for example, in Perl is
+used to match the beginning of a string.
+It's also, if it's used within
+a set of square brackets,
+it means the complement of the rest
+of the symbols mentioned in there.
+For example, if you want to find
+anything that is not the letter a,
+you would include it in the pair
+of square brackets, caret a.
+The dollar sign matches
+the end of a string.
+The period matches any character in
+a string except for new line character.
+The star matches 0 or
+more occurrences of the same symbol.
+Plus matches 1 or more occurrences.
+Question mark matches 0 or 1 occurrences.
+The vertical bar allows it to search for
+alternatives.
+For example, you may be looking for
+megahertz or
+gigahertz as a property of a computer, and
+you would say something like megahertz,
+vertical bar, gigahertz.
+You can also do things like
+grouping in memory, so
+essentially being able to replace
+entire sequences of characters.
+A* means zero or
+more occurrences of something.
+A, curly brace and then a number,
+a closing curly brace,
+means that you want exactly
+m occurrences of that thing.
+If you put in the curly braces something
+like m comma, where m is a number,
+you're looking for
+at least that many occurrences of a.
+If you put two numbers separated with a
+comma, you are looking for at least m, but
+at most n,
+occurrences of that particular symbol.
+And there are some special symbols
+that match things like new lines,
+tabs, carriage returns, any letter,
+any number, anything that is not a letter,
+anything that is not a number.
+Back slash b matches the "word" boundary.
+Back slash B matches anything
+that is not a "word" boundary.
+And you can also have ranges of things.
+For example, is you say left square
+bracket, a-b, closing the square bracket,
+that would tell you that you can match
+any character from a to b, inclusive.
+And if you have a to z,
+that would match any character in the
+alphabet as long as it is in lowercase.
+If you want to match any character in
+the alphabet that is either lowercase or
+uppercase, you would need to say
+something like, left brace, a-z,
+followed by A-Z,
+followed by a closing square bracket.
+In the section on regular expressions and
+automata you will find out
+more about the way that those
+expressions are used and computed.
+So here's some patterns that
+are used in information extraction.
+So for example, to identify prices,
+something like $14,000, you can use
+the expression that says look for
+the special symbol dollar sign
+followed be either a 0 or 1 or
+2 or anything up to 9, or the symbol comma
+repeated as many times as necessary,
+followed by any sequence that
+starts with a period and
+then includes exactly two occurrences
+of the digits from 0 to 9.
+So the second expression is going to
+match $14,000 like written as above.
+It will also match $14,000
+without the comma, but it's not
+going to match $14,000 period and
+then three digits.
+So the question mark at the end of
+the regular expression just tells you that
+the fractional portion is optional.
+So here's an example of a regular
+expression that matches a date
+in the format year, month, day.
+So something like this, caret for
+beginning of string, then either 19 or
+20 for the 20th and
+21st century, respectively.
+Then followed by any two digits,
+followed by a hyphen,
+followed by a two digit sequence for
+the month.
+But it has to be in a specific format so
+that the only valid months are acceptable.
+And then finally, we have the last
+two digits that correspond to all of
+the days of the month, so
+anywhere from 01 to 31.
+Now this expression obviously
+doesn't have enough information
+to determine that we have only 28 days or
+29 days in February but
+31 days in May and July, but
+at least does a good job with what it has.
+Here's an example of an expression
+that matches email addresses,
+something like this, as you can see it
+is a fairly sophisticated expression.
+The important things are that it
+has to include an @ sign somewhere.
+Then at the end it has to have
+an extension that starts with a period and
+then it has anywhere from two to four
+characters to cover things like, .us,
+.com, .info and so on.
+I think that nowadays there are domains
+that have more than four characters.
+So this expression would
+always in need to be revised.
+Match person.
+We can include things like, for example,
+sequence of two words, such that the first
+one starts with a capital letter, and the
+second one starts with a capital letter.
+Obviously this is not going
+to match all the persons.
+There are people who are have three
+names and one name and so on.
+It's also possible to come up with
+patterns that link to some HTML code so
+that they can be used to scrape websites.
+For example, to extract price information
+from websites like Amazon an eBay.
+It can also give part
+of speech information.
+So for example, you may be looking for any
+noun followed by any adjective and so on.
+And it can also include
+Wordnet information.
+For example, you may be searching for
+a sequence so that the second word
+in the sequence is something that belongs
+to the organization subtree of Wordnet.
+So that would include things like
+company and newspaper and so on.
+So here's a simple sound point,
+good format for the named entity recognition,
+this is a par santos from the Penn Treebank.
+Hugo Favanew, 55 years old, and former
+chairman of consolidated Gold Fields PLC,
+was named a non-executive director of
+this British industrial conglomerate.
+So the example after that I'm going to
+show you is in the so called IOB format.
+This is a very common format in many
+natural language processing tasks,
+including part of speech tagging,
+name entity recognition,
+semantical labeling, and so on.
+So what does IOB stand for?
+It stands for the fact that every word in
+the sequence can be labeled as either O,
+which stands for other, or
+it can be a B followed by some label,
+or an I followed by the same label.
+B stands for beginning of the label,
+and I stands for inside.
+So let's look at this example here.
+The first name,
+the entity here is Rudolph Agnew.
+The first word of it is labeled a B-PERSON
+because it's the beginning of a person.
+The next one is labeled as I-PERSON
+because it's part of the person but
+it's not the beginning.
+The next thing is a comma
+which is labeled as O,
+because it's not anything
+that we're interested in.
+Further down,
+we have consolidated gold fields PLC.
+Which is a company name.
+As you can see the word Consolidated
+is labeled with a beginning symbol for
+organization and the rest of
+the words in that organization, Gold,
+Fields, and PLC are all labeled as I-ORG.
+Now, you can imagine that it's possible
+to perform character recognition in
+two steps.
+In the first step, we recognize that
+Consolidated, Gold, Fields, PLC,
+some sort of named entity, and then we can
+use any standard classification method to
+determine what specific
+type of named entity it is.
+So, how do we evaluate template
+based information extraction?
+Well, it's very straightforward.
+For each test document, let's say
+each news story or scientific paper,
+if you got, first off, how many
+correct template extractions happen?
+So, for example, if the task is to
+identify mergers between companies and
+we're given a document that
+doesn't have any such mergers,
+then the correct number of
+template extractions is zero.
+If we end up with more than zero,
+that means that you have made a mistake.
+Now, the next thing is to
+figure out how many slot and
+value pairs were extracted for
+any of the different templates.
+So, for the case of management succession.
+For example, in Mark you can
+have the name of the person
+who's being replaced in the organization,
+and
+the name of the person who's
+replacing that previous person.
+If you get both of those correctly,
+you would get two points.
+If you miss one of them,
+you would only get half of the points.
+And finally, you want to get
+the number of extracted slot/value
+pairs that are actually correct,
+not just extracted.
+So what about relation extraction?
+There are many different relations
+that exist in text, for example,
+relation between two people.
+That can be ParentOf or
+MarriedTo or Manages.
+You can have relations between
+a person and an organization.
+For example, a person can work for
+a certain organization.
+And you can also have relations
+between two different organizations.
+For example,
+organization A is part of organization B.
+You can also have
+organization-location relations.
+For example, such and such organization is
+headquartered at such and such location.
+So, this leads me to another evaluation
+that was used in the early 2000s,
+mostly following Mark.
+It's the so-called ace evaluation for
+automatic content extraction evaluation.
+The task was to use a set of
+newspaper articles from 2002 and
+to identify all the entities that belong
+to the following categories, Person,
+Organization, Facility, Location,
+Geopolitical Entity, and
+also to identify all the relations
+between those entities,
+for example, Role, Part,
+Located, Near and Social.
+So relation extraction in general
+is a very important Core NLP task.
+It's used for building knowledge bases for
+question answering, and so on.
+It's input is a sentence.
+For example, Mazda North American
+Operations is headquartered in Irvine,
+California.
+And the output is supposed to be a tupal
+that consists of the organization,
+in this case, Mazda North American
+Operations, location, in this case,
+Irvine, California, and then the label for
+the relation, specifically,
+in this example, is headquartered in.
+So in predicate form,
+this is a tupal IsHeadquarteredIn,
+with the first argument
+Mazda North American Operations and
+the second argument the city of Irvine,
+California.
+And as you can see,
+this relation is very common.
+There are many organizations, and
+each organization can have a specific
+location for their headquarters.
+So it's very easy to build databases and
+use standard database techniques for
+querying those databases once.
+We have performed all
+the information extraction and
+the relation extraction steps.
+Okay, so the different techniques
+that I used for relation extraction.
+Some of them involve using patterns.
+For example,
+regular expressions and gazetteers.
+And others fall in the usual
+categories of supervised learning and
+semi-supervised learning.
+We're going to look at some examples of
+semi-supervised learning in a minute.
+Let's first look at some
+examples of extracting relations,
+specifically IS-A
+relations using patterns.
+So this example comes from a paper
+by Marti Hearst from the 90s.
+So you should see that to extract all
+these relations, we have to find patterns
+that say something like this,
+X and other Y or X or other Y.
+Y such as X.
+Y, including X.
+Y, especially X.
+Where Y is the more general category and
+X is the less general category.
+So for example, evolutionary relationships
+between the platypus and other mammals.
+So in this case, the expression and other
+gives us a hint that platypus is X and
+mammal is Y, and more specifically
+that Platypus is a kind of mammal.
+Now what about
+Supervised Relation Extraction?
+Well in this case, we want to look for
+sentences that have two entities that we
+know are part of the target relation.
+And then look at the other
+words in the sentence,
+especially the ones
+between the two entities.
+And build a classifier that looks for
+those clue words between the target words
+and help us classify the entire tuple.
+So here's an example, in English,
+we have a sentence like,
+Beethoven was born in
+December 1770 in Bonn.
+So was born is the expression that links
+together the two entities Beethoven and
+1770.
+There are other ways to express
+supervised relation however.
+So for example, born in 1770, Beethoven...
+Or after his birth on December 16, 1770,
+Beethoven grew up in a musical family.
+You can see that it's not always the case
+that the clue phrase, like in this case,
+born and birth, have to appear between
+the two words that we are trying to link.
+They can appear outside of them, but
+usually they appear somewhere nearby.
+Here's one more example.
+Ludwig van Beethoven (1770-1827), which
+are his birth year and year of death.
+So this is another expression that we
+may want to look forward to find more
+instances of the relation person
+was born in a certain year.
+Here's one more example.
+While this evidence supports the case for
+16 December 1770 as
+Beethoven's date of birth.
+Again we have date of birth
+here as the clue phrase.
+It turns out that those techniques can be
+used in non-english languages as well.
+So here are just a few examples
+from Spanish and German.
+In German we have,
+Ludwig van Beethoven [FOREIGN].
+So in this case,
+[FOREIGN] is the expression that indicates
+that he was born on that particular date.
+And then here we have also [FOREIGN],
+which is another way
+to say the same thing.
+And we have also [FOREIGN] or
+the birthday of Ludwig
+van Beethoven and again the next,
+the name of the person with the year.
+The Spanish examples?
+[FOREIGN] in Spanish means was born.
+So again it connects the named entity
+person with the named entity for the time.
+Or we can have [FOREIGN].
+[FOREIGN] means born in Bonn,
+1770, Beethoven...
+Or Ludwig van Beethoven, [FOREIGN].
+[FOREIGN], in this case,
+means born in December, 1770.
+So the third method for
+relation extraction is semi-supervised and
+that example,
+we have some training data, for example,
+some seed expressions like, Beethoven
+was born in December 1770 in Bonn.
+Now we know that this sentence represents
+a valid instance of the tuple,
+x was born in the year y.
+So the next thing that we need to figure
+out is what other sentences contain both
+Beethoven and 1770.
+So there are probability many different
+ways in which we can express the relation
+between those two.
+But we expect that, some of the words
+that appear nearby, Beethoven and
+1770 are the ones that carry
+the meaning of the relation.
+Maybe we're going to learn that
+birth date is such an example.
+Then we want to start looking for
+expressions that appear
+nearby, like birthdate.
+And then we're going to use those
+expressions now to find other
+instances containing other people and
+their birthdates in other sentences and
+other documents.
+Okay, so now let's look at the different
+ways in which we're going to evaluate
+the relation extraction.
+Well, relation extraction is
+essentially a classification task.
+So we want to measure things like
+Precision which is the number of correctly
+extracted relations divided by
+the number of all extracted relations.
+And then Recall, which is the number of
+correctly extracted relations divided by
+all the existing relations.
+Then we can also combine the two
+into F1 measure which is
+the harmonic mean of the Precision and
+Recall.
+Now all those metrics work well
+if we have annotated data, but
+if there's no annotated data,
+it's not possible to measure Recall
+because we don't know what we're missing.
+We can only measure Precision.
+Okay, so to conclude,
+Probabilistic NLP is very important.
+One of the most crucial examples
+of Probabilistic NLP action
+is part of speech tagging
+is a hidden Markov models.
+And information extraction also uses
+the same kind of techniques for
+probabilistic natural language processing.
+And there's one more technique that is
+used in information extraction called
+conditional random fields,
+which we did not cover.
+And you can look it up in the textbook.
+So this concludes the section
+on information extraction.
+Thank you for your attention.
+

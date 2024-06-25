@@ -1,0 +1,326 @@
+Okay, so now we're going to start looking
+at the Bayes theorem which is one
+of the most important topics in
+statistical natural language processing.
+It's based on the formula for
+joint probability.
+So, the joint probability
+of two variables, A and
+B, is equal to the probability of A,
+of one of them,
+times the probability of the other one,
+given the first one.
+So for example, what's the probability
+that today, I'm going to wake up late and
+then I'm going to take a walk.
+Well, that's the probability that today,
+I'm going to wake up late,
+times the probability that
+I'm going to take a walk.
+Given that I woke up late.
+So by symmetry, we can also add this as
+p(A,B) = p(B)p(A|B).
+Now if you look at those two formulas,
+you can see that the left-hand
+side is the same.
+And now we can therefore write this set
+of equations in a different format.
+So we can say that the conditional
+probability of B given A is equal to
+the conditional probability of
+A given B times the probability of B.
+Which comes from the second
+equation on the top, and
+then divided by the probability of A.
+So this equation here is the Bayes'
+Theorem, which is used everywhere as I
+mentioned, in speech and language
+processing, but also in computer vision,
+and statistics, and insurance companies,
+and finance and so on.
+So it's very useful because it allows
+us to compute the condition of
+probability of A given B, if we only know
+the condition of probability of B given A.
+Those two things are not the same.
+In fact they can be very different in
+some circumstances, so it's important to
+understand which one is which and
+also how to get from one to the next.
+So here's an example of a use
+of the Bayesian formula.
+So we're going to consider
+a diagnostic test
+which tells us whether a certain person
+is likely to have a certain disease.
+So, for example, the disease could be
+cancer and the certain test may look at
+the blood image of the person and
+determine whether they have cancer or not.
+The problem with this kind of test
+is that they often make mistakes.
+They're not really erroneous,
+but they aren't perfect either.
+So a typical example is a test
+that has a 95% accuracy.
+So that means that the probability
+that the person is
+positive given that they don't
+have the disease Is 0.05.
+This is an example of a false positive.
+So in other words,
+even if the person is not sick,
+they can still pass positive
+with a five percent probability.
+Similarly, the other type of error
+is the so-called false negative.
+Given that the person has the disease,
+it's also possible that the test is going
+to tell them that they don't have it.
+So the test turns out negative.
+So again, this also happens
+with a probability of 0.05.
+Now you can imagine that the two more
+numbers that I am missing here, and
+they can be computed from
+the two that are present.
+So, the probability of positive
+given disease is just going to
+be one minus the probability of
+negative given disease, or 0.95.
+And similarly the probability of negative
+given not disease is going to be equal to
+one minus the probability of positive
+given non-disease, or again 0.95.
+I should explain here that
+the two numbers are the same.
+However, that doesn't have to be the case.
+There are many tests that have
+different rates of false positives and
+false negatives.
+But for now,
+we don't need to get into this.
+We're just going to look at this example,
+and
+see how to apply the Bayesian
+formula in practice.
+Now, one way to think about this formula
+in terms of statistical natural language
+processing, is to think of the problem
+of part of speech tagging.
+In part of speech tagging,
+you're given a word and
+you have to figure out
+if it's part of speech.
+For example,
+the word cat has to be labeled as a noun.
+So by looking at the word, cat, we may be
+able to predict with a certain accuracy
+whether that word is a noun or not.
+And, again, we're going to use the exact
+same mathematical methodology as in
+the example that I'm about to show you.
+So let's look at the so-called
+joint probability table
+that has all the possible outcomes of
+the joint variable test and disease.
+So this is the conditional probability of
+A|B P where A is the random variable that
+corresponds to the test value.
+It could be either positive or negative.
+And B corresponds to
+the random variable disease.
+And again yes means that
+the person has the disease and
+no means that the person
+doesn't have the disease.
+And in this table I have just plugged
+in the numbers from the previous slide.
+And as you can see on the diagonal,
+on the main diagonal, we have
+two large numbers that correspond to
+the true positives and the true negatives.
+And on the opposite diagonal we have two
+relatively small numbers that correspond
+to the false positives and
+the false negatives.
+So now, the most important question that
+you're trying to answer here is what's
+the probability that the person has
+the disease given that they test positive?
+I mean this is really
+the most likely scenario.
+You have a person who walks
+down to the hospital and
+gets tested and
+the test turns out to be positive.
+And we want to figure out
+if they have the disease,
+with what probability
+they have the disease.
+Well the point is that this
+conditional probability,
+disease given the test,
+is not available in the original table.
+And as I said a few minutes ago,
+we can use the Baye's theorem
+to invert the directionality
+of a conditional probability.
+So instead of having the probability
+of positive given disease,
+we can now compute the probability
+of disease given positive.
+So let's see how to do this.
+Well, it's actually very straightforward.
+We can write this expression,
+probability of disease given positive,
+according to the base formula as
+probability of positive given disease,
+times the probability of disease,
+divided by the probability of positive.
+Similarly, we can add that the probability
+that the person doesn't have the disease,
+given that they test positive.
+Is equal to the probability that they
+tested positive given that they don't have
+the disease, times the probability
+that they don't have the disease,
+divided by the probability
+that they will test positive.
+Now, what we're interested
+in is the following.
+What is the ratio between the two
+numbers on the previous two lines?
+Essentially, how much more likely is
+it that the person has the disease,
+given that they tested positive,
+compared to the probability that
+they don't have the disease,
+even though they tested positive.
+Well this number if we can figure it
+out is going to be enough to answer all
+the other questions.
+So, it turns out that we don't need really
+care about the probability of positive.
+Because once we divide the first
+performer as on the slide,
+this is going to disappear.
+So as long as it's not zero we can divide.
+So, here's the example now.
+So, the probability that the person
+has the disease given that they tested
+positive, divided by the probability that
+they don't have the disease given that
+they tested positive,
+is going to be equal to the probability of
+positive given disease times
+the probability of disease.
+That's the first use of the Bayes formula.
+Divided by the probability of positive
+given that they don't have the disease,
+times the probability of
+not having the disease.
+Now, here we have four variables.
+The first and
+the third one are conditional, and
+we can get those from
+the original diagnostic table.
+The other two probabilities of disease or
+probability of not disease,
+are actually very important and
+we don't have them yet.
+So what do those numbers correspond to?
+Well probability of disease is
+the that a certain person is going to
+have the disease absent any
+information from the test.
+So this number turns out
+to be really important.
+So if the baseline probability or
+the probability of disease is very high,
+then the posterior probability given
+the test is going to be even higher.
+But if the probability of
+disease is smaller, very small.
+For example, on the order of
+one percent or one in 10,000.
+Then as you will see,
+the fact that the test is positive is not
+going to increase significantly, the
+probability that the person has a disease.
+It may increase it by a factor of two or
+four or ten.
+But if the baseline probability
+is let's say, one in 10,000,
+that's still not going to be enough
+evidence that the person has the disease.
+Let's see how this works.
+Suppose that the prior probability for
+the disease is one in a 1,000, so 0.001.
+What that means is that if you take
+a random person in the streets,
+there's a 1 in a 1,000 chance
+that they have the disease.
+So, by a very trivial level of probability
+of a random person not having the disease
+is going to be 999 out of a 1,000.
+So, the two have to add up to one.
+And now we can plug in the numbers.
+And we can see that the probability
+that somebody has the disease,
+given that there's a positive, divided
+by the probability that they don't have
+the disease,
+given that they tested positive.
+Is equal to 0.95 times one over 1,000
+divided by 0.05 times 999 over 1,000.
+And if you simply this formula
+you're going to see that
+the overall probability
+is about two percent.
+This may sound shocking and
+almost certainly a mathematic error,
+but it is not.
+It turns out that what
+happens here is that because
+the prior probability of
+the disease is very low.
+Even though we have a 20 to one
+ratio between the positive and
+the negative test.
+That's still not enough to compensate for
+the original,
+prior ratio, which is one in
+a thousand in the opposite direction.
+So, we're going from a probability of
+one in a thousand to
+a probability of two percent.
+So, that's an increase of about 20.
+But we're still nowhere close to 0.5,
+so we are just at two percent.
+In other words, if you walk into
+the clinic and you test positive for
+the disease, and
+the test turns out to be positive.
+There is still only a two percent chance
+that you actually have the disease.
+And what happens in practice,
+in this case,
+we'd need to do additional tests and
+monitoring, and so on.
+So, there's no reason to
+be worried at this point.
+So again you can do
+a little bit more math.
+Since the sum of the two
+numbers is one and
+one of them is 20 times larger than
+the other one, we are going to see that
+probability of disease give a positive
+is still about two percent.
+So this is the end of this example for
+patient here.
+In the next set of slides we're
+going to look at mark of models and
+part of speech time.
+

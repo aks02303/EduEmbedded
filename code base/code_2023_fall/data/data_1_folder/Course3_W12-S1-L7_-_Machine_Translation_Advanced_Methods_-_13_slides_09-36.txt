@@ -1,0 +1,269 @@
+I'm going to now continue with some very
+brief introduction to some of the advanced
+methods that are used statistical machine
+translation beyond the IBM models.
+Just very briefly, so they include things
+like tree-to-tree translations, that's for
+example work by Yamada and Knight.
+So the idea is that you parse
+the sentences in one of the languages,
+then you do some transformations
+to the syntactic trees, and
+then you generate from that those
+trees to the other language.
+Another technique was introduced
+by Och and Ney, this is a so
+called phrased based mission translation.
+The idea is to recognize contiguous
+chunks of text that form phrases and
+translate them as units
+instead of one word at a time.
+The third method is Syntax- based and
+it was introduced by Och et al.
+And the idea here is to use
+the usual IBM models, but
+then once you put use the top
+candidate translation to
+perform a technique called
+discriminative reranking,
+where you compute a set of features
+on each of the translations.
+And then you combine them
+using a log linear model.
+And pick the translation that is the best.
+As part of this long linear model,
+we can include other features.
+For example, whether the sentence
+is syntactically reasonable,
+whether it's the right length, and so on.
+And one more technique that I want to
+mention briefly is close in structure by
+closing all.
+So the idea here is that you take some
+document in the language for which you
+have a general idea about it's syntactic
+structure, so in this case in German.
+And then you're going to perform
+a sequence of steps that make the text
+more and
+more similar to English by following the
+syntactic patterns of the target language.
+Instead of saying that perhaps adopt can,
+you change it to adopt that perhaps
+can which matches German better.
+Then, so that you adopt can becomes so
+that you can adopt.
+So this is again a peculiarity
+of German syntax.
+So that can you adopt becomes so
+that you can adopt.
+This is moving the subject to the right
+location in the embedded clause, and
+then looking at the exact particle.
+SO in German, there are a common
+phrasal verbs where one of the parts of
+the preposition, like an in anrufen,
+moves back after the main verb.
+So if for example you say rufen
+sie bitte noch einmal an,
+Means call right back please.
+In this case, the verb anrufen
+gets split into rufen, and an.
+And as you can see, the preposition, or
+the prefix, an, can be moved
+arbitrarily later in the sentence.
+So by performing those set of
+transformations in one of the languages,
+you can render that language much
+more similar to the target language.
+And then you are going to avoid
+some of the common problems with
+IBM models of statistical
+machine translation, and
+be able to get a much better
+syntactic structure of the output.
+And one more thing to mention in
+statistical matching translation is
+the idea of synchronous grammar.
+So synchronous grammar was
+introduced in machine translation by
+the [INAUDIBLE] in the 90s.
+So the idea is to generate parse
+trees in parallel in two languages
+using different rules.
+So we can start for
+example from an S in both languages.
+And then, you're going to apply different
+rules that take into account for
+example whether the languages are subject
+verb object, or subject object verb, or
+whether adjectives follow nouns and so on.
+So you can have a rule in English that
+says NP goes to adjective noun in English
+and at the same time have a parallel rule,
+NP goes to N adjective in Spanish.
+So now we'd like to move on to
+evaluation of machine translation.
+I want to introduce the most basic
+techniques that I use that appear
+in research papers published
+on machine translation.
+So machine translation is
+particularly difficult to evaluate,
+because there's not one single answer.
+If you ask different human translators
+to come up with translations of the same
+sentence, they're likely to come up with
+similar yet widely divergent translations.
+So, human judgements are not unique.
+And even if you judge one
+human against another human,
+you're not going to get perfect agreement.
+So, some of the metrics that
+have been used in the past for
+evaluating translation involve asking
+humans to judge the translations manually.
+So, things like adequacy is that
+an adequate translation of the original
+document grammaticality.
+Is it a grammatical output?
+This kind of technique for
+evaluation is very expansive,
+because if you have to compare many
+different systems and many different
+[INAUDIBLE] in many different sentences,
+you would need to have thousands of
+humans, and the humans can be actually
+fairly unreliable and expensive.
+So the focus in recent years has
+been on automatic methods and
+specifically the most common technique
+these days is a technique called BLEU.
+Which was introduced by Kishore Papineni,
+et al from IBM in 2002.
+It's a very simple technique.
+It is based on multiple human
+references and unigram,
+bigram, and so on overlap between them.
+And then when the system
+produces its output,
+you compare that output
+against the human judgments.
+Again, at the unigram, bigram,
+trigram and fullgram levels.
+There's another technique that's
+also relatively off the news.
+It's called edit cost.
+And that is for
+example the number of edits that the human
+would need to perform on the translation.
+For example by moving words around or
+characters around, or
+by counting the number of minutes that
+it takes to revise the translation
+to the correct translation.
+But I will focus most on BLEU.
+So here's how it works.
+Again, it's simple n-gram precision
+with multiple human references,
+and very important it
+includes the brevity penalty,
+because otherwise you could come up
+with a translation that's very short.
+That to just focus on two or
+three of the most obvious words in
+the translation and very high precision.
+So that why BLEU includes an additional
+parameter that makes it
+impossible to cheat that way.
+So BLEU is not an ideal metric.
+However it has been shown to correlate
+relatively well with human assessments of
+automatic systems.
+It's not as good however when
+it's used to compare humans and
+guess automatic translations.
+So the bottom line about BLEU is
+that most people don't like it, but
+they use it anyway, and this is
+pretty much the excepted standard in
+the evaluation of machine
+translations systems these days.
+So many datasets are available, for
+example from LDC the multiple translation
+Chinese and
+multiple translation Arabic corpora.
+Each of which comes with a large
+number of translations by humans and
+also by automatic systems that
+can be used for training and for
+evaluation of translation systems.
+So here's an example.
+You can look at it on
+the Web in more detail, but
+I wanted to show you the first
+sentence of it only.
+This is a Chinese sentence,
+actually a headline, and
+then all the human references that
+you can get from this corpus.
+As you can see,
+they're not exactly the same, and
+even though it's a headline,
+they can have relatively large diversity.
+So now let's move on to the last
+topic in matching translation.
+Very briefly, it is the idea of decoding.
+So once we have built the IBM models,
+including positive phrase models,
+we have to now figure out which of
+the translations is most likely.
+So the decoding process is actually to
+find the role the candidate translations.
+The one that maximizes the probability
+of F given E times P of E.
+We have the vitals of those probabilities,
+but
+now we need to find a translation
+that maximizes this expression.
+So fortunately even for
+a simple model like IBM model 1,
+this an NP-complete problem, so
+the longer the is the more difficult
+it is to Get, the best translation.
+So, what people do instead, for
+efficiency reasons,
+is to use a phrase transition table.
+Specifically, the famous Pharaoh
+system by Phillip Koehn.
+And then use a search, A*, like combining
+the cost of the translation up to
+a certain point with the estimate of the
+translation for the rest of the sentence.
+And this is done at the level of
+phrases to make things more efficient.
+And this is combined with beam search, so
+that only the small set of
+the candidates I evaluated at each step.
+So, we're going to conclude the section
+on machine translation by giving you some
+pointers for tools, for
+projects, for assignments.
+The first one is language
+modeling tool kits.
+There are many available.
+How will they command the SRI and
+Language Modeling Toolkit,
+which are both available for
+research purposes on the internet.
+There are some research translations
+systems, for example Giza ++, by
+and Moses,
+which is available on statmt.org.
+And for decoders,
+you can download Pharoah, also from and
+from some other websites.
+So this concludes the section
+on machine translation.
+I will see you in the next segment.
+

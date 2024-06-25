@@ -1,0 +1,174 @@
+Okay, so we're now going to switch
+to the next topic, inference.
+So the simplest form of inference is
+using a method called modus ponens.
+The way it works is that if you have
+a statement, lets say alpha, and
+we also know that alpha implies beta,
+you can infer that beta is true.
+So here's an example.
+If we know that Martin is a cat and
+we know that for all x, cat is x,
+implies eats fish x, we can infer
+from this that Martin eats fish.
+So inference can be done
+in many different ways.
+You can use forward chaining.
+That's when individual facts are added to
+the knowledge base and then you derive all
+the possible inferences that follow
+from those individual facts.
+And you can also use backward chaining,
+that's when you start from a query.
+For example, you want to find out
+if a certain statement is true.
+And then to figure this out you
+have to go back to the database and
+find the statements that have to be true
+in order for your query to be true, and
+so on recursively until you reach
+statements with truth values unknown.
+So back when Jennings implemented for
+example natively the Prolog
+programming language.
+I'll just show you a brief
+example of Prolog.
+In Prolog you can define the following
+inference statement in the knowledge base.
+So X is the father of Y means that it has
+to be true that X is a parent of Y and
+that X is a male.
+And then if you have the following facts,
+John is the parent of Bill,
+Jane is the parent of Bill,
+Jane is female and John is male.
+All of this new knowledge base and
+you get a query that says find me an M,
+where M is a person who's
+the father of Bill.
+So using backward chaining, what you need
+to do is go to the knowledge base and
+find that in order for M to be the father
+of Bill, there has to be statements with
+true values, which say that M is
+the parent of Bill, and that M is male.
+So going back now,
+we have to find statements about M,
+being the parent of Bill that two possible
+instances of that, John and Jane.
+And at the same time,
+we want M to be male.
+So there's only one such statement,
+so male John.
+Therefore, the only combination of
+statements in the knowledge base
+that satisfies the query is
+where John is equal to M,
+which is also equal to X,
+and Bill is equal to Y.
+And therefore we're going to return
+that the value of M is equal to John.
+So now lets see how we can use
+first order logic for inference.
+I'm going to show you three
+examples from the kinship domain.
+The first one is to represent
+the fact that brothers are siblings.
+So how do we do this?
+Well, we say that for all x and
+y, if x is the brother of y that
+implies that x is the sibling of y.
+Another statement is one's
+mother is one's female parent.
+Again we can define this by saying for
+all m and c, like mother and
+child, if the mother is m,
+mother of c is m,
+that is the same as m is female and
+m is the parent of c.
+And finally we want to be able
+to represent the fact that
+the sibling relation is symmetric.
+So that is represented in
+the following way, for all x and y,
+Sibling (x,y) is equivalent
+to Sibling (y,x).
+Now let's see how we can do inference
+in a little bit more detail.
+The next thing that I want to
+introduce is universal instantiation.
+So we can say that every
+instantiation of a universally
+quantified sentence is entailed by it.
+So if we know that for
+all V, alpha is true.
+We can infer that any substitution
+where V is replaced by a specific
+instance g is also true for a.
+So this is true for any variable v and
+any ground term, for example constant g.
+So here's an example for all x,
+x is a cat and
+fish is y implies that x eats y.
+This can be represented as
+the following substitution.
+Martin is a cat and Blub is a fish
+implies that Martin eats Blub.
+Now an example of
+existential instantiation.
+For any sentence alpha, and variable v,
+and constant symbol k which doesn't appear
+somewhere else in the knowledge base,
+if we know that there exists v for
+which alpha is true, we can infer that
+if we replace this v with a specific
+constant symbol k, the statement
+alpha is also going to be true.
+So for example, if there exists
+a Cat called x and x EatsFish,
+we can represent this using C1 as
+a specific Cat, the one that exists.
+And we can claim for that specific Cat,
+C1, that C1 is a Cat and that C1 EatsFish.
+By the way this special constant
+symbol is known in the logic field as
+a Skolem constant.
+Let's talk a little bit about unification.
+So unification is done when you
+have a possible substitution.
+For example, if we have
+the statement p which is x eats y,
+and the statement q which is x eats Blub,
+it's possible to unify those two
+under the substitution that replaces the
+variable y with the specific object Blub.
+Another example,
+if p is the statement Martin eats y, and
+q is the statement x eats Blub,
+it is possible to unify those two
+using the substitution x is Martin,
+and y is Blub.
+Another example,
+if p is the statement Martin eats y, and
+q is the statement y eats Blub,
+it's impossible to unify those two,
+because we want to simultaneously
+satisfy two substitutions.
+We want y to be equal to Martin and y to
+be equal to Blub, and because Martin and
+Blub are different, then the unification
+process is going to fail.
+Okay, so there are many cases
+where we can do unification.
+One is if we want to unify
+a variable with an object.
+Another example is when we want to unify
+two objects and they are the same object.
+It is also possible to unify two things
+if one of them subsumes the other one.
+So here's an example.
+If we know that all cats eat fish and
+we know that Martin is a cat and
+Blub is a fish,
+we can unify those statements together.
+

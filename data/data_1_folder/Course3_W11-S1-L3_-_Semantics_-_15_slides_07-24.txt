@@ -1,0 +1,202 @@
+Okay, welcome back to
+natural language processing.
+The next segment is going
+to be about semantics.
+It's one of the most important areas
+of natural language processing and
+it ties nicely with logic.
+And philosophy and
+knowledge representation.
+So semantics is about meaning, and it can
+be defined, not just for language, but
+it can also be defined for
+many different things.
+For example, for arithmetic expressions.
+So if I give you this expression,
+5 plus 2 times 4 plus 3 and I ask you,
+what is the meaning of this?
+Well, it's very straight-forward.
+You can say 5 plus 2 is 7,
+4 plus 3 is 7, 7 times 7 is 49,
+therefore the meaning of
+this expression is 49.
+So we can build this by building
+a parse tree of the sentence,
+or in this case,
+the arithmetic expression.
+We have five and two as numbers that
+can be converted to expressions.
+Then we can have functors like plus so
+we can combine nouns and
+functors into more
+encompassing expressions.
+Again, expressions and functors.
+Recursively until we get the top level E.
+Value of the expression
+which is equal to 49.
+So this is nice, and
+we were able to compute this 49 just
+applying some recursive principles
+to the original expression.
+However, what if we had a variable or
+an unknown value somewhere
+in this expression?
+For example, 5 plus 2 times 4 plus z.
+Well, what would be the answer here?
+Well in this case,
+we can start with the same parse tree.
+And we have now a z, instead of a three
+in the lower right-hand corner.
+And in this case, what we can see
+is that the value at the top level,
+is not a number, but
+it is some sort of procedure that lets
+you compute the value of this, of now.
+So it's a multiplication of two numbers,
+each of which is the sum of two numbers.
+The first one being five and two,
+the second one adding four and z.
+Even though we don't know the exact
+value of the top level here,
+we can say that it can be
+obtained by using this procedure.
+Once we know the value of z.
+So in a sense,
+we have converted this expression into
+a procedure that can compute
+semantics recursively.
+Let's look at a different example
+using natural language text,
+specifically an English language sentence.
+So we have something like
+every human is mortal.
+How can we define
+the meaning of the sentence?
+So representing meaning is one of
+the most important aspects of semantics.
+And you want to be able to
+capture the meaning of linguistic
+utterances using some
+sort of formal notation.
+So what does it mean to have meaning?
+Well, linguistic meaning
+can be very different from
+what is known as pragmatic meaning.
+So if I say it is 8 PM I just mean that
+it is now 8 o'clock in the evening.
+So that is the linguistic meaning.
+But the sentence can also have
+a different pragmatic meeting.
+It may mean something like it is 8 p.m.,
+which means that it is time to leave.
+I can point to my watch and say it's
+8 p.m., and I really mean let's go.
+So semantic analysis, we want to assign
+each of the word some sort of a meaning
+and then combine the meanings of the words
+to form the meaning of phrases and
+then by extension entire sentences.
+So ultimately we want to be able to
+convert a sentence like I bought a book
+into something like this.
+There exists, objects x and y.
+Where x is an instance of a buying event.
+And this buying event has two arguments,
+a buyer and a bought item.
+The buyer is the same as the speaker,
+or I.
+The bought item is y, and y is a book.
+So this would be a legitimate first order
+logic representation of this sentence.
+So we're going to first order
+logic in the next two slides.
+Okay, so now they have
+presentation of the same sentence,
+maybe something like this where we have a
+record that consists of a predicate buying
+and then to active two value pairs for
+it's argument.
+A buyer who's the speaker of the sentence
+and a bought item that is a book.
+Let's now introduce two important
+concepts in semantics and
+semantic analysis,
+which we'll use later on.
+One is called entailment and
+the second one is called presupposition.
+So what is entailment?
+Entailment is when one fact
+follows from one another.
+So for if I say that all cats have
+whiskers, and Martin is a cat.
+That means that we can entail
+the statement Martin has whiskers.
+So the fact that Martin has whiskers
+is entailed from the other two.
+Another example is if I know
+that Martin has whiskers and
+a tail that entails the fact
+that Martin has whiskers so
+we can drop a tail and
+still have a valid statement.
+Now let's look at presupposition.
+So presupposition can be better
+explained with an example.
+If I said The Queen of Utopia is dead
+that means that we presuppose that
+Utopia has a Queen otherwise
+the sentence doesn't make any sense.
+So now is a good point to introduce
+one of the NACLO problems
+of 2010 that describes entailment and
+presupposition in more detail.
+So this problem was written
+by Aleka Blackwell and
+it's available on the NACLO website.
+So let me show you the problem now.
+So the first part of the problem
+introduces the concepts of entailment and
+presupposition.
+So the bottom part gives
+you examples of entailment.
+And then on the next slide we
+have examples of presupposition.
+So for example, for presupposition if I
+say I regret not seeing Shaun White's
+gold medal run that we suppose that
+Shaun White had a gold medal run.
+Otherwise it doesn't make sense.
+Okay so then the questions are, for
+any given pair of sentences it is
+possible that you have entailment and
+presupposition, or
+none of the above, or just one.
+So the questions is asking you to give
+examples of pairs of sentences where in A,
+A neither entails nor
+presupposes sentence B.
+The second question is to come up with
+example sentences where A entails and
+presupposes B.
+The third example, the fourth example,
+ask you for cases where either
+you have proposition but
+not entailment or the other way around.
+So let's think about examples
+of those sentences and
+then you will get to see
+the answers on the next slide.
+So again, pulled from the NACLO website,
+we have the examples of each of those four
+combinations of entailment and
+presupposition.
+You can go through them and
+understand why they were selected.
+On the first page,
+we have none of the above and both, and
+on the second slide we have just
+the one or just the other one.
+Okay.
+So now this concludes this introductory
+segment on semantics.
+

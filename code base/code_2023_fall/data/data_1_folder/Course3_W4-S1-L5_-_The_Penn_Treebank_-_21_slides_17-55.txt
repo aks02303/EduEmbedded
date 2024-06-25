@@ -1,0 +1,477 @@
+So the next segment is going to be about
+the Penn Treebank, which is one of
+the most important resources in,
+are used in building parsers.
+One thing that I would like to mention
+here is that, the Penn Treebank paper,
+even though it doesn't describe any
+specific algorithm or evaluation, is one
+of the most cited papers in the entire
+history of natural language processing.
+So what is the Penn Treebank,
+why is it important?
+So the Penn Treebank was created in
+the early 90s at the University of
+Pennsylvania, and it was designed, so
+that people can build trainable parsers.
+So the idea was to take human annotators
+and to ask them to parse sentences by
+hand, and then use this information as
+features for the development of parsers.
+So the paper that decided
+the most is by Mitchell Marcus,
+Beatrice Santorini, and
+Mary Ann Marcinkiewicz from 1993.
+The size of the Penn Treebank is
+not that large, it has about 40,000
+training sentences that have by hand and
+2,400 test sentences, so
+just to give you a heads up, if you train
+a parser on the Penn Treebank you should
+never look at the test data untill
+your parser is fully developed.
+So the genre of of the Penn Treebank is
+mostly Wall Street Journal news stories,
+and also some spoken conversations.
+So to summarize its importance,
+the Penn Treebank single
+handedly helped launch modern
+automatic parsing methods.
+So here are some pointers if you
+want to explore the Penn Treebanks,
+it's available from the LDC catalogue,
+LDC 99 number 42,
+there's an older version
+available from 95 as well.
+And here's a website that gives
+you the Tokenization guidelines,
+how to split sentences into words.
+And finally, there's another pointer
+of a similar resource called
+The American National Corpus
+which is also available online.
+So what does the Penn Treebank
+tagset look like?
+Well, the next two slides are going
+to show you the different tags for
+parse of speech.
+Let's start with some examples.
+CC stands for coordinating conjunctions.
+Such as the word and,
+CD is a cardinal number, for example, 1.
+Determiner, like the is marked as DT,
+adjectives are JJ.
+Modals are MD, singular or
+mass nouns are marked as NN, and
+then you can add an extra s or
+p at the end to indicate a plural.
+You can also have RB for adverb, verbs.
+That base form of a verb is VB.
+But you can also have special cases.
+For example, VBD is the past
+tense of a verb, such as, took,
+VBG is a gerund of present participle,
+VBN is the past participle,
+for example taken, and so on.
+And one important thing to realize
+is that all the prepositions
+are marked with the special symbol IN.
+That symbol is not just used for
+the preposition in, it's used for
+any preposition or
+subordinating conjunction except for
+the preposition to,
+which has its own tag name with t-o.
+And the reason is that, the preposition
+to is also used a lot in infinitives and
+some other special constructions
+has to be significant difference
+from the rest of the prepositions.
+So here's an example sentence.
+It's from the Wall Street Journal
+section of the Penn Treebank,
+it's section 12 sentence 11.
+Because the CD had an effective yield
+of 13.4% when it was issued in 1984,
+and interest rates in general
+had declined sharply since then,
+part of the price Dr.
+Blumenfeld paid was a premium.
+An additional amount on
+top of the CD's base value
+plus accrued interest that represented
+the CD's increased market value.
+I took the time to read this
+sentence in its entirety
+just to give your appreciation
+of the complexity and
+the subject matter that is
+specific to the Penn Treebank.
+So this is the beginning of the sentence.
+And it presented exactly as it
+appears in the Penn Treebank.
+You can recognize some
+nontraditional labels here.
+For example s-bar,
+corresponds to the fragment of
+the sentence that starts with because.
+And you can have another sentence, s-bar,
+one that corresponds to the time
+expression, when it was issued.
+And so, and it has specific words,
+for example, the PP at the bottom
+of the screen in 1984 is
+labeled as a PP time.
+TM stands for temporal prepositional
+phrase that expresses time.
+This thing here is in
+a relatively small font,
+but I had to fit it all in one screen.
+This is the full parse tree that
+corresponds to this specific sentence.
+You can see that it's very complicated.
+And the way to read it is in
+three columns, left, right.
+[BLANK AUDIO] So here,
+some other interesting factors here,
+for example, the coordinating
+conjunction and is indicated with CC,
+and you can have two sentences
+conjoined with this and.
+So the first one,
+is the one that starts with the CD had
+an effective yield of 13.4% and so on,
+and the second one is, interest rates
+in general had declined sharply.
+So this grammar allows for
+coordinating our conjunctions
+to link the entire sentences.
+So let's look at some of
+the peculiarities of the Penn Treebank.
+It includes things like complementizers.
+For example, the word that.
+It includes gaps, for
+example, the word none.
+For example, if you have a sentence
+that says, Mary likes Chemistry and
+hates biology, the subject of
+the second verb hate is also Mary, and
+it appears as a gap in the parse tree, so
+it will be labeled with the string *NONE*.
+And it also includes a special category
+called SBAR which comes from SBAR theory.
+In this example sentence,
+that starts with a complementizer.
+For example, I don't believe
+that he will come tomorrow.
+So that he will come tomorrow is an SBAR.
+So there is a tool that you can use to
+parse the Penn Treebank, that allows you
+to search for specific configurations
+of nonterminals and terminals.
+And here's some of the operators.
+A less than b, gives you sentences where A
+is a nonterminal immediately dominates or
+is the parent of B, A less than less
+than B means that A is somewhere above
+B in the parse tree, but
+is not necessarily as a parent, and so on.
+As you can see,
+the syntax here is pretty rich and
+that gives you a good opportunity to
+find a sentence to use as an example.
+So this is more or
+less what the Penn Treebank looks like.
+What is it used for?
+Well, first of all,
+it has some disadvantages.
+The general idea of using Treebanks seems
+like a no-starter, if you ask me, because
+it takes a lot more work to annotate
+40,000 sentences than to write a grammar.
+But this may be only
+a superficial disadvantage.
+There are actually some
+advantages as well.
+You can use the Penn Treebank to count
+statistics about different constituents
+and phenomena.
+For example, how many times does
+a nonphrase turn into a specific
+right-hand side when it's part of
+the subject of the sentence, or
+when it's part of
+the object of the sentence.
+You can use it to train systems, and
+you can use it to evaluate systems.
+So you can have an automatic parser,
+produce it's output, and
+then you can compare that output using
+some well-defined statistical techniques
+against the manual annotations.
+It's also possible to use
+the same technology for
+building a multilingual
+versions of the Penn Treebank.
+In fact, many such versions exist for
+many European languages,
+as well as Chinese, and Korean, and so on.
+So now, let's see how we can use
+something like the Penn Treebank for
+evaluating parses.
+So the evaluation methodology, in general,
+is the same as the one that is used for
+evaluating classifiers.
+You have, for example, a binary
+classifier where every object in your
+data set has to be labeled as either true
+or false, or either positive or negative.
+So what are some traditional
+classification tasks?
+A document retrieval is one example.
+You have a document, you have a query.
+And you have to say whether this
+document is relevant to the query.
+Yes or no.
+Part of speech tagging is a classification
+task where you have more than two classes.
+So for example, a word like round can
+be labeled as a noun or a verb or
+as an adjective out of the sequence of
+parts of speech that I showed you earlier,
+which has about 60
+different parts of speech.
+Parsing can also be considered
+as a classification task.
+You have essentially a set of words that
+can be labeled as either a sentence,
+or a noun phrase, or a verb phrase, and
+if you get the class right
+you should get some points.
+If you get it wrong you
+should lose some points.
+So the Penn Treebank is split in
+general into a training set and
+a test set in more general cases for
+classification of evaluation.
+You have three sets, a training set that
+is used to learn what the data looks like,
+then a dev-test set which is
+used to test your parsing method
+without touching the official test set.
+So if you use a dev-test set you can
+go back and retrain your system, and
+see how well it works without
+going to the official test set.
+And finally, you have the official test
+set which you're only allowed to look at
+once after your parser has been developed.
+If you look at it more than once,
+you would essentially overfit, and
+your results are not going to be valid,
+and
+they're not going to be acceptable
+by the research community.
+So what are some of the baselines
+used in the evaluation?
+You can have a dumb baseline.
+For example, label everything as a noun,
+or label everything as a noun phrase.
+You can also have an intelligent
+baseline which is typically a something
+straightforward.
+For example, label every word with
+its most likely part of speech,
+looking at the training data.
+So for example, with the word round,
+can be either a noun or a verb or
+an adjective, but the noun sense
+of round is the most frequent one.
+You can label it as a noun every time,
+and that will give you a more
+intelligent baseline than the one that
+just says label every word as a noun.
+You can also have a human performance
+matrix that tells you how accurate
+the system can be expected to be.
+If humans don't agree
+on their performance,
+that means that the system should not be
+expected to do any better than the humans.
+So for example, if on the part of speech
+tagging task humans only achieve 98%
+accuracy, you should not expect your
+part of speech system to go above 98%.
+So you can define a new method, for
+example let's say some statistical parser.
+You have to be able to compare
+it against those baselines under
+human performance using some
+standard evaluation methods.
+So what people typically use are accuracy.
+So how many times does the label that
+you predict match the correct label?
+Precision and recall, which we have
+looked at in an earlier set of slides,
+which tell us for precision.
+Of all the things that you
+have labeled as positive,
+how many are actually positive
+according to the training data?
+And recall is when the measure of all
+the things that you could have labeled as
+positive based on the training data,
+how many you actually labeled as positive.
+And there are extensions to accuracy,
+precision and
+recall that take into account
+the fact that there may be multiple
+references that conflict with one another.
+For example, different humans
+disagreeing on some specific label.
+So in that case, you have to take into
+account the interjudge agreement.
+The interjudge agreement just tells you
+what percentage of times the human judges
+pick the same label.
+And finally, you can use a matrix
+called Kappa which looks like this.
+A kappa is a normalized
+performance of your system.
+P(A) is the agreement
+between your system and
+the human judges or
+between multiple human judges, and P(E)
+is the expected agreement if the judges
+were to label something as an animal.
+So for example,
+if Kappa is greater than 0.7,
+it is assumed that integer
+agreement is high.
+If it's somewhere much lower than that,
+for example, 0.4 or 0.3, that means that
+the task is not well-defined, and
+you should probably not consider it all.
+Because no matter what the results your
+system achieves, it will not be meaningful
+if the judges themselves don't
+agree on the correct labels.
+So this is more or
+less how evaluation is done in general.
+So I have a question for you.
+If judge agreement on a binary
+classification task is 60%,
+is this high enough, is it good?
+What do you think?
+Well, the answer to the question is,
+if we consider the formula for Kappa,
+then we plug in the numbers, we have the
+probability of A, which is the agreement,
+is 0.6, but the expected agreement
+by chance given two classes is 0.5.
+So if we compute Kappa we will realize
+that the value of Kappa is 0.1 in
+the numerator, divide by 0.5 in
+the denominator, which is equal to 0.2 or
+20%, and as we said in the previous slide,
+20% is by far not an acceptable
+interjudge agreement.
+So in this case, we can say that
+the task is not well-defined So
+how do we evaluate parsers?
+Well, there are some standard
+techniques for evaluating them.
+There are some of them are based
+on precision and recall,
+whether you get the constituents right or
+not.
+You can also have labeled precision and
+recall.
+So the difference between
+precision recall and
+labor position recall is
+that in the former case
+you're only looking at whether you get the
+right words bracketed together properly.
+But in label precision you also want
+to make sure that the label of each
+nonterminal is correct.
+So, for example, if you label
+something as a very phrase, where as,
+it's actually a noun phrase,
+you're not going to get full credit
+on labeled precision and recall.
+Even though you would get full
+credit on precision and recall.
+One metric that is used a lot to
+combine precision and recall is F1.
+F1 is just the harmonic mean
+of precision and recall, and
+its highest when both precision and
+recall are high.
+It's low when one of them is high, and
+the other one is low and vice versa.
+So one specific twist in evaluating
+parsers has to do with something called
+crossing brackets.
+So if the correct parse is A,
+B, B, where B and
+C are grouped together before they join A.
+And your system produces AB group
+together before joining them with C.
+You're going to get
+a crossing bracket error.
+So in the Penn Treebank corpus,
+as I mentioned before,
+people usually train on section 02 to 21,
+they use section 22 for development,
+like deaf test, and then finally,
+evaluate their performance on section 23.
+So let's look at an example of
+an evaluation, this is a gold standard for
+the the Japanese industrial
+company should know better, and
+this is the output of a relatively state
+of the art parser, the Charniak parser.
+It produces the parse shown
+at the bottom here, and
+you can see that there
+are some differences.
+They are shown in boldface.
+For example, it has used the different
+part of speech for the word better.
+Instead of labelling it as JJR,
+it labelled it as an RBR.
+So this is going to reduce
+its labeled accuracy and
+its labeled precision and
+recall and labeled F1.
+So overall, the output of the parse of our
+evaluation for the spare of sentences is
+that the bracketing recall is 80%,
+because 8 out of 10 are correctly picked.
+The bracketing precision is two-thirds,
+6 out of 9.
+What that means is that three of the ones
+that were picked by the Charniak parser
+are incorrect.
+The F measure which is the harmonic
+mean of those 2 numbers is 72%.
+Complete match is zero,
+meaning that this sentence was
+not completely parsed correctly.
+It gets 100% score on no crossing,
+because they're not crossing the panels.
+And finally,
+it's tagging accuracy is 87.5, or
+7 out of 8 words were correctly labeled.
+The one mistake being the word better.
+This is the kind of numbers that
+you would see reported in papers.
+Bracketing measures, and tagging accuracy,
+and complete match, and no crossing.
+So this concludes the section
+on evaluating parsers.
+In the next segment, we will be
+talking about statistical parser.
+

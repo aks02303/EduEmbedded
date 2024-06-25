@@ -1,0 +1,83 @@
+ampligraph/latent_features/models/TransE.py
+def __init__(self,
+                 k=constants.DEFAULT_EMBEDDING_SIZE,
+                 eta=constants.DEFAULT_ETA,
+                 epochs=constants.DEFAULT_EPOCH,
+                 batches_count=constants.DEFAULT_BATCH_COUNT,
+                 seed=constants.DEFAULT_SEED,
+                 embedding_model_params={'norm': constants.DEFAULT_NORM_TRANSE,
+                                         'normalize_ent_emb': constants.DEFAULT_NORMALIZE_EMBEDDINGS,
+                                         'negative_corruption_entities': constants.DEFAULT_CORRUPTION_ENTITIES,
+                                         'corrupt_sides': constants.DEFAULT_CORRUPT_SIDE_TRAIN},
+                 optimizer=constants.DEFAULT_OPTIM,
+                 optimizer_params={'lr': constants.DEFAULT_LR},
+                 loss=constants.DEFAULT_LOSS,
+                 loss_params={},
+                 regularizer=constants.DEFAULT_REGULARIZER,
+                 regularizer_params={},
+                 initializer=constants.DEFAULT_INITIALIZER,
+                 initializer_params={'uniform': DEFAULT_XAVIER_IS_UNIFORM},
+                 verbose=constants.DEFAULT_VERBOSE):
+
+        super().__init__(k=k, eta=eta, epochs=epochs,
+                         batches_count=batches_count, seed=seed,
+                         embedding_model_params=embedding_model_params,
+                         optimizer=optimizer, optimizer_params=optimizer_params,
+                         loss=loss, loss_params=loss_params,
+                         regularizer=regularizer, regularizer_params=regularizer_params,
+                         initializer=initializer, initializer_params=initializer_params,
+                         verbose=verbose)
+
+    def _fn(self, e_s, e_p, e_o):
+        return tf.negative(
+            tf.norm(e_s + e_p - e_o, ord=self.embedding_model_params.get('norm', constants.DEFAULT_NORM_TRANSE),
+                    axis=1))
+
+    def fit(self, X, early_stopping=False, early_stopping_params={}, focusE_numeric_edge_values=None,
+            tensorboard_logs_path=None):
+        super().fit(X, early_stopping, early_stopping_params, focusE_numeric_edge_values,
+                    tensorboard_logs_path=tensorboard_logs_path)
+
+    def predict(self, X, from_idx=False):
+        __doc__ = super().predict.__doc__  
+        return super().predict(X, from_idx=from_idx)
+
+    def calibrate(self, X_pos, X_neg=None, positive_base_rate=None, batches_count=100, epochs=50):
+        __doc__ = super().calibrate.__doc__ 
+        super().calibrate(X_pos, X_neg, positive_base_rate, batches_count, epochs)
+
+    def predict_proba(self, X):
+        __doc__ = super().predict_proba.__doc__ 
+        return super().predict_proba(X)
+
+
+
+=======================
+C:\Users\mohan\Documents\ampligraph\ampligraph>python -m latent_features.driver.py
+Traceback (most recent call last):
+  File "C:\Users\mohan\AppData\Local\Programs\Python\Python37\lib\runpy.py", line 183, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "C:\Users\mohan\AppData\Local\Programs\Python\Python37\lib\runpy.py", line 109, in _get_module_details
+    __import__(pkg_name)
+  File "C:\Users\mohan\Documents\ampligraph\ampligraph\latent_features\__init__.py", line 17, in <module>
+    from .models.EmbeddingModel import EmbeddingModel, MODEL_REGISTRY, set_entity_threshold, reset_entity_threshold
+  File "C:\Users\mohan\Documents\ampligraph\ampligraph\latent_features\models\__init__.py", line 15, in <module>
+    from .ConvE import ConvE
+  File "C:\Users\mohan\Documents\ampligraph\ampligraph\latent_features\models\ConvE.py", line 24, in <module>
+    from evaluation import to_idx
+  File "C:\Users\mohan\Documents\ampligraph\ampligraph\evaluation\__init__.py", line 12, in <module>
+    from .protocol import generate_corruptions_for_fit, evaluate_performance, to_idx, \
+  File "C:\Users\mohan\Documents\ampligraph\ampligraph\evaluation\protocol.py", line 19, in <module>
+    from ..evaluation import mrr_score, hits_at_n_score, mr_score
+ValueError: attempted relative import beyond top-level package
+---------------------
+------
+C:\Users\mohan\Documents\ampligraph\ampligraph>python -m latent_features.driver.py
+In TransE custom..........
+WARNING - All triples will be processed in the same batch (batches_count=1). When processing large graphs it is recommended to batch the input knowledge graph instead.
+2022-10-16 22:55:20.465360: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+done
+C:\Users\mohan\AppData\Local\Programs\Python\Python37\python.exe: Error while finding module specification for 'latent_features.driver.py' (ModuleNotFoundError: __path__ attribute not found on 'latent_features.driver' while trying to find 'latent_features.driver.py')
+
+C:\Users\mohan\Documents\ampligraph\ampligraph>
+----------------------

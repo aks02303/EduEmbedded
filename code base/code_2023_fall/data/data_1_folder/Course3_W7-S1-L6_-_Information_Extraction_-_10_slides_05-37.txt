@@ -1,0 +1,154 @@
+Welcome back to
+Natural Language Processing.
+The next slide site is going to
+be about information extraction.
+So what is information extraction?
+Well it's one of the most interesting
+problems in natural language processing.
+It's also one of the most
+practically useful.
+We usually start from some unstructured or
+semi-structured data.
+Unstructured refers to plain text.
+Semi-structured refers to text that may
+have some tables or some meta-data.
+So some examples of unstructured data
+include news stories, scientific papers,
+maybe resumes.
+And we've tried to extract entities,
+events, and
+relations from those documents.
+So for example, we want to figure out
+who did what, when, and where, and
+why, and we may be able to use this
+information to build a knowledge base.
+For example, which companies
+develop what kind of products or
+which papers are about which
+particular scientific topics.
+So what is a named entity?
+Well there are different types of those.
+The most common categories are people,
+locations, organizations.
+Organizations can be partly divided into
+things like sports teams, newspapers,
+let's say New York Times, or
+companies like IBM or Microsoft.
+We can also have geo-political entities
+like countries and continents and so on.
+Named entities can be ambiguous.
+So for example,
+the word London can be a person,
+like the last name, a city, a country,
+it's a country by autonomy if you remember
+from one of the earlier lectures.
+We can say something like, London
+decided not to get involved in the war,
+where London stands for
+the country that it is the capital of.
+So Named Entities are very useful
+because they can be used for
+interfaces to databases,
+question answering systems, and so on.
+In addition to Named Entities we want to
+be able to extract things like times and
+events.
+So times can be absolute expressions,
+like, for example, January the 7th,
+or relative expressions, for example,
+like "last night" or next Thursday.
+We also want to be able to
+extract events and so on.
+So a lot of the information
+extraction tasks can be modeled
+as sequence labeling problems.
+So a part of speech tagging is
+another sequence labeling problem.
+Named entity recognition is one.
+Semantic role labeling that we're going
+to talk about in the future is also
+a sequence labeling problem.
+In sequence labelling,
+the input is a sequence of words.
+For example, w1, w2, w3 and
+the output is a set of labelled words.
+For example,
+w2 is a noun that corresponds to a person.
+Or maybe w2 and
+w3 combined are a sequence of two nouns
+that correspond to a person and so on.
+So most of the time,
+people use classification method for
+sequence labelling.
+So we can use the categories
+of the previous tokens,
+as features when we classify the next one.
+And the direction matters, sometimes
+it's better to do this left to right.
+In other case,
+it may be better to do it right to left.
+And you can also do it by direction,
+going both directions at the same time.
+So one of the most interesting
+points in information extraction is
+Named Entity Recognition or
+NER as it is known in the literature.
+It consists of two parts,
+segmentation and classification.
+So segmentation is about determining which
+words belong to a specific named entity.
+So here in the sentence, Brazilian
+football legend Pele's condition has
+improved, according to a Thursday evening
+statement from a Sao Paulo hospital.
+We have three named entities, and
+they're segmented properly here.
+The second task in name entity
+recognition is classification,
+and that is once we have segmented
+the text into named entities, then
+the rest of the sentence we want to label
+each of the named entities with it's type.
+So there are different ways to do this.
+We can use gazetteers,
+session long lists of geographical
+locations or people's names.
+We can look at the spelling
+of the individual word.
+We can look at the words that are adjacent
+or the presence of specific words.
+For example, the President or Mrs. or Mr.
+as hints as to how to
+classify the named entity.
+So this particular sentence here can
+be labeled in the following way.
+Pele is a person, Thursday evening
+is a time expression, and finally,
+Sao Paulo is a location.
+Here's some more examples,
+we can have organizations,
+Albert Einstein Hospital
+is an organization.
+Thursday night, again, is the time
+expression, and then we have an event,
+Pele was relocated.
+In this case we have an action verb,
+relocate, which has a certain set of
+arguments, in this case,
+Pele as the person being relocated.
+Information extraction and
+entity recognition is very commonly
+used in the biomedical domain.
+Some examples include gene labeling.
+So here's an example with sentence.
+BRCA1 and BRCA2 are human genes that
+produce tumor suppressor proteins.
+In this case, we want to label
+the two instances of genes, BRCA1 and
+BRCA2, as genes.
+So this is the end of the section
+on information extraction.
+We're going to continue with some
+additional topics related to information
+extraction in the next segment.
+

@@ -1,0 +1,208 @@
+Okay, the next section on text similarity
+has to deal with a specific kind
+of word similarity methods that
+are based on thesauri, such as WordNet.
+Let me ask you a question.
+Look at the four pairs
+of words shown here, and
+tell me which pair exhibits
+the greatest similarity?
+Deer-elk, deer-horse,
+deer-mouse, or deer-roof?
+I think the answer to this question
+should be pretty obvious if you know
+what elk means.
+And the answer is deer and
+elk are the most similar pair.
+And I want to ask you now, why do you
+think that they are most similar?
+Well, when you know that
+they're both kinds of deer but
+how does a natural
+language system know that?
+Well, let's see.
+Remember the WordNet tree, it is the
+segment that I showed you under ungulate.
+Well, let's see where those animals or
+those words appear in this tree.
+Deer and elk appear very
+close to each other, in fact,
+one of them is an immediate hypernym of
+the other one whereas horse is pretty far.
+So now, if you want to define a similarity
+metric based on WordNet, the simplest
+thing that we can do is to identify the
+nodes where the different words appear and
+to count the number of links that
+are needed to get from one to the other.
+So according to this metric, elk and
+deer are very similar because there's
+only one hop that separates them.
+The distance between deer and
+horse is much larger.
+We have to go from deer to to ruminant to
+even-toed ungulate to ungulate to odd-toed
+ungulate to equine and then horse so
+that's a total of six hops.
+The distance from deer to horse is six and
+the distance from deer to elk is one.
+Now I need to mention here that
+distance and similarity are related.
+The greater the distance,
+the smaller the similarity, so
+there is an inverse
+relationship between the two.
+If you want similarity and pathlength to
+go in the same direction we need to put
+the negative sign in
+front of the pathlength.
+So the first version of path similarity
+that I want to introduce today is what
+I call Version 1.
+In that case,
+the similarity between the word v and
+the word w is just negation of
+the pathlength between v and w.
+And for practical purposes it turns out
+that it's better to take a logarithm
+of the pathlength.
+So version 2 of our
+similarity metric is just
+minus the logarithm of
+the pathlength between v and w.
+Now there's some problems
+with this approach.
+The first one is that there may not be
+a tree or forest at presentation for
+a specific domain.
+For example,
+the medical domain or the financial
+domain or any particular language.
+For example,
+out of 7,000 languages in the world,
+there are WordNet type databases for
+only a few dozen.
+Now specific words, for example a term or
+a proper noun, may not be in any tree.
+It may be something that is new or
+something that is way too specific
+to be included in any database.
+And a more interesting problem
+is that the hypernym edges,
+which are also known as IS-A,
+ages because elk is a deer.
+Those ages are not equally
+apart in similarity space so
+sometimes two words can be two hops
+apart or two edges apart and they can
+still be relatively similar semantically,
+whereas another pair of words with
+the same exact distance may be actually
+much more different than the first pair.
+So let's talk about some more advanced
+versions of path similarity that use
+WordNet 5 trees.
+The version 3, in our example,
+was developed by Philip Resnik in the 90s,
+and it is again based on minus
+the logarithm of something, but
+the something is not the pathlength, but
+it is rather the probability of observing
+the word that appears
+in the corpus that is
+the lowest common subsumer of the two
+words that we are trying to compare.
+So what does lowest common subsumer mean?
+Well, it's simply the node in the tree
+that is an ancestor of both
+nodes that we want to compare.
+So if we want to compare deer and horse,
+we have to go all the way to ungulate.
+And if we want to compare deer and
+elk, we only need to go as
+far up the hierarchy as deer.
+So the LCS for deer and
+horses is ungulate.
+The LCS for deer and elk is deer.
+And if we want to look at
+the probability of those,
+it should be pretty obvious
+that in any given corpus,
+the probability of ungulate will be larger
+than the probability of deer, because
+ungulates are more common than deer, with
+deer being a special case of ungulates.
+So if we take the logarithm of
+the probability of those two values,
+we are going to obtain the similarity
+that Philip Resnik defined.
+And there's another
+metric in this category
+based on the so-called
+information content of a node.
+So it was developed by
+Dekang Lin in the late 90s.
+Its formula is very simple.
+IC, or the information
+content of a certain concept
+is minus the logarithm of
+the probability of that concept.
+And then the similarity between two words
+is defined as, according to this formula,
+2 x the logarithm of the probability
+of the lowest common subsumer
+divided by the sum of the logarithms of
+the probabilities of the individual words.
+So the example from Dekang Lin's paper
+shows you the similarity between hill and
+coast.
+It is 2 x the logarithm of
+the probability of geological formation,
+which is their lowest common subsumer.
+In this case,
+that is 0.00176 in the numerator.
+And then in the denominator, we have
+the logarithm of the probability of hill.
+So the logarithm of
+0.0000189 + the logarithm
+of the probability of cost,
+which is 0.0000216.
+And then if you simplify this expression,
+you will see that the similarity of hill
+and coast is 0.59,
+where 1 is the largest possible value.
+Now, I want to point out that a lot of
+those algorithms are implemented in
+software.
+And there exists versions for pretty
+much any major programming language,
+including Java and C++, and more
+specifically the slide I have shown you
+links to a Perl implementation called
+WordNet Similarity by Ted Peterson at
+the University of Minnesota,
+Duluth and his students.
+And also a Python version
+that is part of NLTK
+software that we have talked about before.
+And I explicitly for this slide at hand,
+NLTK to see how it computes the similarity
+between different pairs of words.
+I called the function
+lin_similarity which implements
+the Dekang Lin similarity metric
+that I showed you earlier.
+So the Lin similarity between dog and
+cat using the Brown Corpus as
+the knowledge base is 0.879.
+In the same conditions, the similarity
+between dog and elephant is smaller.
+It's 0.531.
+And the similarity between dog and
+elk is even smaller, it's 0.475.
+So this concludes the section on methods
+for word similarity based on thesauri.
+We're going to continue now with
+the next section on text similarity
+using the vector space model.
+

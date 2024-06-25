@@ -1,0 +1,259 @@
+Okay, welcome back to
+Natural Language Processing.
+In the last few segments we looked at
+the problem of part-of-speech tagging, and
+we looked at the HMMs.
+Now we're going to see how we can
+combine the two together into
+a lecture on statistical methods for
+part-of-speech tagging in particular.
+So just to remind you there are many
+different types of tagging methods.
+Rule-base we already went over those and
+stochastic based on HMM so
+a maximum entropy mark up models, the
+difference between those two is that HMMs
+are generated models and maximum entropy
+mark up models are discriminated.
+For this class we're only
+going to look at HMMs.
+And finally we still have to cover
+transformation-based methods for
+part of speech tagging.
+So let's see now HMM tagging first.
+So we remember from the previous segment,
+that we're looking for T tags which
+maximizes the probability of sequence
+of tags given the sequence of words.
+And T can be decomposed into t1,
+t2, and so
+on all the way to tn corresponds
+to the sequence of tags.
+So by Bayes' theorem, we can say that
+the P(T|W) = P(T)P(W|T) / P(W).
+But since we are maximizing
+the right hand side of the equation,
+we can ignore the probability of
+W because it will be the same.
+It doesn't depend on T
+when the computer argmax.
+So, just to put this in
+the same terminology as before,
+the P of T is the power probability
+of the sequence of tags and
+P of W given T is called the likelihood
+of the words given the tags.
+Okay, now let's see how we can compute
+the probabilities for the entire sequence.
+So the probability of the sequence of tags
+times the probability of the sequence of
+words given the sequence of tags
+is going to be a large product.
+We want to compute the probability
+of all the possible
+sequences of words given the previous
+words and the previous tags, and
+also the sequence of tags
+without considering the words.
+We can make two simplifications.
+One is that we are just going to
+use the emission probabilities of
+wi given t sub i.
+And we are also going to just look
+at the bigram sequence of tags.
+The bigram approximation now turns
+out to be that we are looking for
+t as the max of P of t given w.
+Which is the product of all
+the emission probabilities for
+the sequence times of all the bigram
+transition probabilities for the sequence.
+So the maximum likelihood estimates.
+Let's look at some examples
+how to compute, for example,
+the transition probabilities.
+If we're interested in the probability
+of a noun following an adjective.
+That's equal to the ratio of the count of
+adjectives and nouns appearing together,
+that order, divided by the number
+of times adjectives occur.
+So in our corpus,
+we have a total of 22,301 instances of
+adjectives followed by a noun /
+89401 instances of adjectives.
+So, the probability of noun
+following adjective is 0.249.
+Now what about the admission
+probabilities?
+Again, the admission probability for
+the word this given the tag determiner
+is equal to the joint count
+of the determiner and
+the word this,
+divided by the count of determiner.
+In this example,
+it's 7037 divided by 103687, or 0.068.
+We can similarly compute the rest of
+the probabilities and use smoothing and
+interpolation if necessary.
+Now let's try to apply this
+idea to a specific sentence.
+We have the sentence,
+The rich like to travel.
+So travel is marked as a verb.
+But it can also be a noun
+in the dictionary.
+So we want to consider two
+possible sequences of times.
+Determiner, adjective, verb.
+The preposition to, followed by a noun,
+followed by end of sentence.
+For the sequence determiner, adjective,
+verb, the preposition to,
+and then verb for travel.
+Okay, now we already know how to
+build a part-of-speech tagger.
+Now, let's see how we can evaluate one.
+As in many other classification problems,
+we have to
+have a data set that consists of a
+training set, possibly a development set,
+and also a test set, which we are going
+to use for the actual evaluation.
+The metric used for
+tagging is a tagging accuracy,
+which is essentially how many times did
+we get a correct tag for a given word.
+As I mentioned before, a typical
+accuracy for backed data is about 97%.
+What's interesting to notice is
+that the accuracy of unknown words
+is what really hurts
+the overall performance.
+It ranges from 50 to 85%
+according to the different tagger.
+And a tagger model actually doesn't
+do anything good with unknown words.
+It's performance on unknown words
+is usually on the order of 50%.
+The upper bound is still 98%,
+which is mostly caused by errors and
+inconsistencies in the data.
+For example, labeling nouns as adjectives,
+and vice versa.
+Okay, the final method for part of speech
+tagging that we're going to introduce in
+this class is called
+transformation based learning.
+It was developed by
+Eric Brill in the mid 90s.
+Here's the idea.
+We can have a prior probability, for
+example of an emission like
+noun given sleep, 0.9.
+But we can have a norrow the probability
+of verb given sleep is equal to 0.1.
+And we can have a rule that says that
+we want to change the noun to a verb
+if the previous tag is the preposition to.
+The types of rules used
+in transformation-based
+learning are the following kind.
+The preceding or possibly the following
+word has a specific part of speech tag,
+or the word two to the left or
+two to the right has a particular tag or
+one of the two preceding or following
+words is tagged in a certain way.
+Maybe one of the three preceding
+words is tagged a certain way.
+Maybe the preceding word
+is tagged one way and
+the following word is
+tagged a different way.
+Those are all possible things that
+can be learned by the transformation
+based tagger.
+So here's some slides from
+the paper by Eric Brill.
+Those are some of the most commonly used
+known nonlexicalized transformations.
+Nonlexicalized just means that they refer
+just to parts of speech without looking at
+the individual words.
+So, the first rule says
+you want to change a noun
+tag to the verb tag if the previous
+tag is the preposition to.
+The third line says we want
+to change a noun to a verb if
+one of the previous two
+tags is a modal verb.
+And then let's say example
+number 17 says we want to change
+the preposition into a determiner
+if the next tag is a noun.
+So here's some other examples of rules for
+the transformation based tagger, for
+example we're interested in
+the words before, the words after,
+the current word itself, and
+the tagger of the previous word,
+the tagger of the following words and
+so on.
+And here's some examples of unknown words.
+So if the default label for
+a certain word is noun, change to
+plural noun if it has a suffix, s.
+If the default is noun,
+change it to a character if it has
+a certain character like this case,
+the period, which indicates we have
+some number, it's 3.5 and so on.
+The 20 such rules that were
+given in the bill paper for 95,
+you can look at the rest of them and
+understand why they all make sense.
+They typically reflect some important
+morphological properties of words.
+Okay, so before we conclude this section
+on part-of-speech tagging I want to
+bring up some interesting thoughts.
+One of them is about new domains.
+It turns out that it's very difficult
+to port part of speech taggers to new
+domains, especially domains where
+a lot of the words are novel.
+For example, porting a tagger from
+the news domain to the biomedical domain
+is usually a very bad idea.
+We get lower performance and we have
+to find other ways to deal with it.
+For example,
+by training on data from the same
+domain rather than a different domain.
+Another interesting idea is the idea
+of distribution of clustering.
+So we want to combine statistics
+about semantically related words, for
+example companies or numbers, and
+use the combine statistics to build
+better predictions for the next word.
+Some other examples of semantic
+categories include days of the week or
+animals or names of companies.
+So, I'm going to conclude this section
+by pointing you to an external website
+at John Hopkins university, where
+Jason Eisner has developed a very nice
+interactive spreadsheet that teaches you
+how to learn the parameters of an HMM.
+There is some additional teaching
+materials on that site that
+you can find useful as well.
+So this concludes the section
+on part-of-speech tagging.
+We're going to continue in a few
+minutes with the next segment.
+

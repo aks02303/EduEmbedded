@@ -1,0 +1,455 @@
+Welcome back to the natural
+language processing course.
+We're going to continue now with the final
+section on language modeling part three.
+So, let's look at some additional
+issues related to language models.
+First of all, how do we evaluate
+the quality of a language model?
+Well, there are two types of evaluations.
+The first one is known as
+an extrinsic evaluation and
+that is to use the language of a modern
+specific application, for example,
+speech recognition, or machine
+translation, or part-of-speech tagging.
+The second method is based on an intrinsic
+evaluation that has to do with
+the properties of
+the language model itself.
+It's much cheaper than an extrinsic
+evaluation because it can be done
+automatically.
+However, it is very important not to
+use it as a complete substitute for
+an extrinsic evaluation.
+At the very least, if you use an intrinsic
+evaluation, you have to also do some sort
+of extrinsic evaluation to be
+able to correlate the two.
+And once you have a good idea of
+how the two map to each other,
+then you can continue using
+just an intrinsic method.
+Let's see some of
+the intrinsic methods first.
+So, the most commonly used
+method is known as perplexity.
+So, the perplexity is given
+by this formula here.
+We take the probability of all the words
+in a sentence, take the reciprocal of it,
+and then take the nth root of that number.
+That gives us the perplexity.
+So, this is an estimate on how
+well the model fits the data.
+Good language model is one that is
+going to give a high probability
+to a real sentence.
+The perplexity can be thought of as
+the average branching factor in predicting
+in the next work.
+Lower perplexity is better because
+it's correlated with higher
+probability of the sentence.
+So, in this formula,
+n is the number of words in the sentence.
+And let's look at an example now.
+Suppose that we have a set of words,
+N equiprobable words, where the
+probability of each of them is 1 over k.
+So, given the formula for perplexity,
+we can now compute the value for
+this specific example.
+So, the value is going to
+be (1 / K) to the Nth power
+to the power of (-1 over
+N) which is the Nth root.
+So, the N and
+the (1/N) are going to cancel.
+And we are going to get (1/K)
+to the power of minus 1,
+which is essentially
+the original number K.
+So, in that case, what happens is that,
+the perplexity is exactly equal to
+the number of equiprobable
+choices that we are making.
+So, if we have,
+let's say ten words to choose from,
+the perplexity is going to be ten
+if those words are equally likely.
+So, this is another way to assert that
+perplexity is like a branching factor.
+There's a logarithmic version
+that can also be used.
+In that case, we just have the base 2 or
+base 10 logarithm of the previous formula
+so we have 2 to the power
+of minus one over n,
+the sum of the logarithms the probability
+of the individual words and
+this should give us the exact same
+value as the non-logarithmic approach.
+So, the use of perplexities related to
+the so-called Shannon game
+named after Claude Shannon.
+Let's see what it looks like.
+In the Shannon game you try to
+predict the next word in a sequence
+based on the word so far.
+So, if you say something like New York
+governor Andrew Cuomo said and
+then you want to predict the next word.
+Or you could try to predict it yourselves
+and you'll see that this is not easy task.
+You may say, for example,
+that the next word is the.
+For example,
+New York governor Andrew Cuomo said the
+next item on his agenda is such and such.
+Or it may be some other word for
+example, that.
+New York governor Andrew Cuomo said that
+on the next day he is going to travel.
+However, it's very likely that
+the next word is said, or Cuomo or
+any word that was already
+used in the sentence.
+It's also very likely that it's a word
+that usually doesn't follow the word said,
+for example, some adjective.
+So, the Shannon game is
+a [INAUDIBLE] to predict the next word.
+So, let's try this with a simple example.
+What's the perplexity of guessing a digit
+if all of the digits are equally likely?
+Well, as you can imagine from
+the previous slide, the answer is ten.
+What about predicting the next
+letter in a sequence?
+Well, again for instance there
+are 26 equal probable choices,
+the perplexity is equal to 26.
+Now, this perplexity
+is going to get lower.
+If we have a better understanding of the
+words that have already been said before.
+So, for numbers it's not going to work but
+for words it may make sense.
+For example, if you have seen that
+the first letter of the word is
+t the probability of the next letter is
+also going to be to is going to be small.
+The probability of the next letter
+is x is also going to be very small.
+But the probably of having the next
+letters as h or e or r or o.
+Are going to be larger.
+So in this case we don't have anymore 
+equal probable distribution of letters.
+We have something that is different.
+And in that case the average branching
+factor is going to be smaller than 26.
+And this is exactly where
+perplexity is useful.
+So here's an example from the Josh Goodman
+paper that I mentioned earlier.
+Or how about guessing one
+of the next words that
+a customer is going to say over the phone
+when they call customer service?
+So let's assume that the probability that
+they're going to say the word operator is
+1 in 4, that they're going to say the word
+sales with the probability of 1 in 4,
+and that there are 10,000 other cases
+That add up to a probability of one-half.
+For example, those could be the 10,000
+names of people who work at the company.
+So in this case, again, we'll have to
+take a weighted sum of those numbers
+using the harmonic mean and that's going
+to give us the average branching factor
+that corresponds to this
+particular language model.
+So how do we measure perplexity
+of cause distributions?
+This is a very important problem
+in naturalized because very
+often the language model is trained
+on one particular set of data and
+tested on a completely
+different set of data.
+If the two are drawn from
+the same distribution,
+the perplexity should be the same on both.
+However, this is often not the case.
+Very often people train, for
+example, on news stories.
+And then they test it on social media, and
+they are very surprised to see that
+the performance is pretty low, and this is
+not surprising because the perplexity can
+tell us that this is going to happen.
+It turns out that when the two
+distributions are very different
+they are called so called close anthropy
+between the two distributions is going
+to be higher So here's an example.
+If we were training a language model
+with the previous slide's data,
+but however it turns out that the 10,000
+cases are equally like again but
+there are no options for the user
+to say either a sales or operator.
+So in that case,
+the probability distribution
+is going to be very different.
+Instead of having one quarter,
+one quarter, and then 10,000 values that
+add up one-half, we're going to have zero,
+zero, and then 10,000 values that add up
+The cross-entropy is equal to the log of
+the perplexity, and it's measured in bits.
+And this is the formula given
+to populate the distributions.
+As you can see, if the topography of
+the distributions are very different,
+the cross entropy is
+going to be very large.
+If they are are very similar,
+then it's going to be at it's minimum.
+So, some sample values for perplexity
+from real life natural language data.
+They have been computed from
+the Wall Street Journal in the late 90s
+on a corpus of 38 million words or
+38 million tokens and that corresponds
+to 20,000 different words or types.
+So, the perplexity that was computed
+on separate sample of 1.5 million
+documents for
+the same purpose was 962 for unigrams.
+This is a the level of words, not letters.
+For bigrams it went down as low as 170 and
+then as you would expect with
+trigrams it went even lower, 109.
+So, what that means is that even
+though you can have a total 20,000
+words in your corpus, just by using a
+unigram model you're going from 20,000 to
+less than 1,000 choices on average.
+And if,
+you're going to trigrams you go down by
+a factor of 200 from 20,000 to 100.
+So, one other method that is used for
+validating language models is
+so-called word error rate.
+It is equal to the number of insertions,
+deletions, and
+substitutions between two strings.
+It's very similar to what we had earlier
+called the Levenshtein Edit Distance, and
+as you remember, this is something
+that is normalized by sentence length.
+So, here's an example.
+Supposed we have one string, governor
+Andrew Cuomo met with the mayor, and
+another sentence the governor
+met the senator.
+Can you figure out what is the edit
+distance between those two strings.
+I'll give you the answer in a minute.
+So, as you can see,
+there are three deletions.
+We have removed the word Andrew,
+the word Cuomo, And the word, with.
+We have one insertion, we have added the
+word the at the beginning and we have one
+substitution, where we have replaced
+the word mayor with the word senator.
+So, that's a pretty large word error rate
+of five, even if you normalize it with
+[INAUDIBLE] it would still be
+a normalized word error rate of one.
+So, now let's consider two issues that
+come up when we deal with language models.
+The first one is how to deal with Out
+of vocabulary words, or OOV words.
+And so those are words that appear
+in the test data that we have
+never seen in the training data.
+Now, for the purposes of
+estimating the probabilities,
+we can split the training
+data into two parts.
+And label all the words in part two that
+were not in part one as unknown words.
+So, then the estimates for
+those unknown words
+will be used as estimates when we
+would deal with the testing data.
+Another thing that we can do
+is something Called Cluster.
+We can for example combine all of
+the information that we have about,
+all the date expressions together.
+All the monetary amounts
+together separately.
+All the organizations and all the years.
+And that That case we can have
+conditional properties that say what is
+the probability that a certain word wi is
+going to appear after year expression.
+So, this case all of the year expressions
+combined together to give additional
+strength to the prediction.
+So, some of the positive long that
+language models don't model very well
+are named long distance dependencies. So
+this is where n-gram language models
+essentially fail by definition because
+they're only allowed to look at one or
+two words back.
+So, here's an example.
+We may be missing some
+syntactic information.
+So, for example,
+let's consider two sentences here.
+The students who participated
+in the game are tired.
+So, the word are,
+It's conditional on the students.
+So, this is the subject, those are the
+subject and the verb of the sentence.
+There syntactically related, however,
+there's a total of five
+words that intervene.
+So, any shorter then six grams is
+going to miss this dependency.
+So, it's not going to make any
+distinction between this sentence and
+the next one, which says that the student
+who participated in the game is tired.
+So, again, we have an instance
+of agreement that goes back
+more than five words.
+So, trigram and
+language models are not ging to be
+able to deal with this information.
+The same thing applies to
+missing semantic information.
+So here are two sentences The pizza
+that I had last night was tasty.
+So, tasty in this case modifies pizza and
+it makes sense because the word
+tasty is something that you expect
+a pizza to have as a property, but if you
+change it to the class that I had last
+night was interesting You will see that
+tasty doesn't fit in this context and yet
+the trigram model will assign it
+a sample ability in both cases.
+So, because the two words
+before it were night and was.
+So, that trigram anagram model
+in this case is going to miss
+the semantic information because
+of the long distance between
+the two words that
+are semantically related.
+So, there are techniques to
+deal with this kind of problem.
+For example, you can use a syntactic
+language model that looks not
+just at the most recent words, but
+also the most recent words that are
+syntactically related to the current word.
+So, you need to bind the sentence and then
+figure out that the pizza is related to
+tasty using dependency or
+perhaps some specific syntactic condition,
+and then you can condition
+the word tasty on the pizza, and
+similarly condition the word
+interesting on the word the class.
+Here's some other ideas that you can use.
+Though I just mentioned
+the syntactic model.
+So, again the idea is that you
+want to condition some words on
+other words that appear in a specific
+syntactic relation with them.
+You can also use something
+called a caching model and
+that is to take advantage of the fact
+that words appear in bursts.
+So, if you see the work Cuomo in
+a document it's very likely that the word
+Cuomo is going to appear
+again in the same document.
+So, if you keep track of the words that
+have appeared in the most recent history
+You can give them high probability
+of appearing in the future.
+So, I'm going to conclude this section
+by pointing you to some of our external
+resources that are relevant to modeling.
+The first is SRI Language modeling toolkit
+which is available from the SRI website.
+The second one is the CMU
+language modeling tool kit,
+which is available from the CMU website.
+Both of those are very popular, I think
+the SRI system is more popular these days.
+And they do more or less the same thing,
+they allow you to train Maximum likelihood
+estimates from the training data set,
+for any sort of length of ngrams,
+including as many as four and five grams.
+You can also use them
+to compute perplexity,
+you can use them to label sequences,
+and you can also
+use them to estimate probabilities
+using interpolation.
+I would like also to mention the large
+corpus of Google n grams that is available
+on the internet, which has data
+from billions of documents, and
+I'm going to show you later some
+examples of data from that data set.
+There's also a possibility to look at
+the n-grams site proposed by Google,
+which allows you to track the presence
+of n-grams historically over
+hundreds of years.
+Here's some example Google n-grams.
+So, you can see that
+they're very large values.
+Here all the bi-grams
+are conditioned on the word house.
+And you can see only
+the first few of those.
+So, for example the word, a, appearing
+after house has a frequency of 302,435,
+after appears after house
+118,000 times and so on.
+So, you can see that those
+are very large numbers and
+they can be used to get very reasonable
+estimates of bigram probabilities that
+you can use in your systems.
+So, a few more external
+links here about N-grams.
+Some of those websites use N-grams
+to randomly generate text.
+For example, scientific papers and
+poems and country ban names and so on.
+Some of them are really fun.
+I would encourage you to take
+a look at those on your own time.
+So this concludes the section
+on language modeling.
+

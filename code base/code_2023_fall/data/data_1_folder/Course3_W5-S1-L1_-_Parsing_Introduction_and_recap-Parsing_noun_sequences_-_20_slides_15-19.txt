@@ -1,0 +1,426 @@
+Welcome to the natural
+language processing course.
+Today we're going to continue
+with one of the most interesting
+topics in natural language processing,
+namely parsing.
+I want to remind you that last
+time we looked at parsing already,
+and I wanted to bring out that
+parsing human languages is very different
+from parsing programming languages.
+So when we parse a programming language,
+we have to parse statements,
+and punctuation and variables.
+However, all of those
+are designed to be unambiguous.
+So for example this C program here can
+only be interpreted in one possible way.
+There's a main function and
+then inside the main function there's some
+variable declarations, and while loop and
+each of those gets converted into
+binary code in a very unambiguous way.
+Parsing human language,
+on the other hand, is very different.
+I will give you some examples to
+show you why it can be a challenge.
+The first problem is coordination scope.
+Look at the sentence,
+small boys and girls are playing.
+This sentence can have two
+different interpretations.
+The adjective small can attach to
+either boys, in which case we have boys
+was small and girls who are or
+are not small, both of those are playing,
+and the alternative interpretation
+is that both boys and
+girls are small and they are both playing.
+The second example is what is known
+as prepositional phrase attachments.
+A prepositional phrase is a phrase that
+starts with a preposition as the name
+suggests.
+So in the sentence I saw the man with
+the telescope, with the telescope is
+a prepositional phrase, because it
+starts with the preposition with.
+Now let's try to interpret the sentence.
+One interpretation is that, the man
+that I saw was carrying a telescope,
+and another interpretation is that,
+I saw the man using my telescope.
+As you can see, those are two very
+different interpretations, and
+it is difficult, in fact, impossible,
+to tell which one was intended.
+The third example is about gaps.
+Sometimes a sentence may skip some words
+if they can be understood from the context
+and the sentence can still make sense, but
+it may be very difficult
+to process computationally.
+Look at the example.
+Mary likes physics, but hates chemistry.
+If we want to find out who likes physics,
+the sentence tells us right away
+it's Mary, but who hates chemistry?
+Well it's still Mary, but the sentence
+doesn't say this implicitly, we have
+to infer the subject of hates chemistry
+from the structure of the sentence.
+The fourth example is about the use
+of some words as either particles or
+prepositions.
+In English the word up can be
+particle as in, to run up.
+For example, to run up a bill,
+in which case up modifies ran or
+it can also be the beginning of a
+prepositional phrase like up a large bill.
+Obviously up a large bill is not
+a valid prepositional phrase,
+but you can have another sentence that is,
+she ran up a large hill.
+In which case, up a large hill
+is a prepositional phrase, and
+how do we know that this is
+a different interpretation?
+Well, it's very easy.
+We can move up a large bill to the
+beginning of the sentence, we can say up
+a large hill, she ran, but
+we can not say up a large bill, she ran.
+So for example with hill We have
+an opposite preposition, and
+in the example with bill,
+up is a particle.
+And the fifth example for now is the
+difference between gerunds and adjectives.
+Ing words in English can be either
+gerunds which is verbal forms or
+they can be used as adjectives.
+So in the example here,
+we have one interpretation.
+Playing cards can be expensive as
+in to play cards can be expensive,
+because you lose money
+when you play cards.
+At the same time, another interpretation
+could be that, playing cards,
+as in a specific type of cards.
+What kind of cards?
+Playing cards can be expansive.
+So in parsing our sentence
+can be represented
+using a phrase structure formalism.
+This is a very simple example here
+we have, Buster chased a cat.
+Buster is a proper noun which is
+labeled with NNP in our pack set.
+Chased is a verb, the D at the end of verb
+stands for past tense as in chase ed.
+A is a determiner and cat is a common noun
+which is labeled with NN in our gram.
+Now we can start combining
+those words into phrases.
+Our cat is a noun phrase that
+consists of a determiner and a noun.
+Chased a cat is a verb phrase that
+consists of a verb, chased, and
+a noun phrase, a cat.
+And then at the top level
+we have a noun phrase,
+Buster, combined with a verb phrase,
+chased a cat, to form a sentence, S.
+Okay, so now,
+we're going to look into two specific
+problems in parsing in more detail.
+The first problem is what we
+call parsing noun sequences.
+In English, very often,
+a noun can modify another noun.
+An example of this is fish tank.
+What is a fish tank?
+Well, a fish tank is a kind of tank.
+Specifically a kind of
+tank that holds fish.
+Let's look now at the very similar
+construction that has a very different
+interpretation.
+What is a fish net?
+A fish net is a net that
+is used to catch fish.
+What is fish soup?
+Fish soup is soup made with fish.
+What is fish oil?
+Oil extracted from fish.
+As you can see, even though the four
+noun phrases have a very similar
+structure superficially,
+they have very different interpretations.
+Some of those can even be ambiguous.
+Fish sauce.
+What is fish sauce?
+Is it a sauce for fish dishes,
+or is it sauce made of fish?
+It could be either one.
+In English when you have
+a noun-noun compound,
+most of the time the head of the compound
+is the second word in the pair.
+So for example, college junior and
+junior college look very similar,
+they have the same words.
+However a college junior
+is a kind of junior,
+specifically one who goes to
+college rather than high school.
+Whereas as a junior college is
+a kind of college as opposed
+to say a senior college,
+or a guided college.
+Well I said that,
+in English typically the head of a two
+word noun phrase is the second noun but
+we have exceptions.
+The head first rule can
+also appear sometimes.
+So an attorney general is an exception.
+It's not a kind of general.
+It's rather a kind of attorney, but again,
+those kind of phrases
+are relatively rare in English.
+Now what about adjectives?
+In some cases, words like college and
+college junior can be considered as
+adjectives because they
+modify the second noun.
+In other cases, we have explicit
+adjectives as part of the noun phrase.
+For example, New Mexico,
+new is clearly an adjective.
+In general manger, the word general
+is an adjective rather than a noun.
+It turns out that in English,
+people don't always agree.
+So, when they're asked to label general
+manger, they often say that it's
+an adjective followed by a noun, but just
+as often they say that it's two nouns.
+Now, noun phrases consisting of
+nouns are not limited to two nouns.
+Look at the example on
+the bottom of the page.
+What is a luxury car dealership?
+Well, there are two
+possible interpretations,
+at least two,
+that it's a dealership for luxury cars,
+or it's a car dealership
+that is very luxurious.
+Now, the interpretations
+of this non phrase can be
+connected to the structure of the phrase.
+So let's look at an example.
+Detroit Tigers is clearly a noun
+phrase that consists of two nouns.
+However, if we look at
+Detroit Tigers general manager,
+we know that it really consists of two
+noun phrases, Detroit Tigers followed
+by general manager, which are combined
+into a noun phrase themselves.
+However, with four consecutive nouns,
+we can have many other interpretations.
+Let's see first what
+happens with three words.
+Salt Lake City has three words.
+We can either combine first salt and
+lake, and
+the interpretation in that case would
+be a city that is at Salt Lake.
+Or, we can have a city
+that's called Lake City, and
+somehow use the word salt to modify that,
+in this case it's pretty obvious that it's
+the first interpretation that matters.
+The second one is periods, and
+nobody would even think about it.
+Now what happens with four words?
+Can you think of the way that we should
+put parenthesis around those four words so
+that we get the only reasonable
+interpretation of the sentence?
+The answer is on the next slide.
+Okay so I asked you a question about the
+interpretation of Salt Lake City mayor.
+And obviously the solution is the one
+the you can see here, Salt and
+Lake are combined first.
+Then Salt Lake is combined with City, that
+gives us the kind of city that we want.
+And finally, Salt Lake City mayor
+is the mayor of Salt Lake City.
+So this representation using parenthesis
+is very common in natural language
+processing.
+It allows us to write very compacted
+presentations of sentences and phrases.
+We don't have to refer to
+phrase structure or diagrams.
+Let's look at a second example here.
+((Detroit Tigers) (general manager)).
+As you can see now, we're putting
+the parentheses in a different location.
+We first want to group together Detroit
+and Tigers, and then general and manager,
+and finally combine
+the two pairs into one.
+The next, actually that's a mistake.
+It should be
+Leland Stanford Junior University.
+So the question here to the students is,
+if you have a phrase like
+Leland Stanford Junior University,
+which by the way is the official title of
+this university on the West coast,
+there are two possible interpretations.
+One of which is pretty obvious,
+but wrong, and
+the second one is less obvious,
+but correct.
+So, what are those?
+You will see the answer on the next slide.
+Okay, so the question was,
+Leland Stanford Junior University,
+what are the two possible interpretations?
+Well, one of them is that
+Leland Stanford is a person.
+Leland Stanford Junior is the son of
+Leland Stanford Senior, apparently, and
+then finally the university is
+named after Leland Stanford Junior.
+Now, let's do a little
+bit of combinatorics.
+We noticed that if the noun phrase
+consists of two nouns, then we only
+have one possible interpretation and
+that is A and B are combined together.
+This is the case of Detroit Tigers.
+There's only one way to combine the two.
+Now, if we have three nouns, then there
+are two possible interpretations.
+A connects to B first, and then the group
+A and B connects to C or, alternatively
+we can combine B and C together and
+then group them together with A.
+Now, my question to you is,
+if we have four nouns,
+how many different
+interpretations are there?
+So one of them is shown here.
+It's A B connected, C and D connected,
+and both of them connected to each other,
+just like the Detroit Tigers.
+Can you think of the total number
+of ways to combine four nouns?
+The answer is on the next slide.
+Well it turns out that with four nouns you
+can have five different interpretations.
+This is not a very obvious answer most
+people will say either four or six, and
+only when they look at those five do they
+realize that the correct answer is five.
+So what we can do is do the Detroit
+Tiger's general manager example,
+that's the one shown on the first line.
+We can also group the last two words,
+then add the second one,
+then the first one, and so on.
+You can see that there are really five
+different ways to group four nouns.
+Okay, now the question to you is what
+happens if we have more than four nouns?
+Here's an example with five.
+We group A and B first, then we group C
+and D, then we add D to the cluster CD,
+and we finally group the two smaller
+clusters into a group of five nouns.
+So my question to you is,
+how many different groupings of
+five consecutive nouns there are.
+All the answers on the next slide.
+Well, it turns out that the solution
+is known as the nth Catalan number.
+A Catalan here is not a reference
+to the Catalan language.
+It's rather a reference to a Belgian
+mathematician whose last name was Catalan.
+The closed form solution here is
+C subscript n is one divided by
+n + 1 times 2n choose n, for
+any n greater than or equal to zero.
+So the first few Catalan numbers
+are shown here, it's one and two.
+That's for the cases where
+n is equal to zero and one.
+And then when n is equal to three,
+we have two combinations,
+then for n equals four we have five
+combinations, as you saw earlier.
+Then the numbers increase rather fast,
+14, 42, 132, and so on.
+Note that those are not powers of two,
+those are not factorials,
+it's a completely different sequence.
+This sequence is commonly known
+by its index in the online
+Encyclopedia of
+Integer Sequences under A000108.
+And you can visit the URL
+below on your own and
+investigate the sequence and
+others in more detail.
+It turns out that Catalan numbers appear
+very often in math in many different
+locations.
+In addition to parses
+of sequences of words,
+they appear in two other very
+interesting geometrical cases.
+The one on the left is the number
+of different ways in which
+a convex polygon with n + 2 sides
+can be cut into triangles by
+connecting vertices with straight lines,
+and
+you can see that there are 14 different
+ways to do this when n + 2 = 6.
+So in our case, that's n = 4.
+An example on the right is
+the number of monotonic paths
+along the edges of a grid that
+consists of n x n square cells and
+the constraint is that the path
+should not pass above the diagonal.
+So the first example here is one
+where you go East, East, East,
+East then North, North, North, and North.
+The second one is East, East, East,
+Northeast, North, North, North.
+You get the idea.
+As you can see there are 14 ways
+to get from the bottom left
+corner to the top right corner
+using this set of constraints.
+So you see that Catalan numbers
+are very versatile, and
+appear in many different places,
+not just in natural language parsing.
+So this concludes the section of
+parsing noun phrase sequences.
+The next set of slides will be about
+prepositional phrase attachment.
+

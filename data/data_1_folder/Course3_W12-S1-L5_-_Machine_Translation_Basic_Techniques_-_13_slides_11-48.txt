@@ -1,0 +1,326 @@
+Okay so now let's look at some of the
+basic techniques for machine translation.
+So one of the fundamental ideas behind
+modern translation systems is that
+translation is actually
+just a method of decoding.
+So here's a famous quote.
+I want to read it aloud.
+One naturally wonders if
+the problem of translation
+could conceivably be treated
+as a problem in cryptography.
+When I look at an article in Russian,
+I say, this is really written in English,
+but it has been coded in
+some strange symbols.
+I will now proceed to decode.
+So this is a quote from Warren Weaver,
+one of the founders of information theory.
+In the book called Translation,
+published in 1955, almost 60 years ago.
+So here's a question for the audience.
+If you know some French, at least,
+look at the next two slides,
+which have been translated
+automatically from Google Translate and
+see if you can figure out whether
+the system did a good job.
+And what sort of mistakes it made.
+So the documents are about
+a recipe in English.
+So look at the next two slides and
+pause as much as you need and go back and
+forth between them to figure out if you
+can identify the translation issues.
+So here's the original recipe.
+Ingredients and then directions.
+So I just read one sentence here.
+Cook pasta in a large pot of boiling
+salted water until al dente.
+And here's the automatic
+translation from Google in French.
+[FOREIGN].
+So, let's spend a little bit of time and
+see what's wrong in those translations.
+And also, what works.
+I'm going to show you some
+examples on the next slide.
+So, here's the answer.
+So I want to go back for a second.
+If you can see the last ingredient here,
+for some reason, has the pound sign,
+which is probably just the way
+that Google translated one pound,
+which is really funny incorrect.
+Let's look at some of
+the other problems here.
+So I'll show you three of those.
+The first one is just not
+syntactically correct.
+[FOREIGN] It means something
+like near boiling point,
+but it's grammatically incorrect.
+Then the next problem is the use of
+a sequence of verbs which form a very
+nice parallel structure in English.
+So specifically it's cook,
+reduce, simmer, stir.
+Stir, drain, serve.
+So in English, all those verbs
+appear as in imperative sentences.
+Whereas in French,
+the translation is somehow mixed.
+It has the first one,
+[FOREIGN], as an infinitive,
+then [FOREIGN] as an infinitive,
+and one more infinitive.
+And then it switches to a noun, and
+then another infinitive, and so on.
+And then the last example that I want to
+show you is some problem with agreements.
+So [FOREIGN] is plural, and then it is
+listed as [FOREIGN], which is singular.
+It should have had an extra s at
+the end to indicate that it's plural.
+So in French,
+the problem is that adjectives and
+nouns have to agree with each other in
+number and in gender in some cases.
+So in this example we have disagreement.
+So let's see what causes machine
+translation systems to have problems when
+they translate from one
+language to another.
+There are many reasons.
+The first one is word order.
+So some languages are subject-verb-object,
+for example English and Mandarin.
+Others are verb-subject-object and
+others are subject-object-verb.
+So obviously sentences like this when we
+have languages from different word order
+categories, we have to use some
+syntactic information to figure out.
+Where to move the subject,
+and the verb, and the object.
+So this is another example
+with prepositions in Japanese.
+So in Japanese, the prepositions
+are actually postpositions.
+They are actually put after the words.
+Therefore to say something like,
+to Mariko,
+in Japanese you would say it as [FOREIGN].
+Another example is inflection
+with an example in Spanish.
+In Spanish,
+the word have can be translated in many
+different ways depending on the person and
+number of the verb and
+also whether it is infinitive or not.
+So [FOREIGN] for
+example is first person singular,
+[FOREIGN] is second person singular,
+[FOREIGN] is first personal plural,
+[FOREIGN] is third person plural,
+and [FOREIGN] is the infinitive.
+All those appear in English as have.
+So if you want to produce a system that
+translates from English to Spanish,
+we have to figure out what is
+the subject of have before we can
+figure out the correct verb form.
+So more examples.
+Lexical distinctions,
+again with an example in Spanish, so
+here we're making a distinction between
+the word use in the two languages.
+So in English we say,
+the bottle floated out.
+Where as in Spanish the correct
+translation would be [FOREIGN],
+which means it left the place
+by floating or while floating.
+Another example in Japanese is a word
+that has multiple translations,
+is the word brother.
+So brother in Japanese can be either
+[FOREIGN], which is a younger brother,
+or [FOREIGN] which is an older brother.
+One more example in French,
+the work they in English can be
+translated as either [FOREIGN] or
+[FOREIGN] depending on whether
+the group is feminine or masculine.
+So, more example on the next slide.
+So, word order in phrases.
+So for example in French,
+the adjective typically follows the noun.
+So, you say, [FOREIGN], the blue house.
+Where the noun is before
+the verb in French, and so
+the noun is before
+the adjective in French.
+Another example is a much more complicated
+word order in Japanese they have
+because of the subject-verb-object
+versus subject-object-verb order.
+So if we want to translate I like to
+drink coffee from English to Japanese.
+We have the word order in
+English as pronoun, subject,
+followed by verb, followed by some phrase
+that involves the verb and a noun.
+In Japanese, you would have to
+translate this as something like this.
+[FOREIGN] Which means that [FOREIGN] is I,
+so that stays in the right place.
+[FOREIGN] is the subject marker,
+which was not in English.
+[FOREIGN] is the direct object for coffee.
+And the object here
+appears before the verb.
+[FOREIGN] is the expression for to drink.
+So, it's some nominalization of the verb,
+to drink.
+[FOREIGN] is a marker of the topic and
+then [FOREIGN] is like,
+which because the verb of the sentence,
+it appears all the way to the end.
+So, as you can imagine, translating from
+English to Japanese is much more difficult
+then, let's say translating from English
+to a more similar language such as French.
+So another example here
+is vocabulary in Spanish.
+So in English the word wall
+can have multiple meanings.
+Whether it's in internal wall or
+an external wall.
+So the words in Spanish for
+this are [FOREIGN] and [FOREIGN].
+So obviously you need to understand the
+context of the document to come up with
+the correct translation of wall.
+And my final example is again in French.
+So we can have an entire phrases that
+can be substituted for single word.
+So the word play in English as
+a noun indicating a drama or
+comedy in theaters, it's a play.
+It's translated in French as [FOREIGN] or,
+as you can probably guess,
+something like a piece of theater.
+But what's more important is that we
+can have many cases where one word in
+one language gets translated as multiple
+words in another language or vice versa,
+or maybe even multi-word expressions can
+be translated as multi-word expressions,
+but with a very different
+internal structure.
+Okay, now that we understand why
+machine translation can be difficult,
+let's figure out how we can build
+working machine translation systems.
+There are many approaches, and many of
+them are based on this triangle here.
+F here stands for French,
+E stands for English, but
+in many instances, we can just use F to
+indicate any foreign language that
+is being translated into English.
+I stands for interlingua.
+Interlingua some sort of semantic
+representation of the text that is
+not dependent on the underlying language.
+Let's look at the different strategies.
+The first one that we're going to discuss
+is the so called direct approach.
+The direct approach just says start from
+the beginning of the foreign sentence and
+then look it up in the dictionary.
+One word at a time and
+then translate into English.
+So obviously this doesn't take into
+account any of the problems that we've
+discussed so far.
+So you can have ambiguous words that you
+don't know which translation to pick.
+You can have syntactic disagreements and
+so on.
+So this approach was tried in the 50s and
+60s before there were any powerful
+computers and any language resources such
+as software or
+parallel data or dictionaries.
+It's obviously a very naive
+approach that has no way to work.
+And I'm now show you two funny examples
+from that time period that show
+how bad it was.
+In the first example, people were trying
+to build a system that translates from
+English to Russian, and then to figure
+out if they did a good job, they manually
+tried to translate back from Russian into
+English to see if they get the same thing.
+So, the sentence that they tried to
+give was, the flesh is weak, but
+the spirit is strong.
+So, when the sentence got translated
+into Russian and back into English,
+people were scared to see that
+the translation went like this,
+the meat is rotten, but
+the vodka is very good.
+So as you can see that this
+is a very bad translation,
+but you can see why the system
+would make such a mistake.
+And the other funny example from that
+time is to translate this expression,
+out of sight, out of mind.
+So it went to Russian and back and
+then it came back as blind idiot.
+So you can see how bad it was.
+Another approach that was developed later
+is so called indirect transfer method.
+In the transfer method you have
+some set of grammatical rules
+that apply to different
+pairs of languages.
+So for example, in French,
+the adjective follows the noun.
+In English,
+the noun follows the adjective, so
+you can have rules like this and then once
+you identify the adjectives and the nouns,
+you can at least translate
+them in the right order.
+A third approach is to use
+something called interlingua.
+So interlingua is when you translate,
+let's say the foreign language into some
+logical form, for example,
+in the first order logic or modal logic.
+And then you use some generation to
+translate back from that interlingual
+representation to your target language.
+So here's some examples.
+If you want to translate this is
+a blue house, with a direct approach,
+you would translate each word separately.
+With transfer we would make sure at least
+to get blue and house in the right order.
+And with interlingua would have some
+sort of logical representation.
+H is a house and H is blue.
+And then use generation to
+produce the English version.
+So in the next segment we're going
+to look at noisy channel methods for
+machine translation which form the basis
+of modern translation technology.
+

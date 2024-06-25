@@ -1,0 +1,253 @@
+Okay, welcome back to
+Natural Language Processing.
+The next topic is going to
+be on sentiment analysis.
+So sentiment analysis is a very
+popular sub-area of natural language
+processing that has been
+popularized in the last few years.
+In fact, the very first papers on it
+were not published until the late 90s,
+and the most important contributions have
+only been made in the last few years.
+So what is sentiment analysis?
+Let me start with an example.
+So I am going to pick a book that I
+particularly like by a Japanese author,
+Haruki Murakami.
+Suppose that I want to find what sort
+of reviews were posted about this book.
+By the way, the book's title is 1Q84.
+What reviews have been
+posted on the Internet?
+So here are some examples.
+From the Baltimore Examiner,
+1Q84 is a tremendous feat and a triumph.
+A must-read for
+anyone who wants to come to terms
+with contemporary Japanese culture.
+Another example,
+perhaps one of the most important
+works of science fiction of the year.
+1Q84 does not disappoint.
+It envelops the reader in a shifting
+world of strange cults and
+peculiar characters that is surreal and
+entrancing.
+And finally, another example of a review.
+Ambitious, sprawling,
+and thoroughly stunning.
+Orwellian dystopia, sci-fi, the modern
+world (terrorism, drugs, apathy,
+pop novels), all blend in this dreamlike,
+strange, and wholly unforgettable epic.
+Well, by this point it should be obvious
+that those reviews are actually fairly
+positive, and
+if you like this kind of books you should,
+based on those reviews, decide to read it.
+So let's look at some of the things that
+we can see in those reviews that make us
+believe they are positive.
+So first is the presence
+of specific words and
+phrases that are typically
+correlated with a positive review.
+So triumph, a feat,
+a tremendous feat, must-read,
+entrancing, ambitious,
+stunning, unforgettable epic.
+All of those examples of positive phrases.
+In fact, there are very few negative
+phrases in this example at all.
+So here's another example about companies.
+So there's this website that shows you
+in real time the sentiment towards
+different companies and their stocks.
+People use this kind of information for
+trading.
+So you can pick some
+sort of stock ticker and
+observe how sentiment of that company
+changes over time within days or hours.
+Here are some other examples
+of sentiment analysis for
+things like movie reviews,
+product reviews, debates.
+For example, the createdebate.com website.
+So there are many posts and
+blogs that express sentiment.
+Some of them express personal opinions.
+And there are some different research
+questions that we're interested in.
+So one is something called
+subjectivity analysis.
+So before we decide whether
+something is positive or negative,
+we have to decide whether
+it's subjective or not,
+because clearly factual information is
+different from subjective information.
+So once we have performed subjectivity
+analysis we can do polarity analysis,
+essentially labeling things as
+either positive or negative or
+perhaps giving them a number of stars.
+So let's say we read a movie review and
+we'd say based on the text of the review,
+we'll give it four stars out of five or
+perhaps five stars.
+We can also do viewpoint analysis where
+there are different topics for debate.
+So is this person a Chelsea fan or
+a Manchester United fan?
+Is this person a Republican or a Democrat?
+Another research question is,
+can you figure out the sentiment target?
+Are you giving your opinion about
+an entire product, for example,
+the Apple iPhone, or about some
+specific part of it, for example,
+the screen or the wireless connection?
+So the level of granularity
+is very important.
+It can be sentiment for an entire
+document, for example, movie review.
+It can be at the level of individual
+sentences or perhaps individual
+attributes, for example, the music of
+a certain movie or about a specific actor.
+So opinion words are important, so
+there's different types of those.
+There are base words, such as for
+example, pretty or difficult.
+They can also be comparative.
+This movie's better than the other one,
+or this processor is slower
+than this other one.
+Well, if we just count positive and
+negative words, we're not going
+to get a very good classifier.
+So for example, just looking at
+the negative words is not enough because
+some of them can be negated.
+So if we say something is not difficult,
+that means that it's easy.
+So one important component of sentiment
+analysis is negation analysis,
+where you take all the occurrences
+of negation phrases,
+such as not or didn't and so on, and
+try to figure out what things they negate,
+so that you can possibly
+change its polarity.
+We'll go back to the reviews of 1Q84.
+So the second review here
+includes some negative words.
+For example, the word disappoint.
+But in fact, if you read the review more
+carefully, you will realize that is says,
+does not disappoint.
+So we have a negation of a negative word,
+which turns the entire thing
+into a positive phrase.
+Okay, so
+let's look now at product reviews.
+So here's a website from Google
+where people have written their
+reviews about a specific smart phone,
+Samsung Galaxy S5.
+And you can see that they have
+a total of 2,800 reviews.
+A few have given one or two or
+three stars to this product.
+Quite a few have given it four stars,
+and the rest have given five stars.
+But what's more interesting is
+that you can also have sentiment
+about individual aspects of the product.
+For example, its battery or
+its size or its camera and so on.
+And as you can see, the battery
+gets the highest positive rating,
+whereas the design and
+the screen and the speakers and
+the headset get relatively
+fewer positive reviews.
+So again, all this can be done
+automatically by reading the reviews and
+identifying polarity words
+associated with a product or
+with individual aspects of it.
+So it's also possible to use social
+media sites such as Twitter to
+compute sentiment.
+So there's a website
+called sentiment140 where
+you can see what sort of things people
+say about the product on Twitter.
+So again,
+using the Samsung Galaxy S5 example here,
+we can see that the majority of
+the reviews on Twitter are positive.
+So there's some important problems
+that have to be resolved.
+I'm not going to propose solutions for
+them at this point,
+I just wanted to make sure
+that you know that they exist.
+So problems with subtlety,
+sometimes people can use some very subtle
+formulations and explain what they think
+about a certain target concession.
+So for example, you can say maybe
+this product has this problem, but
+on average it's a pretty good product.
+There can also be manipulation attempts,
+for example,
+trying to convince you
+that some product is good.
+People also can use sarcasm and irony,
+which are very difficult to detect.
+And so on.
+So now let's look at sentiment
+analysis as a classification problem.
+We want to classify the documents or
+the sentences into positive or negative.
+So what kind of features can we use?
+We can use individual words.
+For example, whether they appear or not.
+We're not interested in their frequency
+because most of the time they're going to
+be used just once.
+Punctuation, for example, emoticons.
+Phrases, the syntax of the sentence.
+All of those could be valid features for
+classification.
+One good thing about sentiment analysis is
+that a lot of training data is available.
+So we can take entire websites
+that have product reviews and
+also look at the number of stars
+that were given to that product and
+use this as a training dataset.
+There is a very nice dataset
+from a paper by Bo Pang and
+Lillian Lee at Cornell University that
+has movie reviews annotated both for
+polarity, positive and negative,
+and also for number of stars.
+So the techniques that I used
+are the standard techniques used in
+classification, for
+example, maximum entropy or
+support vector machines and naive Bayes.
+So there are some very nice
+resources available, for example,
+the CMU Twitter parser is available
+from Noah Smith's website and so on.
+So this is the end of the introduction
+to sentiment analysis.
+In the next section we're going to look
+specifically at sentiment lexicons.
+

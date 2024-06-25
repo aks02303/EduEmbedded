@@ -1,0 +1,454 @@
+Okay, the next segment is going
+to be about the early parser.
+The early parser is also known as
+a chart parser, it uses a dynamic
+programming method, and it has some
+advantages over the earlier CKY parser.
+So the Earley Parser was created
+by Jay Earley in 1970 and
+one of its major advantages over
+CKY is that there's no need to
+convert the grammar into
+Chomsky Normal Form.
+It works by parsing
+the sentence left to right and
+it does this by looking for
+partial completions of, for non-terminals.
+Its complexity can be very
+often faster than O(n) cubed.
+So going left to right, it looks for
+both full and partial constituents.
+So for example,
+if we have this S goes to Aux.NP VP, what
+this tells us is that so far, we've been
+able to find an auxiliary In the sentence.
+And if later we find the noun phrase and
+the verb phrase adjacent to this
+auxiliary, we will have found a sentence.
+So when reading a certain word k, the
+Earley's Parser have already identified
+all of the hypothesis that
+are consistent with the words 1 to k-1.
+So here's an example If later on,
+the parser has found the noun
+phrase in the example before,
+it will change its state to s
+goes to auxiliary np period, vp.
+Where the period indicates that it has
+found an auxiliary in the noun phrase and
+it still needs to find a verb phrase.
+And if it succeeds in finding it,
+it will have found the entire s advents.
+So the data structure used by the Earley's
+Parser is also a dynamic programming
+table, just like CKY, and it uses columns,
+of course, prone to all the words
+that have been seen so far.
+So here's an example of
+an entry in column one.
+[0:1] in brackets followed
+by VP goes to VP.PP.
+What this means is that
+this in column one,
+therefore we're still
+processing word number one, and
+that the parse shown on the right hand
+side corresponds to words zero to one.
+Those words match the verb phrase part
+of the verb phrase shown in the example.
+So later if from one to the end of the
+sentence we found a prepositional phrase,
+that means that the whole
+VP will be found.
+So the dot separates the completed or
+known part from the one that is incomplete
+and quite possibly unobtainable part.
+The three types of entries in the chart,
+there's an entry called scan,
+which is used for individual words.
+For example, the or child.
+There's a second one called predict, which
+is used for non-terminals and finally,
+there is one called complete,
+which is used otherwise.
+So here's an example for
+grammar, S goes to NP VP, auxiliary
+non phrase book phrase and so on and
+the words here are things like book,
+boys, and girls, and takes and so on.
+So the sentence that you want to parse,
+let's take this book.
+So the scanner here tells us that,
+from position zero to position one we have
+the word take, from position one to
+position two we have the word this, and
+from position two to position
+three we have the word book.
+At this point we can
+start combining things.
+I also need to acknowledge that
+this example was created using
+the NLTK software.
+So, let's look at the next
+few lines of the chart.
+So, all of them have
+less inside zero to zero.
+So, at this point, we hypothesising
+every possible rule in the grammar,
+S goes to NP VP, S goes to auxiliary
+non phrase, verb phrase and so on.
+And we're putting the stars to the left
+of everything on the right hand side of
+the production because we
+haven't seen anything yet
+at this point from the input screen.
+So, in other words,
+the first of the bold faced items here,
+S goes to period or star in this case.
+NPVP tells us that we can
+potentially obtain a sentence
+if later on we found exactly a noun
+phrase and a verb phrase in that order.
+Okay, so now the next set of entries
+in the table have to deal with
+a one after the column.
+So what that means is that we have
+processed the first word take.
+So there's several things that can happen,
+for example the first bold
+faced item here gives us the rule for
+V, goes to take, star.
+So the old entry was V goes to star take
+and this one is V goes to take star.
+What that means is that we have already
+identified a word called take that
+is consistent with the verb, and
+we don't need to find any additional words
+to complete this particular production so
+we take zero to one is acceptable.
+Another thing that we can do with
+take is to replace VP with a V star.
+What that means is that we have a verb so
+far and
+in order to complete the verb phrase,
+we can stop right away, because it's
+one of the rules in the grammar is that
+the verb phrase can just turn into a verb.
+Now, another rule about verb phrases is
+the one that says that verb phrase goes to
+verb noun phrase.
+So this one we cannot complete at this
+point, because we have only seen the verb.
+Therefore, we put in the chart
+the entry VP goes to V Star MP,
+indicated that we have seen the verb and
+we yet have to look for
+a noun phrase to complete the verb phrase.
+Now we can now start rules
+that start at position one.
+So these last two lines on
+the slide indicate such rules.
+So one, one MP goes to stop
+one now that means that if
+we find the pronoun
+starting at position one.
+We will have found a nonphrase
+that starts in position one,
+and then if you continue doing this, you
+will get the full parse of the sentence.
+So just to give you some examples here,
+the last three lines on
+the right hand side.
+The first one of them
+tells us that we have
+a verb phrase that starts with position
+zero, that's before the first word,
+and ends in position three
+which is after the last word.
+And that verb phrase consists
+of a verb and a noun phrase,
+both of which would have seen already.
+And we don't need to do anything
+additional to find the verb phrase,
+the star is at the end of the string.
+We also know at this point that we have a
+sentence which consists of a verb phrase,
+and that verb phrase
+has already been seen.
+And if you think of those three examples,
+they're pretty obvious, so one of
+those corresponds to the interpretation
+I've take this book as a verb phrase and
+the other one corresponds to
+take this book as a sentence.
+And now the last line on the right hand
+side tells us also that it's possible
+that take this book is just
+the beginning of a longer verb phrase.
+And to complete this other verb phrase,
+we would need to find an additional
+prepositional phrase in the input.
+Now the problem is that there
+are no other words left to parse.
+Therefore, this last row VP goes to VP
+star, VP is never going to be completed.
+Since we have reached the end of
+the input string we can stop, and
+the two parses that we have are the ones
+shown in the second and third to us lines.
+So again, it's either a verb phrase,
+take this book, or a samples,
+take this book, and the one we want
+is the one that gives us an S.
+So the final output of the early Parser
+is S that consists of a verb phrase
+that consists of a non phrase and a verb.
+So this was an example
+of the Earley Parser.
+Both the Earley parser and the CKY
+parser have some disadvantages that
+we need to address by using
+completely different techniques.
+This is what I wanted to talk about next.
+So the new topic is issues
+with context with grammars.
+So, the method that we looked at so
+far CKY and
+Earley are both dynamic programming
+base using context with grammar.
+We saw that they have some differences but
+they also have some shared problems.
+So one of them is
+the problem of agreement.
+Agreement happens a lot in English and
+in other languages.
+For example, we want to make sure that
+in a sentence, the noun phrase and
+the verb phrase agree in number.
+So if the subject is Chan,
+which is a single person,
+we want the verb to be is,
+which is singular.
+If the subject is people,
+which is a plural noun,
+we want the verb to be plural as well.
+We don't want combinations such
+as people is, or Chen are.
+We can similarly have agreement for
+person.
+So I am is a first person example.
+Chen is, is a third person example.
+Tense, Chen was reading versus Chen is
+reading, versus Chen will be reading.
+We want to make sure that there's
+agreement in the tense of the sentences.
+And then case,
+in some languages is also a problem for
+example in English there's not much of it,
+but other languages such as German and
+Russian and Greek have agreement for case.
+And gender is, again, not much of
+a problem in English, but other languages,
+such as French, and Spanish, and
+German have very significant
+issues with the gender agreement.
+So one way to deal with this problem is
+to incorporate special rules into grammar
+that allow us to do agreement.
+It turns out however that these
+leads to combinatorial explosion
+as you will see in the next two examples.
+So we want to do this, if you want
+to do this the most simple way,
+we have to create some special non
+terminals that can express agreement.
+So instead of having a rule that says
+S goes to noun phrase verb phrase.
+We can create a new order says S goes
+to first person singular, noun phrase,
+followed by a first person
+singular verb phrase.
+So this rule is going to work very well.
+It will make sure that we have agreement,
+but if we want it to work well,
+we have to create many
+rules of this nature.
+For example, we can have a separate rule
+for second person singular, a rule for
+third person singular, and
+similarly for plurals, and so on.
+Then we also have to expand this
+idea to the other constituents.
+So, in order to get first person singular
+nouns, we have to create rules that say
+first person singular noun phrase goes
+to first person singular noun, and so
+on and so forth.
+And as you can see, this leads to a very
+serious case of combinatorial explosion,
+and this is not the right way
+to do agreement in graphing.
+Another issue, other than agreement,
+is subcategorization frames, so
+If we have a rule that says that S goes
+to NP VP, and then VP goes to verb,
+or VP goes to auxiliary verb,
+VP goes to verb, noun phrase, and so on.
+If we follow the context, the principle of
+the grammar we're going to see problems
+because different verbs have
+different subcategorization frames.
+They take different sets of arguments.
+So some verbs take just the direct object.
+For example, The dog ate a sausage.
+The verb here is ate, and there is
+only one direct object, a sausage, so
+the grammar would have a rule that
+says VP goes to verb noun phrase,
+and this is particular for the verb eat.
+Another example is verbs that take
+prepositional phrases as arguments.
+For example,
+Mary left the car in the garage.
+So in this case, left takes a direct
+object, the car, but it also takes
+an indirect object, in the garage, and
+we have to allow this in the grammar.
+The third example is
+the predicative adjective.
+So for example,
+the receptionist looked worried.
+So worried in this case is an adjective.
+The verb is looked, and
+the verb looked happens to take
+a predicative adjective as its argument.
+Another example would be
+the receptionist looked angry.
+Some verbs take bare
+infinitives as their argument.
+For example, She helped me buy this place.
+Here some more examples.
+Verbs that take to-infinitives
+as the argument.
+The girl wanted to be alone.
+So again the verb entry for
+this type of verb would have verb phrase
+goes to verb followed by
+a to-infinitive phrase.
+Another category is verbs
+that take participle phrases.
+For example,
+he stayed crying after the movie ended.
+So stayed takes, in this case,
+a participle phrase as it's argument.
+That-clause, Ravi doesn't believe
+that it will rain tomorrow.
+So the verb believe takes an entire
+that-clause of its argument, and finally,
+we have question-form clauses.
+For example, she wondered where to go.
+So wondered takes this argument,
+a question-form clause,
+that starts with a wh word,
+such as where to go.
+CFGs make a lot of independent
+assumptions as well.
+So for example, all NPs are half
+the full industry distribution if you
+look at the Bently Bank.
+11% of noun phrases get expanded
+into a sequence of noun phrases and
+prepositional phrases.
+9% get expanded into determinable
+fold by noun phrases, and
+6% get expanded into prepositions.
+However if you look at non phrases
+under S the top level of the sentence,
+nine percent are noun phrase prepositional
+phrase, nine percent are determiner
+noun and a whole 21% are preposition.
+If you look at the noun
+phrases under verb phrases,
+you will see that the distribution
+is very different.
+Only 4% there are prepositions,
+whereas a full 23%
+are noun phrase prepositional phrases and
+7% are determiner nouns.
+So this tells us that the whole idea of
+context free grammars is rather flawed.
+Because, the assumption there was that the
+noun phrase would look exactly the same
+way, whether it's under a verb phrase,
+or under another noun phrase, or
+under the sandals.
+And as you can see from this data,
+this is not the case.
+We have to be able to model
+this sort of dependence
+of the structure of the noun
+phrase on the overall context.
+So this example was actually
+given by Dan Klein,
+and it was computed from
+the Bentley Bank data set.
+So one possible solution to this
+problem of independence is to using
+something called lexicalized grammars.
+We're going to talk about
+lexicalized grammar later.
+I just want to give you a heads up, there
+are grammars where the productions don't
+just look at the syntactic categories
+such as noun phrases and verb phrases.
+They look at the heads of
+the syntactic categories.
+So for example,
+we can have rules about noun phrases,
+but only if the head noun
+is equal to the word cat.
+So to conclude this segment, syntax helps
+us understand the meaning of a sentence,
+but it doesn't give us the meaning itself.
+So it can tell us that the sentence
+is Bob gave Alice a flower.
+Bob is the subject or
+the giver of the action, and
+we can answer questions such
+as who gave a flower to Alice?
+Or what did Bob give to Alice?
+Another interesting observation
+is that context-free grammars
+are an appropriate representation for
+syntactic information, within some limits.
+And that dynamic programming is needed for
+efficient parse, as you saw from CKY and
+the Earley parse.
+It takes typically a cubic time
+to find one parse, and it takes
+an exponential amount of time to find all
+parses, and my question to you is why?
+Why do you think that you need
+an exponential time to find all parses?
+The answer is pretty obvious.
+So the question was,
+why does it take an exponential amount of
+time to find all the parses even though it
+only takes a cubic amount of
+time to find a single parse?
+Well the answer is very, very obvious.
+Because the number of parses
+can be exponential itself.
+So no matter what algorithm you use the
+fact that there's an exponential number
+of parses.
+For example, by attaching in a long
+sequence of prepositional phrases,
+in many different ways, tells us that
+you cannot do faster than exponential.
+So this is the end of this segment.
+In the next segment we are going to
+talk about a very important resource for
+building parsers,
+specifically the Bentley Bank.
+

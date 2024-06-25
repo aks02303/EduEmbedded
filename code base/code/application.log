@@ -1,0 +1,3789 @@
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 61 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 43 triples containing unseen entities. 
+INFO - Removing 88 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 43 triples containing unseen entities. 
+INFO - Removing 80 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 28 triples containing unseen entities. 
+INFO - Removing 69 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 83 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 45 triples containing unseen entities. 
+INFO - Removing 87 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 71 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 74 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 79 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 60 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 68 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 68 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 38 triples containing unseen entities. 
+INFO - Removing 67 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 71 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 84 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 23 triples containing unseen entities. 
+INFO - Removing 61 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 32 triples containing unseen entities. 
+INFO - Removing 68 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 68 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 66 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 23 triples containing unseen entities. 
+INFO - Removing 53 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 71 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 32 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 59 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 67 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 48 triples containing unseen entities. 
+INFO - Removing 88 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 59 triples containing unseen entities. 
+INFO - Removing 119 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 38 triples containing unseen entities. 
+INFO - Removing 78 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 29 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 40 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.5
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 44 triples containing unseen entities. 
+INFO - Removing 87 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 41 triples containing unseen entities. 
+INFO - Removing 75 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 84 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 40 triples containing unseen entities. 
+INFO - Removing 77 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 51 triples containing unseen entities. 
+INFO - Removing 96 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 40 triples containing unseen entities. 
+INFO - Removing 83 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 42 triples containing unseen entities. 
+INFO - Removing 80 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 89 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 49 triples containing unseen entities. 
+INFO - Removing 95 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 47 triples containing unseen entities. 
+INFO - Removing 82 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 44 triples containing unseen entities. 
+INFO - Removing 92 triples containing unseen entities. 
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 49 triples containing unseen entities. 
+INFO - Removing 95 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 41 triples containing unseen entities. 
+INFO - Removing 96 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 44 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 54 triples containing unseen entities. 
+INFO - Removing 100 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 40 triples containing unseen entities. 
+INFO - Removing 89 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 42 triples containing unseen entities. 
+INFO - Removing 77 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 37 triples containing unseen entities. 
+INFO - Removing 74 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.005
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 44 triples containing unseen entities. 
+INFO - Removing 84 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 42 triples containing unseen entities. 
+INFO - Removing 95 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 39 triples containing unseen entities. 
+INFO - Removing 92 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.001
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 28 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 28 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 42 triples containing unseen entities. 
+INFO - Removing 72 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 25 triples containing unseen entities. 
+INFO - Removing 59 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 38 triples containing unseen entities. 
+INFO - Removing 88 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 38 triples containing unseen entities. 
+INFO - Removing 88 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 66 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 66 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 66 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 35 triples containing unseen entities. 
+INFO - Removing 66 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 26 triples containing unseen entities. 
+INFO - Removing 63 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.05
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 33 triples containing unseen entities. 
+INFO - Removing 70 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 67 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 34 triples containing unseen entities. 
+INFO - Removing 67 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 31 triples containing unseen entities. 
+INFO - Removing 58 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 2
+INFO - margin : 5
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.1
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 
+INFO - 
+--------- Loss ---------
+INFO - Name : pairwise
+INFO - eta : 5
+INFO - margin : 1
+INFO - 
+------ Regularizer -----
+INFO - Name : LP
+INFO - lambda : 0.1
+INFO - p : 2
+INFO - 
+------ Optimizer -----
+INFO - Name : adam
+INFO - lr : 0.01
+INFO - 
+------ Initializer -----
+INFO - Name : xavier
+INFO - uniform : False
+WARNING - DeprecationWarning: use_default_protocol will be removed in future. Please use corrupt_side argument instead.
+INFO - Removing 30 triples containing unseen entities. 
+INFO - Removing 76 triples containing unseen entities. 

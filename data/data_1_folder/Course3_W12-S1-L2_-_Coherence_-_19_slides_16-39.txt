@@ -1,0 +1,471 @@
+Okay, in the previous segment we looked at
+discourse analysis from the point of view
+of resolving anaphoric expressions.
+Now we're going to look at some
+other properties of discourse,
+specifically the concept of coherence.
+So coherence is an important
+property of this course.
+Let me show you some examples
+that make it obvious.
+The first example is I
+saw Mary in the street.
+She was looking for a bookstore.
+It should be pretty obvious that those
+two sentences fit well together.
+The second sentence explains
+a little bit about Mary and
+explains why I mentioned that
+I saw her in the street.
+So there's no problem here.
+The second example becomes
+a little bit problematic.
+I saw Mary in the street.
+She has a cat.
+Well, while both of those
+sentences are perhaps true,
+it is a little awkward to use them in the
+same paragraph because there's really no
+logical connection between the two.
+Unless, perhaps, there's more to this
+course that says she has a cat, and
+then the cat likes to go outside, and
+therefore Mary took the cat outside and
+that's why I saw her in the street, but
+overall, this looks a little awkward.
+What about the next example?
+I saw Mary in the street.
+The Pistons won.
+Well, now, this is really a bad
+example of coherent discourse.
+There's really no connection
+between those two sentences.
+It's very hard to imagine a situation in
+which those two would make sense together.
+As you can see, we can have a variable
+degree of coherence in this course,
+and better written text is more coherent.
+So one of the theories that is used in
+computational linguistics to understand
+how coherence works was introduced
+by Mann and Thompson in the 80s and
+that theory is called RST, or
+Rhetorical Structure Theory.
+It is used to determine
+the structure of discourse and
+identify some relations that hold between
+sentences and factions of sentences.
+So other stimulations
+are determined by two items.
+One is called the nucleus of the relation
+and one is called the satellite.
+Let me give you examples of both of those.
+Suppose if you have the two sentences,
+the carpenter was tired.
+He had been working all day.
+As you can see the second sentence
+elaborates on the first one.
+It gives us an explanation
+why the carpenter was tired.
+One other thing that is important here
+is that it starts with a pronoun so
+clearly that sentence, the second sentence
+is less important than the first one
+because it depends on the first one for
+it's existence.
+It can not start with he.
+So in RSD, the relation between those
+two sentences is determined as follows.
+We have a link between the two that
+says that, he had been working all day,
+is a satellite in the relation to
+the nucleus, or, the carpenter was tired.
+And as the names are probably
+clearly indicating the nucleus
+is more important than the satellite.
+So if you wanted to
+summarize this paragraph,
+you would probably want to pick
+the nucleus before we pick the satellite.
+So one of the definitions in RST is
+that the satellite increases the belief
+in the relation described in the nucleus.
+So some relations have only one nucleus,
+others have more than one, and
+others have one nucleus and one satellite.
+So some of the examples of RST
+simulations that I want to show you today
+are listed here.
+The first one is result.
+For example, the carpenter worked all day.
+The new cabinet was ready in the evening.
+As you can see in this example,
+the second sentence showed the result
+of the action in the first sentence.
+Explanation, the carpenter was tired.
+He had spent the entire day
+building a new cabinet.
+So, in this example,
+the second sentence explains why
+the fact in the first sentence is true.
+Third example, parallel.
+The carpenter worked all day, period.
+The upholsterer took the day off.
+So we have two sentences that
+have parallel structure, and
+the second one is in
+parallel with the first one.
+Elaboration.
+The carpenter built a cabinet, period.
+The cabinet had four drawers and
+an oversized rear panel.
+So the second sentence, this is pretty
+obvious here, gives additional information
+that expands in more detail, elaborates
+on the information in the first sentence.
+And there are other relations in RST.
+I'm going to show you
+a list of them separately.
+So some of them have a nucleus and
+a satellite.
+Those include circumstance,
+volitional cause, purpose,
+interpretation, restatement and summary.
+And others are multi-nuclear, or
+in other words have more than one nucleus.
+Those are sequence, contrast, and joint.
+So here's a larger table with examples.
+I'm just going to mention
+a few of them in more detail.
+So let's tackle the first one.
+Antithesis, the nucleus of an antitheses
+relation is the ideas favored by
+the author.
+The satellite is the ideas
+disfavored by the author.
+So for example,
+the author may say I like dogs.
+But I hate chihuahuas.
+So in the second example,
+we have the satellites.
+Something that is disfavored and
+the first example is the nucleus is
+the ideas favored by the author.
+Let's now look at an example
+with this course that has been
+analyzed using rhetorical
+structure theory.
+So the document comes from
+the Christian Science Monitor.
+It has a few sentences.
+The title is Bouquets in
+a basket- with living flowers.
+Then it goes on like this.
+There is a gardening revolution going on.
+People are planting flower
+baskets with living plants.
+Mixing many types in one container for
+a full summer of floral beauty.
+To create your own "Victorian" bouquet
+of flowers, choose varying shapes,
+sizes and forms besides the variety
+of complimentary colors.
+The new sentence, plants that grow tall
+should be surrounded by smaller ones and
+filled with others that tumble over
+the side of a hanging basket, period.
+Leaf textures and
+colors will also be important.
+And then, finally, there is the silver
+white foliage of dusty miller,
+the feathery threads of lotus vine
+floating down from above, the deep greens
+or chartreuse, even the widely
+varied foliage colors of the coleus.
+So this document was analyzed by Mann,
+Matthiessen and Thompson in 1983 using
+RST, and this is a representation
+that they came up with.
+So we have a total of nine,
+what they call utterances.
+So utterances are portions of sentences
+that have some separate semantics.
+Not all of them correspond
+directly to sentences.
+However, a sentence can be
+split into multiple utterances.
+So we have at the lowest level,
+eight and nine.
+At sentences eight and
+nine are connected with each other
+using an elaboration RST stimulation.
+And if you remember from
+a few slides away, the arrow.
+Points from the satellite to the nucleus.
+Okay so once those two utterances eight
+and nine are combined together, the next
+thing that we can do is merge six and
+seven and also six, with eight and nine.
+Both seven and
+the group eight nine are satellites for
+the nucleus that appears in six, and
+the relation here is elaboration.
+Now we have a chunk between six and
+nine that can be connected with five using
+the purpose relationship, but in this case
+the satellite is on the left to create
+your own "Victorian" bouquet of flowers
+and the nucleus is six to nine.
+Then on the left-hand side of the diagram
+we have an elaboration relation between
+utterances three and
+four where four is the satellite.
+Once we combine three and four together,
+they together as a group
+form the satellite of
+another elaboration
+relation with nucleus two.
+And then we can combine the group 2-4
+with the group 2-9 using background,
+with 2-4 being the satellite, and then
+finally we can have another relation at
+the top called preparation, which links
+the satellites I think it's number one
+with the nuclear switch,
+consists of everything else in a sense.
+So this is an example of how
+we can annotate texts for
+rhetorical structure relations.
+And I want to tell you right now that
+there exists automatic parser that
+take narrative texts of this nature and
+automatically label it with RST
+relationships in a hierarchical way.
+So one nice resource is
+Simon Fraser University in Canada.
+That website has the largest repository of
+texts annotated for RST relations that can
+be used for training, and also includes a
+lot of examples and papers on this topic.
+So the process of identifying
+the discourse structure is
+called discourse parsing.
+I'm going to just give
+you one example of this.
+There has been a lot more work that you
+can find on the ACL anthology website.
+The paper that I wanted to discuss
+very briefly here is by Marcu and
+Echihabi from 2002.
+In that example, they looked at
+four RST relations: contrast,
+cause-explanation-evidence as a sequence,
+condition, and elaboration, and
+they also had a null category
+that corresponds to non-relation.
+So they use up to 4 million automatically
+labeled examples per relation, and
+use the very simple classifier
+based on Naive Bayes.
+And they used as features
+word co-occurence
+features to build their discourse trees.
+For more details about this work can be
+found in the paper on the RST website.
+So very briefly, I'm going to
+discuss one other influential paper
+in the history of discourse analysis.
+This is work by Gross, Sidner and
+other people on centering.
+Centering is a theory that tells you,
+out of all the possible candidates for
+an artful resolution,
+which one is the so-called center,
+or the most important concept?
+The most centered concept that is
+most likely to be used in anaphoric
+expressions in future sentences.
+So the goal of centering is to understand
+the local coherence of discourse,
+and to understand why some texts
+are considered more coherent than others.
+So one of the ideas in
+centering is there will be more
+inference load as in cognitive load
+over the person reading the texts
+that will be associated if the referring
+expressions were chosen badly.
+So for example, a prounoun that refers
+to a word several sentences back.
+Also too much focus shift makes
+the text hard to understand.
+So the idea of centering is that
+we're going to keep some sort of
+theme of the document as we go
+along through the sentences, and
+this theme is going to
+change relatively rarely.
+So the centering example that I'm going to
+give you is based on the idea of backwards
+looking centers and
+forward looking centers.
+Every utterance, Un, is known to have a so
+called backwards looking center,
+Cb, which connects the current utterance
+with the previous utterance Un minus one.
+Also every utterance has a partially
+ordered set of forward looking centers,
+C sub f,
+that are related to the next utterance.
+And their order depends on syntax.
+So for example,
+the subject salience of a candidate is
+higher than the one for the object.
+And finally, we're going to pin
+the preferred center among all the forward
+looking centers based on
+its highest salient score.
+So for more details on this work,
+you can read the original
+papers by Gross and Sidner.
+And very quickly,
+I wanted to mention some additional
+work on cause document structure.
+So this is discourse analysis
+across multiple related documents.
+So CSD, it's based on a relations
+similar to RST, to some extent, but
+which apply across multiple sentences,
+multiple documents, and so on.
+For example things like identity,
+that's when the same text appears
+in more than one document.
+So S here appears in first
+sentence P refers to paragraph and
+D refers to document.
+Some of the other CST
+relationships include subsumption.
+For example, one of the sentences
+may include facts A and
+B, and the next sentence may
+include facts A, B, and C.
+So we say that the first sentence of
+those subsumes the second one, and so on.
+So there's two pages of
+relations that appear in CSD.
+There has been work on automatically
+identifying sentence structure
+in the document sets that
+contain related documents.
+One thing that makes CST very different
+from RST, however, is that RST
+is a deliberate relation, whereas CST
+is typically not deliberate, because
+the documents may be from different
+sources written by different people.
+So CST is more of a surface
+structure relation, whereas RST is
+a measure of the deliberate coherence of
+the discourse as written by the humans.
+So one more example of this course
+analysis is something that was introduced
+by Simone Teufel and
+Marc Moens in the early 2000s.
+That is known as argumentative zoning.
+It is a discourse model for
+analyzing scientific papers.
+And in their work, which spans several
+years they had looked at the following
+labels for
+different zones of scientific documents.
+Aim is one of them.
+So for example, the aim can be
+the research goal of the paper.
+Textual is the statements
+about sentence structure.
+For example, in the next section
+we're going to talk about x, and
+we're going to conclude in section seven.
+Own is a description of
+the author's own work.
+For example, methodology,
+results, and discussion.
+Background is generally
+accepted scientific background.
+For example,
+the moon rotates around the earth.
+Contrast is comparison with other work.
+Basis is statements of
+agreement with other work.
+And then the final category's other,
+everything else.
+So for example, the description of
+other researchers' work and so on.
+So one other thing that I want to mention
+about discourse analysis is the idea of
+local entity coherence.
+So this is work that was done
+more recently by, again,
+a Barzilay and we got a Lapata.
+So the idea here was to look at the way
+that entities are introduced in documents
+and how they are referred to
+later on in that document.
+So, let's look at
+an example from that paper.
+The first sentence says that
+the Justice Department,
+which is the subject of the sentence,
+is conducting an anti trust trial, as
+the object, against Microsoft Corporation.
+So, Microsoft Corporation is neither.
+The subject or object of the sentence.
+With evidence,
+again x mean that it's not the subject or
+the object, that the company.
+So the company here is another subject,
+is increasingly attempting to crush
+competitors, and competitors is an object.
+So the idea here is that we want to
+group together expressions that refer to
+the same entity.
+For example, Microsoft Corporation,
+Microsoft, and
+the company would form one cluster,
+Netscape would form another cluster,
+the Justice Department would
+form a third cluster, and so on.
+And then within each of those clusters,
+we want to see whether the first time that
+an entity is mentioned, it is described as
+the subject, and maybe perhaps later it is
+described as an object, and finally it is
+mostly described as something else, an x.
+So in the paper by Barzilay and Lapata,
+they came up with this entity grid,
+which shows you the number of sentences
+in a document, in this case, six.
+And then in each of those sentences,
+which of the adjectives is mentioned and
+when it is the subject or
+object or something else.
+And then they come up to a model that
+is similar to HMM that tells you what's
+the probability that the sum additive
+will be referred to first as a subject,
+then again as a subject.
+Or first as a subject,
+then as an object, and so on.
+And because all the combinations of S,
+O, X, and not nothing.
+So this is one more example from
+the Bars Align Lobota Paper and
+I want to tell you there's a lot of active
+research in this course analysis and
+ACL, that has been built on
+top of this previous work.
+So this concludes the section
+on this course analysis.
+We're going to switch
+next to dialogue systems.
+

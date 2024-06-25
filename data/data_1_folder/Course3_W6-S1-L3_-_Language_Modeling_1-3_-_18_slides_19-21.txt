@@ -1,0 +1,545 @@
+The next lecture is going to
+be about language models.
+This lecture is split into three parts.
+Part one, so what is a language model?
+Specifically probabilistic
+language model is a technique that
+takes a sentence as input, and
+assigns a probability to it.
+So the probability of the sentence is
+the same as the probability of the joint
+sequence of events,
+word one, word two, and so
+on all the way to word end,
+which is last word in the sentence.
+So this style of technique for
+natural age processing is very different
+from the deterministic methods that we
+looked at before using things
+like context free grammars.
+The idea is that we want to take all the
+possible sentences in a given language and
+assign them such probability so
+that they all add up to one.
+This is obviously a very difficult task
+because it's possible that it can write or
+say a sentence that was
+never pronounced before.
+So how do you come up with
+a probability for it?
+So the point of language modeling
+is also related to the point of
+predicting the next word in a sequence.
+So for example, if I start a sentence
+by saying let's meet in Times, and
+then dot-dot-dot.
+Can you predict the next word?
+Well, there are probably several
+different things that can be next, but
+a very likely one would
+be the word Square.
+Let's meet in Times Square.
+So for example,
+here the idea is that even though
+the probability of square in
+general is relatively low,
+in the context of let's meet in Times,
+that probability increases significantly.
+So the posterior probability is much
+higher than the prior probability.
+Another example, General Electric
+has lost some market blank.
+Well, what's the next word,
+is it going to be square?
+No, it's not going to be square,
+most likely it's going to
+be something like share.
+So General Electric has
+lost some market share.
+And again, the idea here is that in
+the context of losing market something,
+it's very likely that
+the next word is share.
+So what is the formula for
+predicting the next word?
+Well it's a conditional probability
+of predicting the probability of
+what N given or the words before.
+So what word follows the word your?
+So coming to the ngram website from
+Peter Norvig, here is the list of some of
+the words that follow your in
+a huge corpus of google documents.
+So the word abilities follows
+your in 160,000 cases the word
+abilities follows your with
+a count of 1.1 million and so on.
+As you can see,
+all those numbers are pretty large, and
+they can also be very
+different from one another.
+So what is a language model again?
+It's something that is used
+a lot in speech recognition.
+For example, we want to be able to have
+the probability of those sentence
+recognize speech to be significant and
+larger than the probability
+of wreck a nice beach.
+We can also use a text generation.
+So for example, we want to generate
+a sentence that has a phrase three houses.
+Would have probability than the sentence
+that contains the phrase three house.
+Spelling correction we want
+the probability of my cat eats fish
+come out of the spelling correction
+system then my xat eats fish.
+Just because xat is not a word
+in English even could be a typo.
+Machine translation we want the
+probability of the blue house, given let's
+say a French expression to be larger
+than the probability of the house blue.
+And there are many other uses.
+For example,
+in optical character recognition,
+we want the text that is extracted
+from the image to be grammatical.
+And also the summarization.
+We want the summary that is produced
+automatically to be grammatical.
+And language model is also used
+in document classification.
+In that case,
+you can have a probability of
+this particular sentence coming from
+English over French, and then figure out
+which of those two language models
+gives it a high probability.
+Therefore you can classify by language,
+or you can have a language model
+that corresponds to sports news articles
+and another one that corresponds to
+business articles and figure out whether
+the document is sports or business based
+on the probability that it was generated
+from either one of those two models.
+So very often,
+the language model is coupled with
+something called a translation model.
+In a few minutes, we're going to
+talk about translation models, but
+let's focus now on language models.
+So let's go back to the idea of
+computing the probability of a sentence.
+Well, how do we do this?
+Well, one possibility is to just
+find all the times that this
+particular sentence has been used in
+a large corpus and then use that.
+However, most sentences that we see
+in a corpus are going to be novel.
+They're not seen before,
+so their probability estimate
+is going to be close to zero.
+And this is certainly not a good idea.
+We can never have enough training
+sentences to cover all the possible
+sentences in English.
+So how do we deal with probabilities for
+novel sentences?
+So let's see how to do this.
+What we are going to looking for
+is to estimate the probability
+of the sentence as
+the probability of the joint distribution
+of the words in that sequence, w1 to wn.
+Now we can rewrite this
+formula using the chain rule.
+And we're going to get that the
+probability of the sentence S is equal to
+the probability of the first word, times
+the probability of the second word given
+the first word and so on,
+all the way to the end,
+where we have the probability of the last
+word given all the probability before.
+I should say that this
+is a correct formula,
+it means that it exactly gives the same
+result as the previous formula.
+Chain rule does not lose information.
+Okay, let's look at an example.
+Suppose that the sentence that
+we want to figure out is,
+I would like the pepperoni and
+spinach pizza.
+What is the probability of this sentence?
+Well, it's very straightforward.
+It's going to be equal to the probability
+of the word I followed by the probability
+of would, given that the previous word
+is I times the probability of like,
+given that the previous two words,
+I would, and so on and times pizza.
+Times the probability of pizza given or
+the previous words.
+Okay.
+Now let's look at something called an n
+gram model.
+So an n gram model,
+allows us to sacrifice some
+of the accuracy of the prediction but
+on the other hand,
+get very good performance and
+deal properly with sparse training data.
+We are trying to put in the probability
+of a word based on the words before.
+For example, what's the probability that
+after the words, let's meet in Times,
+the next word is going to be Square.
+Now we're going to use the so-called
+Markov assumption that tells us that
+the probability of a word is not
+dependent on the entire history, but
+just on the most recent one or two words.
+So if we look at the previous word alone,
+and the current word we're
+going to have a bigram model.
+If you look at the two previous
+words plus the current word,
+we're going to have what is
+known as a trigram model.
+So then, the word n-gram,
+covers unigrams, that is no context.
+What is the probability of the word
+square, regardless of the words before?
+A bigram example, is when we want to
+complete the probability of square
+given that the previous word is Times,
+and trigram examples is
+probability of square given the words,
+in Times, appearing in that order.
+So even in the trigram model, we are not
+going to look at any words beyond in.
+So anything to the left of in
+is going to be irrelevant.
+So let's look at some random text that is
+generated from the so-called Brown Corpus,
+which is one of the oldest and
+most important naturalized processing
+using N-grams of different lengths.
+So a 2-gram random text looks like this.
+Again, this is not text that was
+actually in the Brown Corpus.
+Instead, this is text that is generated
+automatically using a bi-gram model,
+trained on the Brown Corpus.
+So here's how it works.
+We pick the first word at random,
+in this case the word, the.
+Then we look at a word that appears with
+a high probability after the word, the,
+that's 53-year old.
+Then after that, we pick the next word,
+Shea, based on the probability of
+Shea appearing after 53-year old.
+And so every word here is generated
+based on the previous word alone.
+We can do something similar with trigrams,
+for example this text here.
+In this case, the word County for
+example is computed on its probability
+to follow the words The and Fulton.
+The word Jail is computed based on
+the probability that it appears
+after Fulton and County.
+We can do the same thing for
+four grams, and so on.
+And in each case, the text is going to
+look more natural because I believe we
+are going to guarantee that at least
+every consecutive sequence of four words
+is going to be something that has
+actually appeared in the previous text.
+So it's possible to go to tri grams,
+four grams and even five grams.
+However it's very often the case
+that the larger n-grams,
+including tri-grams can be very sparse
+to estimate from training data.
+So, let's look at some
+examples of specific groups.
+So if we download from Project Gutenberg
+the entire set of works by
+William Shakespeare.
+You can look at all the unigrams.
+There is about 900,000 words
+in all of Shakespeare,
+so they'd use the linguistic [INAUDIBLE].
+That means that we have 900,000 tokens
+that correspond to about 30,000 types,
+which is again a linguistic term.
+It corresponds to
+the different types of words.
+So we have an average of 30
+occurrences of tokens per type.
+And just a little sidebar here,
+you can see that the entire
+set of works by Shakespeare is
+less than one million words.
+Now, this is many orders of
+magnitude smaller than what we
+have nowadays on the web.
+So let's see how many bigrams
+we have in Shakespeare.
+So again, there's about 900,000
+bigrams in Shakespeare.
+There's just one fewer bigram than
+unigram token by construction.
+It turns out that those correspond
+to about 340,000 different types.
+So each type is only present about
+three times in the data set, and
+many other types are not present at all.
+You can imagine, if we have
+a vocabulary of about 30,000 words.
+So 30,000 squared,
+that's about 900 million possible bigrams.
+So of those 900 million,
+only about 340,000 appear in the data set.
+So this is, the orders of magnitude
+less than even one occurrence per time.
+So the data is extremely sparse and
+this is going to be a serious problem
+if you want to estimate probabilities
+of words based on large corpora.
+No matter how large they are,
+even bigrams are not going to
+be presented frequently enough.
+Now let's see how we can actually
+estimate the probabilities of certain
+words in the large corporas.
+Can we compute those conditional
+probabilities directly?
+For example, what is the probability
+that a certain word is going to follow
+a certain other word?
+Well, we really can not, because as I
+said earlier, the data is very sparse.
+We're going to, instead, use the so
+called Markov Assumption.
+So let's look at this sentence.
+I would like two tickets for the musical.
+We're going to use
+the following approximation.
+Instead of computing the probability
+of musical given the entire string that
+consists of several words,
+I would like to think it's for the.
+We're going to approximate
+it with the bigram.
+The probability of musical given the word,
+the, or just given the word previous word.
+It turns out that for practical purposes,
+this is going to degrade
+the performance but not that much.
+It's going to be a good trade off, given
+that we are going to have a much more
+flexible and robust system than the one
+that looks at the entire previous history.
+So the trigram counterpart to this example
+is that the probability of musical,
+given I would like two tickets for the,
+is going to be approximately equal to
+the probability of musical,
+given the two previous words for the.
+So again this is called
+a trigram model and
+the previous example was a bigram model.
+So now let's see how we can estimate those
+probabilities from the training data.
+Suppose that we have
+a really large corpus and
+we want to figure out what is the
+probability that we have the word square,
+given that the previous word is times.
+So we're going to see how many times
+a certain context appears in the training
+data, and
+how many times the certain conditional
+probability is going to appear.
+So here's a unigram example.
+The word pizza appears about 700 times
+in a corpus of ten million words.
+So the maximum likelihood estimate for
+the probability of pizza, and
+here we actually use the term P prime or
+P cap in some cases, that is the estimate,
+the maximum likelihood estimate
+of the probability of pizza.
+In this case, it's going to be equal
+to the number of times a word appears,
+which is 700, out of a total of 10 million
+possible times that it could occur,
+so the ratio here is 0.00007,
+which is a very, very small number,
+but it's still not zero.
+Let's look at the bigram example here.
+The word with appears 1,000
+times in the corpus, and
+the phrase with spinach appears 6 times.
+So we want to compute the probability
+of spinach given with.
+This is out of 1,000 possible contexts
+in which the word with appears,
+only 6 have the word spinach after that.
+So the maximum likelihood estimate for
+the probability of spinach
+given with is 0.006.
+So one important thing to keep in mind is
+that if we learn those probabilities from
+one corpus they're only going to be valid
+in corpora that are of a similar genre.
+So for example if we learn probabilities
+from a corpus of English language news,
+we can only expect those probabilities
+to be accurate to some extent
+on other corpora of English news.
+We cannot expect them to work in other
+languages or even in other genres for
+example, such as fiction or
+financial reports or email.
+So it's very important when you estimate
+those probabilities to use a corpas that
+is as comparable as possible to the one
+that you're going to use for testing.
+So here's an example.
+We want to compute the probability of
+the sentence, I will see you on Monday.
+So one thing that you notice here is that
+I've enclosed the sample in XML type tags,
+where the S symbol means start of sentence
+and the /S symbol means end of sentence.
+It turns out that this is
+very important to do in
+statistical language processing because
+we want to treat the beginning and
+end of sentences just as any
+other symbol in the sentence.
+Because the words that come right
+before or right after the beginning and
+end of sentences are going to be
+conditioned on those special symbols.
+So in this case, the bigram approximation
+of I will see you on Monday,
+is going to be the probability of the word
+I given the beginning of sentence,
+times the probability of will,
+given the previous word is I,
+times the probability of see, given that
+the previous word is will, and so on.
+The last thing here is going to be the
+probability of end of sentence given that
+the previous word is Monday.
+So here's an example from the set of
+all the books written by Jane Austen.
+So we have to complete the probability of
+the sentence, Elizabeth looked at Darcy.
+So let's see how we can use
+the information from the corpus
+to compute this probability.
+We're going to use again,
+maximum likelihood estimates for
+the n-gram probabilities.
+So the unigram maximum likelihood
+estimate is just the P(w sub
+i) =be equal to the number of times,
+the count of the word i,
+divided by v,
+where v is the size of the vocabulary or
+the set of all possible types of
+words appearing in the corpus.
+The bigram probabilities again
+are going to be in the following form.
+The probability of wi given wi minus 1 is
+going to be the count of wi minus 1 and
+wi appearing together divided
+by the count of wi minus 1.
+So let's look at those specific values.
+The probability of Elizabeth is 700,
+I'm sorry,
+474/617091, converting
+to decimal numbers that
+corresponds to about 7.6 times
+ten to the minus fourth power.
+The probability of looked,
+given Elizabeth is 5/474.
+It's about 1% and so on.
+We can compute all of the bigra,
+using the maximum likelihood estimates.
+I omitted the beginning and end of
+sentence probabilities here, just for
+simplicity, but in general, they
+should be included in the computation.
+Now let's look at the bigram
+probability of the sentence.
+So the probability of Elizabeth looked
+at Darcy as a bigram probability Is
+going to be this number here which is
+extremely low, 1.3 x 10 to the -9 power.
+And by computing the product
+of all the numbers so far.
+And we can also compare this
+with the unigram probability,
+which is just the probability of
+each of the different unigrams.
+So probability of Elizabeth
+times probability of looks.
+That is the probability of the word at,
+times the probability of the word, Darcy.
+And you can see that here we have
+1.3 x 10 to the minus 12 power.
+You can see that there is
+a difference of about one-thousandth,
+the fact of one-thousandth
+between the two probabilities.
+In other words, the bigram probability
+of this sentence gives a much higher
+value than the unigram probability.
+And this makes sense because the Bigram
+model uses additional context information
+that the Unigram model doesn't include.
+Now let's try to estimate the probability
+of the sentence looked Darcy Elizabeth at.
+Can you think what the answer
+of this question is going to be?
+So I'll give you a second
+to think about it.
+Well let me now give you the answer,
+the question was,
+was the probability that of
+the sentence looked Darcy Elizabeth at?
+Well it turns out that
+the unigram probability for
+the sentence is going to be exactly the
+same as the one on the line above because
+the unigram probability model doesn't
+take into account word order.
+There's going to be some
+re-ordering of the four numbers,
+but the product of them is
+going to be exactly the same.
+However, the bigram probability is
+going to be something several orders
+of magnitude smaller because looked Darcy,
+Darcy Elizabeth and
+Elizabeth at are very unlikely to
+have appeared in the training data.
+So it's very possible that this
+probability is going to be actually zero.
+So let me stop with this example, and
+I'm going to continue in the next
+set of slides in just a minute.
+

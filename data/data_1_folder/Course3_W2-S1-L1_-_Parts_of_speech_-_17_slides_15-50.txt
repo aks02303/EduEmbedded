@@ -1,0 +1,421 @@
+So, the next segment is going to be
+about the different parts of speech
+that exist in language.
+So let's look at the first example here.
+We have a sentence like,
+Nathalie likes black cats.
+We can replace the word
+black with Persian, tabby,
+or small and
+still have sentences that make sense.
+Nathalie likes tabby cats or
+Nathalie likes Persian cats.
+Well, it's a single word and
+it can be used in the same position
+those are usually referred to
+as the same syntactic category.
+In this case, the syntactic category,
+the part of speech is, because it's
+a single word, is an adjective.
+There are many other syntactic categories
+in, in English and other languages.
+So, those include open and
+closed categories.
+Open categories include
+the categories that
+can have new words added
+to them over time.
+So for example, a no-fly-zone
+is a noun and twerk is a verb.
+And, those words were added to
+the vocabulary of English in the relative,
+recent past.
+We also have closed functional
+categories such as the, and in,
+which are respectively determiners or
+articles and prepositions.
+Let's look at an example sentence,
+the dog chased the yellow bird.
+We have multiple parts of speech here,
+article, noun,
+verb article, adjective, and noun.
+So in English, there are about eight
+general types of parts of speech.
+We looked at some of them already,
+nouns and verbs and adjectives.
+So, what do those have in common?
+So, the nouns include things like dog,
+tree, computer and idea.
+They can be either concrete like
+the first three or abstract.
+They can vary in number,
+singular and plural, in gender and
+in case, not in English but
+in other languages.
+For example, in Latin, the same word,
+puer, which means boy,
+can be spelled in many different ways.
+In the singular, one boy can be puer, in,
+which is the so-called nominative case or
+subject case.
+Puerum, which is the accusative object,
+and pueri,
+which is the genitive, of the boy.
+In the plural, we can have pueri, which
+is the nominative again, subject form.
+We can have pueros,
+which is the accusative.
+And finally, puerorum,
+which is the genitive, of the boys.
+Now, the gender doesn't need to match the
+actual sex of the object being described.
+So, a typical example that people
+give is the word in German, madchen.
+The word madchen means girl.
+And because it's a diminutive the chen
+part indicates that it's a small person.
+The word is neuter in gender, in German,
+even though it refers to a female person.
+Now, let's look at one of the most famous
+examples in courses of this nature.
+It's a short poem extracted from
+Lewis Carroll's Alice in Wonderland,
+and more specifically,
+the second part of the book.
+You may have seen this before, but
+if you haven't see it, you will
+realize that this is in gibberish.
+Most of the words are not valid English
+words, and yet, it is possible for
+a speaker of English to understand at
+least the parts of speech of those words.
+Even though, in some cases,
+this can be tricky.
+So, let's try to do this together.
+I want to give you a minute now to figure
+out the parts of speech of the words
+in boldface.
+So, let's look at the answer
+to the previous question,
+what are the parts of speech
+of the words in boldface?
+The first word is wabe and borogoves.
+So, those are most likely nouns,
+and how do we know this?
+Well, they both follow the word the.
+In English, typically after the word the,
+you have a noun.
+Next one is a little trickier, brillig,
+what kind of part of speech is this?
+Well, for your first guess is that this is
+an adjective, but it could also be a noun.
+Let's look at the examples.
+It could be something like, an adjective,
+like it was early, or
+it can be a noun, as in, it was noon.
+So, in either case we don't know
+exactly the part of speech, but
+we know it's one of those two.
+What about mimsy?
+Well, mimsy's most likely
+an adjective because of
+the way it appears in the sentence.
+Now, what about the slithey towes?
+Well, this is either an adjective and noun
+combination, the same as small people.
+Or it can also be a noun and verb
+combination, similar to the bell tolls.
+Finally, we have the expression
+mome rahs ougrabe.
+So, this could be a combination
+of adjective, noun and verb.
+But it could also be a combination
+of noun, verb and adverb.
+As in birds fly outside.
+So, the point here is that in some cases,
+you can guess the part of speech of
+an unknown word based on the context, but
+in other cases this can be,
+still, very tricky.
+And the reason why this is an important
+example is that it mimics what
+computers do with human language, they see
+text that they really don't understand.
+The see seq, sequence of words and
+if they don't have enough prior
+knowledge about that language or
+about the words themselves, they
+wouldn't be able to understand anything.
+So in that case, what they do is
+they either use prior knowledge or
+they reason probabilistically.
+So, there may be a rule in
+the system that says, after a the,
+the next word is a noun with
+the probability of 99%.
+And, after an adjective,
+the next word is a noun with
+a probability of 80% and so on.
+And then, when you combine all the
+probabilities of the sentences that you
+observe, you can come up with the best
+estimate that is consistent with
+the rules that you know and
+the text that you have seen.
+It is also important to use context.
+So if, for example,
+you have a word that is ambiguous maybe in
+the context you can see other related
+words that help you disambiguate it.
+So, for example, if you use the word, bar,
+in a sentence, and the whole text talks
+about legal issues and lawyers and
+people finishing law school.
+It's more likely that this use of
+the word bar is in the legal sense,
+rather than the establishment,
+restaurant-type of sense.
+And also, computers can be wrong.
+So, they can make a mistake and
+this can propagate in the whole system.
+For example,
+they can ignore a negation and
+then assume that the opposite of
+what was said is actually true.
+The next category of parts
+of speech is pronouns.
+In English, they include things like she,
+ourselves and mine.
+Pronouns vary in person first, second and
+third gender, masculine and
+feminine, number and case.
+English actually has cases for
+pronouns, and that includes nominative,
+accusative, possessive and
+second possessive.
+So more specifically,
+that could be I, me, my, and mine.
+And, pronouns can also have reflexive and
+anaphoric forms.
+So, for example,
+if I say Samantha gave her a haircut,
+her must refer to a different person.
+Whereas if I say,
+Samantha gave herself a haircut then,
+she gave the haircut to Samantha.
+So, this is a, a reflexive pronoun.
+The other categories of parts of speech
+in English include determiners and
+adjectives.
+Determiners are things like articles and
+demonstratives, things like the,
+this, that.
+And, adjectives include words
+that describe properties.
+They can be used either attributively or
+predicatively.
+So, small house is attributive,
+and the house is
+small that second example,
+small is used predicatively.
+Adjectives agree in gender and
+number in different languages.
+And, they can have a positive form,
+such as short and
+also comparative and superlative
+form such as shorter and shortest.
+And, those comparative and
+superlative forms can be either
+derivative or periphrastic.
+Derivative is when you have form
+like small, smaller, smallest,
+or a periphrastic is difficult,
+more difficult, most difficult.
+The next category of parts
+of speech is verbs that are,
+includes words that describe
+actions such as throw.
+Activities such as walk and
+states, such as have.
+There are four verb forms in English,
+other languages can have
+many more than that.
+The tenses are present, past and future,
+and different variants of those.
+Other inflection that exists in
+English includes, number and person.
+And, verbs can also include gerunds
+such as ing forms and infinitives.
+That's the form of the verb
+that follows the word to.
+Verbs can also be
+distinguished by their aspect.
+They can be either progressive or
+perfective,
+depending on whether the action
+is to continue or not.
+And finally, they can be
+distinguished based on their voice.
+So, in the sentence I bought a house
+the verb bought is in the active voice,
+whereas in, a house was bought,
+the word bought is in the passive tense,
+a passive voice, sorry.
+So, some other things about verbs is that
+they can include things like participles,
+ed forms, for example, and auxiliaries,
+words like may and will, and shall.
+Verbs can have different arguments.
+Those are the words that
+come after the verb and
+indicate some modifications to the verb.
+For example, the dog sleeps is
+an instance of an intransitive verb.
+There's no direct object.
+That's what intransitive means.
+The dog chased the cat, in that example,
+the word chased is a transitive verb
+because it has a direct object.
+And finally, in the sentence,
+Mary gave
+the dog a bone,
+we have an example of a ditransitive verb.
+That's a verb that takes two objects,
+gave somebody something.
+And, you can also have things like
+irregular verbs, so, slept and caught.
+Now, what I said so
+far applies mostly to English.
+Other languages have
+much richer inflections
+the examples that you may be familiar with
+include languages like French and Latin.
+Which have more than 100 different forms
+of a certain verb, and languages like
+Finnish which have many different forms,
+sometimes more than 20, of the same noun.
+So here's an example of a much more
+sophisticated inflectional paradigm for
+verbs.
+This is an example from French.
+On this slide alone, there are 36
+different forms of the verb, to go.
+And, I can promise you that
+there are at least two more
+slides that I can show you which
+have even more forms of the verb.
+Depending on whether it's in present and
+past and continuous form.
+Or whether it's in a different mood
+such as conditional and subjunctive.
+And now, just to conclude the,
+the list of parts of speech.
+The other parts of speech in English
+include adverbs, things like happily,
+which describes a manner.
+Here, which describes a location,
+and never, which describes a time.
+Prepositions, particles.
+So, particles can sometimes be
+confused with prepositions but
+there's a very important test
+that can tell them apart.
+Particles are usually used in the form
+of the so-called phrasal verbs.
+So, a phrasal verb could
+be something like take off,
+take off is not some special way of
+taking, it's a completely different verb.
+Or I wanted to take up this
+matter with the principal, so
+again, take up is a phrasal verb, and
+in the two cases that I just showed you.
+Off, with two f's and up, are particles
+that are part of the phrasal verbs.
+And, there's the test that I mentioned,
+can be used to distinguish between
+prepositions and particles.
+A common example that people use is, she
+ran up a bill versus she ran up a hill.
+In the first example, she ran up a bill,
+ran up is a phrasal verb.
+Whereas in the second example,
+she ran up a hill,
+up a hill is a prepositional phrase,
+and up is not associated with the ran.
+And, the way to tell the two
+apart is very simple.
+Can we move up and
+the rest of the sentence to the beginning?
+So, we can say, she ran up a hill.
+Up a hill, she ran.
+So, that sounds like a valid paraphrase,
+therefore,
+we have an instance of a preposition.
+But, we can not do the same thing with,
+she ran up a bill.
+We can not say, up a bill, she ran,
+which means in this example, run and
+up are parts of the same word.
+Parts of the same verb,
+rather, and cannot be split up.
+In that case, up is a particle.
+The other conju, the other parts of
+speech we haven't talked about include
+coordinating conjunctions such as and,
+or, and
+but, which are used to connect
+similar parts of the sentence.
+For example, apples and oranges.
+Subordinating conjunctions,
+which are used to connect
+different portions of
+the sentence that are not equal.
+For example, I can have an entire sentence
+be inserted by preceding it with the word,
+that.
+So, I can say, I will not go home
+unless you give me money.
+So, in that example, unless introduces an
+entire relative clause, you give me money.
+But, I cannot switch the order of
+the two parts of the sentence and
+obtain the same meaning.
+And, finally, we have interjections.
+Those are things like sounds,
+like meow or ouch.
+And, to conclude this section, I would
+like to show you the labels that I use
+in part of speech tagging in
+natural speech processing.
+So, part of speech tagging is the process
+of automatically assigning parts of speech
+to words.
+And, most of the existing
+part of speech taggers and
+natural language parsers
+use this convention.
+So, NN is a shorthand for a singular noun.
+NP is a shorthand for proper noun.
+And then, S is for plural noun and so on.
+The first letter in each code tells you
+the part of speech, so whether it's N or
+J or N or C or R or V, and
+the second and third letters,
+if any, tell you something a little
+bit more detailed about that word.
+For example, VB is an uninflected verb.
+VBN is the EN or
+passive perfective form of the verb,
+such as taken or
+looked used as a past participle.
+And, VBD stands for
+a verb used in its past tense,
+such as took or looked, as I looked out,
+versus the previous sentence where
+looked was used in a passive voice.
+So, this concludes the section
+on part of speech tagging, and
+the next section is going to be
+on morphology and the lexicon.
+

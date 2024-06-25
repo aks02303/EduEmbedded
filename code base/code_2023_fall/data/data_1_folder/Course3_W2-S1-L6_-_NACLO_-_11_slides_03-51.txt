@@ -1,0 +1,102 @@
+So one of the activities that I'm
+personally involved with is called NACLO.
+This a competition for
+high school students who are interested in
+linguistics and computational linguistics,
+and many of the problems that we use
+in this class are related to NACLO.
+So I want to give you an idea of what
+it stands for, and what it covers.
+So NACLO is a competition in linguistics,
+but
+it covers also many computation
+linguistics problems.
+It has existed since 2007,
+and usually every year, about 2,000
+students in the United States and
+Canada participate, and the top eight
+of them go to the international level.
+And here I have listed some
+of the ones who did the most
+well at the international level.
+People like Adam Hestenburg,
+Rebecca Jacobs,
+and Alex Wades all won many gold
+medals at the international level.
+There many other countries that do really
+well in the international competition.
+Places like Russia, the United Kingdom,
+the Netherlands, Poland,
+Bulgaria, South Korea, and
+in recent years, Canada and China.
+The international contest
+started in about 2003.
+The most recent ones were in
+Manchester in England last year,
+in Beijing most recently, and then
+the next one will be in Bulgaria in 2015.
+The website for the international
+competition is shown here, and
+as you can see, it is related to
+some other high school competitions,
+such as the math and physics and
+chemistry and biology competitions.
+So let's get to some of the points
+that you can see on NACLO.
+Some of them are what we
+call traditional poems.
+They are about, trying to understand
+a foreign language, and specifically some
+linguistic phenomenon in that language
+that you have not seen before.
+So I'm just going to go through
+those examples very quickly.
+This is about ancient Greek, and
+the problem was a donkey
+in every house in 2007.
+Here's one about Japanese
+noun compounds from 2008.
+Here's one about aligning texts
+from two different languages,
+in this case Swedish and
+Norwegian from 2009.
+This is one about a writing system for
+the blind in Japan called Tanji.
+You have to figure out
+how those characters,
+which are similar to braille in English,
+are used.
+This is a, a more computational example
+about using finite state automata
+to understand how words in the language
+called Rotokas from the coast
+of New Guinea are formed.
+This one's about writing systems,
+specifically people have to figure out how
+Armenian script works by looking
+at the map and the station names.
+Some of those names are given in English,
+so
+you can use your logical thinking to
+figure out where they appear on the map.
+And the once you have figured out
+where they appear on the map,
+you have to figure out what
+the different symbols mean and
+use those symbols to figure out
+the names of the remaining stations.
+Over the years, there have been more
+than one hundred problems used in NACLO.
+I have picked here some of
+the most interesting computational
+problems that you can use to challenge
+yourselves as part of this class.
+So this was my brief
+introduction to NACLO.
+Later in this class, we're going to look
+at some of the specific problems that we
+used in this competition, and I would
+like to use this opportunity to encourage
+people to submit problems for
+future years.
+

@@ -1,0 +1,315 @@
+So this segment is about pre-processing.
+Before you build any natural language
+processing system, you are going to get
+your text in a format that the system
+would not be able to understand.
+You need to convert it into
+a format that is easier to process.
+This stage of [INAUDIBLE] is called preprocessing.
+Let's look at some examples.
+First of all,
+we need to remove any non-textual pieces.
+For example, ads, images, JavaScript code.
+We need to understand the text encoding.
+For example, whether its in unicode or
+some other encoding and
+convert it to one that
+the system understands.
+We need to do sentence segmentation.
+Understand where the boundaries
+between sentences are located.
+And then we need to do
+a bunch of other things.
+Let's look at some of them in more detail.
+The first is called normalization.
+So normalization means that if a word
+can have multiple variants we want
+to convert them all to the same form so
+that they are not confused.
+Labeled and labelled.
+Are spelled differently
+in British English and
+American English with one L's or two L's,
+we want perhaps to merge those into one.
+The word extraterrestrial can be
+spelled with a hyphen in the middle or
+as a single word with
+a space in the middle.
+We again want to be able to collapse those
+into one specific normalized version.
+The next episode is called stemming.
+That is merging words that computer and
+computation into the same category
+based on their stem compute.
+We'll talk about stemming
+in more detail separately.
+Morphological analysis deals with
+the relationship between words of the same
+inflection.
+So for example, cars can be labeled
+as the plural form of car and
+both of those would be labeled as nouns.
+One in singular and one in plural.
+Capitalization matters a lot so if your
+texts is entirely in capital letters this
+may be very difficult to do but
+if it's in mixed case
+you want to be able to distinguish between
+things like now and NOW when the first one
+is just an adverb for time and the second
+one is the National Organization of Women,
+and similarly led could be the past
+tense of the word to the lead or
+it can be a Light Emitting Diodes Which
+is an acronym, O and capital X.
+You also want to see how all this
+interferes with named entity extraction.
+Because if you see USA capital letters,
+that can easily be picked up by the named
+entity recognizer as a country name.
+But if you have a text
+in a foreign language.
+For example,
+"usa" in Spanish means, he uses.
+That would confuse the named
+entity recognizer.
+There's a distinction to be
+made between types and tokens.
+A type is any sequence of characters
+that represent a specific word.
+Where as a token is any
+occurrence of a type.
+So a type may appear just
+once in the document but
+the token may appear multiple times.
+So in the sentence to be or
+not to be, we have four types.
+To, be, for and not.
+But we have six tokens
+because the types and to and
+be appear twice each we need to do
+also something called tokenization.
+So tokenization will have periods and
+other punctuation symbols in the middle
+of the text and we need to figure out
+where words start and where words end.
+For example, we want to collapse
+together ALS without the periods,
+with ALS with the periods and not assume
+that the second example tells us that
+there are really three sentences and
+the periods mean sentence boundaries.
+Identifying the boundaries of words and
+sentences can actually be very tricky.
+For example, Paul's with an apostrophe s.
+Do we split the apostrophe or not?
+We have to make a decision and
+then use it consistently throughout
+the entire natural language pipeline.
+There are some abbreviations
+that end in punctuations.
+And it can be very confusing sometimes.
+So, for example, Willow Dr.
+ends with a punctuation.
+We don't want to split there.
+It's not part of a sentence.
+Dr. Willow has the same words and
+we don't want to split there either
+even though it has a period.
+There are cases of phrases that
+have to be used as chunks,
+for example, New York or ad hoc.
+Those are both two-word compounds, but
+we want to store the message in the memory
+of the computer as a single unit.
+Other punctuation symbols can also
+create problems, for example,
+the New York-Los Angeles flight.
+If we split on spaces, we're going to
+assume that York-Los would be a word.
+Which is clearly not the case here.
+We want to split this phrase
+into New York-Los Angeles.
+That will be the correct
+way to interpret it.
+Notice that this is different
+from Minneapolis-St.
+Paul, which is the name of one place,
+rather than the example
+that we had on the left.
+Numbers can be very challenging.
+We see often phone numbers and
+dates that can be very different formats.
+It may be very useful to recognize this
+entire sequence (888) 555-1313 is a single
+number and also that it is the same number
+as the one shown on the right hand side.
+The standing goals for dates which can
+be spelled in many different ways,
+January-13-2012 versus 2012 01
+13 versus 13th January 2012 and so on.
+And URLs can also be very
+problematic because they have
+portions that are separated with slashes
+and periods, some of those portions
+may look like words and if we don't
+recognize that the whole unit is a URL,
+we may erroneously try to parse it
+into its individual component words.
+Some languages have additional challenges.
+For example, this is a text
+from a new store in Japanese.
+Japanese, just like Chinese and some other
+languages, they don't use word bondings.
+There's no spaces between words.
+So it's very difficult to figure out
+where a word starts and a word ends.
+Plus furthermore, just use this example
+while it's showing on the screen.
+Japanese three different alphabets:
+Katakana, Hiragana, and Kanji,
+which have to be separated and
+each of them has to be parsed separate..
+So word segmentation
+can be very difficult.
+Let's look at a few examples.
+The first example is from Arabic.
+It has the word katabu, which means book.
+Arabic is spelled right to left and
+the symbol on the right-hand
+side is the cursand.
+Too, the next one is the sound and
+the last thing which is
+separate from the rest is book.
+The space in between those two doesn't
+mean that this is a word boundary,
+it just happens that the letter a and
+the letter for
+bu have to have a space in-between them.
+So if we try to split there,
+we are going to get two meaningless words.
+In Japanese, we have an example here.
+Kono hon ha omoi,
+which means "this book is interesting".
+Again, we have four words here.
+The first two symbols.
+The next one has one symbol.
+The next one has one symbol,
+or the last one has two.
+So if we don't know that the third
+symbol from the left represents book or
+hon, we wouldn't understand where to
+put the word boundaries in this case.
+Some languages have very long words.
+For example, in German, you have
+something like finanzdienstleistung,
+which means something
+like financial services.
+In this case,
+we have three different words that are
+just merged together into one long word.
+So this can be very tricky.
+If you want to find, for example,
+all the documents about financial issues.
+We want to be able to retrieve
+this document as well
+even though the word finance
+appears as a part of another word.
+So segmenting and tolkienizing German
+presents a particular challenge.
+And let's look at one more
+example of word segmentation.
+If we make a mistake, in Chinese for
+example, we have the world for television.
+Which consists of the characters for
+electricity and to look at.
+If we split it into two words, we'll get
+something like looking at electricity,
+which is definitely not the same
+intended meaning as television.
+So I mentioned that Japanese
+has three different alphabets.
+So here's an example that shows them all.
+The text in blue is Kanji,
+or Chinese characters.
+The other two alphabets in addition to
+Kanji are Hiragana which is used for
+ending of words and prepositions and
+other service words, and Katakana,
+which is used for foreign words,
+like in this example,
+New York,
+which the the word on the left in red.
+And occasionally Japanese text can
+also include text in Romaji, which is
+essentially a latin character just like
+in English and it can also have numbers.
+So in this particular example we have
+a phrase [FOREIGN],
+which
+means New York is a city located
+in the state of New York.
+We have three pieces of text,
+New York, America, and
+New York again which are in Katakana.
+Have some text in Romaji
+which is spelled in english.
+We have four characters in Hiragana and
+only six other characters in Kanji.
+So you can imagine how difficult it
+is to preprocess this kind of text.
+And the final task in speech processing
+that I would like to mention today is
+sentence boundary recognition.
+So the goal of sentence boundary
+recognition is to figure out which
+punctuation symbols indicate
+the end of a sentence.
+As we looked at this example earlier,
+Willow Dr. and Dr. Willow and so on.
+Very often a period may indicate
+an abbreviation rather than a sentence
+boundary.So sentence boundary recognition
+is typically dealt with by using
+decision trees.
+That look at features such
+as the actual punctuation.
+Is it an exclamation point or a period?
+Is it a question mark?
+Question marks are unlikely to
+appear in acronyms, for example,
+as part of abbreviations,
+whereas periods can appear.
+In acronyms very frequently.
+We can look at the formatting, for
+example is there a space after the period?
+Is there capitalization?
+We can look at the fonts.
+If there's a font change that can
+indicate that we have a new sentence or
+a new paragraph.
+We can also look at a specific
+list of abbreviations such as Dr.
+for doctor or drive, a.m.
+For morning and so on.
+So an example of a rule in the decision
+tree would be something like this.
+If there's no space after a period, don't
+assume that there is a sentence boundary.
+So there is a convention to include one or
+two spaces after a period.
+If the text is in a different language,
+this rule may not apply.
+So you now have an idea how
+preprocessing works, and
+why it is important for
+natural language processing.
+We will assume for the rest of this course
+that the texts that we're dealing with
+have already been preprocessed and
+properly segmented into segments.
+Excuse me, properly segmented
+into sentences, and words.
+So this concludes the section
+on preprocessing.
+

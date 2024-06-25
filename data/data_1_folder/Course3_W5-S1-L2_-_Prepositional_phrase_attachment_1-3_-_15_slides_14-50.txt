@@ -1,0 +1,398 @@
+Welcome back to
+Natural Language Processing.
+We're going to continue now
+with the next topic in parsing,
+specifically something that is called
+prepositional phrase attachment.
+Let me remind you what the Penn Treebank
+Representation of a sentence looks like.
+This is the famous sentence
+number one of the Penn Treebank.
+It represents the sentence Pierre Vinken,
+61 years old,
+who joined the board as a nonexecutive
+director, November 29th.
+As you can see, the list
+type structure represents the syntactic
+structure of the sentence.
+We have a noun phrase that
+is marked as a subject.
+That is namely Pierre Vinken, 61 years
+old, and then we have a verb phrase that
+consists of, will join the board as
+a nonexecutive director November 29.
+How many prepositional phrases
+do we have in this sentence?
+Well, one of this one is
+as a nonexecutive director.
+The word as, is a preposition.
+In the Penn Treebank tag set,
+prepositions are marked with a code IN.
+So, the question here is, does the
+preposition as a non executive director
+modify board, or does it modify join?
+In general, prepositional phrases
+can modify either the noun
+that is closest to them, or
+the verb before that noun.
+The second sentence of the Penn Treebank,
+is, Mr.
+Vinken is chairman of Elsevier NV comma,
+the Dutch publishing group.
+So the prepositional phrase here is of,
+Elsevier, and we.
+The preposition is of.
+So where does this one attach?
+Does it attach to the nearest noun,
+specifically chairman, or
+does it attach to is?
+Well, prepositional phrase attachment is
+the problem of automatically figuring out
+this attachment.
+So there are two types of
+prepositional phrase attachment.
+The first kind is called high attachment,
+or verbal attachment.
+That's when the prepositional phrase,
+as director attaches to the nearest verb,
+in the case, join.
+And the second example is low attachment,
+or nominal attachment, in this example,
+of Elsevier modifies chairman.
+What does it mean to modify chairman?
+It just means that the chairman
+is associated with Elsevier.
+The verb is, is not associated with
+Elsevier just like in the first example.
+As director, is the way in which
+the person joined the board.
+It is not a modification of, board.
+Let's now look at the phrase structure of
+a sentence that includes a prepositional
+phrase.
+Jane caught the butterfly with the net.
+As you can see, with the net,
+is a prepositional phrase.
+That in this case,
+modifies the verb, caught.
+It does not modify butterfly.
+It's actually denotes the way in
+which the butterfly was caught.
+If, for any reason,
+the butterfly was carrying the net.
+We would have the prepositional phrase,
+with the net,
+be listed under the noun phrase,
+for butterfly.
+Let's look at some examples
+of prepositional phrase
+attachment in real life.
+The first example is,
+Lucy's plane leaves Detroit on Monday.
+Is this high or low attachment?
+Well, on Monday doesn't modify the chart.
+It modifies leaves, so
+that is high attachment.
+The second example,
+Jenna met Mike at the concert.
+Is this high or low?
+Well, it is high again, because at
+the concert modifies the verb meet.
+It doesn't modify Mike.
+In the third example, this painting
+must cost millions of dollars.
+In this case, of dollars modifies
+millions, rather than cost.
+So we have low attachment.
+Now, I have a question for you.
+In each of the following six examples,
+can you tell me if we have a case of
+high attachment or low attachment?
+I'm going to read the first two, and
+you can read the rest on your own.
+Alicia ate spaghetti from Italy.
+Alicia ate spaghetti with meatballs.
+Can you think of the six attachments, and
+I'll give you the answers
+on the next slide?
+Okay, so the question was,
+can you classify the six sentences
+into high or low attachment?
+All the answers are in front of you.
+The first one is Alicia
+ate spaghetti from Italy.
+This is a low attachment because
+from Italy modifies spaghetti.
+Alicia ate spaghetti with meatballs, again
+most likely this is low attachment because
+meatballs modifies spaghetti, and then we
+have four instances of high attachment.
+Alicia ate spaghetti with a fork,
+even though the preposition is
+the same as in the previous example.
+We have an instance of high attachment
+because with a fork modifies
+the verb, ate.
+The next example is
+probably a little funny.
+Alicia ate spaghetti with Justin.
+We definitely want with Justin to modify
+ate, which is the verb, and not spaghetti,
+in which case Alicia would have eaten
+Justin along with the spaghetti.
+The fifth example,
+Alicia ate spaghetti with delight.
+We again have an instance
+of high attachment,
+with delight modifies the word ate.
+And finally,
+Alicia ate spaghetti on Friday.
+We have an instance of high attachment,
+because on Friday modifies Alicia.
+A few weeks ago I was reading
+the newspaper and I came across an actual
+headline that includes a very
+ambiguous propositional phrase.
+Police shoot man with box cutters.
+This is a really funny example because,
+it's really difficult to shoot a man,
+using a box cutter.
+Box cutters are typically
+not used to shoot people.
+So the interpretation here was
+fairly simple for a human.
+It was clear that it was the man
+who was carrying the box cutters,
+not the police using the box
+cutters to shoot the man with.
+So in this example, we have two possible
+syntactic interpretations of the sentence.
+The first one in the correct one.
+In that one,
+with box cutters modifies the man.
+So in that sense the man was
+carrying the box cutters.
+The second example which I have
+deliberately marked with a question mark
+on the left, which indicates that
+this is a questionable interpretation
+of the sentence.
+We have with box cutters at
+the same level as the verb shoot,
+which is incorrect, and you can see that
+the two parse trees look very different.
+The one on the left has with box cutters
+as part of the noun phrase man, and
+the one on the right,
+the incorrect one has with box
+cutters as the same that was shot.
+Okay, so preposition phrase attachment
+is a very interesting problem in
+natural language processing,
+because first, it is important for
+parsing sentences syntactically,
+and second
+because it's a very nice introduction to
+the problem of binary classification.
+So I'm going to use this opportunity
+to introduce binary classification and
+this problem.
+So how do you formulate this problem
+as a binary classification problem.
+Well it's very straight forward.
+We have a set of instances.
+Each of which consists of an input and
+an output.
+The input is a prepositional phrase,
+and possibly the surrounding context
+around it, the rest of the sentence,
+and the output is just a binary label.
+The convention is to use zero for high
+attachment and one for low attachment.
+In practice, we don't look at the context
+surrounding the prepositional phrase, in
+fact, we don't look at the prepositional
+phrase in its entirety either.
+In fact, the context only consists of
+four words: the preposition itself,
+the verb before the preposition,
+the noun before the preposition, and
+the noun after the preposition.
+So for example, the segments from
+the Penn Treebank about PR Lincoln joining
+the board as a nonexecutive director,
+this sentence would be only represented
+as the fourth to poll,
+join, board, as, director.
+Why do you think we only keep those
+four words as the representation of
+the instance and ignore everything else?
+Think about it.
+I'll show you the answer
+on the next slide.
+So the question was,
+why do we only represent a prepositional
+phrase instance by the four features?
+Preposition, noun one, noun two and verb.
+Well there are two reasons.
+The first is that we don't really
+need the rest of the context.
+Most of the information,
+in fact almost all of it,
+needed to classify a prepositional
+phrase as either high or
+low attachment turns out to be
+contained in those four features.
+And the second reason is that only
+using consistent tuples of four
+features allows us to have a more
+consistent machine learning approach.
+So let's look at some sample
+tuples from the Penn Treebank.
+This table shows you about ten examples.
+The first column indicates the sentence
+from which those prepositional phrases
+were extracted, and then you have,
+for each instance, four features.
+The verb, the first noun,
+the preposition, and the second noun.
+And the last column shows you if that
+particular tuple should be classified as
+high attachment or
+low attachment, and I want to remind
+you that high attachment is verb.
+A low attachment is noun.
+So let's look at an example here.
+Led team of researchers,
+of researchers modifies team.
+It doesn't modify led.
+Therefore, we're going to
+label it as a noun attachment.
+So it turns that the literature and
+linguistics and particularly in
+psycho-linguistics has this agreement on
+how humans do attachment in sentences.
+There is one theory by Kimball that favors
+the so-called right association rule.
+It says that given a new phrase and
+two choices of attachment, people tend to
+attach the new phrase to the most recent,
+to the rightmost portion of the sentence.
+So this theory favors low attachment.
+However, there's an alternative
+interpretation called the minimal
+attachment principle by Frazier that
+favors an attachment that results
+in the syntactic tree of the sentence
+having fewer additional syntactic nodes.
+So therefore, favoring high attachment.
+If you remember in the previous slide,
+the diagram that corresponds
+to high attachment had
+fewer internal nodes compared to
+the one that has low attachment.
+Well, in practice it turns out that
+none of those theories are correct.
+There are instances of both high and low
+attachment in real occurring human text.
+Let's look now, at the data set that
+is used in most of the research on
+prepositional phrase attachments.
+I'm going to refer to this data set
+as RRR in 1994, where that the R
+is corresponding to the initials of the
+three researchers who first published it.
+This data set includes about
+28,000 prepositional phrases,
+extracted from the Penn Treebank.
+They are divided into three groups,
+20,000 used for training and
+the rest used for testing.
+The representation used in this data sets
+only consist of the four features in
+the table, the verb,
+the two nouns and the preposition.
+So for example, the sentence
+that you sort of presented as,
+bring attention to problem,
+is actually the sentence.
+Although preliminary findings were
+reported more than a year ago,
+the latest results appear in today's
+New England Journal of Medicine,
+a form likely to bring your
+attention to the problem.
+It should pretty obvious
+that most of the sentence
+is not relevant of the decision of
+prepositional phrase attachments,
+which is in this case how to classify the
+prepositional phrase through the problem.
+So, we're going to
+introduce now supervised
+learning as a method for dealing with
+a prepositional phrase attachment.
+And specifically, I want to focus on
+how to evaluate supervised learning.
+So here's how it works.
+We take a set of instances, for
+example the 20,000 from the RRR data set.
+We manually label it.
+So we ask human evaluater's to
+read each of those instances, and
+label each of them as either high or
+low attachment.
+Then, we split the labeled data
+into a training and a testing set.
+Then we look at the training
+data to find patterns.
+Something that we can encode as rules
+to use automatically to
+label the rest of the data.
+We apply these patterns to the testing
+set and we evaluate the accuracy
+of this algorithm, using a metric
+called surprisingly enough, accuracy.
+Accuracy is the percentage
+of correct labels that
+the algorithm has assigned
+on the testing data.
+So, if the correct label for
+a certain tuple is V and
+the system labels it as V,
+we score a point.
+We also score a point if the correct
+label is N and we label it as N.
+The other two cases when the label is V,
+and we mislabel it as N, and
+vice versa,
+we actually don't score any points.
+So typical performance using this
+accuracy magic will be, let's say, 80%.
+If the two classes are equally likely, and
+we randomly guess,
+we will get an average of 50% accuracy.
+So it is very important,
+when you come up with a new algorithm for
+binary classification problem,
+to be able to compare it using
+a reasonable evaluation method such as
+accuracy, with a simple baseline method.
+So what is the simplest baseline
+method in this example?
+Here, think about it.
+Well, the simplest supervised baseline
+method is to find the most common class or
+label in the training data.
+Assuming that one of them is more
+frequent, which is almost always going
+to be the case,
+unless there is a perfectly equal split.
+Then we're going to use
+this more common label
+to assign it to all instances
+of the testing data set.
+In a few minutes we are going to
+look at different algorithms and
+compare them with this base line.
+

@@ -1,0 +1,468 @@
+Okay, so we're continuing now with
+another set of interesting applications.
+The next one is question answering.
+Let's look at an example of that.
+In the Jeopardy game,
+you get questions in the form of answers.
+So, you get something like, the antagonist
+of Stevenson's Treasure Island.
+And you're supposed to answer,
+who is Long John Silver?
+Now, this is essentially the same
+as asking, who is the antagonist in
+Stevenson's Treasure Island, and
+then have Long John Silver as the answer.
+This is one of the examples that
+was actually used in the game that
+IBM's Watson system played on TV.
+And just to give an example of
+how powerful that system is,
+it's powered by 10 racks of
+IBM Power 750 servers, and
+has 15 terabytes of RAM, more than 2500
+cores and operates at 80 teraflops.
+So this is the kind of system that was
+used to play Jeopardy back in 2011.
+Okay, some of the questions that
+were used in Jeopardy, for example.
+On December 8, 2008, this national
+newspaper raised its newstand price
+by $0.25 to $1.00.
+The answer is USA Today.
+So Watson's answers were 66 correct and
+9 incorrect.
+Including one really funny one,
+which I would like to bring
+up here really quickly.
+The category was US Cities.
+And the question was something like this.
+Which city has two airports?
+One named after a World War II hero, and
+one named after a World War II battle.
+Well, the correct answer was Chicago.
+But Watson goofed, and answered Toronto.
+Now, everybody knows that
+Toronto is not a US city.
+The only thing that it has to do with this
+question is that it has two airports,
+but actually not named after any World War
+II heroes or World War II battles, and
+it's not even in the United States.
+So, in this case,
+Watson made a mistake by not understanding
+that the category was explicitly
+meant to refer to US cities.
+But still, it did pretty well, and it
+had a two-day winning streak of $77,000,
+and the two human contestants
+who had previously been
+major players and
+champions on Jeopardy, won much less.
+If you're interested more in this system,
+we'll talk about question answering
+in more detail later this semester.
+And you can also read
+a lot about it online.
+Another task in natural language
+processing is sentiment analysis.
+So there are many websites where people
+can enter reviews of products and
+their properties.
+So Amazon has reviews, another website
+called epinions have such reviews.
+I have picked an example from here.
+We have somebody saying what they thought
+about a camera that they just bought.
+So we have some statements
+about the camera.
+I like the camera,
+which is a positive statement.
+Then it says later on that with
+this camera I can adjust my
+images by cropping as I did with my iPad,
+but better yet.
+So better yet is another
+positive thing about the camera.
+Then there's a sentence about
+the quality of the images specifically.
+Not about the camera itself, but
+something more specific than that.
+I am also quite impressed with
+the quality of the images.
+In this case,
+we have some example of positive sentiment
+towards a specific aspect of
+the object that they're describing.
+So the goal of sentiment analysis is
+to recognize the object that is being
+discussed, and then understand
+the sentiment, whether it has positive or
+negative in it.
+Some of the challenges here are that
+some of the comments may not be about
+the object itself but they can be
+about some property of the object.
+For example, the quality of the images or
+maybe the screen size or
+maybe the zoom and so on.
+So one of the hottest areas in
+natural language processing is
+Machine Translation.
+Imagine that you got an email from your
+friend in Japan who wrote this text here,
+which is [FOREIGN]
+which is Happy New Year!
+You don't know what it means, but you can
+very easily copy and paste this text into
+a tool like Google Translate and get
+back an answer, which is Happy New Year!
+So, there exist both
+commercial systems for
+machine translation,
+such as Google Translate.
+But also several open source systems, the
+most popular of which these days is Moses.
+Here's a small demo of Moses.
+It's available at the statmt.org website.
+So just to illustrate how
+machine translation works,
+I ran a short document
+to Google translate, and
+I'm showing you here both
+the original text and the output.
+This is a translation
+from English to French,
+of a text that is relatively difficult.
+It has a lot of uncommon words, and yet
+Google Translate did a very good job.
+Let's look at some of the examples
+I highlighted in boldface on
+the right hand side.
+Elephants are social animals.
+This is very correctly
+translated as [FOREIGN].
+The second paragraph starts
+with a very long sentence.
+That was translated 100%
+accurately in French,
+even though it's very
+sophisticated in structure.
+Another example of a correctly
+translated sentence is shown at the end.
+[FOREIGN] Which is a very
+difficult sentence to translate,
+and yet Google translated it perfectly.
+However, not everything was smooth,
+they are also some cases where it did a
+relatively bad job for different reasons.
+Let me look at those examples and
+explain why they're problematic and
+how Google Translate arrived at them.
+So let's look at the second
+sentence in the first paragraph.
+They live with their families,
+give hugs and
+call each other by using
+their trunks as trumpets.
+So in English, we have a sentence
+that has they as the subject.
+The elephant.
+And then there's three verbs,
+live with their families, give hugs and
+pull each other,
+connected with a conjunction and.
+Well, their French translation has some
+of those correctly translated, for
+example vive.
+Which is to live, third person plural,
+which matches they.
+However, the other two verbs
+are not translated correctly.
+They are translated as fair and
+appeler which are the infinitive forms.
+They are not conjugated properly for
+third person plural.
+And the reason why this is happening
+is that in English give and
+call have the same forms for third person
+plural and also for the infinitive.
+Now the second paragraph,
+I highlighted a few words.
+The English sentence says the elephants,
+comma, with their big brains and
+survival savvy may be among
+the smartest animals on the planet.
+Or the translation in
+French says [FOREIGN].
+So [FOREIGN] is singular
+as in one elephant or
+as in the expression maybe but
+it is not translated correctly.
+It has to be translated
+in French as [FOREIGN] or
+must be which is a conjugated verb.
+The third highlighted text
+is about science news.
+This is translated as [FOREIGN], which
+is probably a correct translation but
+usually people don't want to translate
+names of magazines like that.
+Later down there's
+an example with everyone,
+which is translated with [FOREIGN],
+which is actually a very good translation.
+There's a mistake, however,
+in the following sentence.
+Plotnik est un psychologue comparative.
+So comparative in French is
+the feminine form of the adjective.
+And here the person is male,
+so the adjective that was
+supposed to be used here is compartif
+with an f and the end for singular.
+And finally,
+the last example here is about [FOREIGN],
+which is really a mistranslation
+that can mislead the person
+reading the document because
+the original English text talks
+about comparative psychologists.
+And here you talk about a study that
+compares different psychologists.
+So this is clearly not
+the correct translation.
+The next slide shows you the general way
+in which machine translation systems work.
+They use what is known as
+the noisy channel model.
+In the noisy channel model,
+you observe a text in a foreign language,
+labeled as f in this example.
+That's the middle portion of the pipeline
+where you see the little letter f.
+This F is assumed to have been
+generated from an English sentence
+through an encoder from E
+to the foreign language.
+You observe F, and then you have to build
+a decoder that would translate back
+the foreign language into English.
+So at the end you will get a sentence e
+prime that may or may not be the correct
+sentence e that was originally
+translated into the foreign language.
+And the way that statistical machine
+translation works is that it tries to come
+up with all the possible sentences in
+English e prime that satisfy two criteria.
+They have to be both
+grammatical in English and
+also faithful to the foreign sentence.
+And by faithful I mean that the words
+in English sentences have to be somehow
+related to the words in
+the foreign translation.
+So we'll talk about machine
+translation in much more detail
+towards the end of this course.
+Okay, so another task in natural language
+processing is text summarization.
+Text summarization can
+be two different forms.
+In one case you have a single document and
+you want to produce a short
+version of that document.
+For example,
+to display on a mobile device or
+to process through
+a text to speech system.
+Because you don't have time to
+read the entire document, or
+there's not enough space to show it.
+The second example of text summarization
+is known as multi-document summarization.
+In multi-document summarization you have
+as input a series of connected documents,
+for example,
+different news stories of the same event.
+And, the summary should contain
+all the information that appears
+in all of them as consensus.
+But also, in many cases, focus on the
+differences between the input documents.
+So, the example here is from a single
+document summarization system.
+I need to warn you that the output that
+you'll see on the next slide is actually
+not produced by an existing
+text summarization system.
+It is something that you would want
+to see, but doesn't exist yet.
+So what's the input?
+It talks about the health benefits
+of a diet rich in vegetables,
+and it explains why eating
+vegetables is healthy.
+What sort of nutrients appear
+in vegetables, and so on,
+it gives us some sort
+of specific examples.
+And, the ultimate summary that
+you want to get, and again,
+I'm warning you that this is not
+the output of an existing system.
+It's something like this.
+Eating vegetables is healthy.
+We'll see later how
+summarization systems work.
+So, one of the first summarization systems
+we used on the internet used to be news
+in essence.
+And it was developed at the University
+of Michigan around 2000.
+It has since stopped existing,
+but there are many other systems
+like this available,
+including systems at Columbia and
+Google, and Yahoo, and many other places.
+Another application of natural
+language processing is text to speech.
+So here I'm showing you a link to an
+external website that you can play with.
+It allows you to type in
+an arbitrary text and
+then specify how it should be rendered.
+For example, in a male or a female voice.
+As a native speaker of English, or
+as a Hispanic speaker of English.
+Or possibly a different dialect or
+different nationality.
+Whether you want the person
+to sound angry or happy.
+You should definitely click on this link,
+and play with this website, yourselves.
+And there are a lot of companies these
+days that produce text to speech software.
+I'm just going to mention one
+of them really quickly here, but
+there are many others as well.
+So this is one that I encourage
+you to take a look at.
+So another interesting task in actual
+language processing has to do with
+paraphrasing and entailments.
+You may remember that paraphrasing has
+to do with different ways to express
+the exact same concepts.
+Entailment is how I decide the difference.
+I'm showing you here a few
+examples from a paper
+about the recent challenge
+on recognizing entailment.
+So let's look at the fourth example.
+On the left-hand side we have a piece
+of text that says, Google files for
+its long awaited IPO.
+And the one on the right-hand side says,
+Google goes public.
+So the one on the left is called the text,
+and
+the one on the right is called
+the hypothesis and the question here is,
+can you infer the hypothesis
+from the text?
+So, in this case, the answer is yes,
+because if a company files for
+an IPO,
+that means that it is going public.
+Even though goes public was not
+used in the original sentence,
+it's something that is entailed
+by the original sentence.
+Now, let's look at the example
+just before that, number three.
+It says,
+RegAan attended a ceremony in Washington
+to commemorate the landings in Normandy.
+So the ceremony took place in Washington.
+Assumedly Washington, DC,
+the capital of the United States.
+But it was about the landings in
+Normandy at the end of World War II.
+The hypothesis here is Washington
+is located in Normandy.
+Well, a silly natural language processing
+system may make that inference, but
+it wouldn't be correct because Washington
+is located in the United States and
+Normandy is located in France.
+So in this particular case,
+the entailment from the text to
+the hypothesis is actually false.
+Okay a few more examples
+of natural language tasks.
+One has to do with dialogue systems.
+Let's look at a very realistic
+scenario with dialogue.
+I would like to make
+a reservation at Sorrento.
+For when?
+8 p.m.
+Friday night.
+We only availability for 7 p.m.
+and 10 p.m.
+Sorry, these don't work for me.
+So, this is a very difficult
+dialogue between a user and
+either a human being who makes
+the reservations at a restaurant or
+a dialogue system,
+that is a computer program that would try
+to understand the human's questions and
+answer them appropriately.
+And there are many other applications.
+I'm just going to enumerate
+some of them here.
+We'll talk about some of them
+in more detail in the class, but
+most of those are based on papers
+that you can find on the website or
+in other publication venues in
+Natural Language Processing.
+So, things like spelling correction,
+web search,
+natural language interface
+of the databases.
+For example, I'm looking for all the
+employees who make more than $50,000 and
+who recently relocated to this
+state from another state.
+So this is something that you can very
+easily express as a SQL query, but
+if you want to express it as
+a natural language sentence then
+the natural language interface will have
+to translate it for you into a SQL query.
+Some other examples of natural language
+applications include parsing job postings.
+For example all the postings that look for
+people with a certain level of
+experience in a certain state.
+Summarizing medical records, for example,
+you have many patients who have undergone
+the same treatment in the same hospital
+and you want to look at their medical
+records and extract information about
+some of the results from the experiments.
+Information extraction for databases.
+Social network extraction from text.
+Essay grading, generating weather reports,
+sports reports, and news stories.
+All those exist in many different
+forms in both the commercial world and
+the research world.
+So, this concludes the section
+on different NLP applications.
+In the next segment, we are going to
+look at the topic of competition.
+

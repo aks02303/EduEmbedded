@@ -1,0 +1,403 @@
+The next segment is going to be about
+a specific type of text similarity,
+more for logical similarity.
+We want to be able to identify that
+two words that are morphologically related and
+this is typically done through
+a process named stemming.
+So words with the same root
+have usually similar meanings.
+So for example the word scan in it's base
+form can also be converted into scans,
+scanned, or scanning,
+which are different forms of inflection.
+The first one could be a plural or
+third person singular verb.
+Second one is a past tense.
+Third one is a gerund.
+It can also add a suffix or
+an ending like er,
+which forms a derived word,
+a noun in this particular case.
+We can also have derived
+forms that use prefixes.
+For example, the verb rescan means
+to scan something for a second time.
+And we can have combinations of derived
+and inflected forms, such as rescanned
+which has both a prefix for
+their evasion and a suffix for inflection.
+The process of stemming is to take a word
+and to convert it into a base form,
+which is known as the stem, after
+removing all the different suffixes and
+endings and sometimes performing
+some additional transformation.
+In practice,
+the prefixes are often preserved so
+rescan will not be stemmed to scan.
+Let's look at some examples,
+we want to convert the past tense
+scan into a base form scan.
+And we also want to convert
+the noun indication into the base
+form of the verb indicated.
+So this way if we want to find
+the similarity between two sentences,
+we would consider scanned and scan to be
+more similar than two random words and
+indicate and indication, again,
+more similar than any other words.
+So the method that is used a lot in
+the natural language community's called
+Porter's Method.
+It was introduced by
+Martin Porter in 1980,
+in a paper called an algorithm for
+suffix stripping that has been cited
+more than 7,000 times
+according to Google Scholar.
+So this is a pretty fundamental method.
+Porter's method is rule based.
+It doesn't use any machine learning or
+training.
+It only works for English and
+all the rules were generated manually.
+The input of the algorithm is
+an individual word such as indicates.
+And then the output is the stem
+of that work which is obtained by
+performing a series of
+transformations on the original word.
+One caveat is that porter stemmer
+sometimes can be wrong and there
+are some well-known cases that always
+have to be fixed in post processing.
+Let's look at a few examples
+of Porter's algorithm.
+The first example starts with computation
+and produces as output the word compute.
+Now you may say compute spelled
+C-O-M-P-U-T-E is not a word,
+that is correct it is the stem
+of the word computational.
+And we want to be able to
+take the word computer and
+we'd use the same stem comput.
+C-O-M-P-U-T.
+So at the end of the day computational and
+computer will be stamped
+exactly the same way.
+So their similarity in the stamped
+space will be perfect.
+So one of the important
+aspects of Porter's
+algorithm is the concept
+of a measure of a word.
+So a measure of a word or
+string is an indication,
+rough indication of the number
+of syllables in it.
+It doesn't measure exactly the number of
+syllables but it approximates that number.
+So let's take with a simple word like cat.
+We're going to think about it as
+a sequence of vowels and consonants.
+So the first c is a consonant,
+the second a is a vowel,
+the third t is a consonant as well.
+So we have a c, v, c sequence.
+If we instead had the word cats,
+we would still count it as a CVC sequence,
+because in Porter's algorithm, the number
+of adjacent consonants doesn't matter and
+the number of adjacent vowels
+doesn't matter, either.
+Now, the measure of
+a word tells you how many
+sequences of VCs we have
+in the representation.
+So if you look at the last
+bullet you can see that
+any word can be represented as
+an optional sequence of consonants, C.
+Followed by any number of VC sequences,
+followed by an optional V.
+Or in other words we can abbreviate
+the middle portion of VCVC...
+To VC with a suffix k,
+which tells you that VCs repeated k times.
+So let's look at a few
+examples of measures.
+The first line shows you five
+examples where k is equal to zero.
+You can see that, for example,
+the word to has the wrong sequence.
+It has a consonant followed by a vowel and
+not a vowel followed by a consonant.
+Therefore, it doesn't
+have a measure of one.
+It has a measure of zero.
+The same thing applies to glee, which
+has a sequence of consonants followed by
+a sequence of vowels, which then
+follows the pattern for k equals zero.
+On the next line we have k=1.
+Or is a vowel followed by consonant so
+that matches the pattern
+on the previous slide.
+East is a sequence of vowels followed
+by a sequence of consonants and
+it matches the pattern as well.
+The word street starts with
+an optional consonant, and
+then has a sequence of vowels and
+a sequence of consonants.
+So, it also, according to the definition
+on the previous slide, a match k=1.
+And finally, we can have long words
+with a k two, three, and larger.
+For example, the word easternmost
+has a measure of three,
+because it has vowel sequence, ea,
+followed by consonant sequence, st,
+that's the first part of the measure.
+Then E followed by RNM,
+that's the second part.
+And, finally, O followed by ST,
+which is the third part.
+So Porter's Algorithm starts
+by taking the word and
+checking it against the sequence of
+transformation of patterns in order or
+in other words,
+this is some sort of a decision list.
+The rules are ordered so if you start
+from the beginning, the first rule,
+which has a left hand side
+that matches your current
+representation of the work
+is going to be applied,
+and then a certain transformation is
+going to be made to the current work.
+So for example,
+a role can be of this form.
+If the measure of the word is greater than
+zero, ation should be conflated to ate.
+So this would take into account
+the transformation of medication
+to medicate or dedication to dedicate.
+However, it's not going to
+convert nation to nate,
+because the measure of nation
+is not greater than zero.
+I should know that the measure
+is measured only for
+the portion of the word that
+is not listed in the pattern.
+So nation using n followed by ation, so
+we want the part on left hand side, n,
+to have a measure greater than zero.
+And that is not the case,
+n has a measure of zero.
+So when the pattern matches, the word is
+transformed and the algorithm restarts
+from the beginning of the list of
+patterns with the newly transformed word.
+And this is repeated until
+there are no rules that match
+in the whole sequence of words.
+At that point, the algorithm stops and
+it outputs the most recently
+transformed version of the word.
+Let us look at a more complicated example.
+The first four lines of this
+slide show you rules that belong
+to step 1a of Porter's algorithm.
+For example, SSES gets transformed
+to SS at the end of the word,
+IES gets transformed to I and so on.
+Now you ask, why does IES get transformed
+to I and not, for example, to Y.
+So, for example, if a word is weekly,
+it's plural is weeklies, IES.
+We want those two forms,
+weekly singular and
+weeklies plural to both
+be stand the same way.
+So, this conversion to LI takes that into
+account so it would convert I-E-S to I and
+Y, with a separate rule that is
+not shown here, also applies.
+So both words would be stand to weekly,
+W-E-E-K-L-I.
+Now step 1 being includes
+rule of this form.
+If the measure is greater than 0, that
+performs a certain type of transformation.
+So refereed changes to referee.
+Because the measure of
+refer is greater than zero.
+But this rule doesn't apply to bleed
+because the measure of BL is zero.
+Now some of the rules in step 2.
+Ational become ate.
+For example,
+inflational turns into inflate.
+If ational doesn't match,
+but T-I-O-N-A-L matches,
+then that gets converted to tion.
+You can see that the order of the rules
+really matters because if we had the rule
+for tional first and then ational,
+obviously the second
+one would never apply.
+Here we're especially taking care
+of the special case ational.
+And then, if the word doesn't
+match that pattern then
+only do we go up to the next pattern,
+TIONAL.
+And you should be able to look at
+the rest of the examples of the slide and
+figure out what kind of
+words they apply to.
+So, ivness gets converted to IVE.
+So for example,
+forgiveness will turn into forgive,
+attentiveness to attentive, and so on.
+Step 3 includes more rules.
+Let's look at the few examples.
+ICATE turns into IC, so
+replicate becomes replic.
+Ative becomes blank,
+that's what this /0 or 5 symbol means.
+So for example, informative,
+gets turned into inform.
+So in step four, we have other endings.
+So for example, AL at the end of a word
+typically indicates a specific type of
+noun or adjective, and it can be skipped.
+So appraisal becomes apprais.
+ANCE, as in conductance,
+can also be skipped, so
+that turns conductance into conduct.
+The next rule is about er at the end which
+again for words of sufficient length,
+measure greater than one, if it applies
+it will remove the suffix er altogether.
+So container will be changed to contain.
+Let's now look at the long word
+that we'll need to go through
+the list of rules multiple times
+before it gets stemmed completely.
+So, if the word is computational,
+we're going to start from
+the first row in the list.
+And we'll find the first matching
+pattern as part of step two.
+And that tells us to
+replace ational with ate.
+So, we're going to change computational to
+computate, which is not even a word but
+we don't care about this because we're
+still not done with the stemming process.
+Instead, what we want is to go back to the
+beginning of the list of rows and look for
+a row that matches computate.
+Well, there is such a row.
+If the measure is longer
+than a certain number,
+we can replace the final ate
+with blank and get comput.
+C-O-M-P-U-T out of computate.
+At this point we go back to the beginning
+of the list of rules and we realize there
+are no other rules that apply and
+we stop here, and we just compute as stem.
+The second example is simpler.
+The word computer only matches a specific
+role that is part of step four
+of the Porter stemmer, and
+that allows us to drop the final er, and
+get comput, C-O-M-P-U-T,
+the same as for computation.
+And this is really the lesson to learn
+here, we wanted those two words to stand
+for the exact same representation, and
+Porter's algorithm make sure that they do.
+If you're interested in Porter's
+algorithm in more detail, I suggest that
+you go to this website here on top,
+which has an online demo of the algorithm.
+You can type in text and
+get an output from it.
+You can also read the original
+paper by Martin Porter and
+I download implementations of
+Porter's algorithm in many different
+programming languages such as Python,
+C++, Java, and so on.
+And one additional link that is
+not showing here is the natural
+language toolkit,
+which I mentioned elsewhere,
+which also contains an implementation
+of the Porter algorithm.
+So, let's have a short quiz now.
+I want to give you four words.
+Construction, increasing,
+unexplained, and differentiable.
+I want you to take a minute and
+look at the original porter paper or
+possibly the code of the stemmer itself
+and figure out what the output should be.
+You can do this either by running
+the code or by tracing it manually.
+Look at the output that you get, and think
+whether that is what is you expected,
+and if not, try to think why.
+I'm going to give you
+an answer on the next slide.
+So the question was to find how the Porter
+stemmer stems the words construction,
+increasing, unexplained,
+and differentiable.
+Well, here's what it does.
+It converts construction to construct,
+which is a good stem,
+increasing to increas without the e, which
+again is a good stem because the final
+E in the verb increase
+is not part of the stem.
+Unexplained becomes unexplain.
+So this may be different
+from what you would expect,
+you may expect that you would get explain
+as a stem but as I mentioned earlier,
+Porter's algorithm explicitly does
+not take into account prefixes,
+it only removes characters
+from the end of the word.
+And finally differentiable
+turns into differenti,
+which is probably not
+the standard you'd expected.
+And I would classify this example as
+one of the places where
+borders algorithm falls short.
+Now there was a problem in NACLO
+in 2008 by Eric Breck on stemming.
+When you have a minute, please download
+this problem and try to solve it at home.
+The solution to the Thorny Stems problem
+by Eric Breck is available at this URL.
+If you tried to solve it yourself,
+you can check your solution now.
+So in the next segment,
+we're going to talk about another type of
+lexical similarity, specifically,
+the concept of edit distance and
+the dynamic programming methods that
+I used to compute edit distance.
+

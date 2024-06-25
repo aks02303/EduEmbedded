@@ -1,0 +1,267 @@
+Welcome back to
+Natural Language Processing.
+We're going to continue with a very
+short segment on dialogue systems.
+So dialogue systems are a very important
+component of computer science and
+natural language processing because
+they are very popular these days.
+So you have a for example,
+a person interacting with a computer and
+asking questions and getting answers.
+So I'm going to show you first an example
+of a video that you can watch yourselves
+on YouTube.
+The link is shown here.
+It's a famous skit from more than 50
+years ago by Abbott and Costello.
+They are having a serious misunderstanding
+when they discuss the names
+of baseball players.
+So the name of the skit is Who's on first.
+The funny thing about this skit is that
+the name of one of the players is Who.
+So when one of the participants in
+the conversation says something like,
+who's on first,
+he's not really asking a question.
+He's actually making a statement saying
+that who is the name of
+the person on first base.
+And the second person
+doesn't understand this and
+asks some follow up questions, and so on.
+And it turns out that the name of the,
+Second baseman is What and
+the third baseman is I Don't Know.
+So, you can imagine how
+fun this dialogue can get.
+So, I encourage you to
+watch it by yourselves.
+So, as you see,
+dialogue has some interesting properties.
+The very least is that it
+involves more than one person.
+Therefore, whenever somebody asks
+a question, they're usually expecting
+an answer, and if one of the participants
+in the dialogue makes a pause,
+that means that it may be time for
+the other person to start talking again.
+So this idea is called turn-taking.
+So two people, or
+more than two people, take turns.
+There are some specific rules for
+turn-taking, so for example,
+people are not expected to interrupt
+others unless there is a good reason, or
+unless a lot of time has elapsed.
+So there's an idea of a default
+turn-taking role, which says, more or
+less, that you say what you want to say
+and then you give a chance to the other
+participant to say whatever
+they want to say and so on.
+So this is the default and
+there are many exceptions to it.
+So the only places where it is possible
+to have a change of turns, is when
+you're at a relevant place for example,
+after a pause or after a question.
+Barge-in is possible, and
+it has to be analyzed separate.
+Another interesting property of dialogue
+systems is something called conversational
+impliciture.
+So, an implictature has
+some shared information
+between the participants and the dialogue.
+So, here's an example.
+If A says, How can I help you?
+And then B says, I am looking for
+a Thai restaurant, so
+this is a typical example of dialogue.
+So what is clear is that the first
+person is willing to help,
+the second person is looking for
+specific past run and
+then, they probably know in what
+neighborhood they're located.
+So, the first person is not going to send
+a second person to a Thai restaurant in
+a different location or
+to a Mexican restaurant.
+So, this is part of their
+shared information.
+So, implicature is the term that
+refers to meaningful inferences that
+the listener can make.
+So, we're going to see some
+examples of this later.
+So Grice's maxims refer to some properties
+of dialogue that make it easier
+to understand and more logical.
+So here are some of them.
+So the first one is the so
+called maxim of quantity.
+So the idea is that you want to make your
+contribution to the dialogue informative.
+You don't want to say either too much or
+too little.
+Second one is the maxim of quality.
+So you want to say only things
+that you believe are true.
+And don't say things for
+which you lack evidence.
+The third one is the maxim of relevance.
+Fourth one is maxim of manner, so you want
+to avoid ambiguities in the discourse.
+So dialogue is a collaborative endeavor.
+And it is expected that all participants
+are going to make an effort
+to make it possible for the other
+party to understand what is going on.
+So here is an actual
+problem on Grice's maxims.
+I am going to show it to you very briefly,
+and then I am going to pause so
+that you can try to solve it on your own.
+So the problem is about a robot that
+teaches players how to play a card game.
+The robot's name is GGG,
+and it has to follow
+the following maxims on Grice's list,
+relevance, manner, quantity, and quality.
+And it is that it gives you
+hints as to which cards to play.
+So please read this carefully and
+try to solve this problem.
+And the goal here is to
+understand the following things.
+If the robot gives us a particular piece
+of advice, you have to determine whether
+that sentence violates any of the maxims,
+and if you ask which one.
+So, this is the first
+part of the question, and
+then there's two additional components.
+And then, on the next line,
+I'm going to show you the answer.
+So, the final thing that I want
+to mention about this course,
+dialogue analysis, is speech acts.
+So speech acts are some
+specific expressions that
+are not just factual statements.
+So for example, assertives, things like
+suggesting, putting forward, swearing,
+boasting, and concluding.
+Directives, things like asking, ordering,
+requesting, inviting, advising,
+and begging.
+Commissives that equals promising,
+planning, vowing, betting and opposing.
+Expressives for example, thanking,
+apologizing, welcoming and deploring.
+Finally, declarations,
+things like I resign or you're fired.
+So if I say I resign, I'm not just saying
+that I resign, I'm also taking an action.
+And if I say you're fired as
+a result of the sentence,
+the second person has lost their job.
+So some action has taken place
+even though it's just a sentence.
+To conclude the segment I'm going to
+go over the typical architecture of
+a dialogue system.
+So it involves typically
+the following components.
+An understanding component,
+which makes sense of the sentences
+asked by the human.
+Then a dialogue manager, which based
+on what it has heard from the user,
+continues to carry on the dialogue
+by asking followup questions.
+I should also say, there exists
+so-called mixed initiative dialogue
+systems where the system may be
+the one who interacts with the user.
+Then there's a task manager.
+So based on the dialogue manager
+the system may decide for
+example to send a query to a database
+of let's say airplane reservations or
+some search engine.
+The output of the task manager is then
+sent back to the dialogue manager.
+Which generates an answer to the user and
+then this can go in a loop if necessary.
+For example, the generation may involve
+some follow-up questions and then
+there may be some additional rounds of
+understanding in dialogue management and
+generation until the task
+has been completed.
+And one other interesting property
+of this course that I didn't mention
+before is the idea of prosody.
+Prosody is a property of text that
+deals with issues like Rhythm,
+and Intonation, and Stress.
+So there has been a lot of work
+in the speech literature and
+the natural language literature of
+identifying those kind of prosodic
+expressions and features in documents
+especially spoken documents.
+Those are important because a lot of text,
+especially in user-generated content and
+social media is used to express
+emotions and emphasis and so.
+So it's very important for
+good natural language understanding system
+to be fluent in people's use of prosody.
+So here's an example of one specific
+instance of prosody called emphasis.
+I'm going to show you one sentence and
+then I want to propose seven different
+ways to pronounce it, and you will
+see that each of those ways to pronounce
+it will have a very different meaning.
+So here's the sentence.
+I never said she stole my money.
+And the tasks that you have right now in
+front of you is to say the sentence seven
+times and each time you should emphasize
+one of the words in the sentence in order.
+So the first time you say you
+emphasize I then never and so on.
+And try to see how much the meaning of the
+sentence changes because of this emphasis.
+So clearly this is something that
+you can only, the computer can only,
+understand in the case of spoken text.
+If you just have it in text, you would
+never be able to recognize the emphasis.
+Although it is completely possible that
+if somebody wanted to convey the same
+idea in written text,
+they could use something like italics or
+bold face or stars around words to
+indicate which word they're emphasizing.
+So there's a lot of interesting
+work that has been done and
+that can still be done in that optic
+community on prosody recognition.
+And also I should mention
+prosody generation.
+If you want to produce
+more effective text,
+you would want to use
+automatic prosody generation.
+So, this concludes
+the segment on dialogue, and
+I'm going to see you in the next segment.
+

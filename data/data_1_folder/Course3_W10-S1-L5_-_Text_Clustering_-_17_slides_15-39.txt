@@ -1,0 +1,460 @@
+So we recently discussed
+text classification.
+Now we're going to switch to a slightly
+related topic in information retrieval,
+specifically text clustering.
+So what is the difference between text
+classification and text clustering?
+In text classification, we know in advance
+what sort of classes we're looking for,
+whether they're overlapping or not,
+whether they're hierarchical or not.
+However, in text clustering we
+don't know that in advance.
+We have to figure out first of all how
+many clusters there are in the data, and
+then decide which documents
+go to each cluster.
+So in clustering we also have this issue
+of exclusive versus overlapping clusters.
+So a document in the first case may
+only be assigned to one cluster.
+In the second case,
+it may be assigned to multiple clusters.
+And we can also have the same distinction
+as in classification between hierarchical
+and flat clustering.
+So in information retrieval
+there's this very important
+principle called the cluster
+hypothesis that says that
+documents in the same cluster
+are usually relevant to the same query.
+So if somehow several documents
+are similar to each other, and
+one of them is relevant to a particular
+query, that means the rest
+of the documents in the cluster
+are also expected to be relevant to it.
+So how do we do this in practice?
+Let's look at an example.
+So this is Clusty.
+It is an old information retrieval
+system that clusters documents based on
+word senses.
+So the word here is jaguar.
+Jaguar is obviously
+an ambiguous word in English.
+It can correspond to a sports team,
+to a car, to an animal and
+to several other things.
+The idea here is that when the search
+engine retrieves all the documents that
+match jaguar, it looks at how
+similar they are to each other.
+And then it tries to identify all the
+clusters that correspond to the different
+word senses of jaguar without knowing
+in advance that jaguar is ambiguous or
+without knowing that it has
+a certain number of senses.
+So it gives you one cluster for cars,
+one cluster for animals and so on.
+So one of the simplest techniques for
+document clustering is the so
+called k-means method.
+It's done by iteratively determining
+which cluster a point belongs to, and
+then adjusting the cluster centroid for
+that cluster, and then repeat.
+So what is needed, however, is to know
+the number of clusters in advance, k.
+And k-means is based on hard decisions.
+So once a document is assigned to a
+certain cluster it can only be there, and
+it cannot change clusters and
+it cannot be assigned to
+another cluster simultaneously.
+So here's the algorithm.
+We initialize the cluster centroids for
+the k cluster to some arbitrary vector.
+And then while further improvement
+is possible, we do the following.
+For each document d, we find which
+cluster is closest to the document d.
+And then we assign this
+document to the cluster c.
+And then for each cluster c,
+we recompute the centroid of
+cluster c based on its documents.
+And that's it.
+Okay, so let's look at an example for
+k-means clustering.
+We have k equals 2 and
+we have six vectors that we want to
+classify into those two clusters.
+So the documents are <1,6>, <2,2>,
+<4,0>, <3,3>, <2,5> and <2,1>.
+As I said before,
+we can assign arbitrary values to
+the cluster centroids at the beginning.
+Let's make it simple.
+We are going to have
+class 0 labeled as 0,0.
+That will be the centroid for that class.
+And class 1 having a centroid at 6, 6.
+So it will be much easier to compute the
+distances from each of those vectors to
+the centroids in our heads.
+So let's look at document A.
+Is it closer to 0,0 or to 6,6?
+Well, it should be pretty obvious
+that based on both Euclidian and
+Manhattan distance that it belongs
+to the second cluster, 6,6.
+Document B, with a value of 2,2,
+is going to be closer to centroid 0,0.
+C is also going to be closer to 0,0.
+Now D is an interesting example
+because it's right in the middle
+between the two centroids, so
+we cannot really use it in this round.
+We can ignore it.
+E, 2,5 is closer 6,6 than to 0,0.
+And finally F,
+2,1 is closer to 0,0 than to 6,6.
+So what happens after the first half
+of the first iteration is that out
+of the six documents, we have labeled
+five of them one way or the other.
+And specifically documents B, C and
+F belong to the cluster centered at 0,0,
+and documents A and
+E belong to the second cluster.
+So now we can do the second
+part of the first iteration,
+namely recomputing the centroids.
+So let's do this for
+the cluster that used to be 0,0.
+So now it includes 2,2, 4,0 and 2,1.
+The new centroid is just going to
+be the average of those vectors.
+So 2 plus 4 plus 2 is
+equal to 8 divide by 3, so
+eight-thirds for the first dimension.
+And then for the second dimension, 2 plus
+0 plus 1, so 3 divided by 3, or 1 for
+the second dimension.
+So we have essentially 2 and
+two-thirds comma 1 as the new centroid for
+the first cluster.
+Now the second cluster,
+the one that used to be at 6,6,
+is going to be computed as follows.
+We have to take the average of 1,6 and
+2,5.
+So the first dimension is
+going to be at 1.5 and
+the second dimension
+is going to be at 5.5.
+So those are now the two new centroids
+after the first full iteration.
+And now we can repeat the same procedure
+by reassigning each of those documents,
+A, B, C, D, E, F,
+to one of those two clusters, and
+then recomputing the centroids again.
+And we have to repeat this sequence of
+iterations as many times as necessary
+until the centroids converge.
+What that means is that the moment that
+the two centroids don't change from one
+iteration to the next,
+we can stop because they're never
+going to change from that point on.
+So there are some websites that
+have interesting demos of k-means.
+So one is here, and the second one,
+third one, fourth one.
+So I would like to encourage you
+to look at those tutorials and
+understand k-means a little bit better.
+So how do we evaluate clustering?
+So again,
+in all the cases that we had so far,
+we assume that we know in
+advance the number of clusters.
+One important thing to realize is that
+if we don't know the number of clusters,
+we essentially have to do the following.
+We can try different values for
+k and then figure out which of those
+clusterings gives us better performance.
+So here is one way to evaluate
+the performance of clustering.
+The first technique that we're going
+to introduce is called purity, and
+it is based on the majority
+class in each of the clusters.
+And the second one is the so
+called RAND index, which is going
+to be shown on the next slide.
+So let's look at purity first.
+We have three clusters.
+The first one has three Xs and
+two circles.
+The second one has three circles,
+one X, and one %.
+And the last one has four %s and two Xs.
+So how pure are those clusters?
+Well, the first cluster,
+the majority class is X.
+And three out of five elements
+in that cluster are Xs.
+Therefore, its purity is 60%.
+The second cluster has the same value,
+three circles out of five for
+the majority class.
+Again, a purity of 60%.
+And finally the last cluster we
+have four out of six, or 67% for
+the majority class of %.
+And then we can take the average
+of those over the entire set, and
+compute the overall purity.
+So this is (3+3+4)/16, which is the total
+number of elements that we clustered,
+and that gives a total purity of 62.5%.
+Obviously, if we had the first
+cluster consisting only of Xs,
+the second cluster consisting
+only of circles, and
+the third one consisting only of %s,
+we will get a purity of 100%.
+So the next metric that is used in
+evaluating clustering is so-called
+Rand Index.
+So Rand Index is based on
+the following principle.
+We're going to score points every
+time we get two objects that
+really belong to the same class
+labeled together in the same cluster.
+And we're going to lose points every time
+we have, again, two objects that should be
+in the same cluster and
+we label them in different clusters.
+So the Rand Index value is equal to the
+number of true positives plus the number
+of true negatives, divided by the total
+number of all the pairs of objects.
+So here's an example using the same
+example as on the previous slide.
+The number of true positives and
+the number of false positives together.
+In the first example we
+have five total objects,
+there's five choose two
+pairs of those five objects.
+So that gives us ten.
+We also have five choose two pairs for
+the second cluster, so another ten.
+And finally we have six choose two
+pairs in the third cluster for 15.
+So the total number of positives is 35.
+Those are the things that we're
+supposed to get into the same cluster.
+Now we can similarly compute the number
+of true positives separately.
+So in the first case we have three Xs.
+So 3 choose 2 is equal to 6.
+And then the same thing for the next
+cluster, 3 choose 2, and the final
+cluster we have both two different
+kinds of objects that appear together.
+So the first one appears four times so
+we have four choose two.
+And the last one there are only two so
+we pick two choose two.
+So the sum of those four
+terms is equal to 13.
+So the number of false positives is equal
+to the first number minus the second
+number, or
+35 minus 13 which is equal to 22.
+So this gives us two of
+the thousand of contingency tables,
+specifically true positive and
+false positives.
+We can use the same math to compute
+the false negatives, which are 21, and
+the true negatives, which are 64.
+And now we can compute the Rand Index.
+It's again two positives plus two
+negatives divided by the total number, or
+13 plus 64 divided by 120,
+which is equal to 0.64.
+So again, this is a moderately good
+agreement of the clustering algorithm.
+If we had everything correctly clustered,
+the exact same way as in the gold
+standard, the Rand Index is going to be
+equal to one because we are only going to
+have true positives and true negatives and
+none of the other two categories.
+So there are other methods for clustering
+that are specifically designated for
+hierarchical clustering.
+Everything that we looked at so
+far was mostly for flat clustering.
+So one of the techniques that is used
+is the so-called single-linkage method.
+In single-linkage, you take two objects,
+you figure out how similar
+they are to each other,
+and if you think that they are similar
+enough, you put them in the same cluster.
+So and then to collapse two clusters,
+you have to figure out if there's even one
+pair of documents that are close enough
+to each other you are going
+to merge the two clusters.
+So this has disadvantages that
+you can get very long chains of
+documents that are not even
+related to each other.
+They're just pairwise related, but the
+first one is very different from the last
+one, and
+we still have them in the same cluster.
+So another method is the so called
+complete-linkage method in which case in
+order to merge two clusters we have to
+consider all the pairs of documents where
+one is in one cluster and
+one is in the other cluster.
+And if they're similar enough to each
+other, then we merge the two clusters.
+One disadvantage of this method
+is that it is too conservative.
+And finally we can have so-called
+an average-linkage method,
+which is based on the average similarity
+of objects in the two clusters.
+So let's look at an example here.
+Suppose that those are our documents.
+We're going to start by collapsing
+together the documents that are most
+similar to each other.
+So for example, 1 and 2 in the same
+cluster, 3 and 4 in the same cluster,
+5 and 6 in the same cluster, and
+then 7 and 8 in the same cluster.
+So now at this point we're going to
+have four clusters of two documents.
+And then in this case,
+depending on the algorithm,
+we would either merge 1,2 with 3,4,
+and 5,6 with 7,8, or
+we would merge 1,2 5,6 and 3,4 7,8.
+And then at the last step of
+the hierarchical clustering process,
+we're going to merge the two
+remaining clusters into one.
+So at the very end, we're going to have
+one big cluster that includes all of
+the A documents, and then two subclusters
+that include four documents each.
+And then finally, those four are going
+to be grouped into groups of two.
+So let's look at an example of a hierarchy
+called agglomerative clustering using
+a dendrogram.
+So a dendrogram is a technique that
+builds a hierarchical
+structure based on similarity.
+So here's an example
+from language similarity.
+We have six Germanic languages, Icelandic,
+Norwegian, Swedish,
+Danish, Dutch and German.
+And we want to measure how similar they
+are based on their use of different words.
+So in this case it turns
+out that Norwegian and
+Swedish are more similar to each other,
+with around 0.12.
+So we're going to cluster
+them together at that level.
+Then that new cluster,
+Norwegian and Swedish,
+is going to merge with the cluster for
+Danish at 0.16.
+Then Dutch and German are similar
+to each other about 0.29, so
+they're going to be
+clustered together there.
+Than the group that consists of Norwegian,
+Swedish and Danish is going to be
+merged with Icelandic at around 0.36.
+And finally the two remaining
+clusters are going to be clustered at
+0.7 into the whole collection.
+So this gives us a very
+nice representation which
+allows us to produce
+any number of clusters.
+If you start from the right-hand side and
+you move a vertical bar to the left,
+if that bar is at, let's say 0.8,
+we just say that we have one cluster.
+If we lower it to 0.5,
+then it's going to cross the two
+horizontal lines that are at 0.5.
+We're going to have a Nordic
+group of four languages and
+another group of two languages.
+Then if we slide this vertical
+bar again to let's say 0.25,
+we're going to get four clusters.
+And if we slide it all the way down to
+0.1, we;'e going to get six clusters.
+So an example of this is
+shown at the website below.
+So let's now look at an example for
+clustering using dendrograms.
+Suppose that you have the following
+sentences or following documents.
+The first one is ABCBA,
+the next one is ADCCADE, and so on.
+And we want to build a hierarchical
+clustering diagram using dendrograms.
+So what do we need to do?
+We have to compute the pairwise
+similarities between
+all the pairs of documents, so one to two,
+one to three, one to four, and so on.
+We identify the closest pair.
+In this case that could be, for
+example, document one and document two.
+And now we have to merge them into
+a single node based on the frequencies of
+the words that appear in
+the two documents combined.
+And then we repeat this until all
+the documents have been clustered.
+And we can also represent
+this as a Venn diagram where,
+depending on the similarity metric, we may
+get something like the first document and
+the second document in one cluster,
+the fourth and
+the fifth one in another cluster,
+then the fourth and the fifth combined
+with the third one in another cluster,
+and then all five in another cluster.
+So this concludes the section
+on text clustering.
+We're going to continue
+with a different topic.
+

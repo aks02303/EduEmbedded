@@ -1,0 +1,217 @@
+Okay, so we discussed one of the most
+important problems in question and
+answers, specifically
+question classification.
+In brief, now let's look at some of
+the specific techniques that I use for
+question classification.
+Well, first of all, as the name indicates,
+question classification is just
+a classification task,
+the standard machine learning task.
+So it's possible to use very
+standard techniques, for instance,
+SVMs and naive Bayesian techniques.
+It's also possible to
+use regular expressions.
+For example,
+if the question is what country,
+then it's fairly obvious that the answer
+that we're looking for is a country.
+Or if the question is, who is or
+who was, then we classify this
+expression or this question as a person.
+Which state, a state, and so on.
+So query formulation, or query modulation,
+is essentially the process by which
+a natural language question is converted
+into an information retrieval query.
+So here are some examples from
+one of the Michigan papers.
+In that case, the question is,
+what country is the biggest
+producer of tungsten?
+So this question is then converted
+into different queries depending
+on the target search engine.
+For example, by removing the double
+quotes, by replacing the names of words.
+For example, tungsten was replaced by
+wolfram because it's the synonym for
+that element.
+Tungsten was also replaced
+by atomic number 74.
+Again, this is all done
+using database like Wordmap.
+Then biggest producer can also
+be replaced by largest producer.
+Country can be replaced by region,
+geographical area, rural area, and so on.
+What's very important is that,
+depending on the target search engine,
+it may be important to
+use the right connector.
+So for example the word or to indicate
+a disjunction of query words, or
+perhaps a vertical bar for
+the same purpose.
+The use of double quotes to
+indicate phrases, and so on.
+Now, what about passage retrieval?
+So some of the features that I use in
+passage retrieval are proper nouns that
+match the query.
+So for example, the question is,
+who wrote Tarzan?
+We are looking for
+passages that contain the word Tarzan.
+We want the words to be near each other.
+So if we have multiple proper
+nouns in the question,
+we want those to appear near each
+other in the answer as well.
+We also want entities to match
+the expected answer type.
+So if we're looking for a person or
+an author like who wrote Tarzan,
+we're looking for
+sentences that contain persons.
+If we didn't have
+a person in the sentence,
+it's very likely that that is not
+the correct passage to return.
+And then in answer retrieval,
+we use standard name entity recognition
+systems to identify the matching phrases.
+For example, label January 1,
+1951 as a date.
+Some of the features that can be used
+in answer retrieval are the distance to
+the query words.
+So for example, if the name of
+the author is listed within 1 or 2 words
+of the name of the book, that's better
+than if it's listed 10 or 20 words away.
+In this case, we're also looking at
+the answer type that has to match
+the question, the Wordnet similarity.
+So for example,
+if we're looking for author and
+we want to be able to get
+person instead or writer.
+And we're also looking at the redundancy.
+So words that appear multiple times in
+the answer set are more likely to be
+the correct answer.
+Let's look at redundancy in
+a little bit more detail.
+It should be fairly obvious that there
+are many different ways in which
+one can express a relation using text.
+So, for example, the relation between
+Madrid, which is a city, the capital
+Spain, and Spain, which is a country,
+can be expressed in the following ways.
+A very simple statement such as,
+Madrid is the capital of Spain.
+But also things like en route to Spain's
+capital of Madrid, dot, dot, dot.
+Madrid, Spain's capital city is
+situated almost at the geographical
+epicenter of the country.
+The capital of Spain is Madrid, again,
+a different paraphrase of the original.
+Madrid, Spain's sunny capital.
+Madrid became Spain's capital.
+In 1561, it, referring back to
+Madrid in the previous sentence,
+was elevated to status as
+Spain's capital city and so on.
+So it's very important to be able to
+recognize that all of those passages
+are really paraphrases of one another so
+that we can take advantage of
+the existing redundancy, and boost up
+Madrid in the candidate answer list.
+So a few more example of the same idea.
+When did the French revolutionaries
+storm the Bastille?
+Here are some answers.
+The storming of the Bastille occurred in
+Paris on the morning of 14th of July 1789.
+The storming of the Bastille,
+14 July 1789.
+The storming of the Bastille
+prison on July 14th, 1789, so
+again slightly different spelling here.
+Here there's one that only has the year,
+French revolutionaries storm Bastille,
+1789.
+And so on and so forth.
+Then one more example,
+who killed Mahatma Gandhi?
+So here's one answer,
+Gandhi was assassinated dot,
+dot, dot, by Nathuram Godse.
+Nathuram Godse killed Gandhi,
+Godse killed Gandhi.
+Gandhi was assassinated, shot at,
+dot, dot, dot by the same person.
+So again, this is just to let you
+appreciate how much paraphrasing and
+variability in language can be important
+for tasks like question and answer.
+So, some of the systems that we mentioned
+before are not based on a local corpus
+of news, but they're rather based
+on arbitrary web documents,
+including blogs and
+encyclopedia entries and so on.
+So there's a very important distinction
+between the co-called traditional
+corpus-based systems and
+the open-ended web-based systems.
+First of all, the systems on the web
+have a significantly larger corpus.
+We know that the web has billions and
+billions of documents.
+It's impossible to do any
+sort of pre-annotation.
+So with a local corpus, even if it's,
+let's say several hundred gigabytes,
+it's possible to go through it in advance
+and identify all the named entities and
+data expressions and so on.
+This is not possible on the web because
+any document is a potential answer to
+the question, and it's not possible to
+pre-process all that data in advance.
+So search engines are not
+necessarily useful all the time.
+So for example,
+they may remove some of the stop words.
+They may disregard the question types.
+For example,
+if the question type is who wrote Hamlet,
+the word who is also going to
+be considered a stop word.
+It's not going to be translated into a
+person name as part of the query process.
+Search engines also impose
+arbitrary restrictions on queries.
+For example, some can only allow
+queries of a certain length.
+So many of the issues that
+researchers have to deal with
+are related to reliability,
+to the timeliness of the documents.
+You don't want to return an answer
+that was accurate a year ago but
+is no longer correct.
+And also, the presence of inaccurate
+answers which can creep on the web for
+many different reasons.
+So if you work,
+if you do research on question answering,
+you have to deal with all those issues.
+

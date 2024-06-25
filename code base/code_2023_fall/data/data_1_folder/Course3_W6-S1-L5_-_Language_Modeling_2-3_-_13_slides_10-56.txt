@@ -1,0 +1,305 @@
+Okay, let's now move on to the next
+segment of language modeling.
+We are going to discuss
+the problem of smoothing.
+So smoothing is important when
+the vocabulary size is very large and
+the training data is relatively small.
+So, for example, in a typical application
+I may have a vocabulary size of a about 1
+million words.
+So if you want to estimate the frequencies
+of unigrams in a training data set,
+we have to have many millions of words to
+estimate each of the possible unigrams.
+That's a lot of parameters,
+even for a unigram model.
+So the maximum-likelihood estimate
+is going assign values of 0 to any
+unseen event.
+So, that doesn't mean that
+this event is impossible.
+So any word that is not
+in the training data,
+it's still possible to
+appear in the testing data.
+And if we assign a score of 0 to it, that
+means that we are going to assign a score
+of 0 to the entire sentence, and
+this is definitely not what we want.
+Getting enough training data
+is important for unigrams, but
+it's even more important for
+bigrams and trigrams.
+So for a bigram,
+we would expect to have 1 million squared,
+so that's a lot of trending data.
+And for trigrams, we would need to have
+something on the order of 1 million cubed,
+which is much larger than any
+reasonable corpus that we can train.
+And even if we had a corpus of this
+size it would still have a lot of gaps.
+And we have to figure out a way to
+come up with reasonable estimates for
+the probabilities of unigrams,
+bigrams and trigrams, even if they
+never appeared in the training data.
+So this process is called smoothing or
+regularization.
+And the idea behind it is to assign some
+of the probability mass to unseen data.
+So a basic way to think about it is that
+we want to model the occurrence of novel
+words, words that we have not seen in
+the training data, possibly novel bigrams.
+So one of the techniques used for
+smoothing is the so
+called Laplacian smoothing or
+Add-one smoothing.
+In that case,
+we are going to assume that every
+word that we'll see in the test data,
+we'll see it at least once in the training
+data, even if it was not see there before.
+So if a word was seen five times we
+will assume that it was seen six times.
+And if a word was never seen,
+we'll assume it was seen exactly once.
+So this way any word has a chance of
+getting a small amount of probability from
+the training data set.
+So for bigrams, we're going to have
+an estimate, a mathematical estimate, for
+the probability of word, i,
+given word, i, sub minus 1,
+as the actual count of the bigram,
+(w i-1, wi) + 1.
+And then, for normalization purposes, we
+need to divide this by the total number of
+occurrences of (wi- 1) + V,
+where V is the size of the vocabulary.
+So, by doing this normalization,
+we can ensure that the bigram probability,
+add-one smoothing, is still a valid
+probability and adds up to 1.
+One problem with this method is that it
+reassigns too much probability mass to
+unseen events.
+So one in a million is still significantly
+larger than what we would expect for
+a rare word.
+It's possible to do something like,
+add-k, instead of add-one,
+which has a similar problem.
+So, for
+most practical purposes add-one and
+add-k smoothing is not used because
+they don't work well in practice.
+Instead, what people do is use
+Advanced Smoothing techniques.
+I'm not going to go into a lot of detail
+on those, but I'll give you one example.
+So the most common example is Good-Turing,
+which is used to
+predict the probabilities of unseen events
+based on the probabilities of seen events.
+And the other techniques, for example,
+Kneser-Ney and Class-based n-grams.
+In class based n-grams,
+you collapse together words
+that belong to the same class.
+For example, all parts of speech,
+I'm sorry, all prepositions or
+all nouns or all verbs, or possibly
+all days of the week, all persons,
+all numbers into one class and
+then use an estimate for any new member
+of this category based on the occurrences
+of existing members of this category.
+So let's look at an example.
+Suppose that we have this corpus here.
+It has 20 words.
+They appear in this order, cat, then dog,
+then cat, then rabbit and mouse and so on.
+So as I said we have a total of 20 words
+in the corpus, and our goal now is to
+predict the probability that the next
+word is going to be the word, cat.
+Well, what is our best estimate?
+Well the maximum likelihood estimate
+here is very straightforward.
+The word cat appeared 4 times out of 20,
+so that gives
+us a 20% probability that cat is going
+to appear again in the next iteration.
+So this is straightforward if we use
+the simplest maximum-likelihood estimate.
+However, what's the probability
+the next word is going to be
+a species that we have not seen before,
+for example, an elephant?
+So let's do this with some more examples.
+So the probability of seeing mouse in
+the next iteration is 2/20 because
+that's how many times mouse
+appeared in the original corpus.
+Okay, now let's see what
+happens with elephant.
+This is a little trickier,
+because one estimate will be 0/20.
+Why?
+Because we have never seen it.
+This would be the maximum-likelihood
+estimate for elephant.
+However, we know that the probability
+that the next animal is unseen so
+far is actually > 0 because even in
+the first 20 examples there were
+many cases where we saw a new
+species that we haven't seen before.
+So we know that this is
+something that can happen,
+we are likely to see it
+again in the future.
+So to be able to allow for elephants to
+appear in the next iterations, we have to
+somehow discount the probabilities of
+the animals that have already been seen.
+So instead of having a maximum-likelihood
+estimate for mouse that is 2/20,
+we're going to have to change
+it to something < 2/20.
+So here's where the Good Turing
+method comes into place.
+We're going to take the actual counts,
+c, for any particular word.
+N sub r is the number of n-grams that
+occur exactly c times in the corpus.
+N0 is the total number of n-grams in
+the corpus, so in our example there
+were a total of 20 words and there were,
+for example, 4 that occurred exactly once.
+But now we're going to compute the revised
+counts, c*, based on those three
+parameters, and use those as the Good
+Turing estimates of the probabilities.
+So the general formula is that c* = (c+1),
+the number of n-grams that occur
+exactly c+1 times divided by the number
+of n-grams that occur exactly c times.
+So let's see how this works in practice.
+Here's our corpus again.
+Whether the count of cat is 4,
+the count of dog is 3,
+the count of fish is also 3,
+the count of mouse is 2, rabbit is also 2,
+hamster is 2, and then we have fox = 1,
+turtle = 1, tiger = 1, and lion = 1.
+So now we can compute the N sub i values.
+N1=4, because there are four animals that
+appear exactly once, N2=3, N3=2, and N4=1.
+So in each of those cases
+we have exact counts of
+the number of species that appear
+a certain number of times in the quotes.
+So this is the numbers
+that we came up with.
+So now we have to compute
+the revised counts, c*.
+So c* of cat used to be 4, now it's going
+to be also 4 because of this formula.
+The estimate for dog is going to be (3+1),
+which is equal to C plus 1,
+times one-half,
+which is the number of counts plus 1,
+which is 4, divided by the number
+of counts for C, which is 2.
+So the new value for
+dog is going to be (3+1) times a half, or
+it's equal to 2, so
+it's less than what we had originally.
+The same thing applies for
+mouse because (2+1) multiplied by
+two-thirds is also equal to 2.
+And the same applies for rabbit,
+which is in the same category as mouse.
+Now we go down, next one down is fox.
+Fox only appeared once in
+the original data set, so
+the new count is (1+1) times
+three-quarters, or that's six quarters.
+Same thing applies for turtle,
+for tiger and for lion.
+So this gives us the estimates of
+the counts under Good-Turing for
+each of those species.
+And then we can also
+compute the probability
+that we'll see a new species and
+that is according to the formula N1/N.
+So this is the number of things we have
+seen exactly once in the corpus so
+far, divided by the total
+number of unigrams, so
+4 out of 20 is the estimate for elephant.
+We still need to normalize
+this entire set of counts so
+that we can get
+a probability distribution.
+So this is the end of the Good-Turing
+example, and Good-Turing is often used for
+application of speech processing and
+natural language processing.
+So how else do we deal with sparse data?
+There are two other
+techniques that can be used.
+One is called Backoff and
+the other one is called Interpolation.
+Let's look at them in turn.
+So what is Backoff?
+So Backoff is used when a certain n-gram
+model does not give us enough data.
+So if we are trying to compute
+the value for bigram model,
+it's possible that the counts for
+a given bigram are very small.
+In that case we want to back-off to
+another model with a lower-order n-gram.
+For example,
+from bigram we can go to unigram, and
+from trigram we can go to either bigram or
+unigram.
+And in both cases we can also go to a
+default value that is not even a unigram,
+it's just the default value for
+certain word.
+So we learned those parameters by using
+a training set, and also a held out set,
+and we come up with values that
+are based on the development set.
+The other technique is
+called Interpolation.
+If the probability estimate for
+a trigram, for example,
+is sparse we can use a linear
+combination of the bigram model,
+the unigram model combined
+with a trigram model.
+So we have a lambda 1 times
+the trigram probability plus lambda 2
+times the bigram probability plus
+lambda 3 times the unigram probability.
+And this method works better than Backoff,
+and
+the lambdas can also be learned based on
+approximations with a held out data set.
+There's a paper by Stanley Chen and
+Josh Goodman from 1998 that covers
+most of the important techniques for
+smoothing Backoff and Interpolation.
+You can look at this paper for
+more details.
+So this concludes the end of
+the second segment on language model.
+

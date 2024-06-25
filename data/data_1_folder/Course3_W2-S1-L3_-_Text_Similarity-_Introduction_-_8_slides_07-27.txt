@@ -1,0 +1,202 @@
+This segment is going to
+be about text similarity.
+Text similarity is one of the most
+important applications of linguistics and
+statistics to natural language processing,
+and
+it helps in many different applications.
+There are many ways in which people
+can express the same concept or
+related concepts.
+For example,
+we could say the plane leaves at 12pm, but
+we can also say,
+the flight departs at noon.
+Except for the words like the and at,
+the rest of the words in the sentences
+are very different and yet
+they express the exact same meaning.
+As I mentioned earlier,
+text similarity is one of the key
+components of natural language processing.
+For example, in an information and
+table task, if the user is looking for
+information about cats, we may want
+the system to return documents that
+mention the word kittens and
+not the word cat.
+So the document may not have any
+words in common with the query, and
+still be related because cat and
+kitten are similar words.
+Another example is if the user is looking
+for information about a fruit dessert,
+we may want the NLP system to return
+documents about peach tarts or
+apple cobblers.
+In each of those examples, we have a
+specific fruit and a specific dessert, but
+both of those items are special
+cases of fruit dessert.
+Another example is about
+a speech recognition system.
+For example, if I want to fly to
+Dulles airport, sometimes the system
+may hear my incorrectly and
+figure out that I want to go up to Dallas.
+And it may book me on the wrong flight.
+However, if a system knows in advance that
+Dulles and Dallas sound very similar,
+it may tweak its algorithm so
+that if it picks up one of those two,
+it may ask me to confirm if
+I didn't mean the other one.
+It doesn't need to do this for
+names of cities that are not so similar.
+So for example, if I ask about Dulles,
+it's never going to ask me,
+do you really mean San Francisco?
+So in this segment of this lecture,
+I'm going to teach you how text similarity
+can be modeled computationally.
+Let's start first with some
+human judgments of similarity.
+I'm showing you here an example from
+a paper by Finkelstein, et al., from 2002,
+where they ask people to determine
+how similar two words are.
+So they give them words like tiger and
+tiger, and obviously they got the maximum
+similarity score from the human judges,
+in this case 10 out of 10.
+Then they give them tiger and cat, and
+they got a similarity
+of an average of 7.35.
+Book and paper had a similarity
+of about the same range.
+Computer and keyboard also about 7.5.
+Now some other examples, plane and
+car got a similarity of 5.7.
+Cucumber and
+potato had a similarity of 5.92.
+One interesting thing is that the variance
+of those scores was actually pretty high.
+So clearly there was
+not much user agreement
+whether a certain two words
+are very similar or less similar.
+But they still agreed, generally,
+about the overall level of similarity.
+So one other example is
+from a more recent paper,
+it was just published in
+2014 by Felix Hill et al.
+It has a much larger data set,
+with 999 words,
+all kinds of parts of speech including
+adjectives, verbs, nouns, and adverbs.
+For example,
+they figure that delightful and
+wonderful are very similarly with
+a similarity of 8.65 out of 10.
+Whereas modest and
+flexible were not similar at all,
+their similarity being only 0.93.
+You can look at some of the examples on
+the slide, just talk about one of them.
+Argue and persuade were moderately
+related, 6.23 similarity,
+versus pursue and persuade which had
+a much lower similarity of 3.17.
+So this kind of data set can be used to
+train natural language systems, and they
+can also be used to evaluate systems that
+automatically compute text similarity.
+One more recent example is by Mikolov
+et al., in the paper published in 2013.
+He uses the word2vec approach,
+which I'm going to talk about later.
+And he was able to compute automatically
+the words that are most similar to
+France based on the context
+in which they appear.
+Those words are shown in the table.
+So are not surprisingly,
+the words that are most similar to France
+are countries that are near France
+geographically, Spain, Belgium,
+the Netherlands, Italy,
+Switzerland, and so on.
+Now let me describe the different
+kinds of text similarity that exists.
+The first kind is
+morphological similarity.
+We have two words, such as respect and
+respectful that have the same stem.
+But then they have some
+additional morphological change.
+In this particular example,
+the word respectful is
+an adjective derived from respect.
+And the suffix ful tells
+us that it's an adjective.
+But the two words
+are morphologically very similar.
+They share pretty much the same meaning.
+The next example is spelling similarity.
+It can be useful, for example,
+in dealing with different
+versions of dialects of English, for
+example, in British and American English.
+The word theater can be spelled
+either with an E-R at the end or R-E.
+So we want the system to understand
+that those are pretty much the same word
+because they look very similar.
+And they follow a very
+specific pattern of changes
+that appears across those languages.
+Synonymy is when two words
+have a very similar meaning.
+It's very rare for two words to
+have exactly the same meaning,
+but it is usually enough for them to be
+close enough to be considered synonyms.
+So talkative and chatty are synonyms.
+Another category of similarity
+in text is homophony.
+That's when you have multiple words that
+have possibly different meanings but
+have the same pronunciation.
+So raise, R-A-I-S-E, raze, R-A-Z-E,
+and also rays as R-A-Y-S.
+All of those are pronounced the same way.
+We can also have different
+kinds of semantic similarity.
+For example, cat and tabby
+are semantically related because the word
+tabby is usually used to refer to a
+specific kind of cat, specific color cat.
+There can also be
+similarities among sentences.
+For example,
+two sentences may paraphrase each other.
+And we can have also similarity
+to the level of documents.
+For example, two news stories reported
+independently on the same event
+will often have very similar content.
+And I would also like to add
+an additional example of similarity,
+namely cross-lingual similarity.
+For example, the word for
+Japan in Japanese is Nihon.
+So sometimes, the name of an organization,
+may be translated Nihon, or Japan,
+depending on who does the translation.
+And we want to be able to identify
+that those refer to the same country.
+So, in the next segment,
+we're going to talk specifically about
+morphological similarity and stemming.
+

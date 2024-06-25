@@ -1,0 +1,92 @@
+Okay, so now, let's look at N-grams and
+how they relate to regular languages.
+So one important point that I would
+like to mention here is that,
+N-grams are very similar
+to Regular Languages.
+In fact, HMM's are equivalent to
+weighted finite state transitions,
+which have been used in several of the
+earlier papers on part of speech tagging,
+just the same as HMM's.
+We're going to talk more about regular
+languages in a separate lecture, so
+stay tuned about that.
+So one thing that you need to
+know about N-gram models is that,
+they can be considered
+to be generated models.
+So we can look at the unigram model first,
+the is algorithm is very straightforward.
+You generate the word from
+the distribution of unigrams, and
+then you generate the next one,
+and then you stop when you generate
+the end of the sentence symbol slash s.
+So this is actually what
+a Unigram model looks like.
+We have W1, W2, then W3 then,
+all the rest of the words in a sentence
+until WN to the final symbol.
+This is different from a Bigram model.
+In the Bigram mode,l we have to generate
+first the special symbol to start
+the sentence, so that we can have a
+conditional probability for the next word.
+Then we're going to generate
+the next word based on,
+its probability given that
+S has been generated.
+Then we generate the second
+word based on the first one.
+And so on.
+And again, we stop,
+when we reach the end of the sentence.
+So the graphical model looks
+very different, though.
+It looks like this.
+We have conditional probabilities between
+every pair of words until the end.
+So one important engineer trick that
+I would like to mention briefly.
+So the maximum likelihood values that
+we estimate for the probabilities,
+are often on the order of ten
+to the minus six or less.
+Sometimes as little as
+ten to the minus 12.
+When you multiply many of those numbers,
+for example in a sentence with 20 words,
+you may have to multiply
+as many as 20 values.
+So you would get a number on
+the order of 10 to the -120 power.
+This is a really tiny number, and
+in most computers it will
+delete to arithmetic underflow.
+And therefore, it will be
+rounded down to zero, therefore,
+avoiding any work that you have done so
+far.
+So talk about this problem,
+there's one important engineering
+trick that you can use.
+Can you think what it is?
+And I'll give you the answer in a second.
+So the answer is to use logarithms,
+specifically base 10 logarthims.
+Instead of having something like 10 to the
+minus 6 power, we'll get a number like -6.
+Instead of multiplying probabilities,
+we're going to add the logarithms
+of the probabilities.
+Ad then at the end,
+if we need to we can always exponentiate
+back, and get into the normal space.
+So we have something like this.
+10 to the minus 6 becomes minus six.
+We use the sums, and then we're done.
+So this concludes the first
+part of language modeling.
+Stay tuned for the next one.
+

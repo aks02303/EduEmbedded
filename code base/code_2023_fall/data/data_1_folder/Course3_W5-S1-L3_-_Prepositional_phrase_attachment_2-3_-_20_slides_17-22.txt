@@ -1,0 +1,445 @@
+Okay so, we're going to continue with
+the prepositional phrase attachment.
+As I said earlier, there are some baseline
+algorithm that we can try on our data.
+The simplest such algorithm,
+which we're going to number algorithm one,
+is to label every single tuple in the test
+set as low attachment, as the default.
+Now let's also consider what
+is known as a random baseline.
+A random baseline is even simpler
+than the one that I just showed you.
+It would have been to assign each
+item in the data set with a random
+label zero or one.
+In practice,
+a random performance is the lower
+bound against which we should evaluate
+every other non random method.
+So let's now see how we can measure
+the performance of a supervised baseline
+method, what we named
+algorithm number one.
+In the official training data set, RRR94
+the rate of the occurrence of the one
+label, which is low attachment is 52.2%,
+so it's slightly above 50%.
+Well, can we then claim that the accuracy
+of this baseline method is equal to 52.2%?
+Is that a reasonable thing to say.
+What do you think?
+So the answer to the previous question,
+whether 52.2% is the correct
+measure of accuracy, is wrong.
+This is not how accuracy is computed.
+Accuracy has to be computed on
+the testing set, not on the training set.
+We use the training set to learn a rule,
+but then we evaluate
+the algorithm on the testing set.
+In this particular example,
+the performance on the training table was
+52.2% in favor of one or low attachment.
+However, using the official split,
+the accuracy of this method of the testing
+set is actually 59%, or
+1,826 out of 3,097 tuples.
+Well it looks like we got a decent
+performance even higher than what we
+expected, 52.2%, but
+59.0 is really not a good result.
+We shouldn't be proud of it.
+This difference between the performance
+on the training data and the testing
+data of +6.8% could have actually gone
+just as well in the opposite direction.
+Resulting in a performance even below 50%,
+or worse than random,
+which would be a disaster.
+So let me make now some
+interesting observations.
+If the baseline method is very simple and
+the testing set is randomly
+done from the full data set, and the data
+set is large enough one should expect that
+the accuracy on the testing set will be
+comparable to the one on the training set.
+However, let's note that the Penn Treebank
+data set is drawn from business news
+stories.
+If we wanted to train a method,
+any method,
+on this data set, but then test it on
+a completely different of sentences, for
+example fictional sentences from a novel.
+It is very possible and
+very likely that the two sets would
+have a different characteristics.
+Now if the method is more complicated,
+then it is very likely that it
+will over fit the training data.
+It may learn patterns that are way to
+specific to the training data itself, and
+which may not even appear in the testing
+data, or even worse they may
+be associated with the opposite class in
+the training data and the testing data.
+Okay we talked about lower bounds.
+Can we now look at the upper
+bound on accuracy?
+Well, typically in papers
+by our classification,
+people use human performance
+as one possible upper bound.
+For PP attachment, using only
+the four features mentioned earlier,
+it turns out that human
+accuracy is about 88%.
+So if we have a hypothetical algorithm
+that achieves an accuracy of 87%,
+we can actually be very happy with it
+even though it doesn't get close to 100%.
+Why?
+Because on the scale from the lower bound
+of 52% to the upper bound of 88%
+it is actually 97% of the way
+to the upper bound.
+So that is a very good algorithm, we
+would be happy to have such an algorithm.
+So far we've only looked at
+algorithms that involve random and
+simple supervised base lines that do
+not use any linguistic information.
+This course is about natural
+language processing.
+So we should figure out how we can
+use linguistic information to improve
+the performance of our method.
+For example by looking at the training
+data we may notice that the preposition of
+is much more likely to be associated with
+low attachment than high attachment.
+In fact, in the training data set,
+this percentage is 98.7%.
+There are 5,707 instances of
+the preposition of in the training data,
+and of those, 5,534 have high attachment.
+Therefore, the preposition of
+is a very valuable feature, and
+there are two main reasons for this.
+Can you think what those two reasons are?
+Well, the two reasons why the preposition
+of is a very useful feature is that,
+first, it is very informative
+as you saw 98.7% of the time,
+it is connected with
+the low attachment class.
+And the second reason it is very frequent.
+It consists of 27% of
+the entire training set.
+You can agree that reason one alone is not
+sufficient, we can have a very informative
+feature which is so rare that we may
+not ever observe it in the testing set.
+So that feature would not
+be a good one to consider.
+Now, the Penn Treebank
+data set has been used for
+evaluation of PP attachment
+algorithms since 1994.
+It's very important if you come up with
+a new algorithm to know how to proceed
+methodologically, so that your results
+can be valid and you can publish them.
+So any new algorithm is allowed to
+look at the training data set and
+also add the second development data set
+and use any knowledge extracted from that.
+However, the official testing data set
+should never be used in evaluation
+Until your algorithm is
+completely finished, and
+in that case, you're only allowed to
+look at the testing data sets once.
+If you do the contrary,
+that is, repeatedly tuning your algorithm
+based on the performance on the designated
+test test,
+you're going to over train your system.
+And you're going to report a performance
+level that is not reproducible on
+any new data.
+Such approaches are not
+allowed in NLP research.
+If you submit a paper, and it makes clear
+that you've been using such an approach,
+your paper will be rejected summarily.
+Now, let's look at the training data set,
+and see if there are any other patterns
+that we can use in addition to
+the fat pattern preposition, of.
+So in addition to the preposition of
+we can look at some other prepositions.
+For example, against.
+Against appears 172 times
+in the training set, and
+of those 82, or 48%,
+are attached to the noun.
+The rest are attached to the verb.
+Well, this ratio, 48 to 52,
+in very similar to the baseline, 52 to 48.
+So clearly,
+this preposition is not very useful.
+It gives us very little new information.
+Furthermore, the total number of
+recurrences of the future against in
+the training corpus is very small.
+It's less than 1% of the total
+number of prepositional phrases.
+So what prepositions
+can we use as features?
+We looked at one of them, of,
+but there are others as well.
+For example, the preposition,
+to, is associated with high
+attachment in 82% of its occurrences, and
+in addition to of that preposition
+to is also fairly frequent.
+To represents 27% of all
+prepositions in the training set and
+of consists of another 11% of them.
+So with this knowledge we can build
+a very simple decision list algorithm.
+Originally introduced by Brill and
+Resnick, that looks like this, okay.
+So the algorithm that we so far,
+consists of two very simple rules.
+If the preposition is of,
+we're going to label the tuple as low, and
+if not, we're going to
+consider the preposition, to.
+If that's what we have,
+we're going to label the tuple as,
+high, and else we're just going to go
+back to low as the default algorithm.
+Now let's see how accurate
+this algorithm is.
+On the training set,
+the first rule would fire in 5,277 cases.
+All those will be correctly
+labeled as low, and
+another 50 will be incorrectly
+labeled as high attachment.
+The second rule, which has an expected
+accuracy of 82% on the training set
+would result in an additional 2,600
+decisions, of which 2,172 will be
+correctly processed as high attachment and
+500 will be mislabeled as low attachment.
+And then everything else would
+fall under the default rule,
+and in this case that
+gives us another 12,552.
+Of those,
+it would label 4,837 correctly as low, and
+it will incorrectly label the remainder
+of 7,714 cases as high attachment.
+So overall, we're going to have
+5,527 tuples correctly labeled
+by the first rule, 2,172 correctly
+labeled by the second rule,
+and 4,837 correctly labeled
+by the default rule for
+a total of 12,536 correct decisions.
+So out of 20,801 instances in the data
+set, that gives us an accuracy of 60%.
+So as you can see, using some very small
+amount of linguistic information will make
+our new algorithm, algorithm two
+better than the default algorithm,
+algorithm one, but this is on the training
+data, and this is not surprising.
+We expected that the accuracy of
+this new algorithm should be no
+less than the worst expected
+accuracy if its rules.
+In this case, that's rule number three,
+which had an accuracy of 52%.
+And it is also likely to be
+higher than this baseline,
+because we have two
+additional rules that exploit
+the structure of the training data that
+give us additional performance benefits.
+We can look at more
+sophisticated algorithm.
+For example we can look at the nouns or
+the verb or some combination of those.
+For example the verb got appears 93%
+of the time in high attachment and
+only 7% of the time as low attachment.
+Now let's consider a different algorithm.
+We're going to call this algorithm 2a.
+It's the same as algorithm number 2,
+it has the same rule one and
+the same rule two.
+However, the default rule after
+that is to label the tuple as high.
+Now you may ask why do we want
+to have this kind of algorithm?
+Well, it turns out that after we look
+specifically at the instances of,
+of and to, the remaining data points
+actually are more likely to be
+instances of high attachment and
+low attachment.
+So this algorithm is actually
+going outperform method two.
+So algorithm 2A, in particular,
+is going to achieve 5,527 correct
+classifications using rule number 1,
+2,172 correct assignments
+using rule number 2, but
+also A whopping 7,714 correct
+assignments using the default rule.
+So that gives us an accuracy
+of 74% on the training set.
+So we clearly want to prefer algorithm
+2a over algorithm 2 based
+on the training set alone.
+Now, we should also notice that algorithms
+2 and 2a have only three rules each.
+They're very simple.
+We can imagine a classifier that
+consists of 20,801 rules, one for
+each of the training examples.
+In each of those rules is going
+to have this kind of form.
+Even the preposition is of, and
+the nouns and such and such,
+and the verbs are such and such, then
+we're going to classify the data point
+as the actual class observed for
+that tuple in the training set.
+Okay, so this algorithm is going to
+work very well in the training set.
+In fact, it's going to get an accuracy
+very close to 100%, but can we now
+reject the performance of those algorithms
+from the training set to the test set?
+Let's now compare algorithms one and
+three.
+Algorithm one labels everything as
+low attachment, and if you remember,
+it achieves 52% accuracy
+on the training set, and
+it's performing on the test
+set is expected to be similar.
+In fact, it is 59%.
+So it's roughly in the same ball park,
+slightly higher, and
+the reason why we have a difference
+of almost 7% is that the test
+set is not distributed exactly
+the same way as the training set.
+So this is an example that illustrates
+the variability of text when
+you do random splits of the data.
+In some other cases for example if we have
+swapped the training in the test set,
+the performance of this
+algorithm would have gone down.
+It would have achieved 59% on the training
+set but 52% on the testing set.
+But on average, if we build this
+kind of experiment many times,
+we expect the performance on the test
+data to be very similar to the one on
+the training data again because this
+is a very simple algorithm, and
+because this ample training data.
+Now let's look at algorithm number three.
+This is the one that includes one rule for
+each of the instances in the training set.
+So the first rule here is the following.
+If the preposition is on and the verb is
+casting and the first noun is cloud and
+the second noun is economy, we're going
+to label the phrase as high attachment.
+As you notice, this is just a way
+to memorize the first tuple in
+the training set and use it as else.
+Then, if we have another instance of
+a preposition of, and the verb open, and
+the first noun can, and
+the second noun worms,
+we're going to label this phrase as low,
+and if this rule doesn't apply
+we're going to go through the rest
+of the 20,799 more rules.
+This would be our most complicated
+algorithm that would definitely
+over fit on the training day.
+So algorithm number three in particular,
+is going to achieve very high
+performance on the training data.
+In fact,
+it will have a performance that is way
+above the upper bound achieved by humans.
+It is so specific to the training data
+that most of the rules that it learned
+are not going to apply
+at all in the test set.
+It turns out that only 117
+combinations out of a possible
+count of 3,032 of the words
+in the test set match
+a combination previously
+in the training set.
+In other words, algorithm number three
+learned a lot of good rules, but
+it failed to learn enough rules so that it
+can work seamlessly on the testing data.
+In fact, its accuracy on
+the testing data is only about 4%.
+Now we can improvise number
+three a little bit better.
+We can have algorithm three the way
+it was described before, but
+then we can also have everything that
+it misses as a default attachment.
+In this case, noun attachment.
+This algorithm, which we're going to
+call the number 3A is actually going to
+achieve a performance that is only
+slightly above the baseline of 59%.
+It turns out that this is
+not good enough either.
+So clearly none of those algorithms,
+three or 3a is going to get anything close
+to 100% accuracy, or
+even close to the 88% upper bound.
+Now an interesting point is
+that no algorithm is going
+to achieve 100% no matter
+how it is designed.
+Why is this?
+It turns out that even in the training
+set there are some mutually inconsistent
+labels for the same data point.
+For example, the instance won verdict in
+case, appears twice in the training data,
+and it is labeled once as high
+attachment and once as low attachment.
+There are a total of 56 such
+discrepancies in the training set.
+Some of those are caused by the use
+of inconsistent human annotators,
+whereas others are correctly
+labeled to disagree.
+However, more context is needed.
+For example, the entire paragraph
+of the entire document for
+that to be corrected, this would be great.
+

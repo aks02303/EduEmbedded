@@ -1,0 +1,21 @@
+[<OpenAIObject chat.completion id=chatcmpl-8Avw0BQUKddLB9j4g86SycSfTBiq1 at 0x260bb06f990> JSON: {
+  "id": "chatcmpl-8Avw0BQUKddLB9j4g86SycSfTBiq1",
+  "object": "chat.completion",
+  "created": 1697616672,
+  "model": "gpt-3.5-turbo-0613",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "concept vocabulary: natural language processing, applications, problems, machine translation, information extraction, text summarization, dialogue systems, tagging, part-of-speech tagging, named entity recognition, parse tree, grammar relations, high accuracy, linguistics, computer science, Columbia University, professor, human-computer interaction, input, output, sentence, data, text, understanding, processing, mapping"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 992,
+    "completion_tokens": 76,
+    "total_tokens": 1068
+  }
+}]

@@ -1,0 +1,604 @@
+So the next topic in text similarity
+is called dimensionality reduction.
+The motivation behind dimensionality
+reduction is that a document is often
+not about many different topics but
+just a relatively small number of topics,
+certainly smaller than the number
+of words that appear in it.
+So if we can somehow collapse some of
+the words into semantic categories,
+we may be able to find
+better similarity measures.
+For example if we can collapse all
+the documents about patients, doctors, and
+hospitals into one place, we may consider
+them to be semantically similar,
+even though they contained
+different words in that set.
+So the simpler vector approaches
+to similarity that we looked at so
+far have a few problems.
+In many cases there's a polysemy
+that's why the similarity,
+the actual similarity between the words
+are smaller than what the cosine
+similarity would make you believe.
+That includes words with multiple
+sentences such as bar, bank,
+jaguar, or hot.
+The opposite is due to synonymy,
+that's when the actual similarity between
+the words is larger than what the cosine
+similarity would make you believe.
+So a word like building
+is a synonym of edifice.
+They're different words, therefore they're
+going to be in different contexts,
+but even though they are in different
+contexts, they have the same meaning.
+So we want somehow to know those synonyms,
+and in that case,
+overestimate their cosines similarity.
+The matrix between words and
+sentences in general, are very sparse.
+And it needs to be processed through
+dimensionality reduction, so
+that we can find some hidden
+semantic dimensions of it.
+Let's look at some examples of some of the
+natural language processing literature.
+So the example on the left gives
+you multiple choice questions from
+the TOEFL test,
+you're given the words,
+specifically levied, and you're asked
+which word is most similar to it.
+So the choices are A, imposed.
+B, believed.
+C, requested.
+D, correlated.
+And the answer is that the most
+similar word to levied is imposed.
+So this is the kind of semantic
+relationship that we want to discover
+in text.
+And this is where letter and
+semantic analysis,
+the technique that we're going to
+introduce today, is going to help us.
+The same technique is also used
+to identify similar analogies.
+So an example from the SAT test is,
+you're given the pair mason to stone and
+you're asked which of the following
+five choices represents
+the most similar relationship as the one
+between the mason and the stone.
+So the answers are A, teacher to chalk.
+B, carpenter to wood.
+C, soldier to gun.
+D, photograph to camera,
+and E, book to work.
+And the correct answer here is carpenter
+to wood because just like a mason is
+a person who works stone,
+a carpenter is a person who works wood.
+All the other analogies are different.
+So it turns out that
+this problem of analogy
+similarity can also be resolved by
+dimensionality reduction techniques.
+And a lot of this work
+was actually done by
+Peter Turning in his papers
+from the last ten years.
+So let’s now consider dimensionality
+reduction in more detail.
+So the purpose of this method is to
+look for hidden similarities in data.
+It's based on matrix decomposition, and
+I'm going to introduce it by giving
+you an example from some high school,
+where people measured the heights and
+the weights of the students in the school.
+And the scatter plot on the left shows you
+the different students who were measured.
+The x-axis represents,
+let's say, the height, and
+the y-axis represents the weight.
+Now, we can find the regression line
+that explains this data the best,
+that's shown in the middle with
+a red line that appears diagonally.
+Now, it turns out that there is a third
+variable in addition to height and weight
+that can explain the differences in height
+and weight between the different students,
+and that is exactly what our
+regression line shows you.
+This line corresponds to
+the dimension of age.
+So it turns out that the sample
+students in that high school was not
+students of the same age.
+It was students from across all
+different classes and age groups.
+So obviously the students in the lower
+grades were both lighter and
+shorter than the students
+in the upper grades.
+But if we collapse each of those points
+on the diagonal axis that represents
+the regression line, you will see that
+there's actually a very nice trend.
+Students who are older are both taller and
+heavier than younger students.
+So in this process we're not
+losing much information.
+It turns out that we can replace
+height and weight with age, and
+gain most of the information that
+appears in the data set on the left.
+And everything that is different
+between the two examples tells us
+how a particular student differs from the
+trends, so a person who is too tall for
+their age or
+somebody who's too short for their age.
+So what we did here was to
+reduce the dimensionality of our
+data set from two dimensions
+to one dimension.
+So how is this done in practice?
+Well, let's go back to a little
+bit of linear algebra.
+We need to remember how vectors and
+matrices work in order to understand
+dimensionality reduction.
+So a matrix is an m x n table of objects,
+in our case, those objects are numbers.
+Each row and
+also each column of a matrix is a vector.
+Matrices of compatible dimensions, and
+there's a special definition of
+compatibility in this context.
+So matrices of compatible dimensions
+can be multiplied together.
+And if you don't remember this
+kind of math, you should go and
+visit some website that explains
+how to multiply matrices and
+then come back here and try to multiply
+the two matrices in the example below.
+So the next slide,
+I'm going to show you the answer.
+So the way that matrices
+are multiplied is very simple.
+You just multiply the values in the first
+row with the value in the first column.
+And then you add them up, and the result
+goes into the cell that corresponds
+to the first row and
+the first column in the product.
+So the first row of the product is 1 x 2
++ 2 x 1 + 4 x (-1), or a total of 0.
+The second row is 2 x 2 +5
+x 1 + 7 x (-1) which is 2.
+And finally 4 x 2 + 9 x 1
++ 14 x (-1) is equal to 3.
+So the product for
+those two matrices is the vector 0, 2, 3.
+Now one other important concept of linear
+algebra that is related to dimensionality
+reduction is that of eignenvectors,
+and eigenvalues.
+So an eigenvector is an implicit
+direction for a matrix.
+So if we multiply a vector v,
+which is the eigenvector,
+to the right-hand side of a matrix A,
+we're going to obtain the same result as
+if we had multiplied v with lambda,
+which is a scalar, like an eigenvalue.
+In principle, the eigenvalue lambda
+can be any complex number, but for
+the examples that we are going to look at,
+it will always be real.
+So to compute the eigenvalues of a matrix,
+we need to use the following equation.
+We need to find
+the determinant of the matrix,
+A minus lambda I where I Is a unit
+matrix of the same size as the matrix A.
+And we want this to be a square
+matrix obviously, so that we can
+compute the determinant and we want to
+set this determinant to be equal to 0.
+So, let's look at an example.
+If our matrix is A is minus 1 3 and
+then 2 0,
+A minus lambda I is the matrix
+shown to the right.
+It's minus 1, minus lambda in
+the first row followed by a 3.
+And then 2, and
+minus lambda in the second row.
+So, if we want to compute
+the determinant of this matrix,
+we need to find the product
+of the forward diagonal,
+and then subtract the value of the product
+of the numbers on the backwards diagonal.
+So that gives us (-1-lambda)*(-lambda),
+and
+then the whole thing- 3 x 2 =0.
+If we solve this quadratic equation,
+which is lambda + lambda squared- 6 = 0.
+We're going to see it has two roots.
+Lambda 1 = 2, and lambda 2 which is = -3.
+So if we pick one of those eigenvalues and
+replace them in the equation on the top.
+We're going to get a new matrix -3 3 2 -2,
+which then has to be multiplied
+by the eigenvector X1 X2 and
+we want the result to be equal to 0.
+Well, if you solve
+the system of equations,
+you will find out that
+it's answer is x1=x2.
+So any two dimensional
+vector where the x and
+y coordinates are the same would
+satisfy the second equation.
+So if a matrix is square, it can be
+decomposed to into U lambda U inverse.
+Where U is its matrix of eigenvectors, and
+lambda is a diagonal
+matrix of eigenvalues.
+And you can do different transformations,
+which are all mathematically equivalent.
+So sigma U = U lambda,
+U inverse sigma U = lambda,
+and sigma = U lambda U inverse.
+So here's an example.
+If the original matrix S = 2, 1, 1, 2,
+it's 2 added values are lambda 1 = 1 and
+lambda 2 = 3.
+And then if we do this decomposition,
+we're going to get that U is
+equal to the matrix 1, 1- 1, 1.
+It's inverse U- 1 is equal
+to the matrix one-half-
+one-half followed by one-half one-half.
+And you can verify yourselves that
+we can indeed cover the original
+matrix S by multiplying U with lambda and
+then by U inverse.
+You can do this multiplication in sequence
+and you will obtain the original matrix S.
+So what happened here is that we are now
+able to convert the original matrix
+into a new space of old Eigen vectors,
+and then each point in the original
+space is going to be represented as
+a point in this new representation.
+So in the case of the weight and height,
+you would have a new dimension
+that corresponds to the age, and
+another dimension that corresponds
+to the deviation that the certain
+person has given their weight, based
+on the trend line defined by the age.
+Now if the matrix is not square,
+we have to use a different technique
+called singular value decomposition.
+So why do we care about
+non square matrices?
+Well, because in most NLP information
+retrieval tasks, we have matrices of
+either documents and terms, or
+words and their context features.
+And those matrices by definition
+are not necessarily square.
+We can have for example
+a vocabulary of size 1 million, and
+a set of 10 million documents.
+In which case we are going to have
+a matrix of 1 million by 10 million,
+which is clearly not square.
+So in that case we use another technique
+called singular value decomposition,
+in which case our matrix A is represented
+as the product U sigma V transposed, where
+U is the matrix of orthogonal eigenvectors
+of the pole that AA transposed.
+V is the matrix of orthogonal
+eigenvectors of A transpose A.
+And the components of sigma
+are the eigenvalues of A transpose A.
+So this decomposition exists for all
+matrices, whether they're dense or sparse.
+We can estimate the dimensionality
+of the different matrices.
+For example, if A has 5 columns and 3
+rows, then the matrix U of the orthogonal
+eigenvectors of A A transpose will
+be a 5x5 matrix, V, the matrix
+of orthogonal eigenvectors of A transpose
+A will have a dimensionality of 3x3.
+Now in Matlab and Octave,
+you can use a very simple function, svd,
+give it the matrix as input, and
+it will return a tuple consisting of U, S,
+and V, where those match exactly U,
+sigma, and V in our example.
+Let's look now at a specific example.
+We have a collection of seven
+documents and nine terms, and
+we can look at what terms
+appear in which documents.
+So for example,
+document 1 contains terms 6 and 9,
+document 2 contains terms T1 and
+T2, and so on.
+So we can also look at this posting list,
+and
+represent the data in the form
+of a bipartite graph.
+A bipartite graph has two components,
+one on the left and
+one on the right in this example, that
+correspond to different types of objects.
+So the left hand side, or left hand mode,
+corresponds the documents,
+the right hand side
+corresponds to the terms.
+So we have, for example,
+a connection between D1 and D6, And
+D1 and D9, but we don't have
+a connection between D1 and D7.
+Okay, so now
+let's see how we can compute the singular
+body composition of a arbitrary matrix.
+We're first reppresent it in whole form,
+like the example on the left.
+Where one is that a certain term
+appears in a certain document.
+And zero means it's absent
+from that document.
+And then we need to normalize this
+matrix by dividing all the values
+by the length of the column
+vector that they are part of.
+So that means that in the first
+column we have two ones.
+Therefore, the length of the vector that
+corresponds to the first column is going
+to be square root of 2.
+So if we divide each of the values in
+that column by the square root of 2,
+we are going to get 0.71 and 0.71.
+The 2nd column vector has 3 1s,
+therefore its length is going
+to be square root of 3.
+And if we divide 1 by square root
+of 3 we're going to get 0.58.
+And you can see that
+this is the technique that we use to
+compute all the other normalized values.
+So we have to normalize
+the matrix before we can compute
+its singular value decomposition.
+So once we do this,
+we can just enter the matrix in MATLAB or
+our other favorite software,
+and run the SVD library.
+And we're going to get
+something like this.
+U is going to be just
+going to be a 9x9 matrix.
+V is going to be a 7x9 matrix.
+S is going to be a 7x9
+matrix that responds to
+the spread on the different
+axes of the data.
+So the first dimension
+here has a spread of 1.58.
+That is the most important dimension in
+the lower dimensionality representation.
+The second value is 1.27 and so
+those are the singular values
+that appear in the sigma matrix.
+So one thing that we can do here is
+we can reconstitute the original
+matrix a by multiplying U by sigma and
+V1 transposed.
+But we can also produce
+a different version of A,
+specifically A star, which is
+a lower dimensionality version of A.
+By instead of multiplying U with sigma and
+V transpose,
+we multiply U with sigma star and
+V transpose, where sigma star only
+keeps the largest singular values
+of the original sigma matrix.
+So if you go back to the previous slide,
+we can essentially delete the 5th and
+the 6th line, the 0.5692 and
+the 0.1977 and
+maybe the 0.71 without losing much of
+the information stored in this matrix and
+we can just keep the four
+most significant dimensions
+that correspond to the four
+largest values in sigma.
+So this is
+the Rank-4 Approximation of sigma,
+as you see it has a few more
+zeros than the original matrix.
+And now, if we multiply U with sigma 4 and
+V transpose,
+we're going to get a different
+representation of A, which is not going to
+be what we had at the beginning, but
+it will be significantly different for A.
+If we do this further, we can now compute
+the representations of the terms and
+the documents in the new
+semantics space and
+this is done by appropriate
+multiplications of matrices.
+For example, U times S4 or
+S4 times V prime.
+So this gives us the representations
+of the documents and
+the terms respectively in
+the new semantic space.
+Now we can also take
+this a step further and
+compute the Rank-2 Approximation of
+the original matrix by just preserving
+the two largest values of
+the sigma matrix, 1.58 and 1.27.
+And then if we do the same
+operators as before,
+we can compute a new value for A,
+which is its Rank-2 Approximation.
+So in the Rank-2 Approximation,
+we can now use U multiplied by S2 to get
+the word vector presentation in
+concept space, now the two concepts.
+And we can also use s2 times v
+transposed to find the new concept
+representation of the document.
+So in this case,
+we again have two dimensions.
+And now here's a slide
+that summarizes the entire
+singular value decomposition method.
+We have the documents
+shown on the top-left and
+the terms on the top-right
+in this new semantic space.
+So as you can see, there are two
+clusters of both documents and terms.
+I'm going to focus on one of them.
+In the bottom-left area of the screen,
+you can see that T3,
+T7 appear near each other and D6 and
+D7 also appear near each other.
+So we,
+essentially kill two birds with one stone.
+Firs, we found that there is some latent
+semantic similarity between the terms
+T3 and T7 and also similarity
+between documents D6 and D7.
+But we also,
+we're able to achieve something that
+we couldn't do in the original space.
+Namely to find that documents six and
+seven are similar for
+terms three and
+seven in this new concept space.
+So if you look at the smallest
+circle in purple,
+you will see that D6 is
+the closest match to T3 and T7 and
+then the entire cluster of
+elements in this quadrant,
+including T3 T7, D6 and
+T1 are also all semantically connected.
+And this is actually something
+that you can understand better,
+if you look at the original example and
+specifically in its graph representation.
+You can see that D6, which is one
+of the documents that appears in
+the purple cluster here is
+represented in fact as T3 and T7.
+D7 is similar to D6 bit for
+it has a lot of common terms with D6 and
+then if we continue
+expanding this recursive,
+you will see that D2 is the next small
+similar document followed by D4 and so on.
+And this is exactly
+the intuition that you will get
+by looking at the graph
+representation on the right.
+And now for those who have more patience,
+there are a few more formulas in math
+lab that allow you to seek out to
+translate individual documents and
+terms to concepts.
+So you just have to multiply
+either an entire column vector or
+an entire row vector with
+a singular value matrix.
+So now, I have a question for you.
+If A is a document to term matrix,
+what are A*A transpose and A transpose *A?
+Let's start with A*A transpose.
+As you can see,
+A*A transpose is a 9 by 9 matrix,
+which is not surprising given that
+the original matrix was 9 by 7 and
+we multiplied it by transposed,
+which is 7 by 9.
+And therefore,
+the result should be 9 by 9.
+Similarly for A transpose *A,
+we have a matrix that is a seven by seven.
+And again, this is not surprising,
+because we multiplied a 7 by 9
+matrix with a 9 by 7 matrix.
+But the dimensionallities of those two
+products should give you a hint as to what
+they mean.
+So it turns out that A transpose *A is the
+document to document similarity matrix.
+So for example, it tells you that the
+similarity between document 1 and document
+2 is 0, whereas the similarity between
+document one and document four is 0.639.
+If you go to the previous slide,
+we can see that A*A transpose is
+a term to term similarity matrix.
+So the similarity between term 1 and
+term 2 is 0.3364.
+The similarity between term two and
+term three is zero and so on.
+So this is all based on the contexts
+in which those documents appear and
+the terms appear.
+So let's now wrap up the section.
+We discussed the technique for
+dimensionality reduction called
+latent semantic indexing or LSI,
+which is in some papers is called
+LSA as in latent semantic analysis.
+This means pretty much the same thing.
+So dimensionality reduction
+is used to identify hidden or
+latent concepts in textual spaces and
+it is used for
+a variety of NLP tasks,
+information retrieval tasks,
+including, but not limited to
+query matching in latent space.
+So here now, two external pointers
+about latent semantic indexing or
+if you prefer latent semantic analysis,
+the two of the sites that have been
+the most active in this field.
+Colorado and
+the University of Tennessee in Knoxville.
+So this concludes the sections,
+text similarity using singular
+value decomposition or
+dimensionality reduction and
+the next topic is going to be on
+text similarity using text kernels
+

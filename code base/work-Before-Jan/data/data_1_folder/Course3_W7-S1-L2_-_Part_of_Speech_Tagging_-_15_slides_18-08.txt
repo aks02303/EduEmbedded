@@ -1,0 +1,525 @@
+Okay welcome back to natural
+language processing.
+The next topic for today is going
+to be part of speech tagging.
+Part of speech tagging is one of the most
+fundamental applications of statistics to
+natural language processing.
+Let's define, first, what the POS,
+or part of speech task is.
+To give us an example, we have a sentence
+that I just got from the news yesterday.
+Bahrainis vote in second round
+of parliamentary election.
+We have eight words, and
+each of those words need to be
+associated with a part of speech.
+So what are the parts of speech
+that are things like nouns and
+verbs and prepositions and articles.
+Here's another example from the famous
+poem the Jabberwocky by Lewis Carroll from
+Alice Through The Looking Glass in 1872.
+You may have seen this poem before,
+it's really funny.
+It includes a lot of nonsensical words.
+So, let me read a few words from it.
+'Twas brillig, and the slithy toves
+Did gyre and gimble in the wabe.
+As you can see,
+those words are not real words, and
+yet we can figure out most
+of their parts of speech.
+So for example, the word gyre, gyre is
+very likely a verb because it follows did.
+And then, by analogy the word gimble or
+gimble is also a verb.
+The word wabe is most likely a noun
+because it follows the word the.
+So as you can see,
+we can get a lot of morphological and
+part of speech information from the words,
+even if they're not real words.
+Another example is the word toves
+if that is a noun we know that
+the s indicates plural.
+If it's a verb we know that
+it indicates third person.
+And in fact this set of two words at
+the end of the first sentence is actually
+ambiguous.
+So slithy toves can mean
+an adjective followed by a noun, but
+it can also mean a noun
+followed by a verb.
+Each of those make sense and it would be
+difficult to figure out which one it is
+without any additional context or
+information.
+What about the word mimsy?
+Well, mimsy has two reasons to
+be classified as an adjective.
+First is it's ending, which is consistent
+with many other adjectives, but
+it also follows the word all, which also
+indicates that this could be an adjective.
+And finally the word borogroves is clearly
+a noun, because it follows the word the.
+So what are the parts of
+speech that I used in English?
+Well they belong to two
+different categories.
+One is the so-called open class.
+Those are classes where you
+can add new words any time and
+things that correspond to new words.
+So you can have nouns, non-modal verbs,
+adjectives and adverbs.
+And you cannot also have, closed class,
+parts of speech, for example prepositions,
+modal verbs, conjunctions,
+particles, determiners and pronouns.
+It is very difficult to invent
+new instances of those.
+Although it is possible in some case for
+example,
+this recent use of the word ze
+as a gender-neutral pronoun.
+So for the purpose of this class
+we're going to use the so-called
+Penn Treebank tagset.
+Here are some examples of
+tags that I use there.
+The first example is a coordinating
+conjunction, a word like and.
+It's labeled as a CC.
+The second category's cardinal numbers,
+for example, 1 or
+17, which is labeled as CD.
+Then determiner, existential there,
+foreign word, and so on.
+Typically, the first two characters
+I use to denote the part of speech.
+So for example, JJ is an adjective.
+And the third and
+additional characters, if they exist,
+are used to give some additional
+information about that part of speech.
+So, for example, JJ stands for adjective,
+but JJR is a comparative adjective, for
+example, greener, and JJS is a superlative
+adjective, for example, greenest.
+Similarly, NN stands for the simplest type
+of noun, a singular noun, like table, and
+NNS stands for plural noun, so something
+that ends in S typically, like tables.
+NNP stands for
+proper singular noun, like John.
+And finally NNPS stands for
+plural proper nouns, such as vikings.
+So the next slide has a few more
+Penn Treebank tagset examples.
+So for example, RB is used for an adverb.
+VB is used for a base form of the verb.
+Some of the other interesting forms for
+verbs are VBD for past tense of the verb.
+That's not necessarily an ed form.
+So, for example,
+your regular words like take have
+forms like took as their past tense, which
+would nevertheless be labeled as VBD.
+VBG is a gerund or present participle,
+typically in ing form.
+VBN is the past participle, so
+it's normally in ed form, just like VBD.
+But for irregular words like take,
+it's a specific word like taken.
+And finally we have VBP which is used for
+the non third person,
+singular present, like take.
+One other interesting observation is that
+all the prepositions are labelled with
+the label, in, I-N, as you can see
+in the previous slide, except for
+the preposition to,
+which gets its own label.
+Because it's often used as
+a particle in the cases like to go.
+So don't be confused by this fact in,
+the label in does not indicate
+just the preposition.
+And it indicates any preposition except
+for the preposition to and the tag
+T-O is only used for the preposition to,
+even when it's used as a particle.
+It's a little confusing but
+there are good reasons why the people who
+developed the Penn Treebank
+set did it this way.
+Let's now make some observations.
+Words in English are often ambiguous.
+For example, the word count can be
+a noun and it can also be a verb.
+11% of all the types in
+the Brown corpus are ambiguous,
+however those also tend to
+be the most frequent words.
+So if we look at the number of tokens
+instead of the number of types,
+it turns out that the whole 40% of all
+tokens in the Brown corpus are ambiguous.
+So here's an example
+from the Brown corpus.
+The word like can have as many
+as five different tags, ADP,
+VERB, ADJ, ADV and a NOUN.
+The word present can be tagged as an
+adjective, a noun, a verb and an adverb.
+So some more examples.
+Here are some words that are very
+ambiguous in English, but
+not as obviously as the previous one.
+So for example, the first word here,
+if you look at it for the first time,
+you're going to think of
+it as a non-ambiguous word.
+However, you can not only be part of
+two different parts of speech, noun and
+verb, but
+it can also be pronounced differently.
+So you can say transport as a verb,
+or transport.
+And this interesting property applies
+to the other words in the sequence.
+So you can say, I object to something,
+and then you can say,
+I achieved the object, from there on.
+You can discount something and
+you can get a discount,
+and you can address somebody and
+you can live at a certain address.
+Another similar example is the word
+content, which can be an adjective or
+a noun and
+have different meanings in both cases.
+So it turns out that having the pattern
+of speech is important also for
+pronunciation purposes.
+So, for example, in French, many words can
+be pronounced differently depending on
+their pattern of speech,
+even if the spelling is exactly the same.
+So here are three examples.
+The first one is spelled est, but
+in French it can be two different words.
+One of them is the third person
+singular of the verb to be,
+in which case this word is pronounced
+just [FOREIGN] or it can be the word for
+east in which case in which case
+it's pronounced as [FOREIGN].
+In one case the verb is
+pronounced as one way and
+in the other case the noun is
+pronounced in a different way,
+the second example is the word president
+which means president if it's a noun.
+And it's pronounced, as I said, president.
+But it can also be a verb in which
+case it's pronounced as president.
+The ent is silent and
+it corresponds to the third person plural
+of the verb preside, or to preside.
+And the final example here is
+a word like fils which can be
+pronounced differently, as I said,
+fils, which means sun, or
+as fi, just F-I, if it means the plural
+of the word fils, which is train.
+So in this case it's the additional
+morphological information about this noun,
+whether it's singular or plural,
+that tells us how to pronounce it.
+The three main techniques for
+part of speech tagging which we
+are going to look at in the next slides.
+The first one is a rule based technique.
+The second one is based
+on machine learning,
+specifically tools like conditional
+random fields, hidden mark of models or
+maximum marks of entropy marks of model.
+And the third one is something called
+the transformation based learning.
+All those methods are valid and
+used in real-life part of speech tagging.
+However, machine learning methods and
+transformation-based
+methods are more powerful than rule-based,
+because it's much easier to scale them
+to other languages and to other domains,
+because they are trained automatically.
+Part of speech tagging is very important
+because it applies to parsing,
+translation, text to speech,
+word sense disambiguation, and so on.
+Pretty much all the major components of a
+natural language processing system depend
+on proper proper part of speech tagging.
+Let's look at an example.
+Bethlehem Steel Corporation
+hammered by higher costs.
+So this case the word costs is
+labeled as a noun plural NNS.
+Compare this with Bethlehem Steel
+Corporation hammered by higher costs,
+where cost is labeled as a verb.
+So, given that both of those tags are
+valid interpretations of the word costs,
+how do we know which one
+to pick in this sentence to
+complete it's part of speech assignment?
+Well, obviously the first example is
+correct, the second one is incorrect.
+But how does the part of speech
+system really know this information?
+So one possible approach is just
+to use baseline probabilities.
+Look at the number of times that costs
+appears in the training data and
+see how many times that word has been
+labeled as a noun, and see how many times
+it has been labeled as a verb and
+pick the one that is more frequent.
+So this would be essentially
+a unigram part of speech.
+Another possibility is to
+consider the word before.
+So for example, what is the probability
+that costs is going to be a noun,
+given that the previous
+word is the word higher?
+And what is the probability
+that costs is a verb,
+given that the previous
+word is the word higher?
+While clearly in this case, it's more
+likely that the first interpretation is
+valid because after an adjective we're
+more likely to see a noun than a verb.
+Which actually leads me to another
+model that can be used in this example.
+Instead of looking at the previous and
+the current word.
+We can look at the part of speech of
+the previous word and the current word.
+So we can just say that we're going to
+pick what the interpretation of costs
+is consistent with the fact that
+the previous word is an adjective.
+No matter what adjective we're looking at.
+So the three examples that I gave
+you are first, a unigram model.
+Second one is a bigram model that looks at
+words, and the third one is a bigram model
+that looks at the current word and
+the part of speech of the previous word.
+Now, this is together part of
+speech of the previous word.
+You have to label the words in sequence,
+starting left to right.
+If you want to consider the part of speech
+of the word after the current word,
+then you would need to this from
+the right hand side going left.
+So, what sources of information
+can you use to label words?
+So, an example here, the knowledge
+about individual words is useful.
+So, the fact that costs is a noun or
+a verb.
+You can look at lexical information,
+what information is available in
+the dictionary about that word.
+You can look at the spelling.
+So for example, words that end
+in O-R are likely to be nouns.
+Like let's say the word suitor or
+vector and so on.
+Words that end in E-S-T are more likely
+to be superlative forms of adjectives.
+You can also look at capitalization.
+So things like I-B-M, all capital letters,
+is most likely to be an organization or
+a product and not,
+let's say an adjective or a common noun.
+You can also use the knowledge
+of other neighboring words.
+As in the examples that I just mentioned,
+you can look at the previous word,
+the word after, maybe the two previous
+words, or the previous word and
+the part of speech of the word before,
+and so on.
+Okay, now before we introduce the specific
+techniques for part of speech tagging,
+let's decide first how we're going
+to evaluate their performance.
+Well, it turns out that the varying part
+of speech tagging is very straightforward,
+however, there's a problem
+with a high baseline.
+The high baseline comes from
+the fact that we can tag each word
+with its most likely tag, and
+tag each out-of-vocabulary word as a noun.
+This baseline alone gives us a 90%
+accuracy in predicting the pattern
+of speech of the next word.
+So any automatic system that we come
+up with will have to be significantly
+higher than 90% to be useful.
+So, the current accuracy of the best part
+of speech tags around 97% for English.
+And this is just slightly below
+the upper bound expected for
+human performance, which is about 98%.
+It turns out that in 2% of the cases
+humans don't agree with each other, and
+most of the time this happens when
+an adjective is used as a noun.
+For example, in a noun noun compound.
+For example, the word college senior.
+It's two consecutive nouns.
+In other cases, the first word of a noun
+phrase in a non-noun component can be
+an adjective that is used as a noun or
+a noun that is used as an adjective.
+For example, senior class, the word,
+senior, can be used as a noun or as
+an adjective, and humans don't necessarily
+agree which part of speech it is.
+Okay, now let's talk about the first
+type of part of speech tagging, so
+called rule-based method.
+So, this is typically done by using
+a set of finite-state automaton,
+specifically finite-state transducers
+to find all the possible parts of
+speech for a given sequence of words and
+then use the disambiguation rules that
+make some of those transitions possible
+compared to others.
+So for example,
+we can have a rule that says that
+an article can never be followed by verbs.
+Every time we see a transition from
+an article to a verb in the machine,
+we are going to remove it from
+the possible set of outputs.
+We can define hundreds of
+constraints like this manually and
+then call them in the finite
+state transducers.
+So here's an example from a paper
+that I worked on many years ago for
+French part of speech tagging.
+So we have here a sequence of
+words on the left-hand side.
+La, teneur, moyenne, en, uranium, des,
+riviere, bien que delicate, a, caculer.
+Which stands for
+the average content of uranium in the
+rivers even though difficult to compute.
+If we want to tag the sentence,
+how do we do this?
+Well first of all, we have to find
+all the possible parts of speech that
+are associated with each of those words,
+so we put those in the second column.
+So S as the beginning of a sentence
+is marked with a special symbol
+carrot which indicates
+beginning of sentence.
+The word la can be many
+different things in French.
+It can be a pronoun,
+it can be a noun, and so on.
+The next word, teneur, is interesting.
+It's a noun in both cases, but
+it can mean different things when
+it's in feminine or in masculine.
+In this example, it is in the feminine so
+the correct time here would be nfs.
+The next word, moyenne, can be either
+an adjective or a noun or a verb and
+the verb can be either first, or second or
+third person, and so on and so forth.
+So we have a sequence of parts of speech,
+and
+now we have to get rid of some of those.
+And as I said before, the sequence
+article verb is not allowed and so on.
+Let's look at some specific examples.
+So, here we can have our rule that says
+that a third person subject personal
+pronoun cannot be followed by a first
+person indirect personal pronoun.
+So if the example is il nous
+faut which stands for we need,
+the word il has the tag for third person,
+singular, personal pronoun.
+And the word nous has several possible
+tags, some of which are first
+person indirect personal pronouns and some
+of which are direct personal pronouns.
+And we can get rid of the ones
+that combine BS3 with BI1.
+So that removes on of the alternatives for
+the tags of new and keeps the other four.
+Here's another example of a constraint,
+N followed by K.
+N stands for noun, K stands for
+interrogative pronoun.
+So for example, in the sentence le
+fleuve qui, the river that, we want to
+label the second word, qui, as a relative
+pronoun, not as an interrogative pronoun.
+So we want to get rid of the K tag and
+use the alternative E as
+the only acceptable choice.
+And finally in the example
+that I gave you before,
+article cannot be followed by a verb.
+So for example, in the sentence
+that contains the words l'appelle,
+the word appelle can only be a verb, but
+the word l can be either an article or
+personal pronoun.
+So this rule here R V helps us get rid of
+one of those and eliminate the article,
+therefore unambiguously determining
+that the word is a pronoun.
+So this is just a small set of
+examples from a large system that had
+hundreds of rules.
+And you can imagine,
+looking at those examples,
+that it's very difficult to build systems.
+You need a lot of
+linguists to be involved.
+Very often they don't necessarily
+agree with each other.
+And the whole process can
+be very time consuming.
+So group based systems have their purpose,
+and can sometimes be very useful,
+especially for unseen languages.
+But most of the time part of speech
+data is done using completely
+automated methods, such as HMMs and
+transformation based learning methods.
+So we're going to look at some more
+examples of part of speech tagging in
+the next few slides.
+

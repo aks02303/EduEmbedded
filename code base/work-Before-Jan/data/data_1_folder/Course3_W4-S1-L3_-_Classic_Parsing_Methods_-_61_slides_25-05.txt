@@ -1,0 +1,711 @@
+Okay, so now we're going to start talking
+about some classic parsing methods for
+natural language processing.
+Some of those techniques are also used for
+parsing non-human languages, for
+example, programming languages.
+That's why they have been
+developed many years ago.
+Some of them are in the 50s and 60s.
+I should say that, even though those
+methods are pretty old, they are still
+being used with some modifications,
+as you can expect, even these days.
+So it's important to
+understand how they work and
+where the people who came up
+with them were coming from.
+So again, let's look at the most
+typical example of parsing.
+We have on the left-hand side now,
+a parse tree for the sentence,
+the child ate the cake with a fork.
+On the right-hand side, we have grammar.
+So the question is, how do we arrive at
+this parse tree given the grammar and
+given the original sentence as a string?
+So one of the approaches is to
+treat parsing as a search problem.
+And there are two types of constraints.
+Some of those constraints
+come from the input sentence.
+So we know that is has
+a certain number of words,
+that they come in a certain order and
+that they have certain parts of speech.
+And there are other constraints
+that come from the grammar.
+So we know that what we're looking for
+is a sentence or a noun phrase and
+that the sentence has a noun phrase and
+a verb phrase in that order, and
+that we expect to see
+an adjective before the noun.
+And so those types of constraints, both
+of them help constrain the parse process.
+So there are two general
+approaches to parsing as search.
+One is a top-down method where it
+starts from the sentence level and
+it tries to expand a true structure
+that matches the input string.
+Or it can also have the so-called
+bottom-up method where you start from
+the sentence itself and you try to combine
+adjacent words into constituents, and
+then combine those constituents together
+until you reach the S level at the top.
+So here's the basic example of top-down
+parsing, on the right-hand side
+we have the same grammar, and
+then we're starting from S and
+we're trying to come up with
+a parse of the sentence.
+So for the first thing we
+can try is S goes to NP VP,
+that's kind of unambiguous
+in this example.
+Then the noun phrase,
+the one thing that you can try,
+again not necessarily by
+leftmost derivation, just for
+some reason we want to choose this
+particular expansion, NP goes to NP PP.
+And then, it turns out that eventually
+this is going to conflict with the input
+sentence, which is that the first
+two words are with child.
+So the prepositional phrase is nowhere
+to be found near the beginning of
+the sentence, and therefore we have
+to backtrack and consider a different
+interpretation for noun phrase,
+specifically to determine a noun.
+And later, if we expand this further
+down to the sentence, this particular
+derivation is going to match the input
+sentence and we can proceed with
+the inside of the grammar until we
+finish parsing the entire sentence.
+So this is an example of top-down parsing,
+and
+it was successful in this case
+with a little bit of backtrack.
+Now, let's look at bottom-up parsing.
+In bottom-up parsing,
+we are going to start from the sentence.
+The child ate the cake with the fork.
+And we're going to try to combine symbols
+starting from the left-hand side.
+So the,
+the only thing it can be is a determiner.
+Child is a noun and so on.
+We get all the parts of speech.
+And we move on.
+We tried now to combine left to right,
+the determiner was something else to
+build a new nonterminal from the grammar.
+So determiner noun combined
+very nicely into a noun phrase.
+Then, we have now a noun phrase and
+a verb phrase.
+We could combine those two together, or
+we can combine another determiner in
+a noun into a noun phrase,
+and possibly a third one.
+Then, we can combine the preposition
+with a noun phrase to form
+a prepositional phrase.
+And now, we can combine a noun phrase
+with a prepositional phrase to
+form a new noun phrase and so on.
+As you can see,
+at every iteration we are picking
+two symbols that have not
+been combined yet, and
+we combine them together until we reach
+the top level of the sentence, S.
+And now, when I say two,
+this is just because this grammar
+is of the so-called binarized form.
+In which case, the right-hand
+side of a nonterminal always
+consists of two new nonterminals.
+This is not necessarily the case
+in general, as if you remember,
+the grammar with auxiliaries had rules of
+the kind S goes to auxiliary noun phrase
+verb phrase, in which case you have
+three things on the right-hand side.
+It turns out that for parsing,
+it's very important whether
+grammar is binarized or not.
+We will revisit this in
+the next few slides.
+So there are some advantages in both the
+bottom-up and the top-down methods, and
+there are just as many disadvantages for
+each of them.
+So, for example, the bottom-up
+parser has a significant problem
+is that it explores options that
+are not going to lead to a full parse.
+And this is pretty obvious,
+since we're starting from the sentences.
+And the top-down method
+has a different problem.
+It explores options that don't
+match the full sentence.
+So you may have a dead end
+starting from the top and
+then you have to do a lot of backtracking
+until you find the correct expansion.
+So one technique that solves some of those
+problems is based on dynamic programming.
+So, just a reminder,
+dynamic programming is a method where
+you have a number of iterations.
+At each iteration, you combine
+some partial solutions that you
+have computed in the previous iterations
+to form a solution to a larger problem.
+So you essentially cache a lot of
+intermediate results, for example,
+the particular parse of a noun phrase, so
+that you don't have to
+re-parse it later on.
+So the technical term for
+this cacheing is memoization not
+to be confused with memorization.
+Memoization just means that, once you
+have a low terminal that has already
+been parsed, you can just store all the
+information that was needed to parse it.
+And you can just restore it from
+memory instead of re-computing
+it every time you need it.
+So the method that has been used the
+longest, that uses dynamic programming for
+parsing, is the so-called
+Cocke-Kasami-Younger parser or CKY.
+As I mentioned before,
+is based on dynamic programming, and
+it's actually very powerful, as long
+as the grammar is in a binarized form.
+So now, we're going to look at some
+specific techniques for parsing.
+We're going to start with
+shift-reduce parsing.
+So shift-reduce parsing
+is a bottom-up parser.
+It goes left to right in the sentence.
+And it tries to match the right-hand
+side of a production until it can
+build a sentence.
+It includes two operations,
+as the name indicates.
+Those are the shift operation and
+the reduce operation.
+The Shift operation takes a word from the
+input centers and pushes it onto a stack.
+So for example, if the sentence is,
+the child ate the cake with a fork,
+the first that we'll see is that the word,
+the, is going to be pushed onto the stack.
+And then, it will wait until it can
+be combined with some other words.
+And then, if that happens, we will
+perform the so-called reduce operation.
+Which checks if the top end
+words on the top of the stack
+match the right-hand side of a production.
+If they do, then all of them
+are popped from the stack,
+and they are replaced by
+the left-hand side of the production.
+For example, if we had the word
+the already on the stack and
+the next word is child, the word the is
+a determiner, the word child is a noun.
+And we have a rule that
+says that a determiner and
+a noun can be combined
+to form a noun phrase.
+So once we have pushed the and child to
+the top of the stack and we popped them
+back, we're going to replace them
+with the symbol for noun phrase.
+And there's a stopping condition.
+This one should be pretty obvious.
+This method is going to stop if
+both of those things are true,
+namely that the input sentence has been
+processed all the way to the end and
+that an S has been popped from the stack.
+And there's nothing left in the stack.
+So let me now walk you through an example
+of a shift-reduce parsing process.
+What you see on the screen is
+the sentence that we want to parse,
+the child ate the cake.
+There is a star that tells us how
+far in the string we have come.
+At the beginning obviously,
+we are at the beginning of the string.
+So the only thing that we can do at this
+point is to recognize that the word, the,
+is a word.
+And that it has to be pushed into
+the stack using a shift operation.
+So we're moving the cursor forward,
+and we now have the word,
+the, on top of the stack.
+And we replace it there with a determiner.
+So a determiner is its part of speech.
+So this is done doing
+using a reduce operation.
+So now at this point,
+the stack has determiner on top and
+child ate the cake remains in the string.
+So the next thing that we want to do
+here is to process the word child.
+So the word child gets pushed onto
+the stack and then replaced with a noun.
+So with a shift and a reduce operation, we
+have determiner noun on top of the stack
+and ate the cake as
+a remainder of the string.
+So at this point we can perform
+a second reduce operation
+to merge the determiner and the noun and
+replace them with a noun phrase.
+The next thing we do is
+look at the word ate.
+The word ate goes to the stack.
+Then it gets replaced with its
+part of speech which is verb.
+And then the noun phrase and the verb are
+going to be combined together, and so on.
+So we have a sequence of shifts and reduce
+operations until we get to this point,
+where we have on the stack
+three categories, noun, phrase,
+verb, and determiner.
+And the word cake, so
+the word cake gets replaced by a noun.
+And then, at this point, we can
+combine things onto top of the stack,
+determiner noun into noun phrase,
+verb noun phrase into a verb phrase, and
+finally, noun phrase
+verb phrase into an S.
+So at this point, we have satisfied
+all the stopping conditions, and
+we can declare that
+the parsing was successful.
+So just to remind you, the stopping
+conditions were that the stack is empty,
+the input string is empty, and
+that we have been able to get
+S as part of the process.
+And the corresponding parse tree here is S
+goes to non phrase verb phrase, and so on.
+So the next that we're going to talk
+about is the Cocke-Kasami-Younger
+parsing method, or CKY.
+It's based on dynamic programming.
+And the reason why we're using
+dynamic programming is so
+that a lot of the work that is
+normally repeated in parsing,
+bottom up or top down parsing,
+doesn't have to be repeated.
+So we're going to cache some
+of the intermediate results
+in order to improve the complexity
+of the parsing algorithm.
+So the dynamic programming
+method works the following way.
+You're going to build a parse
+a substring from word i to word j, based
+on all the current parses i to k, and k to
+j, where k is somewhere between i and j.
+So for example, if we have something like,
+the child ate the cake,
+we're going to parse that phrase,
+the child at the cake, based on the parses
+for, the child, and the parse for,
+ate the cake, or any other combination of
+sub-strings for this five word sequence.
+So the complexity of dynamic computing
+is cubic, and this is recognizing or
+finding a single parse for
+any input string of length n.
+We're going to look at more detail at
+the complexity of CKY in a few slides.
+So the CKY method is a bottom-up method.
+And it requires that the grammar
+is normalized, more specifically,
+has to be converted to a binary form.
+So in a binary grammar, the only
+things that you are allowed to have is
+a non-terminal going to two non-terminals,
+or a non-terminal going to a terminal.
+Later, we're also going to
+look at the early parser,
+which is also based on dynamic
+programming, which is a top-down parser.
+And a little more complicated than CKY,
+but more importantly,
+doesn't have this
+binarization requirement.
+So going back to CKY, the sentence
+that we want to parse is the same,
+the child ate the cake with the fork.
+The grammar is the same, and
+as you can see, it is in binary form.
+Let's confirm this.
+S goes to NP VP,
+the two non-terminals, this is fine.
+Both rules for noun phrases include two
+non-terminals on the right-hand side, so
+this is fine.
+The same thing applies for
+prepositional phrases and verb phrases.
+And then finally we have the lexicon.
+All of the non-terminals here
+determine a noun, preposition, and
+verb turn into single terminals.
+And again, this is completely consistent
+with the definition of a binary grammar.
+So the CKY method works by
+building a dynamic table.
+Each of those cells here tells you how to
+parse a substring of the original sentence
+from a given word to another given word.
+So for example at the very beginning,
+we want to build a parse for the word the.
+The word the,
+looking at the lexicon is a determiner.
+So this cell here includes the information
+that the word the is a determiner.
+Then we're going to start filling this
+table until we get all of the boxes full,
+and the order in which this is done
+is by columns going bottom up.
+So the next thing that we are going
+to produce after this determiner is
+the box just between child and ate.
+So the word child is a noun.
+According to the lexicon,
+the next box is the one above.
+So is the any way to combine
+the determiner and a noun?
+Yes, there is such a way and that is
+by creating a rule for noun phrases.
+And we can also keep some back pointers
+that tell us that this noun phrase
+was created from the determiner and
+the noun.
+So the next box that needs to be expanded
+is the one to the right of the word ate.
+Well that's a verb,
+there's only one possible way to
+interpret this word in the grammar.
+Then there's nothing else that
+we can do in that column.
+We move on to the next column,
+the word the is a determiner.
+And again,
+the boxes above cannot be filled at this
+point because there's no rule that has
+a determiner as the right-hand side.
+The word cake now is a noun.
+At this point we can combine
+the determiner for the,
+with the noun for cake.
+That gives us a noun phrase
+in this particular cell here,
+which, with back pointers,
+takes us to the parses of the individual
+constituents, determiner and noun.
+Then we continue filling
+the rest of this column going up.
+So there is a verb phrase that can
+be produced by combining the verb,
+ate, with the noun phrase, the cake.
+So this is what you see on the screen now.
+And we can also go all the way up to
+the cell that goes from the to cake.
+In this case,
+we can build a sentence right there.
+And this sentence consists of
+the noun phrase, the child, and
+the verb phrase, ate the cake.
+Now, one thing that you can say at
+this point, is okay, and we're done.
+And we've just parsed the input sentence.
+Now obviously, we're not done,
+because we still have the words,
+with the fork, that have to be processed.
+We have been able to identify a sentence
+up to this point, the child ate the cake.
+But we're not done.
+We have to continue until we can find an S
+in the top right-hand box of the chart.
+Okay, so what do we need to do next?
+We need to expand the word with.
+That's a preposition.
+There's nothing we can do with this
+preposition on the right-hand side, so
+the rest of the boxes in this
+column are going to remain blank.
+The next word then is the word the,
+then fork.
+Then we can combine the determiner for
+the with the noun for
+fork to get a noun phrase.
+We can combine that noun phrase
+with the preposition with
+to form a prepositional phrase.
+And finally,
+we can combine the noun phrase,
+the cake, with the prepositional phrase,
+with the fork,
+to form a noun phrase that corresponds to
+the substring, the cake with the fork.
+So, this is where we are now.
+We can continue going up,
+we now have an entire verb phrase that
+we obtained by combining the verb phrase,
+ate the cake, with a prepositional phrase,
+with the fork, and that give us a new
+verb phrase, ate the cake with the fork.
+But we can also combine a verb phrase at
+this point by merging ate which is a verb,
+with the noun phrase
+the cake with the fork.
+So you can see that we have
+a verb phrase in this cell, but
+it can be obtained in two different ways,
+and
+this obviously will lead us to having two
+alternative parses for this sentence.
+And eventually we have this verb phrase
+can combined by, with a noun phrase
+the child to form the sentence
+the child ate the cake with the fork.
+But as we noticed before,
+there are two different parses
+that have to do with the verb
+phrase ate the cake with the fork.
+So if you look at the CKY
+data structure you will see that
+the two bold lines tell you that
+the verb phrase in position eight can be
+obtained by either combining the verb and
+a noun phrase, or by combining a verb
+phrase and a prepositional phrase.
+So this gives us two different parses and
+we want to figure out what is the meaning
+of each of those two sentences.
+The one on the left and
+the one on the right.
+So what's the difference between the two.
+Let's look at the syntactic tree.
+The one of the left-hand side has
+the prepositional phrase with the fork,
+as part of the cake with the fork.
+So, it's part of the noun phrase,
+whereas the one on the right-hand side has
+with the fork at the same level as ate.
+So to remind you, we have looked
+at examples like this before.
+The one on the left-hand side is
+an example of noun attachment or
+low attachment.
+And the one on the right-hand side
+is an example of high attachment,
+also known as verb attachment.
+And the semantics of the sentence on
+the left Is that the cake includes a fork,
+whereas the one on the right-hand side
+says that the fork was used to eat
+the cake, and this the Pen Treebank
+presentation of those sentences.
+As you can see, the first one has S
+goes to NP VP, and the VP goes to VP PP,
+whereas the second one less goes
+to NP VP just as before, but
+the verb phrase goes to VNP, and then
+the PP is generated as part of the noun
+phrase instead of as directly
+as part of the verb-phrase.
+If you're interested there's a nice
+online demo of a cky parser,
+which actually uses a very similar example
+to the one that we looked at so far.
+Feel free to take a look at this site and
+return here.
+So one thing that we want to say
+about the complexity of CKY is
+that there are O of n
+square cells in the table.
+Specifically there are n times n
+plus one divided by two cells, but
+it is still ordered by n squared.
+For finding a single parse, you have
+to do a linear lookup to each cell, so
+that's a square algorithm, and
+then you have to do this n times.
+So the total time
+complexity is O of n cubed.
+However, if you want to
+find all the parses,
+the total time complexity
+is going to be exponential,
+not cubic, and there's a reason for
+that and we'll get to that in a sec.
+Now let's look at the longer example.
+So this grammar here, which we've
+seen before has nonbinarized rules.
+For example it has the possibility
+of creating imperative sentences.
+VP going reacted to V, auxiliaries
+before the noun phrases, and so on.
+So if you want to parse
+the sentence take this book,
+which is an imperative sentence.
+We have to use the grammar
+that we have on the slides,
+and because it's not binarized
+we cannot use CKY as it is.
+We have to first convert
+the grammar to a binarized format.
+So here are some of
+the non-binary productions.
+S goes to auxiliary noun phrase,
+verb phrase.
+This is non-binarized because it has three
+non-terminals on the right-hand side.
+S goes to VP,
+NP goes to pronoun and so on,
+are all unary roles which have to
+be converted to binary as well.
+So this leads us to the binarized
+form of this grammar.
+The technical term for
+it is the Chomsky Normal Form or CNF.
+It tells us that the grammar has to
+be in the following form, either
+a non terminal going to two non terminals,
+or a non terminal going to a terminal.
+So convert the grammar from
+the previous slide we have to
+create new known terminals for
+hybrid rules.
+So hybrid rules one that has
+a mixture of terminals and
+non-terminals on the right hand side.
+For n-ary rules where n is other then 2,
+and for
+unary rules where n is equal to one.
+So here's an example from the ATIS Grammar
+describing Jurafsky Martin.
+The original grammar is shown on the left.
+We have two examples of non
+binary productions S goes to
+auxillary noun phrase verb phrase and
+goes to verb phrase.
+So how do we convert those to binary form?
+Well, one possibility is to split
+the three way right-hand side of
+auxiliary noun phrase,
+verb phrase into two binary roles,
+by introducing a new
+non-terminal called X1.
+So we have S goes to X1 VP,
+and X1 goes to auxiliary VP.
+So this way, the new grammar is in CNF.
+Now, the unary cases are more complicated
+and they involve a specific procedure,
+which is going to take possibly
+some of the terminal symbols.
+So that the grammar can be turned
+into context to Chomsky Normal Form.
+So, in this case,
+S goes to VP in original grammar is going
+to be replaced by several new rules.
+Some of which directly take you to
+the terminals, such as S goes to book,
+include, and prefer, and
+others that expand the sentence S into
+two non-terminals, each of which
+having exactly two known terminals.
+So S goes to verb and noun phrase and
+S goes to VP, PP, and
+you can do the same thing for
+the other productions.
+So for example, NP goes to pronoun
+is going to be replaced exactly
+when NP goes to I, or he, or she, or me.
+NP goes to proper noun,
+is going to be replaced directly where
+the terminal's NP goes to either Houston
+or Northwest airlines, and so on.
+So there is an automated procedure
+that takes the original grammar and
+binarizes it and
+turns it into Chumsky Normal Form.
+So, here's some specific examples.
+An infinitival verb phrase, that is, to
+verb phrase, would become something like
+infinitival verb phrase followed by to as
+the preposition's non-terminal symbol.
+And then that new non-terminal
+symbol is going to be converted into
+the terminal symbol to.
+S goes to auxiliary noun phrase, verb
+phrase is going to be replaced with S goes
+to R1 or X1 VP,
+R1 goes to auxiliary noun phrase.
+And finally, all the unary rules
+will be converted into rules
+where the left-hand side is a non-terminal
+and the right hand is a terminal.
+So there are some issues with CKY.
+When we start from a non-binary grammar,
+it turns out that the language generated
+by that new grammar is only weakly
+equivalent to the original language.
+It generates the same strengths
+using the different derivations.
+So if we have to convert original
+grammar to conjunctive normal form,
+then the final parse tree is not
+going to match the original grammar.
+So some additional processing will need
+to be done to convert it, and this is
+something relatively straightforward
+to do, but it needs to be done.
+One other issue with CKY parsing is
+that you can have syntactic ambiguities.
+So the deterministic CKY method has no
+way to perform syntactic disambiguation.
+So in the sentence,
+the child ate the cake with a fork,
+we saw that the chart
+includes two possible parses,
+but the parser has no way to
+tell which one is the best one.
+It would need to use either probabilities
+or some additional external information
+to choose one over the other and
+we'll see how this can be done later on.
+Okay, so as we can see,
+CKY is a very reasonable parser.
+However, it has some issues that can be
+addressed using some other techniques.
+We're going to look at some of those
+other techniques in the next segment.
+

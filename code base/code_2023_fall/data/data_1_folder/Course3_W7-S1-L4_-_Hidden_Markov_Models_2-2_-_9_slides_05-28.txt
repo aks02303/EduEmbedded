@@ -1,0 +1,160 @@
+We're now going to continue
+on the topic of HMMs.
+We just looked at a example.
+Now let's look what else
+we can do with HMMs.
+So given multiple Hidden Markov Models,
+we may want to compute which HMM
+was most likely to have generated
+a particular observation.
+And why do you think this is useful?
+Well, it turns out that you can have
+different HMMs for different languages,
+and then you can decide
+whether the document or
+the sentence is in a particular
+language based on the likelihood that
+the sentence was generated from
+each of those particular HMMs.
+So a naive solution is to try
+all the possible sequences for
+each of the HMMs and again this is
+something that is not going to work in
+practice because it has
+a very high complexity.
+Instead what we want to do is something
+similar to the Viterbi algorithm
+in the sense that it
+uses dynamic programming.
+It's something called
+the forward algorithm.
+The forward algorithm again
+uses a trellis called
+the forward trellis that encodes
+all the possible state paths.
+And I'm not going to go into the math for
+this algorithm, but I just want to tell
+you that it's again based on the Markov
+assumption that the probability of being
+in any state at a given time only
+depends on the probabilities of
+being in any particular state
+at the previous time point.
+Okay, so there are three different
+types of learning algorithms for HMM.
+The first one is called
+supervised learning.
+And that's when we have the luxury of
+having all of our training sequences be
+labeled with parts of speech.
+The second class belongs to the so-called
+unsupervised learning category, in which
+case we only have training sequences,
+like sequences of words or sentences.
+But we don't have any sequences
+of labels or parts of speech.
+In this case,
+the only thing that we need to know is
+how many states we expect
+to have in the HMM.
+So as we know the number of states in HMM
+for part of speech tagging corresponds
+to the number of parts of speech,
+plus possibly start and end.
+So, this is something
+that we can easily get.
+And the third category of matters for
+HMM learning is called
+semi-supervised learning.
+In semi-supervised learning,
+we have some label training data,
+but most of the data is not labeled.
+We have, for example,
+a few hundred sentences that have been
+manually labeled for parts of speech and
+then we have millions of tens of millions
+of sentences that have not been labeled.
+Let's first look at
+Supervised HMM Learning.
+We want to estimate
+the transition probabilities and
+the mission probabilities using
+maximum likelihood estimates.
+So the very simple method for
+this is to use maximum likelihood.
+So we count how many times the certain
+set of two states appears.
+And we just divide this by the total
+number of instances of the first state.
+And we can do the same for
+observation probabilities.
+Again, by counting the number
+of times that a certain word and
+a certain part of speech
+appear together and
+then divide this by number of times
+that particular part of speech appears.
+And then we can use smoothing for
+any unseen conditional probabilities.
+Now, the more interesting method is
+called unsupervised HMM training.
+In this case, we are given a set
+of observation sequences, and
+the goal is to build the HMM,
+in particular to build the new model that
+consists of the A, B and pi matrices.
+The most general technique used for
+HMM training without supervision
+is called EM algorithm.
+EM stands for expectation maximization and
+the specific implementation of EM for
+HMM training is called Baum-Welch
+algorithm or forward-backward algorithm.
+So Baum-Welch which is not guaranteed to
+find an exact solution for the best model
+that maximizes the probability of
+the observation given the model.
+However, it often reaches
+a solution that is acceptable.
+I'm only going to go to
+an outline of Baum-Welch.
+Here's at it works,
+we initially set all the parameters
+of the HMM to random values.
+So in our case we had, I believe,
+12 different parameters.
+And then we're going to
+perform a set of steps until
+the set of parameters converges.
+The two steps are the E step and
+the M step.
+The E step is the expectation step.
+That is used to determine the probability
+of the various state sequences for
+generating the observations.
+And then the M step, or the maximization
+step, is used to re-estimate
+the parameters based on the probabilities
+that we just observed in the E step.
+So very often what happens is that
+in a small number of iterations,
+probably a few dozen or even less, the set
+of parameters converges, and we can stop.
+So a few notes about the EM
+algorithm is that the algorithm
+guarantees that each iteration
+the likelihood of the data increases.
+And it's also important because it can
+be stopped at any point in time and
+give us some reasonably
+acceptable partial solution, so
+we don't need to wait until it converges.
+And it's also guaranteed to converge
+to a local maximum if we let it finish.
+So this is a little bit of a outline of
+the methods that I used with HMMs for
+natural language processing.
+And in the next lecture we're
+going to look at some additional
+ways to do part of speech tagging.
+

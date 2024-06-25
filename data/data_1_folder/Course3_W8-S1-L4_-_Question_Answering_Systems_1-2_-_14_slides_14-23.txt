@@ -1,0 +1,398 @@
+Okay let's continue with
+the topic of question answering,
+the next segment is going to be about
+some of the most important Q & A systems
+developed over the years.
+I already gave you some of the examples of
+the systems before TREC, and now I'm going
+to continue with systems that were
+developed for TREC and after TREC.
+So starting in '99, the first system is
+AnSel, John Prager et al., 1999 from IBM,
+was designed specifically for TREC,
+and it has the following components.
+It includes something called
+predictive annotation,
+which means that every named
+entity in the document collection
+corpus is labeled with a candidate answer
+type, such as person and location.
+It uses a standard machine learning
+technique, logistic regression,
+to compute scores for
+each of the candidate answers.
+So, here's an example.
+One of the questions is,
+when was Yemen reunified?
+So, the way that predictive
+annotation works is
+that it's somewhere between two
+extremes of question answer.
+So one of those exchanges will be
+something that is purely knowledge-based,
+NLP-based, for example,
+using a parse tree of the sentence, and
+something that is completely bag-of-words
+type, for example, an IR approach, in
+which case you have vector representations
+of documents and queries and sentences.
+And you're just looking for
+the passage that contains the words
+that are most similar to the query.
+So predictive annotation
+is somewhere in the middle.
+It labels every named identity
+with an appropriate category.
+Time, expression, person,
+location, and so on.
+So here's an example of
+how it works in practice.
+One of the TREC questions from
+99 was the author of the book,
+The Iron Lady,
+a biography of Margaret Thatcher.
+So this question is converted into
+an internal presentation that
+has Iron Lady as a phrase and a biography
+of Margaret Thatcher as a phrase.
+And then it gives different weights
+to the different types of words.
+For example, biography and
+book and author and so on.
+And then in green,
+in the middle of the screen,
+you can see the so-called
+syn categories for
+the expected answer, so
+who questions corresponds to persons,
+organizations, names, and
+roles in the named entity space.
+Then the next few lines show a sample
+document that was continued by
+the system it's label was in the middle.
+Its overall IR score is given next.
+And then one of the passages in this
+document is shown at the bottom
+of the page.
+As you can see,
+there are multiple named entities.
+One is Biography of Margaret Thatcher.
+That was labeled by
+the NER agent as a name.
+The next thing is Hugo Young,
+which was labeled as a person.
+Farrar, Straus & Giroux,
+which was marked as an organization, and
+finally Margaret Thatcher
+was labeled as a person.
+And now what we really need to do
+here is to identify the entities
+that have types that match
+the expected types of the question.
+So we're going to skip some of them.
+For example,
+in this example actually plays deaf is not
+on the list of question types expected.
+And we're going to focus
+on the other four,
+which actually correspond to
+the four categories in green.
+So here is some important
+observations about this kind of work.
+If a document contains
+the answers to the question,
+the query words tend to appear in
+close proximity to each other.
+So for example, author and the name of
+the book and the name of the person,
+like Margaret Thatcher, all appear near
+each other in the answer sentences.
+Another observation is that the answers
+to fact seeking questions are usually
+phrases.
+So this is consistent with
+the idea of predictive annotation.
+And those phrases can be
+categorize by question type.
+And the phrases can be identified using
+simple pattern matching techniques
+commonly use in name editing recognition.
+So in our case once we have the candidate
+answers that match the question types,
+what kind of features can
+we use to rank them and
+pick the one that we
+want as the first one?
+So in answer,
+the following features were used.
+Average distance and
+several others which I'm going to
+show you in the next few seconds.
+So, average distance is
+the average distance between
+the words in the beginning
+of the passage adjective and
+words of the queries that
+also appear in the passage.
+So, for example, if the question is, who
+is Johnny Mathis' high school track coach,
+and the passage is, Tim O'Donohue,
+Woodbridge High School's
+varsity baseball coach, resigned Monday
+and will be replaced by assistant
+Johnny Ceballos, comma,
+Athletic Director David Cowen said.
+So in this example, the passage that
+we're considering as a candidate
+answer to the original
+question is Tim O'Donahue.
+We want to compute how far that phrase,
+Tim O'Donahue is from the words
+that appear also in the question.
+So the question words are high school,
+which appears a few words
+later in the sentence.
+The word track, which doesn't appear,
+and the word coach,
+which appears about six
+words to the right.
+So, the average distance
+between Tim O'Donahue and
+the words from the query is about eight.
+Another feature is Not In Query.
+So Not In Query reflects the number
+of words in the passage that do not
+appear in the query.
+So for example if, one the candidate
+answers is Woodbridge High School.
+It's going to have a notinq score of one,
+because the words high and
+school appear in the query,
+whereas the word Woodbridge doesn't.
+The third feature is frequency.
+This is just the number of times a given
+passage appears in the hit list.
+The next one is sscore,
+this is the search engine relevance score.
+So essentially how relevant
+that particular sentence
+is to the original query according
+to the underlying search engine.
+The fifth feature is number.
+That is the position of the span or
+the short-text passage that we're
+considering, among all the spans returned.
+So in this example Lou Vasquez is
+the first example that was returned
+in all the passages.
+The next one is relative span number.
+This is the position of the span
+among all the spans returned within
+the current passage.
+So an example here, the rspanno value for
+Tim O'Donahue will be one,
+would be who would be two, and so on.
+And finally count is the number
+of spans of any span
+class retrieved within
+the current passage.
+So in our example we have
+Tim O'Donahue,Woodbridge High School,
+Monday, Johnny Ceballos, and
+Athletic Director Dave Cowen.
+So five, that would be the answer
+to this question here.
+And the final feature is the type,
+which is the position of the span type,
+and the list of potential span ties for
+that particular question.
+So, for who questions,
+the answers are expected to be person,
+organization, name, and role.
+But, those are not in any order.
+They are actually ordered so,
+the person is the most likely one,
+organization is the second most likely and
+so on.
+So, we want any candidate
+answer span that is a person to
+get a higher score than one that is
+an organization or name or role.
+And now we can continue with a full
+table with all the features.
+So the left hand side we have
+all the candidates' spans or
+candidate answer passages.
+For each of those we have the type,
+the value of the different feature, and
+finally the composite score computed
+by the logistic regression function.
+Then when you sort the passages
+based on this Value.
+You get that Lou Vasquez
+gets the highest score and
+is therefore returned in
+first place by the system.
+Tim O' Donohue is in second place and
+so one.
+Now whether this is the correct
+answer is not really relevant here.
+What's important is to
+understand how the system works.
+Okay this was an IBM system from '99.
+The next system is from AT&T Research.
+It's system was developed by Abney et al
+called IONAUT It used to be available
+online but it's not there anymore.
+It again is based on passage retrieval.
+It uses the Salton and
+Buckley start system,
+which is one of the classic information
+retrieval systems as their back end.
+It then performs entity recognition using
+Abney's Cass parser which is a parser
+that recognizes chunks such
+as non-incursive non-phrases.
+For example, names of people and
+dates and so on.
+And then it uses, just like the IBM and
+the system, entity classification.
+But only for 8 question types.
+The next system that I want
+to mention is from 2001.
+It was developed by Kwok from
+the University of Washington, and
+other researchers of there.
+This was the first large-scale Web QA
+system that used the full Web index.
+It involves several off the shelf
+natural language components.
+For example,
+it has a maximum entropy parser from
+the Charniak group at Brown University.
+It uses PC-Kimmo Antworth's system for
+part of speech tagging and
+morphological analysis for unknown words.
+It uses a very old version of
+a dependency link parser by Sleator and
+Temperley, and it uses Google
+as the underlying search engine.
+It performs tokenization,
+it identifies phrases in quotes, and
+it performs query transformations.
+So for example, a question like
+when did Nixon visit China,
+is expected to appear in original
+text as Nixon visited China.
+As opposed to having the verb in
+the infinitive and having a question word.
+It's actually expecting the text
+in the corpus to be very different
+syntactically form the question type.
+And they can convert the questions
+into this format automatically.
+The fourth system is from the University
+of Michigan, it's called NSIR, from 2002.
+It is based on probabilistic
+phrase re-ranking.
+So the idea behind it is that
+every candidate named entity or
+span has a signature,
+which is a sequence of parts of speech.
+For example, two nouns or a noun
+followed by a propositional phrase and
+then you have a training compass from
+which you determine the probability of
+having a certain question type
+associated with the specific signature.
+So for example, if the signature is two
+consecutive proper nouns, N and P, N and
+P, then the probability that this
+is a name of a person is very high.
+So here's an example.
+Bill Gates is a name of a person and
+then PNNP is
+the most likely sequence of parts of
+speech that corresponds to a person.
+So answers uses, again, off the shelf
+search engines as the backend.
+At that time, those were Google but
+also some old search engines such as
+AlltheWeb, Northern Light and Alta Vista.
+The next system is AskMSR by Michelle
+Banko et al., 2002 for Microsoft Research.
+It's based on the assumption
+that if a question is important,
+that means that somebody has already
+answered that question on the web.
+It's components are shown in this
+diagram here, directly from the paper.
+So here's what a typical flow looks like.
+We have a question such as,
+where is the Louver Museum located.
+The first component is
+a rewrite query component,
+where the original question is
+converted into likely patterns.
+Such as the Louvre Museum is located,
+or the Louvre Museum is in,
+the Louvre Museum is near, or
+just the Louvre Museum is, or
+finally, just the word Louvre and
+Museum and near.
+So those queries, are again, the output of
+the query, or query modulation component.
+Those are sent in parallel
+to search engine.
+The passages that are returned by
+the search engine are then collected.
+Only the summaries, or
+the snippets, get return for
+each document by the search
+engine are considered.
+Then all the n-grams, for example, two,
+three, four word long n-grams,
+are collected from those passages.
+And then those are filtered and tiled.
+So the tiling process, means that if
+you have one diagram that consists
+of the words, A and B, and another one
+that consists of the words, B and C,
+The tiling component is going to merge
+them together into a trigraph A, B and C.
+So, this case, for
+example, in Paris, could be from one
+bigram returned by the search engine.
+Whereas, Paris, France could come
+from a completely different bigram.
+And those two are tiled together
+into the trigram in Paris, France.
+And as you can see in
+this very simple example,
+the three candidate answers
+of which one is correct.
+And that is the one that
+ranks in first place.
+So one more example of tiling.
+If we have Mr. Charles and Charles
+Dickens, that could be combined into Mr.
+Charles Dickens.
+Okay, so the last system that we are going
+to talk about in this segment is by
+Echihabi and Marcu.
+It introduces, of the first time,
+the noisy-channel model,
+where on one hand you have questions, and
+on the other hand you have sentences that
+contain the answers to the questions.
+The idea is to pick the answer sentence
+that maximizes some probability,
+given the question.
+And it turns out that this kind of work
+requires sentence simplification so
+that it's possible to learn
+the probabilistic model accurately.
+So, in the next segment we're
+going to look at some more
+systems about question answer.
+

@@ -1,0 +1,700 @@
+So the next segment is going to give us
+some examples of difficulties with human
+language that make it very difficult for
+Adobe systems to understand them.
+The example in the box is
+time flies like an arrow.
+You can, if you think about it.
+You will probably immediately come up
+with a very reasonable interpretation
+of this sentence.
+However, this sentence has
+more than one interpretation.
+And some of those interpretations
+may not be as reasonable or
+as grammatical as the one
+that you first thought about.
+What are the different interpretations,
+can you think about them?
+Well, the most obvious meaning of this
+sentence was that time flies very fast,
+as fast as an arrow.
+Therefore, we can say
+time flies like an arrow.
+However, this is a metaphorical
+interpretation, and as you can imagine,
+computers are really not
+that good with metaphors.
+So they may just as well come up with
+other interpretations of the sentence that
+are much more literal.
+Let me run you through two
+such possible interpretations.
+In the first one, we start from
+a sentence like flies like honey.
+As in the insects called
+flies like to eat honey.
+Then we modify the sentence slightly
+to say flies like an arrow.
+I mean, this is just something
+else that they like.
+It's an arrow.
+It's not honey, but it's still
+a valid object of the verb like.
+And finally, we can change the sentence
+to fruit flies like an arrow.
+So some specific kind of flies.
+Like an arrow.
+So this is another valid interpretation
+of this original sentence.
+Yet another one is to think of
+the word time as a verb, so
+it's like you take a stopwatch.
+And you use it to time the race.
+In that case, you can say,
+well, let's time the flies and
+then we can go back to the original
+sentence, time flies like an arrow.
+Let me run you through some more classic
+examples of ambiguous sentences and
+confusing sentences in natural language.
+The first one is about Beverly Hills.
+Everybody knows that Beverly Hills
+is a city in California.
+If we teach a computer to recognize that,
+let's say compound like this
+is the name of a city, it will probably
+interpret the next one also as a city.
+Whereas many of you probably have
+heard of the name Beverly Sills and
+know that this is actually
+the name of a famous person.
+One example is the box is in the pen,
+this is an example from Yehoshua Bar-Hillel
+from more than 50 years ago.
+This sentence has a very
+obvious interpretation,
+if box could be contained inside a pen.
+However because boxes
+are usually larger than pens,
+it would have to have a completely
+different interpretation.
+In that case, we are not going to assume
+that pen is a writing instrument but
+instead we're going to assume that
+the pen must be something larger than
+a box or it could be the interpretation
+of pen as a place where animals live.
+This is very different from the pen is in
+the box which very clearly talks about
+the writing instrument because
+it can fit inside the box.
+So the lesson to learn here is that
+the word order can matter a lot.
+Next examples, Mary and Sue are mothers.
+Let's think about this sentence for
+a second.
+How many mothers do we have here?
+Well, Mary is a mother, Sue is a mother.
+That makes two mothers.
+What if we say Mary and Sue are sisters?
+This sentence looks very similar to the
+previous one, and yet in most contexts it
+would mean that Mary and Sue are sisters
+of each other, and therefore.
+They're not in the same semantic
+relationship as the ones in
+the previous sentence.
+Every American has a mother.
+How many mothers is that?
+Well we assume that it means that they're
+roughly as many mothers as Americans.
+At least the same order of magnitude.
+But if we just change just a simple word
+here to every American has a president,
+we're going to see that the semantics
+of the sentence changes a lot.
+In this case,
+there's only one president for
+all Americans, as opposed to the previous
+example where there were many mothers.
+And the final example is we gave
+the monkeys the bananas
+because they were hungry.
+Who is they?
+Well because they is
+the subject of were hungry,
+it must refer to monkeys because
+bananas cannot be hungry.
+Whereas in the next example,
+we can say we gave the monkeys
+the bananas because they were overripe.
+Well, who was overripe?
+Well again, the common sense tells us that
+it was the bananas and not the monkeys.
+So the lesson to learn here is
+that two sentences may look very
+similar on the super superficially, but
+then when you want to translate them
+into some semantic representation.
+You may not be able to do this in
+a straightforward manner because
+there are many subtle
+interactions that come into play.
+So, let's now talk about the difference
+between syntax and semantics.
+Very often in the linguistics
+literature people use stars and
+question marks to indicate that
+a certain sentence is incorrect.
+It's not grammatical in some way.
+And the difference between the two
+is that the first sentence here,
+little a has Mary lamb, this sentence
+is not syntactically correct.
+When you would expect to see
+a sentence like Mary has a little lamb,
+which has the correct syntactic structure.
+So sentences that
+are syntactically inaccurate.
+Are usually marked with stars.
+Now what about the question mark?
+The second example from Chomsky 1957 says
+colorless green ideas sleep furiously.
+Well, if you think about this sentence,
+it is.
+Actually syntactically well formed.
+It has a subject just like
+Mary has a little lamb.
+In this case,
+the subject is colorless green ideas.
+It has a verb phrase, sleep furiously.
+And the whole sentence sounds
+syntactically correct.
+However, its semantics, its meaning
+is problematic in more than one way.
+What are the problems here?
+Well, the first one is that ideas.
+Usually don't sleep, in order to sleep,
+some entity has to have
+this capacity and ideas doesn't fall in
+the category of things that can sleep.
+The second problem is that when you sleep,
+you usually sleep peacefully,
+not furiously so the combination of
+sleeping with the adverb furiously is
+in congruence, and
+finally we have colorless green ideas.
+Which is problematic in two ways itself.
+Colorless and green are two adjectives.
+But they contradict each other.
+It cannot be both green and
+colorless at the same time.
+And finally, ideas cannot be described
+as colorless or green, or both.
+Because ideas, again, don't have
+the property of color or colorlessness.
+So to summarize the slide, we want to
+make a distinction between syntactically
+poorly formed sentences
+like the first example.
+And sentences that
+are semantically incorrect or
+poorly formed like the second one.
+Then let's look at different
+kinds of word ambiguity.
+Let's start with three very simple
+words that you see every day.
+The word ball, the word board,
+and the word plant.
+What are the meanings of those words?
+Well they have more than one meaning.
+Each of them has in fact as many as 10 or
+15 different senses.
+What about the words fly, rent and tape?
+Well they can also be ambiguous but
+in a different way.
+They don't just have different senses,
+they also have different parts of speech.
+For example, a fly can be a noun and
+to fly can be a verb.
+A rent is a noun.
+To rent is a verb.
+So this is a difference in part of speech.
+And the third category is the words
+that I'm just showing you here.
+Try to pronounce those words,
+and see what they have in common.
+Just give it a try, and on the next slide,
+I will explain what they have in common.
+So let's look at the answers to the quiz.
+Address or address can be pronounced
+different whether it is a noun or a verb.
+There are many other words like this.
+For example,
+transport versus to transport.
+Effect and outline versus outline.
+Resent versus resent, for
+example as a verb infinity which means
+to hate somebody, and resent means
+to send a letter a second time.
+It's pronounced very differently again.
+Entrance can be a noun, or it can be
+a verb, which means to put somebody in
+a trance and then pronounced very
+differently, entrance versus to entrance.
+And finally, number can be either number,
+if it means the comparative
+of the adjective numb, or
+it can just be the word number as a noun.
+Now, computer languages don't have
+this kind of problem of ambiguity.
+They are designed to be unambiguous.
+It turns out that there are also human
+languages that are unambiguous by design.
+One such example is Lojban, and the,
+the picture that you see next to the name
+is the official logo of that language.
+It was designed specifically
+to be unambiguous.
+There are examples of ambiguity also
+in what is known as noun-noun phrases.
+So a sequence of three words
+can be parsed either as
+a group of the first two that is
+then modified by the third one, or
+as a group of the last two,
+which is then modified by the first one.
+So which instance do we have here?
+Science fiction writer is of the first
+kind, where science fiction is a type of
+literature, and a science fiction writer
+is somebody who writes science fiction.
+Customer service representative.
+Again, customer service is a unit,
+and then customer
+service representative is a representative
+who provides customer service.
+So we again have the first
+possible interpretation.
+And then the last example
+is state chess tournament.
+If we try to pass this phrase the same way
+as the previous two, we would assume that
+state and chess are connected, and that is
+not the case in this particular example.
+We have the opposite kind of grouping.
+Chess tournament is a unit, and
+then state chess tournament is
+a kind of chess tournament.
+So we have the second possible parse.
+Now, I'm going to jump to a,
+a couple of problems from NACLO,
+which is annual computation and
+linguistic competition.
+You can do those problems on your own.
+The first problem is called One,
+Two, Tree.
+Not three but tree, by Noah Smith,
+Kevin Gimbel and Jason Eisner.
+It deals with counting the number
+of parse trees of sentences.
+And the second example is
+called Fakepapershelfmaker,
+which is again related to this
+problem of grouping nouns.
+It was written by Willie Costello, and
+it uses Japanese noun compounds
+as the material for the problem.
+And once you solve those problems,
+you can go back here and
+find whether your solutions
+match the official solution.
+Now let's look at other types of ambiguity
+that appear in natural language.
+The first item is morphological ambiguity.
+Joe is quite impossible,
+means that Joe is not possible.
+The word impossible can be
+morphologically analyzed as not possible.
+Im means negation,
+whereas if you look at similar word,
+Joe is quite important, the word important
+looks superficially similar to impossible,
+but it means something very different.
+It doesn't mean not portant.
+In fact, portant is not a word by itself.
+So important is misleadingly considered
+to be a negation when it's not.
+Now, phonetic examples,
+I already showed you this one before.
+Joe's finger got number.
+Now, number can be pronounced as number
+if you don't know what the full sentence
+means, and similarly the word finger
+is different from the word singer,
+which comes from sing,
+which has a very different pronunciation.
+And finger doesn't come from the word
+fing, which doesn't even exist.
+They can also be ambiguities
+with parts of speech.
+For example, Joe won the first round.
+The first round could be either a verb,
+a noun, or an adjective.
+In this case, it is a noun because
+it's preceded by an article and
+an adjective, but in other context,
+it could be a different part of speech.
+It can also be syntactic ambiguities.
+Call Joe a taxi.
+So this sentence can be either
+that you want to hail a cab for
+Joe, or
+you want to name Joe with the name taxi.
+And then we have propositional
+phrase attachment.
+This is a classic example.
+Joe ate pizza with a fork.
+With a fork can relate to pizza,
+or it can relate to ate.
+So if it were to refer to pizza,
+it would mean that somehow the pizza
+is connected with the fork,
+which is definitely not the case here.
+In the second interpretation where
+the fork modifies the verb ate, and
+it tells you the way
+that Joe ate the pizza.
+With meatballs,
+if you use it in a sentence,
+you would say,
+Joe ate pizza with meatballs.
+In that case,
+with meatballs modifies pizza.
+Joe ate pizza with Samantha.
+Definitely the Samantha was not part
+of the pizza, so it modifies ate.
+And finally, Joe ate pizza with pleasure.
+Again, with pleasure modifies ate and
+not pizza.
+Say it's ambiguity.
+Joe took the bar exam.
+So bar exam can relate to many
+different senses of the word bar.
+In this case,
+it is probably the legal sense of bar,
+as the association that qualifies lawyers.
+But if you want to be
+really funny about it,
+you can also interpret it as taking the
+exam in a place where you can have drinks.
+There's also modality ambiguity.
+Joe may win the lottery.
+So Joe may win the lottery gives you
+essentially two possible worlds,
+one in which he will win the lottery and
+one in which he will not win the lottery,
+and may is a way to hedge between
+those two alternative futures.
+Let's look at the few more
+examples of ambiguity.
+There is subjectivity ambiguity.
+Joe believes that stock will rise.
+If you hear sentence like this,
+it should not lead you to
+believe that stocks will rise.
+It just indicates that somebody
+believes that the stocks will rise, so
+this is a subjective opinion or
+another instance of modality.
+The next example is cc attachment.
+So cc stands for coordinating conjunction.
+Those are words like and, or, and but.
+The example is Joe likes ripe apples and
+pears.
+The ambiguity here comes from
+the fact that the conjunction and
+can link just apples and pears, but
+it can also link ripe apples and pears.
+So in one of the examples,
+the pears are ripe, and the other example,
+the pears are not specified
+as either ripe or not ripe.
+Negation ambiguity.
+Joe likes his pizza with no cheese and
+tomatoes.
+The negation starts with the word no,
+but whether it applies to just cheese,
+or it applies to no cheese and
+tomatoes is ambiguous.
+We also have a referential ambiguity.
+Joe yelled at Mike.
+He had broken the bike.
+The word here that we're
+interested in is 'he'.
+Those 'he' refer to Joe, does it refer to
+Mike or does it refer to another person?
+Well, we can infer from the contacts
+that it probably refers to
+Mike because otherwise, Joe wouldn't
+have any reason to yell at him.
+Now, we look at a very similar example
+which has a different interpretation,
+Joe yelled at Mike, he was angry at him.
+Well, what does 'he' refer to here?
+Is it Mike or Joe?
+Well it looks like it's again,
+fairly straightforward to interpret this
+sequence of sentences as 'he' referring to
+Joe because when people are angry,
+they yell at each other.
+In this case, Joe is angry at Mike and
+therefore he yells at him.
+So 'he' refers to Joe,
+unlike the previous example.
+And reflexive ambiguity,
+John bought him a present.
+What does him refer to?
+Well, could this refer to John?
+Probably not.
+In that case,
+you would have to say something like this.
+John bought himself a present.
+Himself is a reflexive pronoun that
+explicitly refers back to John,
+whereas in John bought him a present,
+him must refer to another person.
+One more example of ambiguity is what
+is known in linguistics as ellipsis or
+parallelism.
+Joe gave Mike a beer and
+Jeremy a glass of wine, so
+we have a sentence that consists
+of two phrases one where Joe gives
+beer to Mike and one where Joe
+gives Jeremy a glass of wine,
+yet Joe gave is missing
+from the second sentence.
+It can be inferred from the parallelism
+of the two components of the sentence
+because somebody is receiving a drink so
+that person is Mike in the first example,
+Jeremy in the second example.
+Whereas the person who's giving the drink
+is only shown in the first half of
+the sentence.
+That is Joe.
+It's missing in the second sentence and
+therefore by parallelism we can
+infer that it has to be Joe again.
+So the full sentence would read something
+like this, Joe gave Mike a beer, period.
+Joe gave Jeremy a glass of wine.
+And one final example of ambiguity
+is what is known as metonymy.
+Let's look at the sentence,
+Boston called and left a message for Joe.
+Well, the word Boston here is not used in
+its literal sense as the City of Boston.
+Instead, this sentence means that
+the office in Boston called, or more
+specifically, a person in the office in
+Boston called and left a message for Joe.
+So when word or expression is used to
+refer to some other expression instead
+we have an instance of metonymy.
+In addition to ambiguities there are many
+other sources of difficulties in natural
+language processing.
+For example, non-standard slang and
+novel words and usages,
+those come up all the time.
+So, let's look at some examples.
+A360, this is a model of an airplane.
+The next thing is a number.
+That can be an infinite number
+of different numbers that you
+can see in the text.
+Phone numbers can be formatted
+in many different ways, with
+a plus at the beginning, with parentheses,
+with or without hyphens in the middle.
+And so on.
+The word Spam used to be a kind of food,
+and
+now it's used as a verb indicating that
+you're sending somebody unsolicited email.
+The verb friend, so
+the word friend used to be a noun, but
+now it is used as a verb as in
+he friended me on Facebook.
+Some of the words that you see on
+the list here were recently recognized as
+dictionary words.
+They did not exist a few years ago.
+For example, yolo, for you only live once.
+Selfie, for
+a picture that you take of yourself.
+And chillax,
+which is a combination of chill and relax.
+Those words were recently
+added to major dictionaries.
+In fact, if you go to Urban Dictionary,
+you will find a lot of normal words
+that have very unconventional
+sense as that you still have to be able
+to process in a natural language system.
+The only warning that I have for you is
+that this website is very much R-rated and
+it should only be looked
+at with parental warning.
+There are also inconsistencies in text.
+For example, a non-compound such as
+junior college is a type of college,
+where as a compound like college
+junior is a type of person.
+Even though the two phrases have the same
+words, they mean very different things.
+There's also a very major difference
+between a pet spray, which is a spray for
+pets, and a pet llama,
+which is just a small of a llama.
+You can see that even though the two
+sentences have the same structure,
+they have very different interpretations.
+Then where I explicitly spell this wrong,
+typos and grammatical errors.
+Things like receipt, which people tend
+to spell incorrectly very frequently.
+John Hopkins instead of Johns Hopkins.
+Should of instead of should have.
+There's also parsing problem
+that you have to deal with.
+For example, what is a cup holder?
+Well a cup holder could be
+a person who won a cup.
+For example, a cup in golf.
+Or it can be a tool inside your
+car which is used to hold a cup
+wh- while you're driving.
+Federal Reserve Board Chairman again
+can be parsed in many different ways.
+And later on in the class we're going
+to look at how many different ways in
+fact there are to parse
+this sequence of nouns.
+The intended interpretation here is
+that we have a Federal Reserve,
+which is a United States
+national organization.
+The Federal Reserve has a board.
+And then a specific person is a chairman
+of the Federal Reserve Board.
+What other sources of
+difficulties can there be?
+They can be very complex sentences.
+We looked at some examples of those before
+they can be counter-factual sentences.
+For example, if you worked until
+this then that would happen.
+Humor and sarcasm, computers have a really
+hard time dealing with humor and sarcasm.
+As well as metaphor and
+other non-literal usages of words.
+Implicature, inference,
+word knowledge: this refers to cases
+where a sentence can only make sense
+if there is enough shared knowledge
+between the people who communicate.
+For example, if I say I was
+late because my car broke down,
+a normal person would understand
+the sentence without any difficulty.
+However a computer would have a hard
+time because there's a lot of
+implied knowledge that was not explicitly
+said in that previous sentence.
+For example, "my car broke down"
+implies that I own the car,
+I use the car to get to places.
+It also means that the car has wheels,
+that the car can break and
+that when a car breaks that causes
+you to be late for a meeting.
+So what is that explicitly mentions
+is very important for computer, and
+also what is word knowledge.
+Very often you cannot come up with any
+reasonable interpretation of a sentence if
+you don't have access to the implied
+knowledge that humans take for granted.
+There's also a significant difference
+between semantics and pragmatics.
+A sentence can be semantically correct,
+but it may have a specific purpose
+which can only be called by pragmatics,
+which is the study of how words and
+sentences are used in a given
+context to achieve certain goals.
+For example, if somebody asks you,
+do you know the time?
+What are you going to answer?
+I mean, some possible answers are yes,
+I know the time or I do.
+Obviously those are correct answers but
+they are not what the user what
+your interlocutor wants to hear.
+They want to ask you for
+the specific time.
+And language is hard even for humans so
+we shouldn't be surprised if even com,
+computers have problems with it.
+For example, for humans there's
+a distinction between learning
+L1 which is your native
+language as a child, and
+learning L2 which is
+learning a foreign language.
+Both of those are known to
+be very difficult to learn.
+Another instance of confusion in natural
+language processing is the use of
+synonyms and paraphrases.
+Synonyms refers to words
+that have similar senses.
+And paraphrases refers to phrases
+that have similar senses.
+So let's look at three sentences
+that come from the Dow Jones.
+The first sentence says
+the S&P 500 climbed 6.93,
+its best close since a certain date.
+The second sentence says
+the Nasdaq gained 12.22 for
+its best showing since a given date.
+And finally
+the Dow Jones Industrial Average rose,
+show the number of points its
+highest level since March 15.
+You can see that the three words
+on the left, climbed, gained,
+and rose, are pretty much
+synonyms of this in this context.
+Similarly, the three phrases on the right
+are phrases of each other.
+Its best close, for its best showing, and
+its highest level indicate the exact
+same meaning in those three examples.
+And the reason why the news wire
+uses different words is just to be
+more natural.
+You don't want to hear
+the exact same sentences and
+the exact same words used all over.
+So in the next segment we're going to look
+at some of the background that is needed
+to build natural energy processing
+systems, specifically the linguistic and
+mathematical background.
+

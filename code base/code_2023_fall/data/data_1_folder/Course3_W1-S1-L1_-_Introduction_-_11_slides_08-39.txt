@@ -1,0 +1,236 @@
+Welcome to
+the Natural Language Processing class.
+This is the introductory lecture.
+My name is Dragomir Radev,
+I have a PhD from Columbia University.
+The course is going to be approximately
+20 hours long, 10 weeks of 2 hours.
+And the intended audience is primarily
+students in computer science and
+linguistics, and informatics and
+some other fields such as mathematics,
+statistics, management, and engineering.
+There are other online courses available
+in natural language processing.
+This course however,
+is more introductory than the course that
+Michael Collins taught
+on Coursera in 2013.
+It is more focused on linguistics and
+computational resources than the Jurafsky
+and Manning version on Coursera in 2012.
+So the first questions that
+we want to ask ourselves is
+what is Natural Language Processing?
+Why do we want to study it?
+The definition of NLP or Natural
+Language Processing is very simple,
+it's the study of the computational
+treatment of natural language.
+When people say natural language
+they usually mean human language.
+It doesn't mean for example,
+the language of some animal.
+In other words, this course is about
+teaching computers how to understand but
+also how to generate human language.
+Let me start by asking you
+where this quote came from.
+Do you know this movie?
+It was from the time when I was a kid.
+You probably haven't seen this movie.
+It has a person talking
+with a computer and
+the person says "open the pod bay doors,
+HAL."
+And the computer says "I'm sorry Dave,
+I'm afraid I cannot do that."
+Here's the answer to the quiz.
+This is a quote from
+2001: A Space Odyssey.
+It's a 1968 science fiction
+movie by Stanley Kubrick.
+It was written by him and Arthur C Clarke.
+It's one of the first major science
+fiction movies that talks about
+computers that interact with
+humans using natural language.
+Nowadays, however, there are actual
+applications of natural language
+processing to the real world
+not just science fiction.
+I'm going to show you some examples here.
+The most obvious ones are search engines,
+all the major search engines
+such as Google, Yahoo!, Bing and
+some other search engines in other
+languages like Baidu in Chinese.
+All use natural language processing
+technology to understand your queries and
+find the matching documents.
+Another application is question
+answering for example,
+a few years ago IBM's Watson
+system famously
+played on television against the best
+human contestants in Jeopardy and won.
+There are nowadays natural language
+assistants such as Apple's Siri.
+And translation systems, you're probably
+familiar with Google Translate.
+There are other applications
+by other companies.
+For example, News Digest from Yahoo!
+There are applications to text generation.
+For example, the LA Times
+applies some computer software
+to generate the reports
+about earthquakes automatically.
+All those techniques use
+natural language processing and
+many person years have gone
+into building those systems.
+Now in the course of 20 hours, we're
+going to try to figure out what sort of
+technologies and what sort of insights
+are necessary to build systems like this.
+Let me make some notes here.
+First of all, computers are not inherently
+designed to understand human language.
+In fact,
+they're very confused by human language.
+Some very specific techniques are needed
+that will teach computers
+how to use human language.
+Natural language processing is
+the field that teaches computers
+how to understand language and I want to
+warn you that natural language processing
+is a very multi-disciplinary field.
+It draws on research and linguistics
+which are the study of language,
+theoretical computer science, mathematics,
+statistics, artificial intelligence, and
+even fields like psychology, and databases
+and user interfaces, and whatnot.
+So this class has multiple goals.
+The first goal is understand that
+language processing is hard.
+You cannot do a natural language
+processing if you don't have a very
+intuitive understanding of
+the difficulties of human language.
+Not only do you need to know
+that language is difficult, but
+also need to understand why.
+So this is the first theme of this class.
+The second theme is to
+provide the students with
+an overview of the key problems in
+natural language processing for example,
+machine translation and parsing.
+The third topic is to learn about the
+methods used to address these problems.
+Those techniques could involve
+specific statistical techniques or
+specific language resources.
+And finally, and
+just as importantly, we need to understand
+the limitations of these methods.
+Don't expect that the techniques that
+work for one type of text will work for
+another or the techniques that work for
+one language will carry
+over to other languages.
+So let's start first with a little
+bit of background in linguistics.
+And I want to warn you that this
+course is going to spend a lot of
+time on some of the linguistic intuition
+behind natural language processing.
+So very often will you see
+slides that address specific
+linguistic issues as they
+relate to this field?
+In communication,
+people have focused on interaction
+between a speaker and a listener.
+This theory applies not only to
+interaction between computers and
+humans but also interactions
+between different people.
+So what does the speaker do?
+The speaker first has to have an intention
+of something that she or he wants to say.
+That can include a certain goal,
+it can include some shared knowledge and
+beliefs about the topic that
+they're going to discuss.
+The next thing is, once the goal
+has been formulated, is to generate
+some representation of the sentence or
+the discourse that will be said.
+The third step is to actually synthesize
+and say, produce, the sentence.
+That can be done in text or
+in speech, depending on the system.
+Now, on the listener side
+we have three steps again.
+The first one is perception.
+That's when the listener hears or sees
+the text that was uttered by the speaker.
+The second step is the interpretation
+of what the speaker said.
+And interpretation can be
+done at the syntactic level,
+which is the grammatical
+structure of the sentence.
+The semantic level which is
+the meaning of the sentence, or
+the pragmatic level which is
+the purpose of the sentence.
+What did the speaker
+intend to communicate?
+And the third step is the incorporation
+of what the speaker just said.
+This is also know as internalization or
+understanding.
+That's when the listener
+actually take some action or
+learn something based on
+what the speaker just said.
+And both the speaker and the listener
+have to have some common ground.
+For example, if you are in a restaurant,
+you can point to a certain dish on
+the menu and say this or you can talk
+about a certain person and say he or she.
+So, this is all part of the shared context
+between the speaker and the listener.
+And it is known in linguistic
+theory as part of grounding.
+So, basic natural language processing
+system has the following structure.
+It has two components.
+U stands for understanding.
+That's the part that takes you from
+language to computer representation.
+Very often a natural language processing
+may only have an understanding component.
+For example, if you want to ask
+a question, you may just want
+the computer to perform an action
+based on it, not answer anything back.
+In other cases, you may have an entire
+dialog system which includes both
+understanding and generation.
+In that case, the computer will hear you.
+And then, using a technique called natural
+language generation, produce a sentence or
+perhaps a longer piece of text
+that would go back to you.
+Now in the next segment we're going to
+talk about some specific examples of
+text and understand why they
+present challenges to computers.
+

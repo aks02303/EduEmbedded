@@ -1,0 +1,248 @@
+Okay.
+We're now going to continue with another
+method for text similarity.
+Now, this is a much more general model,
+the vector space model,
+which is used not only for
+text similarity, but also in many other
+applications in natural language
+processing and information retrieval.
+So the vector space model
+represents documents in a space,
+a multidimensional space where
+each term is a dimension.
+So this is used primarily for
+representing full documents in
+information retrieval scenarios.
+So the terms could be the words
+that appear in the document, for
+example, cat, dog, and elephant, and
+the documents are linear combinations
+of vectors along the axes.
+So a document that contains, for example,
+three instances of the word cat, and
+one instance of the word dog, and
+one instance of the word elephant
+would be represented as the vector 3,
+1, 1 in this three-dimensional space.
+Another document that only has
+four instances of elephant and
+no instance of the other two will
+have a representation of 0, 0, 4.
+So document similarity is used in
+information retrieval to determine which
+document is more similar to a given query.
+So this is one of the basic ideas in
+document retrieval or in search engines.
+So we have a query such as the vector q,
+which is shown in the middle of the slide,
+and then two documents d1 and d2.
+And we want to determine whether d1 or
+d2 is a better match for the query q.
+We should note that queries and
+documents are presented in the same space.
+And that we can use the angle between the
+vectors as a proxy for their similarities.
+So in this example, the similarity
+between d1 and q is proportional to
+the angle alpha between those two vectors,
+and the similarity between d2 and
+q is proportional to theta, which is
+the angle between those two vectors.
+A slightly better version of similarity
+is based on the cosine of that angle.
+So this is cosine of alpha
+versus cosine of theta.
+And then, in this quadrant,
+they're related in the same direction.
+So, if the cosine is smaller,
+that means that the angle is also smaller,
+which also means that
+the similarity is larger.
+So smaller angle means larger similarity.
+So let's see how cosine
+similarities are computed.
+Well, mathematically, the cosine is just
+the normalized dot product of two vectors.
+So if we want to compute
+the similarity between a document and
+a query, we can just divide
+the sum of the Di Qi for
+all i's in the different
+dimensions of the vector space,
+where D sub i is the i'th
+component of vector D and
+Q sub i is the i'th component of vector Q.
+And then we need to normalize this by
+dividing the sum by the lengths of the two
+vectors.
+And the lengths are computed by taking
+the square of each of the dot product of
+the vector by itself and
+then taking the square root of that.
+There's a variant of cosine
+called the Jaccard coefficient,
+which is just the size of the intersection
+of the two vectors divided by the size of
+the union of the two vectors.
+Let's look at some examples now.
+Suppose that we have a document
+that is presented as cat, dog,
+dog and a query that is represented
+as cat, dog, mouse, mouse.
+So in this example, the first dimension
+is cat, the second dimension is dog, and
+the third dimension is mouse.
+So the vector representation
+of D is going to be <1,2,0>.
+The vector representation of
+Q is going to be <1,1,2>.
+And then we can compute
+the similarity between D and Q.
+So we multiply pairwise the first
+components of the vectors,
+1 x 1 + the product of the second
+components, 2 x 1 + the product of
+the third components, which is 0 x 2,
+that gives us 3 in the numerator.
+And then we normalize by the product
+of the lengths of two vectors.
+The length of the first vector D
+is square root of 1 squared plus 2
+square plus 0 square, or square root of 5.
+And the length of the second vector is
+square root of the sum 1 square plus
+1 square plus 2 square,
+which is square root of 6.
+And if we simplify the formula, 3 divided
+by square root of 5 times square root of
+6, we get that the cosine similarity
+between D and Q is about 0.55.
+Now let's see what happens if
+we compare a vector with itself.
+So the cosine similarity between D and
+itself is 1 x 1 + 2 x 2 + 0
+x 0 = 5 in the numerator.
+And then in the denominator we have
+the square of the length of the vectors,
+and the vectors are the same,
+they each have length of square root of 5.
+Square root of 5 squared is 5, and
+then if we simplify the expression,
+we get that the overall cosine
+similarity of D to itself is 1.
+And this is the largest
+possible similarity.
+The smallest possible
+similarity is going to be what?
+What do you think?
+Okay, now let's try to
+do this as an example.
+We are given now three documents,
+D1, D2, and D3, and
+we want to compute the cosine similarities
+between D1 and D2, and then D1 and D3.
+So why don't you compute
+those similarities and
+think about the values that you get, and
+think why you're getting those values.
+On the next slide,
+I'm going to show you the answer.
+Here are the answers.
+The similarity between D1 and D2 is 1.
+And let me go back to the previous slide
+to remind you what those documents are.
+D1 is <1,3> and D2 is <10,30>.
+The similarity between those two is 1,
+because they
+are aligned in the exact same direction,
+therefore the angle between them is 0,
+which corresponds to the largest
+possible cosine of 1.
+Now if we compare D1 and D3, we're going
+to get a very different similarity of 0.6.
+So swapping the two dimensions
+between between <1,3> and
+<3,1> actually results in
+a very different value.
+In this case it's 0.6, but
+it could have been a much smaller value.
+So swapping the two dimensions is actually
+a bad thing, you don't want to do that,
+whereas extending the vector in
+a particular direction by multiplying it
+with a scalar is actually something
+that preserves document similarity.
+So one question for
+you now is, what is the range of
+values that the cosine score can take?
+There is one correct answer and there's
+another one that is somewhat correct,
+but depending on the context
+it won't be correct.
+So think about it very carefully.
+So the answer is this.
+In general, in mathematics, the cosine
+function has a rage of -1 to plus 1.
+However, since we're dealing with
+vectors that include counts of words,
+they are both in the first quadrant.
+And because the word counts
+are non-negative, the range for
+the cosine can only be 0 to 1.
+So the next item that we're going to
+discuss today is the vector space model
+as it is applied to text
+similarity in particular.
+So first let's consider the idea
+of distributional similarity.
+The distributional similarity
+principle tells us that
+two words that appear in similar contexts
+are likely to be semantically related.
+For example, I went to a search engine and
+searched for names of words that
+appear together with drive.
+I got schedule a test drive and
+investigate Honda's financial options.
+Volkswagen debuted a new version
+of its front-wheel-drive Golf.
+The Jeep reminded me of a recent drive.
+And finally, our test drive took place
+at the wheel of a loaded Ford EL model.
+So you can see that the word drive
+appears in all of those sentences.
+And a name of a car also appears in them.
+So Honda, Volkswagen, Jeep, and
+Ford are related each other because
+they appear all near the word drive.
+So this goes to an old principle
+by Firth from 1957 that
+says, you will know a word by
+the company that it keeps.
+So this is a summery of
+the distributional similarity principle.
+So what is the context, though?
+The context of a word can be anything.
+It can be the word before the target word,
+the word after it,
+any word within n words of the target
+word, any word with a specific syntactic
+relationship with the target word, for
+example, the head of the dependency or
+the subject of the sentence
+related to the target word.
+It can also be any word
+within the same sentence and
+even any word within the same document.
+So for example,
+documents that talk about hospitals and
+doctors and nurses are very likely to
+contain the word patient somewhere.
+So that's means that they're
+all semantically related.
+Now we're going to continue
+in a few minutes with
+the next segment on
+dimensionality reduction.
+

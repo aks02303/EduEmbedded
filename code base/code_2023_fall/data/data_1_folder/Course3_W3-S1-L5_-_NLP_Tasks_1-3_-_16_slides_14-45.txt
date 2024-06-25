@@ -1,0 +1,411 @@
+So in today's segment, we're going to
+talk about long range of tasks that
+form the core of research and development
+in natural language processing.
+The simplest or
+probably the most fundamental task
+is called part-of-speech tag.
+Before we can understand the sentence,
+we need to understand what part of speech
+each individual word has,
+let's look at this example.
+The swimmer is getting ready
+to run in the final race.
+Some of those words have an obvious
+part-of-speech, so for example,
+the is clearly an article
+is is clearly a verb,
+getting is clearly a verb as well,
+ready is an adjective, and so on.
+However, some of the words are ambiguous,
+let's look at two of them.
+The first one is the word run,
+so in this context,
+it should be pretty obvious that
+run is not a noun, it is a verb.
+Because its preceded by the particle to,
+in other cases,
+the word run could be preceded
+by the terminal such as the,
+and then it will be considered a noun.
+What about the word final?
+Is it a noun, or an adjective?
+Well, it's not so obvious in this case
+because, the final could have been a noun.
+But, the final race,
+looks like final is an adjective.
+And finally,
+the word race, is it a verb or a noun?
+Well, it could be either one in general.
+But in this example, because of
+the structure of the sentence, it follows
+an article followed by an adjective,
+it's much more likely to be a noun.
+So part-of-speech tagging is about using
+rules like these, and some statistics
+to understand the parts of speech of
+the individual words in a sentence.
+So if we had his, before run we
+would label run as a noun, and
+if we have to before run we
+would label it as a verb.
+The next task in natural language
+processing is parsing, so, parsing takes
+a sentence as input and it produces
+a syntactic representation for it.
+So let's look at some simple sentences
+in English, and later we're going to
+discuss context free grammar and
+parsing it in with more detail.
+Here I just want to give you
+an inclusion about parsing.
+So in all the sentences here we have
+a subject, which is Myriam, and
+we have verb.
+Most sentences have a subject and a verb,
+the verbs however here are very different.
+The first verb here is slept,
+which as we know is an intransitive verb,
+because it doesn't take a direct object.
+Myriam wrote the novel is
+an instance of a transitive verb,
+because wrote does take a direct object.
+Myriam gave Sally flowers is
+an example of a ditransitive verb,
+because give takes,
+in this case two nouns as arguments.
+So give something to somebody, or
+in this example, give somebody something.
+So we can have two nouns without
+the preposition to in this form.
+And then in the examples
+I showed you earlier,
+Myriam ate pizza would have different
+sorts of prepositional phrases.
+With olives, with Sally,
+which can be attached to either
+the newest noun pizza like,
+in the case of olive or
+it can be attached to the verb ate
+such as with Sally or with remorse.
+So parsing usually deals with either
+constituent structure often a phrase
+structure grammar,
+like the one I'm going to describe now.
+Or with what is known as
+a dependency grammar,
+which is something we are going
+to look at in a few minutes.
+So a phrase structure
+grammar looks like this.
+It has two parts, in the first part
+the one on the left hand side,
+we have the rules between nonterminals.
+And on the right hand side we have
+what is known as the lexicon, or
+rules about terminals or words.
+So let's see how to interpret
+the rules on the left hand side.
+If we want to generate a sentence, or if
+we want to parse a string into a sentence.
+We would have to look at a noun
+phrase followed by a verb phrase.
+Similarly, a noun phrase can be one of two
+things, it can be a determiner followed
+by a noun, or it can be a noun phrase
+followed by a prepositional phrase.
+So examples of the determiner now
+would be something like this cat.
+And the second one N-P goes to N-P-P-P
+we would have something like this,
+eat pizza with olives.
+So pizza with olives would
+be a noun phrase and
+with olives is the prepositional phrase.
+The verb can be either a V-B-D,
+which is a past tense verb,
+it could be a past tense verb
+followed by a noun phrase.
+That's the case for transitive verb so
+it can be a past tense verb
+followed by a two noun phrases.
+And it can also have a prepositional or
+phrase such as the case of
+Sally ate pizza with pleasure.
+So in that case,
+with pleasure modifies the verb.
+P-P stands for prepositional phrase, and
+the first tag in the prepositional
+phrase is the preposition itself.
+It's labelled P-R-P here,
+in some cases it's just P-R.
+Now let's look at the lexicon, we have in
+this particular grammar a determiner that
+can be the, that, or a, a noun that
+can be the child, window, or car.
+A past tense verb which is either found or
+ate, or saw, and
+finally we have three prepositions,
+in, of, and through.
+So if you want to produce a parse tree for
+a sentence, we can build an entire
+representation like this.
+The child saw the car through the window.
+What do we have here?
+We have a sentence that consists of
+a noun phrase and a verb phrase.
+The noun phrase is the child, the verb
+phrase is everything else in the sentence.
+The noun phrase then consists
+of a determinant and a noun, and
+then in turn those get translated
+as the words the and child.
+The verb phrase, turns into a V-B-D
+followed by a noun phrase and
+a prepositional phrase and so on.
+It can continue this inference
+process a little bit further, and
+fill in all the gaps and
+complete the sentence.
+So one example of an external
+tool that you can use for
+parsing is the well-known Stanford Parser.
+There are many others out there, but
+the Stanford Parser comes
+with a very nice demo.
+You can go to the URL here and
+type in a sentence.
+And you will get as output a parse tree,
+as well as a part -of -speech tagged
+sequence of all the words in the sentence,
+as you can see in this example.
+So the output of the parser
+looks like this.
+For example, the sentence on
+the left is housing starts comma,
+the number of new homes being built comma,
+then continues on the right.
+Rose 7.2% in March,
+to an annual rate of 549,000 units comma,
+up from a revised 512,000 February comma,
+the commerce department set.
+You see the this side is
+fairly complicated and yet,
+the parse has no problem with
+figuring out it's internal structure.
+Let's look at some of the special
+things that happen here.
+For example, commas and other punctuation
+are labeled as separate syntactic units,
+and separate parts of speech.
+We have things like adverbial phrases,
+like up from a revised
+512,000 in February,
+we have embedded clauses.
+We have very deep recursion and
+many other interesting phenomena.
+So when we get to the section on parsing,
+we'll see how parsers work and
+how they can build the most likely
+parse given the initial sentence.
+Now let's switch to an interesting
+problem in parsing, mostly for fun.
+It's a NACLO problem known as
+This Problem is Pretty // Easy.
+So what does this notation mean?
+It means that if you say the part of
+the sentence before the two slashes,
+the sentence makes sense.
+But then when you add the last part,
+you get a completely different sentence.
+That is not a modification
+of the shorter sentence,
+it actually means something
+completely different.
+So let's try this here,
+if I say this problem is pretty,
+I'm essentially saying that I like
+this problem, it's beautiful.
+But then if I add
+an extra word after that,
+that changes the meaning
+of the sentence completely.
+In this case pretty modifies easy, and
+what I'm really saying is that the problem
+is easy, and more so it's very easy.
+So this kind of phenomenon in parsing
+is known as a garden path sentence.
+And it has the falling properties,
+there has to be a point in
+the sentence where you can stop.
+And interpret the sentence in one way
+syntactically, but if you continue all
+the way to the end of the sentence
+you'll get a very different parse tree.
+So this example actually was
+motivated by a commercial for
+phone company from a few years ago.
+So the idea was something like this, they
+want to tell you that the phones that sell
+and the service that they
+provide is pretty reliable.
+And you're not going to be cut in the
+middle of a sentence when you're making
+a phone call.
+So if this were to happen with
+one of the competitor's phones,
+what would happen is that the person
+listening to the call would only hear
+the beginning of the sentence.
+And get a very different
+impression of what you
+were trying to say than if they
+had heard the entire sentence.
+So here's some examples
+of garden path sentences,
+don't bother coming,
+versus don't bother coming early.
+So if you get interrupted
+after don't bother coming,
+you will just not go to that place.
+But if you had heard the full sentence,
+you would hear don't bother coming early
+which means you should still come,
+just come on time.
+Here are some other funny examples,
+take the turkey out of the oven at five.
+So this is an order,
+like instructions what to give
+to somebody who's at their home.
+So if they hear only this part, they're
+going to take the turkey out at five.
+But they really meant was, that the turkey
+out of the oven at five to four,
+which is a very different thing.
+So if they wait until five o'clock,
+chances are that it'll be overcooked.
+Here's another one, I got canned,
+this is something you don't
+want to hear over the phone.
+But maybe full sentence was,
+I got canned peaches for dinner.
+So clearly the two sentences have very
+difference syntactic structures and
+very different semantic interpretations.
+A few more examples,
+all Americans need to buy a house.
+Okay maybe yes, maybe no, but
+that's not what was really intended.
+What was intended is, all Americans
+need to buy a house is a lot of money.
+So you can build the parse tree for
+those two sentences and
+realize they are very different.
+Can you think of any other such examples?
+So this was essentially the topic
+of this NACLO problem that
+I have in the subject line of this slide.
+So the solutions are available on
+the web on the NACLO site, and
+there's a lot of examples there.
+However I want to emphasize
+the criteria we use to judge them.
+And the criteria are the following,
+the bar before the two slashes
+should be a complete sentence.
+The full sentence has a different meaning
+than the part before the slashes.
+And the part before the slashes
+should not already be ambiguous.
+So if those criteria are met then you
+get a good solution to this problem.
+So the other kind of parsing that is very
+common these days is called dependency
+parsing.
+In dependency parsing, we're not so
+much interesting in S and noun phrases and
+verb phrases.
+We're interested in the relationships
+between the words in the sentence.
+Without any explicit
+constituent structure.
+So basic example is shown here,
+this sentence is Mary likes yellow apples.
+So the dependency of
+the presentation is shown here.
+It's always in the form of a tree and
+it is rooted at the predicate
+of the sentence.
+So the most important word in the sentence
+is considered to be the main verb,
+in this case, likes.
+That's why we have it on
+the top of the slide.
+Now, in the sentence
+Mary likes yellow apples.
+We have two words that
+are arguments of the verb likes.
+For there to be a liking event, there
+has to be somebody who does the liking.
+And somebody who,
+quote unquote receives the liking or
+is the recipient of the liking.
+So those two slots in the center
+are filled by Mary and apples.
+Mary is the liker and
+apples is the quote unquote liked.
+This is the terminology that
+is used in linguistics.
+And finally we still have one more word
+left to represent, that is yellow.
+Yellow does not modify
+likes does not modify Mary,
+the only thing that it modifies is apples.
+Therefore we draw it as part
+of the dependency tree,
+as a child node of apples.
+So in dependency parsing,
+we start with a sentence, and
+we produce a dependency
+structure as the output.
+And this is something that
+can come in very handy.
+Here's an example from a paper on
+biological natural language processing.
+In this case, a sentence was
+converted into a dependency tree.
+And then some rules were used on
+the dependency tree, to determine whether
+there was an interaction between any two
+particular proteins in that sentence.
+And again,
+the dependency structure was what made it
+possible to understand how
+those proteins are related.
+So, let us look now at the sample
+output of the dependency parser.
+As you can see,
+every line here connects two words.
+The words are numbered from
+one through I guess 36,
+which is the last word in the sentence.
+If you look at the pairs of numbers in
+each dependency, you will see that you
+can construct the entire dependency
+structure of the sentence.
+You just need to look for
+a number that only appears once,
+that will be the root of the sentence.
+And then all of the children know that
+that node will be the second tier on node.
+And then, of course,
+you can build an entire dependency tree.
+And I will let you figure out
+this entire tree as homework.
+So this concludes the first part
+of the section on NLP tasks,
+that includes morphology
+part-of-speech tagging and parsing.
+We are going to continue later
+with some additional NLP tasks.
+

@@ -1,0 +1,315 @@
+Okay so the next topic that we're going
+to talk about is machine translation.
+Machine translation is
+one of the most exciting
+areas of natural language
+processing research.
+So why is it important?
+Well, there are more than
+7,000 languages in the world,
+it turns out that the majority of
+the documents however on the web are in
+English as you can see from this
+diagram about 55% are in English.
+And then you have small segments
+in languages like Russian, German,
+Spanish, Chinese, and French and
+smaller percentages in other languages.
+So, the remaining close to seven
+thousand languages have only 11%.
+This is in stark contrast with the number
+of Internet users in the world.
+So, that second diagram, you can see
+that English and Chinese speakers form
+the majority of Internet users followed
+by Spanish, and Japanese, and so on.
+And their percentage for
+speakers of other languages,
+languages that are not in the top ten,
+goes up to 17%.
+So, it seems most of those people speak
+only one or a maximum of two languages.
+It is very common that they would
+encounter a document on the web that is in
+a language other than their own.
+So for that to be avoided we need
+to come up with ways to translate
+text automatically.
+So this is exactly what
+machine translation does.
+I'm going to show you now a little
+picture, this is a famous painting by
+Peter Bruegel, a famous painter from 1563.
+Depicting the Tower of Babel.
+So, there's a biblical
+story that says that people
+were only speaking one
+language at the time.
+And then, when they built the Tower of
+Babel, God created all the different
+languages so people couldn't
+talk to each other so easily.
+So, we are trying to solve this problem
+now by creating Machine Translation
+systems.
+Okay, so now, let's see how
+much Machine translation works.
+So, most modern software is
+based off statistics, and
+I'm going to show you as an example,
+the so-called Rosetta Stone,
+which illustrates how statistics
+can be used to translate languages.
+So, here's what
+the Rosetta Stone looks like.
+It has inscriptions in three languages,
+one of which is shown here.
+This is Egyptian at the top,
+and then Greek in the middle.
+This stone was carved in Egypt in 196 BC,
+and it was
+only deciphered by more contemporary
+humans by Champollion in 1822.
+And the way he deciphered it was to figure
+out that those texts, even though they
+were in different languages,
+were translations of one another.
+And he was able to figure out
+using some pattern recognition or
+manual pattern recognition which
+symbols in one of the languages match
+with symbols in the other language.
+So if you're interested in
+the Rosetta Stone in more detail,
+you can go to this website and look at
+the entire text and the alignments.
+So, here's a NACLO problem that is
+very similar to the Rosetta Stone.
+In fact, this category of problems
+in NACLO is called the Rosetta Stone
+problems.
+It was written by Simon Zwarts,
+based on work by Kevin Knight.
+So here's what the problem looks like.
+It is not about real human language.
+Although there is a little
+twist to what I just said,
+in which I am going to explain
+in a few minutes.
+Instead we want to focus on the story.
+Describe the response.
+Specifically that this is about arcturan,
+which is Intergalactic language, and
+you have come up with some communication
+from constellation in this language.
+And you know that each sentence on
+the left is in Centauri language, and
+each sentence on the right
+is in Arcturan language.
+And now the question is,
+can you figure out which word in one
+of the languages matches which
+word in the other language?
+How would you do this?
+So, I'm going to let you think and
+you can do this by looking
+at the next couple slides.
+Then I'm going to show you the answer.
+So the specific task in my clue
+was to find individual words.
+For example, the word farok in Centauri.
+So, that word appears in
+two of the sentences.
+And then what you need to do is to
+figure out which sentences in Arcturan
+those corresponds to.
+And see if there's one
+single word in those
+two sentences that appears only in them
+and not in any of the other sentences.
+So, we can continue doing this for
+the other sentences and
+the other words until you
+have unique translations.
+And here's the solution.
+It turns out that even though those
+languages were labeled as Centauri and
+Arcturan, they in fact English and
+Spanish, and this is the example that was
+using by Kevin Knight in 1997
+to introduce translation works.
+So, every word in English and
+Spanish was translated into some made-up
+word in those artificial languages.
+And now you can see that
+it makes more sense.
+So, for example, the word Garcia appears
+in both languages, English and Spanish.
+And since this is a person's name,
+we can use the principle that person
+names are typically left untranslated.
+So we can figure out that word voon
+in the two languages is the same.
+Then you can do this recursively until
+you figure out the rest of the words.
+Here is the full solution.
+Okay, so you by now have an idea
+how machine translation or
+statistical machine translation,
+rather, works.
+You need to have for
+this known as parallel corpora.
+Now parallel corpus is a text
+in one language that is aligned.
+To a text in another language
+that forms its translation.
+So there are many instances of
+parallel corpora out there.
+The first one is the Rosetta Stone
+which is obviously very short.
+Then there's data like
+the Handsards Corpus.
+So the Handsards Corpus is the proceedings
+of the Canadian parliament,
+which by law Has to keep all parliamentary
+proceedings in both French and English,
+which are both equally official.
+So every time somebody speaks in
+English there is a translation
+done by humans in French, and vice-versa.
+And since this is government data,
+it can be obtained very easily
+from the Hansards website.
+And most of the early statistical
+machine translation systems were
+Train using this kind of data for
+French and English.
+There are many other
+parallel corpora available.
+For example news stories that
+are translated in different languages.
+User manuals the discerning
+company publishes so
+that people in different
+countries can use their products.
+One of the most common data sets used for
+machine translation training,
+which is available in thousands
+of languages, is the Bible.
+So let's look at some examples.
+Hansards, here's an English paragraph,
+two sentences, and
+there are translations in French.
+So I'll just give you an example
+of words that are aligned here.
+So government in english appears
+as gouvernement in french.
+So that's a very straightforward
+example which also forms a cognate or
+the two words have the same.
+A historical connection.
+Now the next thing is Postmaster General
+which gets translated as le ministre des
+Postes, or in other words,
+the minister of posts.
+So that's not exactly the same
+translation as Postmaster General but
+it means the same person.
+So you can see that even though those
+documents refer to the same person in
+both languages,
+they may use some idiosyncratic vocabulary
+that is not directly translatable.
+So here's one more example from
+a Bible paragraph in English,
+and its translation in Cebuano,
+which is a language from the Philippines.
+So let's try to figure out how we can
+translate those three words, God, heaven,
+and earth, from English to Cebuano.
+So here's one pair of aligned sentences.
+Then another one.
+And then a third one.
+Now we can use a lot of information.
+First of all,
+Cebuano is spoken in the Philippines, and
+in the Philippines, Spanish used to
+be a commonly spoken language so
+there are some words in
+Cebuano that got cognates.
+So for example,
+Dios here, if If you know spanish you can
+immediately figure that it means God.
+But that's not the basic idea of
+statistical machine translation,
+what's more important is to look
+at core current statistics.
+So we're looking for words that appear in
+the same sentences in both language and
+don't appear in any of the others.
+So for example, here I'm going to pause
+for a moment to let you figure this out.
+Can you figure out what
+are the translations for Heaven and
+for Earth,
+just based on those three examples?
+So here's some of the information
+that you can use.
+Co-occurrence in sentences, word order,
+especially among Across languages that
+are relatively similar to each other,
+which is probably not the case here.
+And also cognates, which again is more
+useful when the languages are related.
+So you need to have a corpora of
+this nature that are aligned at
+the sentence level.
+If those are not aligned, then
+the first thing that you need to do for
+this algorithm to work is to
+align them automatically.
+If they are exactly the same.
+Text alignment actually can be done, but
+if they are not exactly the same text,
+they may be just what
+is known as comparable corpora.
+Then, site design would be maybe,
+much trickier and noisier.
+But, it is still possible to use it and
+build translation systems
+purely based on comparable.
+So here's a NACLO problem
+that you can download.
+It's about language similarity.
+You can see how often you can identify
+cognates among languages that
+are historically related.
+So you have the first sentence of the
+Universal Declaration of Human Rights in
+17 different languages, and
+you have to figure out Which ones of those
+are in the same language family
+because they have very similar words.
+So, the first 11 of them are shown on
+this slide and two of the languages
+are labeled as English and Latin and then
+you have six more on the second slide.
+So you should pause here and
+look at the last two slides and
+see if you can figure out which Of those
+languages belong to the same family.
+So, the answer will be shown next.
+So, here are the seven clusters.
+You can look up the Universal Declaration
+of Human Rights on the Internet,
+to figure out which specific
+languages we have here.
+But they include languages like Romanian,
+and
+Italian, and Basque,
+and Latvian, and so on.
+So now we're going to stop for
+a moment and
+continue with more techniques
+from a central relation.
+

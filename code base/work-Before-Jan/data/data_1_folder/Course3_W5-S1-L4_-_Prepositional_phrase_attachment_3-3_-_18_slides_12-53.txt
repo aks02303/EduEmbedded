@@ -1,0 +1,317 @@
+Okay, we looked at several
+simple algorithms for
+prepositional phrase attachment.
+Now let's compare all them
+using our accuracy metric.
+We're going to start with algorithm 2 and
+algorithm 2a, and, as I said earlier, we
+need to measure their performance on the
+test set rather than on the training set.
+Let's first look at
+the performance of algorithm 2.
+The test set consists of 3,097
+items that we need to classify.
+Rule 1 correctly classifies 918 out of 926
+instances of of, which is a 99% accuracy.
+Then, Rule 2 kicks in,
+and it gets 70% accuracy.
+234 out of 332 to pose.
+Then we move on to Rule 3, and
+that one achieves a performance that
+is slightly less than random,
+810 out of 839, so that's 44%.
+Overall, the accuracy of algorithm 2,
+when you combine all the three
+different rules, is 63%,
+1,962 out of 3,097 to pose.
+Let's compare, now, the performance of
+algorithm 2a with that of algorithm 2.
+On the test data, on the same test data
+set, algorithm 2a actually outperforms
+algorithm 2 because its rule three
+actually has the majority in this case.
+It's 1029 out of 1839 to pose for
+a 56% accuracy.
+So overall, the accuracy of algorithm
+2a on the testing set is 70% for
+2,181 data points correct
+out of a total of 3,097.
+We can now prepare
+a little table that shows
+all the algorithms that
+we have looked at so far.
+The first algorithm is the default.
+It just has one rule and
+its accuracy on the test set is 59%.
+Then switching over to algorithm 2,
+which includes the prepositions of and
+to plus the default rule, we're getting
+an accuracy of 63%, and, if we use 2a,
+which is the better default,
+we can go as high as 70%.
+Now, if you remember algorithm 3 is
+the one that memorizes everything in
+the training data.
+It has a lot of rules, 20,801, compared
+to 1 and 3 before, and its training
+set accuracy is really close to 100%,
+except for those 56 discrepancies.
+However, its test set accuracy is only 4%.
+Algorithm 3a is the same as algorithm 3.
+It memorizes everything, but it also has
+a default of everything that it sees
+in the test that was never
+seen in the training set.
+The number of rules in
+this case is 20,802,
+its training set accuracy is the same
+as the previous algorithm, almost 100%,
+and its test accuracy is significantly
+higher compared to algorithm 3.
+In fact, it is 62%, but, as you can see,
+even with so many rules,
+even with the correct default,
+it achieves a performance that is not even
+as high as algorithm 2,
+let alone algorithm 2A.
+So memorizing everything
+is really not a good idea.
+You are going to have way too many rules,
+and
+you're not even going to get any bang for
+your buck.
+Okay, so what's next?
+We have so
+far come up with some simple algorithms
+that use very limited linguistics.
+In particular,
+they use few prepositions and
+a few other rules,
+Aand we were able to get
+from an accuracy of 59% on the test set
+to 70% with just those two simple rules.
+What other sources of information can
+we use to improve the algorithm, hm?
+Here's some ideas.
+We can try to come up with a few more
+good linguistically motivated features.
+For example,
+look at a few more prepositions,
+perhaps some verbs and nouns.
+Another idea is to come up with some clever
+ways to deal with missing information.
+For example, if we see a tuple testing
+set that is not exactly like one that
+we have seen in the training data, but
+is similar to one in the training data,
+maybe we can use that similar data point
+as a reference instead of using a default.
+A third option is to use lexical semantic
+information, for example, synonyms.
+So, if we have a tuple that
+talks about cats, and,
+in the testing set,
+we have a tuple that talks about dogs or
+about animals in general, perhaps we can
+generalize from one to the other and
+assume that the correct classification
+will be the same in both cases.
+And finally, we can use additional
+context beyond the four featured
+types used so far.
+For example,
+we can use the rest of the sentence, or
+we can use information from
+adjacent sentences, or
+perhaps we can use information
+about the genre of the document.
+So here's some statistics about
+the different features that we can
+potentially consider.
+They are grouped into four categories.
+Prepositions, verbs, noun1s, and noun2s.
+I've only shown a few of each category.
+So which prepositions do you
+think would be most useful?
+About is not a really great feature.
+It has 67 to 132 split
+in the training set, so
+that's essentially one to two split,
+about 33 to 67%.
+That's about as good or bad as any of the
+algorithms that we have seen so far, so
+this feature is unlikely to give us
+a lot of additional performance.
+The feature, as, on the other hand,
+seems pretty good.
+It has a very large bias towards
+the first type of attachment,
+380 versus 94, and
+overall it appears 474 times, which
+is a fairly decent number, so it's very
+likely that the feature as will be useful.
+The same can be said for the feature at.
+Again, it overwhelmingly refers
+the first kind of attachment,
+552 to 136 cases.
+Now, the next feature is not good
+even though it's very frequent.
+4 appears more than 2,000
+times in the training set.
+As you can see, the frequency of high and
+low attachment is about the same, so that
+feature is not going to be very useful.
+Verbs, in general,
+are not as good prepositions as features
+because they are not that frequent.
+There's only a small set of prepositions,
+whereas the number of verbs is very large,
+so each of them is very unlikely to
+occur frequently enough to be useful.
+But if we were to include
+any verbs in our set,
+we would probably pick follow and include,
+which have fairly large discrepancies
+between the two different classes.
+NOUN1s and
+NOUN2s are even less likely to be used.
+So what other things can we do?
+We can consider combination
+of some of the ideas so far.
+One thing that can be done is, it was
+tried by Collins and Brooks in 1995, their
+method was based on a principle
+called back-off, which is somehow
+a combination of all the algorithms
+that we have so far, 1, 2, and 3.
+So back-off allows us to use the label
+of a tuple if we have seen it
+in the training data, but when such tuple
+was not present in the training data.
+We're going to back off to a similar
+tuple in the training data.
+For example, if we observe a certain
+preposition, noun one, noun two, and
+a verb, and, in the training data,
+we have the exact same words,
+except the verb was different with
+the other three features were the same.
+We can use that as a training example.
+So the point with this approach is that
+the problem with algorithm 3 is that there
+was not enough training data to learn all
+the possible combinations and features.
+How many training data points would
+we need to achieve good performance?
+Let's do the math.
+If we look at all of the data
+points in the test set,
+we would need a total of
+102 billion combinations.
+How did we arrive at this number?
+Well, it is simply the product of
+the numbers 1,123, 295, 52 and
+1,362, which are, respectively,
+the number of verbs,
+noun ones, prepositions, and
+noun twos in the test set.
+It is impossible to obtain
+that much training data, and
+even if it could be done,
+there would still be a need for
+billions more combinations
+if the test set were larger.
+So I'm going to introduce the Collins and
+Brooks algorithm.
+So here's how it works.
+We're going to count
+the frequency of a hypothesis,
+a verb, a noun phrase one, noun one,
+preposition, and noun two, and
+divide by the sum of all the tuples.
+And we're going to estimate
+the probability of this hypothesis
+given this tuple,
+using this maximum likelihood estimate.
+If, however, this specific feature does
+not appear in the training set, then
+we're going to go back to combinations
+of three features instead of four.
+Now you would say, why three?
+There are really six different
+ways in which we could combine
+three out of those four, are verb,
+noun1, preposition, noun2.
+Well, in Collins and Brooks,
+we always insist that there will be
+the preposition here to match, so
+the preposition has to be in here.
+Now if we don't find the matching triple,
+we go back to doubles,
+again keeping the preposition,
+plus one of the other features.
+Either the verb, or noun2, or noun1.
+And finally,
+if they're not doubles either,
+then we would resort to a singleton,
+which says look at all the instances
+where that preposition appears in
+the training set and all the instances in
+which it appears with a certain
+hypothesis, high or low attachment.
+And then, if this fails,
+too, we go to the default,
+which is to label everything
+else as high attachment or zero.
+So we are approaching
+the conclusion of this lecture.
+Let's see how many algorithms
+we have seen so far.
+We have algorithm 1, which has one rule,
+and it achieves an accuracy of 59%.
+2a has three rules, both at 70%.
+If you only look at the best
+class per preposition,
+we are going to have 66 rules and
+72% accuracy.
+Collins and Brooks goes to 84%.
+So algorithms that we did not introduce
+today are k-nearest neighbors,
+which we choose about 80%,
+and TUMBL, which is the same as supervised
+learning method, which is about 82%.
+And to put those numbers in perspective,
+our human performance using
+only the 4-tuples is 88%,
+and human performance using
+the entire sentence is 93%.
+But again, we cannot compare the automatic
+methods with this performance because
+they are not allowed to look
+at the rest of the sentence.
+So, in summary, the other methods
+that we did not discuss in detail,
+but you can read about
+on the Web are Zhao and
+Lin, 2004, which uses nearest neighbors.
+It looks at the most similar examples for
+a given tuple and achieves 86% accuracy.
+It's similar to the method
+described by Zavrel, Daelemans, and
+Veenstra 1997, which is based on
+a technique called memory-based learning.
+And there are some other techniques
+based on boosting by Abney et al 1999.
+Some methods that use semantics,
+Stetina and Nagao 97, and one of the best
+performances, which is a graph-based
+method by Toutanova et al 2004.
+I want to remind you that all
+the papers mentioned on this slide and
+elsewhere in this lecture
+are available on the course website.
+I hope that you will have the time before
+next lecture to look at those papers,
+even if it's very briefly.
+Thank you so much for your attention.
+

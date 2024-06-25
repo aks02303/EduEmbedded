@@ -1,0 +1,397 @@
+Okay, the next section about
+text similarity is going to be
+on semantic similarity.
+We're going to look at synonymy and
+others and semantic relations.
+I showed you this example in introduction.
+There were three different announcements
+about the stock market and
+they all used different words, and
+yet they meant more or less the same.
+So climbed, gained, and rose mean pretty
+much the same in the context of our
+stock index going up or down.
+And then, on the right hand side we
+also looked at paraphrases which are,
+its best close, or its best showing,
+and its highest level.
+Now the difference between the left
+column and the right column is that
+in the left one we have synonyms, and
+the second case we have paraphrases.
+So, what are synonyms?
+This is something that you may
+have studied in high school.
+Synonyms are different words, and
+sometimes word compounds,
+that can have similar meanings.
+For example, the adjectives tepid and
+lukewarm, have very similar meanings
+because they can be substituted for
+one another in many different contexts.
+For example, the water was tepid
+versus the water was lukewarm.
+They're not exactly the same.
+There are cases where you want to
+use one and not the other, but for
+practical purposes they can be
+substituted in most contexts.
+I mentioned earlier
+an example where big and
+large can be synonyms in many contexts,
+but not in all contexts.
+For example, there’s a major difference
+between the big leagues and large leagues.
+Big leagues is an actual concept,
+whereas large leagues is not used.
+The verbs to sweat and
+to perspire are also near synonyms.
+But they differ in different things.
+For example, the frequency of use and
+the context in which they appear.
+Another property of words is polysemy.
+So, polysemy is the property for
+words to have multiple senses.
+This is what you typically
+see in a dictionary.
+If you open the dictionary and you look
+at the definitions of the word book,
+you will see that it can refer
+to many different things.
+It can be a literary work, for
+example Anna Karenina, by Tolstoy,
+that's a literary work.
+It can be a stack of pages, which may or
+may not be blank, for example a notebook.
+It can be a record of business
+transactions, think as a bookkeeper.
+A bookkeeper is a person who keeps
+tracks of accounts in books.
+It can be a record of bets.
+So a bookmaker is a person who takes bets.
+And it can also be a list of buy and
+sell orders in some financial markets.
+So if you want to buy or a sell certain
+stock, there's a list of orders and
+the whole list is called a book.
+There other senses of book that
+I'm not going to mention here.
+So the same word can also have
+multiple parts of speech, and
+each of those can have
+its own set of senses.
+For example, the word book as a verb now
+can mean to make a reservation for or
+to occupy.
+Now the different senses of the same
+word don't have to be equally frequent.
+So the sense, for example,
+of the word S-E-E,
+as to watch something,
+to observe something is very frequent.
+But the sense of S-E-E as the Holy See,
+where Holy,
+spelled H-O-L-Y, and See, spelled S-E-E,
+is only used in a very specific context,
+specifically the Vatican.
+The Holy See is a special name for
+the Vatican.
+Some of the senses of a word may overlap.
+For example, the first two senses
+of book in the previous slide,
+remember one was literary work,
+and one was a stack of pages.
+So when we talk about a book we may say,
+bring me the book from the shelf,
+we are really talking about
+a stack of pages, but
+we can also be thinking about
+the work of literature instead.
+That's why different dictionaries have
+different sets of word senses for
+the same word.
+In some cases, there may be a difference
+between the two sizes of a word,
+like title, and in other
+dictionaries there may be conflict.
+So a little joke here.
+Somebody said, my favorite books are
+Anna Karenina and my father's checkbook.
+You see, in this case we have two
+very different kinds of books
+that are lumped together.
+Now some words can be
+very highly polysemous.
+According to WordNet, to which we are
+going to discuss in the new few slides,
+the verb get has at least
+35 different meanings.
+Many other words in English
+have many meanings.
+For example, words like dull, put,
+have also dozens of meanings.
+There are other semantic
+relationships that
+are interesting to natural
+language processing.
+For example, antonymy, or
+antonyms, means near opposites.
+So for example, the word raise,
+as in raise the bar, is an antonym
+of lower, as in lower the bar.
+Another semantic
+relationship is hypernymy.
+Hypernym is a more general
+concept than another.
+So for example, a deer is a more
+general concept than an elk.
+Hyponymy is the opposite of hypernymy.
+In that case, we have a word that is
+a more specific instance of another word.
+So an elk is a hyponym for deer.
+And then one more concept is meronymy.
+There are two kinds of meronymy,
+a membership meronymy and part meronymy.
+Membership meronymy refers
+to words like flock,
+which includes a bunch of sheep or
+possibly a bunch of birds.
+That's an example of membership meronymy.
+And part meronymy refers to
+the relationship between a table and
+its legs, because a table includes or
+has legs.
+Semantic relations hold between
+word senses, and not between words.
+For example, the antonym of
+the word hot can be either mild,
+if hot is used in the sense of spicy, or
+cold, if hot is used in the sense of warm.
+Or it can be even unattractive if hot
+is used in the sense of attractive.
+So depending on the sense of how
+to may have different antonyms.
+Another example is the following.
+The immediate hypernym of
+bar can be one of many.
+Among others, it can be room,
+musical notation,
+obstruction, profession and so on,
+depending on the sense of bar.
+As a result, people in
+the community use the term synset
+to group together all
+the synonyms of the same word.
+If a word is polysemous, it may be
+associated with multiple synsets.
+So this takes us to WordNet.
+WordNet is a special database
+of lexical relationships between
+words in English that was created at
+Princeton University over the years.
+It was started by George Miller,
+who unfortunately passed
+away a couple of years ago.
+This project is now run by Christiane
+Fellbaum, still at Princeton University.
+It includes a large database
+of words in English.
+Mainly nouns and verbs, but also a
+material number of adjectives and adverbs,
+and it also includes the semantic
+relationships between them.
+The main relation in WordNet is hypernymy,
+so
+the overall structure of
+the database is more tree-like.
+The next slide will show an example of
+a small subsection of the WordNet tree.
+Now Wordnet is one of the most valuable
+resources in natural language processing,
+and I would like to encourage everybody
+to look at the two references that
+are listed here.
+One is a collection of papers
+edited by Christiane Fellbaum,
+and one is an introductory article
+about WordNet by George Miller himself,
+in the Communications of
+the ACM about 20 years ago.
+So in this example,
+I'm going to show you a small sub-tree
+of WordNet that matches the relationship
+between different animals.
+So, you can see that the word
+ungulate is shown on top.
+Ungulates are divided into
+even-toed ungulates and
+odd-toed ungulates, and
+all ungulates include equines and others.
+I'm only showing the equines here.
+Equine are mostly horses, but
+other related animals also belong here,
+such as mules and zebras.
+And then I also have an example of an
+object that is more specific than a horse,
+in this case, pony.
+On the left hand side, we have okapis,
+deer, and giraffes, that are all examples
+of ruminants, and elk, wapiti, and
+caribou, which are all examples of deer.
+So just to remind you,
+a deer is a hypernym for caribou, and
+caribou is a hyponym for deer.
+Let's look at some examples of WordNet.
+The word bar in WordNet has 11 senses.
+They are not sorted in any particular way.
+But often the first few
+are the most frequent senses.
+So barroom, bar, saloon,
+gin mill, taproom,
+are all words in the same synset as bar,
+in the sense of a room where alcoholic
+drinks are served over a counter.
+The second sense of bar
+is the actual counter
+where you can purchase food or drink.
+The third sense is a rigid piece of metal,
+for example, an iron bar.
+The fourth sense is a measure in music, so
+its definition is a notation for
+a repeating pattern of musical beats,
+written followed by a vertical bar,
+and so on.
+There are many other senses of bar.
+Now the verb bar, as opposed to
+the noun bar, also has four senses.
+Let's just look at one or two of them.
+The first one is to bar, to exclude, as in
+he was barred from membership in the club.
+The second sense is the same as barricade,
+block, blockade, block off, block up.
+It means to render something
+unsuitable for passage.
+So barricade the streets
+are to bar the streets.
+In the first sense of bar,
+it's closest hypernym is room.
+Then the hypernym of room is area.
+The hypernym of area is a structure or
+construction.
+Then artifact, then object,
+and then entity.
+So entity is one of the root
+categories in the WordNet hierarchy.
+I should say that WordNet
+is not really a tree.
+I misspoke earlier, it's more like
+a forest, because it has multiple roots.
+Entity or something is one of them.
+I will show you some others later.
+In the second sense of bar,
+a bar is a hyponym of counter which
+is a hyponym of a table,
+a piece of furniture and so on.
+And it all goes back to entity or
+something.
+So it goes back to the same root note.
+And let's briefly look at some of
+the other interpretations of bar.
+So a bar is an implement.
+An implement is a type of instrumentation,
+and instrumentation's a type of artifact,
+and now we go back to entity.
+Now in the fourth sense,
+we have now an abstract concept.
+So bar,
+in the sense of a musical notation,
+is a hyponym of a notational system, which
+is a hyponym of written communication,
+and so on, all the way to abstraction.
+So that takes us to another root
+note in the WordNet forest.
+If we look at some other examples.
+Sense five takes us to entity, sense six
+takes us to an act, a human action or
+human activity, seven is again
+an obstruction, eight goes to entity,
+and nine goes to group or grouping,
+and ten goes back to entity something.
+Some other properties of words in WordNet
+include familiarity and polysemy.
+This slide is going to
+show examples of both.
+The left hand side of the slide shows you
+the familiarity of certain words, and
+the right hand side shows
+you their polysemy.
+Polysemy, as the name indicates,
+means number of senses.
+Poly means many.
+Semy means senses.
+So the polysemy count of the word
+board used as a noun is nine.
+For bar earlier, it was 10 or 11.
+For familiarity,
+the word board used as a noun is familiar.
+So that's a very common category.
+The other categories available are common
+and uncommon, and also rare and very rare.
+So the word serendipity,
+for example, is very rare.
+Now one thing that you may
+notice based on this example,
+which is also true in general,
+is that more common words are also more
+familiar, and also have more senses.
+Like an example,
+here the word board is very familiar and
+it also has a high polysemy count.
+So there are other lexical networks
+in addition to WordNet that I want to
+bring up.
+Here's a sampling of those.
+EuroWordNet has multiple European
+languages, such as Spanish, and
+French, and German.
+And I would like to emphasize
+that there exists many,
+including many open source,
+external thesauri, or language resources
+that can be used in natural language
+processing, in ways similar to WordNet,
+and different databases that can be
+incorporated in natural language systems.
+For example, Open Thesaurus, Freebase,
+DBPedia, BabelNet, and various thesauri.
+And in case you're wondering what thesauri
+means, it's the plural of thesaurus.
+And thesaurus is just a special kind
+of dictionary that tells you which
+words are similar or
+related to other words.
+Here's an example of BabelNet,
+this is for the word song.
+As you can see, it tells you in different
+languages what are the usages of this
+word, and it contains links to definitions
+of that word in multiple languages.
+MeSH is another interesting
+hierarchy of concepts.
+It's used in the medical literature.
+MeSH does stand for
+Medical Subject Headings, and
+it includes concepts such as diseases,
+drugs, body parts, sera, and so on.
+And the link at the bottom shows
+you how you can access MeSH.
+MeSH can be freely downloaded and
+is used a lot in the biomedical
+natural language processing community.
+So this concludes the section on
+WordNet and related lexical networks.
+We're going to continue in
+a moment with the next section,
+which is on thesaurus-based
+word similarity methods.
+

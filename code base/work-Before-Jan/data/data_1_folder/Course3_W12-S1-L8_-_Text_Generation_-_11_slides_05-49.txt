@@ -1,0 +1,168 @@
+In this segment we're going to very
+briefly talk about the second portion
+of the Natural Language Understanding
+Pipeline, specifically text generation.
+So let me remind you what
+the NLP Pipeline looks like.
+We have Understanding and
+Generation, we'll start from
+a language like a sentence.
+Understanding takes us to some computer
+representation that the computer
+can understand.
+And then if the computer wants
+to respond to the human,
+it would have to go through a generation
+component and produce language back.
+Not all NLP systems have to
+have both of those parts.
+It's completely reasonable to expect
+the system to just understand human
+language and then perform some actions
+without having to generate anything back.
+It is also possible for
+a system to just have the second part.
+So for example, a computer can have
+access to the weather data and
+then use automatic text generation
+to produce weather reports, or
+it can have access to stock market
+data and produce financial reports.
+So what is the definition of
+natural language generation?
+It is the process of deliberately
+constructing some natural language text
+in order to meet specific
+communicative goal.
+And a communicative goal may be, we want
+to give this specific information to this
+user in this particular
+context using this much space.
+This definition is from David McDonald,
+1992.
+So what is NLG.
+One of it's most important components
+is mapping meaning to text.
+So this meaning is typically
+presented in some semantic form.
+For example, CCG or F-U-G, fug.
+And the stages are the following,
+first you have to perform something
+called content selection.
+That is determining what content
+you want to share with the user.
+Then you perform lexical choice,
+which is deciding what words to use, for
+example whether to use a nominalization or
+a verb to express a certain concept.
+Then you have to perform something
+called sentence structure generation.
+That is performing actions like
+aggregation that is collecting
+multiple facts in to one.
+Generating referring expressions.
+For example, pronouns.
+And then you also have to worry
+about the discourse structure.
+Once you know what
+are the individual sentences.
+You may want to generate
+some discourse connectives.
+For example, therefore or consequently or
+in addition, so
+that the text flow is more a small thing.
+So, here's an example of an NLG system.
+This is the FOG system
+designed by Goldberg et al.
+It has been in use for
+more than 20 years now.
+It is designed to generate
+weather forecast reports for
+the Canadian Weather Service
+in both French and English.
+Let's input some numerical simulation data
+annotated by humans from example about
+France and expected precipitation.
+And then its output which is
+a little bit harder to see here.
+And you can probably stop and
+zoom in to see it in more detail.
+Is an actual weather report for
+a specific location in one
+of the two target languages.
+So one more example of a generation system
+was developed at Columbia University
+in Belfort in the 90s.
+It's goal was to produce reports that
+describe difference simulation options
+that an engineer who lays cables in
+telephone system has already explored.
+So the input is a simulation log file and
+it was designed and
+developed by Bellcore and
+Columbia University in the '90's.
+So the input is something like this,
+there's a specific RUNID, so
+specific type of cable that
+was located in a particular
+place at a particular
+date in a certain way.
+And then all of those get
+collapsed into one output.
+So, it's something like this.
+This saved fiber refinement includes
+all DLC changes and Run-ID ALLDLC.
+RUN-ID FIBERALL demanded
+that PLAN activate fiber for
+CSAs 1201, 1301, and so
+on in second quarter of 1995.
+It requested replacement of 48-fiber
+cable from the CO to section 1103.
+And so on.
+So, this is the output of
+the system which used FUF and
+SURGE, two generational systems
+developed at Columbia in the mid 90s.
+So, in text generation,
+there's some important considerations.
+I mentioned some of them already.
+But they all have to deal with choices.
+So you can consider each of those
+as some sort of a classify,
+that takes multiple inputs and
+you have to decide which one to take.
+So the choices are about the content and
+what you want to say, coherence,
+how to make the text flow coherently,
+the style, the media.
+So media refers to the fact that you can
+generate multimedia presentations that
+involve, let's say,
+some of the information in visual form and
+the rest in textual form, and you have
+to balance the amount of information
+conveyed by each of those media.
+You also have to determine what
+syntactic structure to use.
+For example,
+whether to use a nominalization or a verb.
+You have to aggregate facts so
+that you get more concise sentences.
+So instead of saying, for
+example, there is a cable in unit one and
+there is a cable in unit two.
+You may say something like,
+there are two cables in units one and two.
+You also have to figure how to
+generate differing expressions so
+that the text doesn't look
+completely automatically generated.
+And you have to worry
+about the lexical choice.
+What words are most appropriate
+in the given context?
+So this is the end of the introduction
+to natural language generation.
+We're going to continue
+in the next segment.
+

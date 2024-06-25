@@ -1,0 +1,222 @@
+In the next course segment,
+we are going to discuss why
+natural language processing has
+challenges that come from text.
+Specifically, we are going to look
+at an example of a news story that
+talks about an event that
+happened recently in Brazil.
+The story is about a candidate for
+president who died in a plane crash.
+We want to build a system that
+would understand this story and
+be able to answer questions about it.
+For example what happened and
+where and so on.
+I'm going to now highlight a few
+of the pieces of the document.
+For example the word they.
+The phrase is expected and then an entire
+sentence and a few more phrases.
+I have a specific reason
+to highlight those.
+Can you figure out why
+I highlighted them and
+why each of them presents a different
+sort of challenge to the computer?
+Oh, the answer will be on the next slide.
+Well the first sentence is Brazil crowds
+attend funeral of late candidate Campos,
+the reason why I chose the sentence
+is because it tells us
+the main event of the story.
+So computers have to be able to
+understand entire sentences and
+figure out how they
+relate to what happened.
+The second sentence is, Mr Campos'
+jet crashed in bad weather in Santos.
+So, this is a background event.
+The current event is the funeral,
+and the background event in which
+the context of which the funeral
+happens is that the jet crashed.
+And the third sentence is
+also very interesting,
+it says, Mr Campos' Socialist Party
+is expected to appoint.
+So this is not an event,
+this is a speculation about
+what may happen in the future.
+President Dilma Rousseff.
+Well this sentence gives
+you a property of a person.
+It tells you that Dilma Rousseff
+is the president of Brazil.
+And they attended a funeral mass.
+Here the world they only makes sense in
+the context of the previous sentence.
+And in this particular case,
+what's important is that the word
+they refers to the hundreds of thousands
+of people who attended the funeral.
+So this is known in natural language
+processing as a pronominal reference
+to an entity in the previous sentence.
+There are many different genres of text,
+and
+each of them presents different
+challenges to computers.
+Let's see what are the most
+common kinds of text that
+computers are likely to encounter.
+Well they will include the most obvious
+genres of texts, such as blogs and emails,
+press releases, chats on the internet,
+debates and so on.
+So on the left hand side here
+I have a small snap shot.
+You're not expected to read it, you can
+go to the website, create a debate and
+see what that's site is all about.
+I'm just going to describe
+it here really quickly.
+Anybody can go to this website and
+post a controversial topic.
+For example, is Manchester United
+the best football team ever.
+Or in this particular example
+do you think that schools should
+provide more tests for
+developmentally challenged people.
+And you can decide whether you're
+on the yes side or the no side, and
+then everybody can participate
+in this discussion and
+enter arguments on both sides.
+So this kind of text presents interesting
+challenges because we want to understand
+what each person's opinion is, whether
+they're on the yes side or the no side.
+The second example here is from Wikipedia.
+It includes an entry about
+a specific politician, Tony Blair.
+And it can be used to understand the basic
+events and facts about his biography.
+Now let's look at the more
+challenging piece of text.
+This is a scientific paper,
+it's title itself already tells you
+how difficult this topic can be.
+Induction of
+Influenza Specific Mucosal Immunity by
+an Attenuated Recombinant Sendai Virus.
+I've extracted some of the text from
+the sentence, from this document, sorry.
+And I want to show you, some of
+the specific challenges to computers.
+So the first thing is this phrase here,
+Sendai virus, this is a named entity.
+It's specifically a virus and it has
+to be recognized by the system as such.
+There are other examples
+of named entities.
+For example, human parainfluenza
+virus type one or HPIV1.
+Then Sendai virus is
+mentioned a few more times.
+Luciferase Green Fluorescent Protein or
+GFP, those are all examples
+of named entities.
+There are also examples of speculation,
+for example reported and
+suggesting, which are in purple.
+We have instances of species, for
+example the words human, mice, ferrets.
+We have cell types, for
+example, mesoepithelial cells.
+We have also facts, and
+we have references,
+the things in the square brackets
+are references throughout the papers.
+So, a computer will need to understand
+the purpose of each of those words and
+phrases and references in order to
+understand the content of the document.
+So another interesting type of,
+documents that can be challenging
+to computers are medical records.
+Medical records have two
+interesting properties.
+First of all, they're often
+the result of transcriptions and
+they don't contain grammatical sentences.
+And the second problem with medical
+records is that when they're used for
+research purposes they have
+to be anonymized, so for
+example in this, medical record here.
+The name of the person has been
+changed to, something that is not,
+personally identifiable information.
+A more interesting challenge comes
+from literary texts, or fiction texts,
+those can be, very difficult for
+computers to process.
+I want to show you some examples
+from a project, Gutenberg,
+which is an online digital
+library that contains, old books.
+Just some examples.
+Some classic books like Ulysses.
+You can see that there
+are some proper names that
+are difficult to understand if you
+don't know the context of the story.
+There's some rare words such
+as waggoner here, and so on.
+Another example is from Jane Eyre,
+here you have again short,
+relatively short sentences.
+But then we also have
+sentences in parentheses
+which indicates some
+additional information.
+And another example from the Wizard of Oz.
+Which is a little bit longer but,
+luckily, for
+a computer program it has relatively short
+sentences that are easy to understand.
+Now, on the other end of the spectrum we
+have some really long literary sentences,
+for example try to parse this sentence,
+and
+this is just one sentence that
+occupies the entire screen.
+It talks about again,
+obscure names of people.
+It uses some words that are not
+even words in the English language.
+Can you guess where this text is from?
+Well, on the previous slide I showed
+you an excerpt of, Gravity's Rainbow,
+this is a book that is known for
+its, use of very arcane words and
+complicated, sentences and
+also fairly complicated plot structure.
+Another such work that you may have heard
+about is Finnergans Wake by James Joyce,
+which is probably one of the most
+difficult books to read.
+And translating or understanding poetry
+can be even more difficult, because,
+in addition to the constraints
+that are imposed by language,
+you also have constraints that are imposed
+by the metric structure line and
+the structure of the individual line.
+So in the next item we're
+going to talk about some funny
+sentences that present specific challenges
+to natural language processing systems.
+

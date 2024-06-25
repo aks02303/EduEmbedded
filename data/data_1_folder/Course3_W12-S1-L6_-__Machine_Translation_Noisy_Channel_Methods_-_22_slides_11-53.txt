@@ -1,0 +1,349 @@
+Okay, we're now going to see how noisy
+channel methods are used as the basis for
+modern machine translation.
+So we looked at noisy channels before.
+The idea was that we have a source signal
+that gets transferred through a channel,
+and that's our mode of communication.
+And the noisy channel model is essentially
+a parametric probabilistic model of
+language and translation.
+So let's see how it works.
+We're given some foreign
+language sentence, f, and
+we have to guess
+the English translation e.
+So we're going to think of
+this process as follows.
+We have the English sentence,
+either one of us tried to guess.
+And we converted to a foreign language
+center using an encoder from E to F.
+So now we actually observe this f and
+we want to get back the original e.
+So this down to a decoder that gets the f
+as input and produces e as the output.
+Actually, it doesn't produce E.
+It produces E prime.
+But we want to pick such an E prime that
+is as close as possible to the original E,
+that was really the English sentence.
+So now we have a translation model and
+the language model, and
+we're going to pick the e that
+maximizes this probability.
+So we want the probability
+of e given f to be largest.
+And we're going to model this using
+the Bayesian theorem by representing
+it as the product of the translation model
+f given e, and the language model e.
+So P(e) just means,
+given this English string,
+what's the probability that it
+forms a valid English sentence?
+And P(f given e) says if we have this
+particular English string e, and
+this particular foreign sentence f, what's
+the probability that f was produced by e?
+So let's look at that example.
+Suppose that we want to translate for
+French this expression, une fleur rouge.
+Let's look at several
+different candidates,
+again we have an infinite number
+of candidates for English,
+we're just going to look at some of
+them and see how this method works.
+So the first one is a flower red,
+the second one is red flower a,
+third one is flower red a.
+And so on.
+So let's see what are the values for
+p of e and p of f given e, and
+the product of those for
+each of those examples.
+So a flower red has very low p of e,
+because a flower red is not a trigram
+that you expect to see in English.
+However it has a high value for
+p of f given e because
+it has the exact words that we
+expect to see in that translation.
+And then if you multiply those two,
+you're probably going to
+get a relatively low score.
+The same thing applies to
+the next two lines of this table.
+Okay.
+The flower r is also very good in terms of
+its relationship to the foreign sentence,
+but
+it's not a legitimate English translation.
+And same thing applies to the third one.
+Now let's look at a red dog.
+Now a red dog is going to have a much
+higher p(e) because it's something that
+you expect to see in English, but
+p(f) gives given e is going to
+be low because the words here are not the
+ones that we saw in the framed sentence.
+Next one is dog, cat, mouse.
+That is going have low values for
+both of those features.
+And finally, a red flower is going
+to have high values for both, and
+therefore a high product.
+So the idea here is if we can estimate
+p of e and p of f, given e, and
+multiply them together, we can rank all
+the candidate English phrases based on
+this product and pick the one with the
+highest score as the correct translation.
+So, here's an example.
+We want to go, for example,
+between English and Chinese.
+We have some text in Chinese.
+We want to find for
+every English sentence,
+the probability of the Chinese
+sentence given in the sentence.
+Multiply it with the probability of
+the English sentence and that is going
+to give us an estimate of the probability
+of the English given the Chinese.
+Okay.
+So noisy channel models are used not
+only for machine translation but
+for many other tasks.
+For example, for
+text to text generation or summarization,
+where the input is a long document and
+the output is a short document.
+So in the lecture on summarization,
+we talk about this method.
+But also things like text to signal,
+speech recognition, OCR,
+spelling correction.
+In each of those cases,
+we'll have us input one type of text or
+representation and the output is
+another type of text or representation.
+And with a noisy channel
+converts one to the other.
+Specifically in OCR we have
+the probability of the text
+given the pixel map is the product
+of the probability of the text times
+the probability of
+the pixels given the text.
+So the IBM model that was developed in the
+early 90s and is probably one of the most
+fundamental contributions to natural
+language processing goes like this.
+We're going to start with
+a sentence in one language, and
+then we're going to perform a sequence
+of transformations to it until we get
+to the sentence in the target language.
+So some of those transformations
+may look very unintuitive,
+however they have been picked for
+very a good reason.
+They are all relatively possible or
+straightforward to
+implement computationally.
+So this is an engineering achievement
+more than a linguistic achievement.
+Because we want a system that works even
+if it's not necessarily based on the way
+that humans actually do the translation.
+So bear with me for a second and
+you'll see what the story is and
+we can discuss later if it makes sense.
+So here's how we want to
+translate from English to French.
+I watched an interesting play.
+So in the first step which
+actually the order of steps here
+in this example doesn't match
+the order that the IBM system uses but
+it will still give you
+a good idea how it works.
+For the first step we're going to
+produce each of those words in English
+as many times as we need to get the actual
+number of words in the French translation.
+As we saw before the word play in English
+is translated as three words in French.
+So we're going to have
+something like this.
+I watched watched
+an interesting play play play.
+So the reason why we have three plays is
+because the French translation of play
+has three words and
+the reason we have two words for watched
+is because the French translation of
+watched is also going to have two words.
+Okay.
+The next thing that we need to do is to
+now figure out the right word order.
+So because in French, the nouns and
+adjectives appear in a different order
+than in English,
+we're going to switch the order.
+We're going to get I watched watched and
+play play play interesting.
+And then in the final step we are going
+to convert each of those English words
+into one of the French words
+that corresponds to it.
+So I becomes J' for J'.
+Watch becomes ai uv.
+Play becomes piece de theatre.
+And interesting becomes interessante.
+So this is how the ideal model works,
+roughly.
+We have essentially three
+sets of probabilities.
+The first one is the so called
+fertility probability which tells us
+what's the probability
+that the words of lengths,
+an expression of length i in one of
+the languages is going to be translated as
+an expression of length
+j in the other language.
+The second is the word ordering or
+distortion.
+So it tells us, what's the probability
+that the word in position seven in one
+language is going to switch to position
+eight in the other language, and
+vice versa.
+And finally,
+we have the translation probabilities,
+which tell us what's the probability
+that the certain word in English gets
+translated to a certain word in French.
+And each of those probabilities
+is automatically obtained
+by using a method called EM or
+expectation maximization.
+From pairs of aligned sentences
+in those two languages.
+So I'm not going to go through
+a lot of detail about those models.
+I just want to list them here.
+There are five EM trained models.
+So translation, alignment, and fertility,
+the ones that I already mentioned.
+And also models 4 and 5, which include
+something called class-based alignment and
+non-deficient algorithm.
+Here are some of the steps that we need
+to undertake in order to do machine
+translation.
+We first have to tokenize
+the input document into words.
+Then we have to perform
+sentence alignment.
+So most of the time,
+we're going to have 1-1 alignments.
+Especially in the case of
+good parallel corpora.
+Or perhaps 2-2 which are relatively rare.
+That's when sentence a and b into one
+language get translated into let's say
+sentences x and y in the other language,
+but a doesn't exactly match to x, and
+b doesn't exactly match to y.
+And finally, we have other examples,
+for example 2-1 or 1-2 mappings where
+one sentence in one language gets
+split into two or more sentences.
+So the method that has been used first
+on this problem was by Church and
+Gale, and it was based on sentence length.
+So they look at sequences of 4-grams and
+cognates between the languages.
+Especially, this especially works for
+languages like French and English.
+And this is the kind of
+alignments that they get.
+So they look at the paragraph
+length in English and
+then paragraph length in German.
+And you can see that the paragraph
+lengths are highly correlated,
+the scattered plot diagram
+shows you that very easily.
+And then in their output they see that
+most of the pairs of
+sentences have a 1-1 mapping.
+89% of them have that.
+There are a few examples of 2-1 and
+1-2 alignments.
+Or 1-0, 0-1.
+Those extremely rare.
+Less than 1%.
+And finally a few examples.
+A little bit over 1% of 2-2 alignments.
+So once you have performed sentence
+alignment you can apply the IBM models 1,
+2, 3 and so on if necessary to learn
+the actual translations, fertilities,
+and distortion probabilities.
+So let's look briefly at IBM Model 1.
+So IBM Model 1 is based on
+alignments of sentences.
+So for example you have a pair,
+la maison bleue in French,
+with the blue house, and
+you look at all the possible alignments.
+They can be things like 1, 2, 3,
+which means that the first French
+word becomes the first English word,
+the second becomes the second and
+the third one becomes the third one.
+The second alignment is 1,3,2 which
+means that the French word becomes
+the first English word but then you swap
+the order of the second and the third one.
+And there are other combinations for
+example you can say that the second
+English word doesn't exist in French, but
+the third English word corresponds to
+the second and third French words.
+We can even go to an extreme and say that
+all three words in French get translated
+as the first word in the English sentence,
+but
+the second and third English words
+did not appear in the French at all.
+So, there's a certain number
+of such alignments, and
+you have to consider all of them.
+And at the beginning you're
+going to assume that all of them
+are equally likely.
+And then the ER algorithm is going to
+tell you which one is most likely.
+And at the same time give you
+the most likely alignments between
+individual words.
+So we're not going to go into a lot of
+detail about IBM models 1, 2, and 3.
+However, if you're interested in that,
+you can go and
+read an excellent tutorial by Kevin
+Knight, which is available on his website.
+And you can also download
+an implementation
+of a statistical machine translation
+system called Moses from statmt.org.
+We're going to continue the next segment
+with some of advanced methods for
+machine translation.
+

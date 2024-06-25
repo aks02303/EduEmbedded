@@ -1,0 +1,544 @@
+Okay, so we're now going to continue with
+some specific summarization techniques in
+the next few segments.
+I want to start by one of the most
+classic papers by Baxendale from 1958.
+So he introduced the so called Positional
+method, which works very well for
+some specific genres of text,
+for example, scientific papers.
+He analyzed 200 paragraphs and he figured
+that the first and the last sentences
+of the paragraph are the ones that
+contain the most useful information.
+Because that's where the topic
+sentences are typically located,
+according to the style that was used for
+that type of documents.
+So this was a very naive,
+yet reasonable approach given
+the state of the art 55 years ago.
+And this paper is always cited as the
+first paper on automatic summarization,
+and it has been very
+influential in the field.
+As you can see, many of the other papers
+that follow use this kind of technique as
+their starting point.
+So the next paper is by Luhn from IBM,
+1958.
+So he was also summarizing
+technical documents.
+He was also one of the first people to do
+stemming, automatic stemming of words and
+removal of stop words.
+And he was using as features,
+the frequency of content terms.
+And, according to his methodology, the
+words that are not the most frequent ones,
+such as stop words, and
+not the least frequent ones, those
+are the ones that appear just once in
+a document, are the most informative ones.
+So the E metric that is shown in
+this diagram reaches its maximum for
+words that are in the middle
+range based on their frequency.
+So sentences that contain those words
+are deemed to be more worthy
+of inclusion in the summary.
+So there's sentence level,
+significance factor,
+based on the presence of
+the words with the high E values.
+And he wanted to pick sentences
+that have a large concentration
+of salient content terms.
+So for example, if you have a sentence,
+represented on the top of this slide and
+you have four significant words in it
+that appear within a span of 7 words.
+Then the score for that particular cluster
+of significant words is going to be 4
+squared, which is the number of
+significant words squared divided by
+the length of the span in which
+they appear, so about 2.3.
+So you can see, this is a very
+reasonable metric because it focuses
+on two important things for summaries,
+significant words and also their high
+concentration near each other rather than
+being dispersed around the document.
+A more recent paper is
+by Edmundson from 1969.
+It also uses technical documents and uses
+the features of position and frequency,
+just as his previous work.
+But also looks at Cue words.
+Cue words are categorized further
+into bonus words and stigma words.
+So bonus words are things like
+significant accomplishments and
+stigma words are hardly and impossible.
+So those words are typical for
+scientific papers and
+typically indicate portions of the paper,
+which are most informative.
+Edmundson also uses document
+structure as a feature.
+So is the sentence a title or
+heading of a section of the paper?
+Or is it right under one of those?
+So for example,
+the first sentence of the document or
+the first sentence in a specific
+section or subsection.
+So he combines those four categories
+of features using a linear combination
+to pick the most important sentences.
+So those papers were all very early and
+all based on sentence extraction for
+technical papers.
+Now, a completely different
+approach was done by Jared deJong,
+1979, 1982 as part of his thesis
+at the University of Illinois.
+The system was called Frump, and
+is one of the first knowledge
+based summarization systems.
+So the idea was that you would
+automatically process a sequence of
+news articles on UPI and then recognize
+what sort of scenario they're discussing.
+And once you figure out what scenario is
+being discussed in a particular story, you
+would have a set of slots that need to be
+filled that correspond to that scenario.
+And then use the sentences that include
+the slot fillers as the summary sentences.
+So he created a collection of
+50 so-called sketchy scripts
+that correspond to different situations
+that are often discussed in the news.
+And all those are matched to scripts
+based on manually selected keywords.
+And because they're manually selected,
+they were very difficult
+to port to other domains.
+And it turns out that
+when he evaluated it,
+he realized that a set of 50
+scripts is nearly not enough
+to cover all the possible inputs that
+you can expect to get from the news.
+So here's an example on
+one of his scenarios or
+so called the demonstration category.
+So the script for that category
+involves the following events.
+So you have some demonstration going on,
+so the first thing that happened was
+the demonstrators arrived at
+the location of the demonstration.
+Then they march,
+then police arrives on the scene.
+The demonstrators communicate with
+the target of the demonstration so for
+example, a mayor or
+a politician or organization.
+Then they attack the target
+of the demonstration.
+Then they attack the police, and so on.
+So, as you can see,
+this is a fairly specific scenario that,
+when it happens to match an existing
+news story, is very valuable,
+but there's only so far that you
+can go with this kind of approach
+given their wide diversity of event
+types that occur in the news.
+Nevertheless, this paper
+was highly influential for
+the summarization community and for
+the knowledge representation communities.
+Okay, now a more recent
+paper by John Paice, 1990.
+It was essentially a survey of all
+the work on text summarization
+up to that point.
+And it discusses, in a lot of detail,
+techniques that worked and
+many of them that actually failed.
+He discusses some techniques that really
+did not provide good results, for
+example, the use of syntactic criteria to
+pick sentences that have some syntactic
+patterns.
+Or the presences of indicator phrases
+such as discourse structure phrases.
+He also focused on some of
+the problems with extracts.
+So the idea here is that if you
+would use an extractive summary of
+a document that contains sentences that
+were not adjacent in the original text,
+you may run into issues with discourse
+coherence, and also, lack of balance.
+So, for example if you have
+a fairly balanced document and
+it describes the points of view
+of two opposing factions and
+you end up with a summary that
+only describes one of those,
+you are thereby experiencing
+a lack of balance problem.
+Another example is lack of cohesion.
+So, first is the fact that a sentence
+may start with a pronoun or
+a definite anaphora and it's not clear
+if you don't pick the sentence that
+contains the antecedent what that
+anaphoric expression refers to.
+It's even possible to
+get incorrect outputs.
+So for example, I have three sentences.
+The first one talking about A,
+the second one about B.
+And the third one saying
+something about B, but
+using another fork expression,
+for example, he.
+If you drop the second sentence,
+you're only going to have the first and
+the third sentence remaining, and
+therefore, he is going to appear to refer
+back to A in the first sentence,
+rather than B in the second sentence and
+can therefore lead to confusion and
+incorrect outputs.
+So one of the big things that he liked and
+discussed in detail was the idea of
+how to deal with lack of balance.
+So some of that has been more
+recently dealt with by using
+rhetorical structure of texts,
+specifically the work by Daniel Marcu
+which I'm going to discuss
+in one of the later slides.
+Lack of cohesion can be addressed by using
+some techniques from discourse analysis.
+So for example, if you want to deal
+with issues of anaphoric reference,
+the presence of and definite anaphora, or
+the use of lexical or definite reference.
+You have to be able to understand and
+use the correct rhetorical connectives
+when you generate the output sentences.
+So, it's possible to recognize
+that you have anaphoric use.
+So some of the early work on this
+was done by Liz Liddy in the 80s.
+So for example, if you want to determine
+if the word that is used anaphorically,
+you could do the classifier that
+looks at the context of that word and
+tells you in each case whether
+it's used anaphorically or not.
+So for example, if the word that
+is preceded by a research verb,
+for example, demonstrate,
+then that is nonanaphoric.
+Else, if it is followed by a pronoun,
+an article or quantifier,
+it's also nonanaphoric.
+Else, if it appears in the first ten words
+of the sentence, it's external, meaning
+that it is unaphoric, but it refers to
+a reference in the previous sentence.
+And finally,
+it's internal unaphoric if it appears
+after the first ten words of the sentence.
+So, a few more papers of that time period.
+One is by Brandow 1995.
+This was about news articles now,
+for a change.
+Again, most of the previous work
+on summarization had to deal with
+scientific articles.
+The system was called ANES, and
+it included commercial news from
+a large number of publications.
+So they were able to evaluate different
+techniques for intelligence summarization,
+and they showed that lead summarization,
+the ones that picked the first few
+sentences of a document are much more
+acceptable than the automatic summaries.
+So this was essentially a negative
+result for research, but yet
+it turned out later based on the work by
+other people that this problem of having
+lead outperforming intelligence
+summarizers is only applicable to news.
+And only to certain genres of news where
+the journalists have been instructed to
+write the stories in the so-called pyramid
+style, where they are automatically
+expected to include the most important
+information, the first few sentences.
+So in the Brandow et al paper,
+they looked at 20,000 documents.
+And they looked at the words
+based on their tf*idf value.
+So tf*idf is a concept that we're going
+to discuss in the information and
+table section of this class.
+Suffice it to say, at this point, that
+words that have high values of this metric
+are more important words rather than stop
+words, which have lower tf*idf values.
+So before they used the sentence based
+features, for example the presence of
+signature words, the location of the
+sentence in the paragraph, the presence or
+absence of anaphora words,
+the length of the abstract, and so on.
+So sentences with no signature words,
+are included only if they appear
+between two selected sentences.
+So this is one way in which they can deal
+with problems with anaphora and reference.
+So they evaluated their output at the 60,
+150, and 250 word length.
+And they used a non-task
+driven evaluation.
+So they just asked people to rank
+the summaries whether
+they're acceptable or not.
+So one of the other interesting papers
+from the 90s is by Julien Croupier.
+Okay, the same person behind
+the MURAX question answering system.
+This paper appeared in Sigrear in 1995.
+It was the first use of trainable
+machine learning techniques for
+sentence extractions, specifically
+the system used a naive based classifier.
+Its target was a 20% extract of the input.
+And its collection was 188
+documents from scientific journals.
+So again, back to scientific papers.
+And the features that we use in addition
+to the ones that we have already
+discussed, include, sentence length.
+So, if the sentence has fewer than
+five words, it's not included.
+The presence of uppercase words, for
+example names of places and organizations
+and people, except for common acronyms.
+The use of thematic words, and
+a set of 26 manually fixed phrases.
+So, the last set of features
+has to deal with a sentence's
+position in the paragraph.
+So that's a numeric feature, a 1, 2, and
+is the number of sentences
+in the paragraph.
+So here's how Naive Bayesian
+classifier works.
+You have features like for
+example F1 to Fk like the ones
+that I had on the previous slide.
+Little s is a specific sentence,
+a capital S is the summary.
+So here we try to compute the probability
+that the sentence is going to be put in
+the summary given it has
+a set of specific features.
+Then using the Bayesian formula,
+we convert this into the probability of
+the set of features given that
+the sentence is in the summary times
+the probability that
+the sentence in the summary.
+Divide by the prior probability of
+that particular set of features.
+So using statistical independence,
+we can use the chain rule and
+simplify this a little bit, and
+have the value of the probability of
+the sentence being the summary given
+as features is just going to be
+the product of the probabilities
+of the individual features for
+the sentences of the period of summary.
+So the performance of Kupiec's system
+was that he was getting 84% precision
+compared to the goal standard
+summaries at the 25% level,
+and that he was actually
+getting a 74% improvement
+over a lead-based summary when he was
+producing the shorter 25% summaries.
+So this is more encouraging for
+research than the Brandel paper.
+So another paper from 1995 was
+by McKeown and Radev, also 1995.
+It's a system called Summons.
+And this is the first paper that
+introduced the problem of multi-document
+summarization.
+So all the work before was on single news
+articles or single scientific papers.
+Here, they put a set of news
+story on the same topic,
+that come from possibly from
+a variety of different sources.
+So the approach was an extraction
+knowledge based approach,
+where first,
+you convert the input document
+to the so-called MUC template that
+corresponds to the specific event type.
+So, MUC is
+the Message Understanding Conference.
+It was a competition in the mid-to-late
+'90s and early 2000s, where
+systems were built for filling in slots
+that correspond to specific scenarios.
+For example, about mergers and
+acquisitions or
+joint ventures or terrorist events and
+some other types of news.
+So once those templates are filled
+out by the mock system,
+the next step is to
+perform text generation.
+This actually identifies
+how to generate sentences
+that contain the slot
+fillers of the MUC template.
+So that corresponds in practice to things
+like the perpetrator of an event, or
+the names of the companies
+involved in a merger,
+the date and
+amount of the merger and so on.
+So here's an example of
+an output of summons.
+This output is generated from
+multiple input documents.
+As you can see there
+are reported statements,
+the stuff in green, that correspond
+to the sources of the information.
+And also,
+there are indicators of agreement or
+disagreement between different sources.
+And if some specific slot is not
+filled in any particular document,
+then you can use a specific
+sentence to explain that
+there's no information
+about that particular slot.
+So here's an example of MUC template
+that is used in input to summons.
+In this example,
+this is about terrorist events.
+There are different slots that
+are filled in by the MUC systems.
+For example by BBM and
+some other participants.
+There is the date of the event,
+the location of the event, the type of
+the event, and the participating entities.
+Some of those may be present,
+and some of them may be missing.
+So a summons takes its input a cluster of
+templates that correspond to the different
+input documents.
+And then it combines them
+together using a domain ontology.
+And then it performs
+multiple additional stages,
+which are not really
+relevant at this point.
+We are going to discuss them in more
+detail when we talk about ten generation.
+So the stages are a paragraph planner,
+which tells you what information you want
+to include in each of
+the paragraphs that you generate.
+Then, within the paragraph,
+a sentence planner that
+essentially determines what information
+will go into each individual sentence.
+Then you have a lexical
+chooser which tells you
+what words to use to express a specific
+concept from the input template.
+And finally it uses an off-the-shelf
+sentence generator called SURGE
+which converts the logical representation
+into an actual grammatical sentence and
+grammatical paragraph.
+So, because one related
+example in this case,
+the input consists of four different
+templates, and here's the output.
+Because there are multiple
+events being discussed,
+you have to generate
+specific time expressions.
+For example, on Sunday,
+the next day in the second incident,
+later the same day, which made the summary
+more readable and more coherent.
+So here's all the rules
+that are used in summons.
+So for example if there are two templates
+and the location is the same and
+the time of the second template is after
+the time of the first template and
+the sources of the first template
+is different from the source of
+the second template and
+at least one other slot differs,
+then combine the two templates
+using the contradiction operator.
+Which later would tell
+the generation component that
+a certain connective
+expression should be used.
+And here's some of the operators used
+in Summons, Change of perspective.
+The precondition of change of
+perspective is at the same source.
+It reports a change in
+a small number of slots.
+So here Reuters gives one account on
+one day, and then later the same day,
+it actually changes its account
+to something very different.
+Now, the operator is contradiction.
+That is when multiple sources
+report contradictory values for
+a small number of slots as opposed
+to the previous example where it
+was the same source, but different times.
+Another operator is Refinement.
+That is when some slot gets filled
+out at some point even though it was
+empty before that.
+There is also agreement.
+That's when multiple sources
+corroborate the same information.
+And there's also some other ones such as
+generalization, where you have the output
+of two different templates and you want
+to combine them into one, and so on.
+So let me stop here and
+we're going to continue with
+the Mitra paper in the next segment.
+

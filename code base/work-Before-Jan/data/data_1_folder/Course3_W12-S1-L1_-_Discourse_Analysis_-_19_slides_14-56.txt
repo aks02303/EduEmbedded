@@ -1,0 +1,444 @@
+Welcome back to natural
+language processing.
+We're going to continue now with
+the unit on discourse analysis.
+So discourse analysis is very different
+from most of what you see in natural
+language processing so
+far because it deals with information
+that goes across sentences.
+Very often the documents that
+we are going to process and
+analyze have multiple sentences.
+Any news article, story, and
+fiction work has many sentences.
+So the many issues with discourse that
+we need to focus on computationally,
+some of them are listed here.
+The first one is called anaphora.
+So anaphora is a Greek word and it is used
+to refer to expressions that correlate
+with some earlier
+occurrence in the document.
+So for example, if I say I went to see
+my grandfather at the hospital, period.
+The old man has been there for weeks.
+The phrase the old man refers
+to my grandfather, and
+it's used in the sentence as anaphoric.
+And then, the last sentence,
+he had surgery a few days ago,
+again we have an instance of an anaphora.
+The pronoun he is used to
+refer back to my grandfather.
+So one of the goals in computational
+discourse analysis is to be able to group
+those three expressions, my grandfather,
+the old man, and he into one set so
+that we know that they
+refer to the same person.
+So there are two concepts that I
+want to introduce at this time,
+that of a referring
+expressions of an antecedent.
+So the referring expression, the examples
+above was something like the old men or
+he and the antecedent was my grandfather.
+So anaphora is a problem not only
+with multisentential text, but
+also with single sentences.
+It is completely possible and
+frequent that an anaphoric expression or
+referring expression may refer to
+an antecedent back in the same sentence.
+So what do we need to do to address
+this issue computationally?
+Well the first thing that we need is
+a model of discourse that tells us
+how do people actually go about generating
+text that includes an anaphora.
+So the moment we
+understand how they do it,
+it will have an easier time
+computing their intent.
+So let's look at some other
+phenomena related to discourse.
+One of them is coreference.
+So for example, if I say,
+Joe saw Mary in the park, period.
+As every morning, she was walking the dog.
+So what does she refer to?
+We have to be able to figure out of all
+the words in those two sentences what
+it can possibly refer to.
+First of all, we know that it
+has to refer to a named entity.
+Sorry, it has to refer to a noun phrase.
+So the noun phrases are John, Mary,
+park, every morning and her dog.
+So how do we know which one of those
+is the correct antecedent for she?
+Well, let's think about it.
+Every morning is clearly not a person,
+whereas she has to be a person, so
+we have a discrepancy here.
+Another discrepancy,
+again similar in nature is the park.
+The park is not something that we can
+refer to as she because it's inanimate.
+John is a man, so
+we can not refer to him as a she either.
+We have a gender agreement.
+Her dog is a possible reference, but
+the structure of the sentence makes
+it impossible for
+that to be the right antecedent for she.
+So the only thing that is left is Mary.
+And you can check that
+in fact it makes sense.
+It has the right gender,
+the right animacy, it's an animate person and
+it appears previously in the discourse.
+So some of those features will be used in
+the computational analysis of coreference.
+So there is an annual competition,
+at least there was an annual competition
+called MUC that had a specific
+task on coreference extraction.
+And for that evaluation,
+the participants were provided by NIST
+with a large collection of documents that
+were annotated for coreference manually.
+So here's some examples.
+It's very difficult to read those, so
+you should probably pause and
+read this carefully.
+The idea here is that we have some
+sentence, like the Russian airline
+Aeroflot has been hit with a writ for loss
+and damages found in Hong Kong and so on.
+So every entity here is
+marked with some number.
+For example the Russian
+airline Aeroflot is ID 6,
+whereas Hong Kong is ID 15 and so on.
+So the goal here is to figure out which
+of those entities refer to one another.
+So let's look at some examples of those.
+So in the second paragraph on the slide,
+you can see that some
+of the entities have references that
+point back to some other entities.
+So all 75 people on board
+the Aeroflot Airbus, we have
+Aeroflot marked as a named as an entity
+and Airbus also marked as an entity.
+And you can see that Aeroflot
+has an ID of ten, but
+you took it first back to
+the entity numbered six.
+And then later on when we have
+the pronoun it, it has a new ID 11,
+but it is also identified to
+COREF to the named entity 12.
+So using this kind of data we could build
+automatic systems that use classification
+to take into account every single
+occurrence of a pronoun or
+other anaphoric expression and
+look for possible antecedents and
+use features to determine
+what is the correct one.
+Let's look at some other
+properties of discourse.
+I looked up the definition of
+a screwdriver, the tool on Wikipedia.
+Here's roughly what it looks like.
+It's a fairly long paragraph so
+we don't need to read the whole thing.
+A screwdriver is a tool, manual or
+powered, for turning screws and
+so on and so forth.
+What you need to pay attention to however
+is the presence of some discourse
+structure.
+So for example, the word the shaft,
+and the tip, and the word handles,
+and so on are introduced at the beginning
+of sentences, and they refer back to
+objects that I introduced directly or
+indirectly in the previous sentences.
+Ascending applies to the word
+these in the final sentence.
+So how do we do coreference resolution?
+As I mentioned before, we need to
+look at agreement constraints and
+also positional constraints.
+So some of the agreement constraints
+that make sense are gender,
+for example male or female.
+Number, singular or plural.
+Animacy, you know animate and inanimate.
+We can also look at syntactic constraints.
+For example parallelism.
+We can have two sentences that have
+roughly the same structure and
+we can use that information to determine
+which anaphoric expression refers to what.
+And the order of the sentences
+is also very important.
+Anaphora specifically is
+a phenomenon that refers back
+to earlier occurrences in the document.
+There is a similar term called cataphora,
+which refers to referring expressions
+that point to antecedents
+that appear after them.
+So an example of this would be,
+with each new
+role in the movie, Brad Pitt is
+going to become even more famous.
+So in this expression, his appears
+before its antecedent, Brad Pitt.
+So this is an example of cataphora.
+So in sentence ordering,
+recency is very important.
+The most likely antecendent
+of a referring expression is
+within the current sentence earlier on,
+or in the previous sentence,
+and rarely in some earlier sentence
+within the same paragraph.
+Now very rarely would you see instances
+of anaphora that refer back to
+entities introduced in
+the previous paragraph.
+Unless, there was some
+intervening anaphoric
+expression that refers back to
+them in the current paragraph.
+So now to go now to an example
+based on a paper by Lappin and
+Leass from the early 90s where,
+for the very first time,
+they looked at the computational
+treatment of coreference.
+So they manually came up with
+a list of rules that tell you,
+given a list of candidates for
+anaphoric resolution,
+what properties of those make them more
+likely to be the correct antecedents?
+So here are the seven properties that
+Lappin and Leass were looking at.
+I want to explain them on
+the next slide in more detail.
+First I want to say that sentence
+recency is the most important feature.
+If an entity was introduced in the same
+sentence as the anaphoric expression, it's
+more likely to be the correct antecedent
+than one that was introduced earlier.
+The other features that count for
+the largest number of points
+are subject emphasis.
+That is when the entity is the subject
+of the sentence, and so on.
+I'm going to explain them on
+the next slide in more detail.
+So, how do we deal with recency?
+If an entity is a candidate
+to be the antecedent
+of a current referring expression,
+every time we cross a sentence boundary,
+it's weight is going to be cut in half.
+So, this effectively gets rid of
+expressions after a few sentences.
+And, in fact Lappin and Leass also have
+a rule that says after four sentences
+all the candidates get removed.
+And here's some of the examples for
+the different features that they use.
+So for example, for subject,
+an Acura Integra is parked in the lot.
+So Acura Integra is a car and
+it is the subject of the sentence.
+There is an Acura Integra
+parked in the lot.
+This is an example of the second feature.
+That's an existential predicate.
+The third example is John
+parked an Acura in the lot.
+In this case Acura is
+the object of the sentence.
+John gave Susan an Acura.
+This is an indirect object.
+And finally, in his Acura Integra,
+John showed Susan his new CD player.
+So this is an example of an adverbial
+prepositional phrase that includes
+the candidate referent.
+And as you can see in the order
+in which I show them,
+we have an even decreasing likelihood
+that that particular word,
+car, is the antecedent of
+a pronoun that appears later on.
+Let's right now to an example that was
+described also in the Jurafsky and
+Martin book.
+This is an example of the procedure
+described by Lappin and Leass,
+its name is Resolution
+of Anaphora Procedure.
+It's called also RAP and in recent years,
+there has been an open source
+implementation of this algorithm by
+[INAUDIBLE] group of
+the National University of Singapore.
+So, let's go through
+the algorithm in more detail now.
+We're going to take
+an existing expression,
+and we want to disintegrate it.
+So, for this purpose,
+we're going to collect all the possible
+reference, up to four sentences back.
+We're going to remove all the potential
+referents that do not agree in number or
+gender with the pronoun.
+So in one of my earlier examples
+we had John and then she.
+So John would be removed in this example.
+Then we remove all the potential
+constraints that do not
+pass intrasentential syntactic
+coreference constraints.
+What that means is that if the sentence
+doesn't make syntactic sense
+with that particular referent,
+we're going to ignore that.
+And then we're going to compute the total
+salience value of the referent by adding
+any applicable values for
+things like role parallelism which gives
+us an extra 35 points and also cataphora.
+Which actually removes 175 points.
+And then,
+once we have added all the feature scores,
+we're going to select the referent
+with the highest salience value.
+And if there is a tie,
+the tie breaker is going to be the closest
+to the currently disintegrated expression.
+And then just so
+that we can also take into account
+recency, when we move to a new sentence
+we're going to halve all the scores
+of the existing entities on the list.
+Okay, so now let's look at an example from
+Raskin Markin with three sentences that
+shows how the Lappin and Leass algorithm
+works with pronoun resolution.
+The first sentence talks
+about the following.
+John saw a beautiful Acura Integra
+at the dealership last week.
+He showed it to Bill.
+He bought it.
+So we have four pronouns
+that we need to resolve.
+The first one of them is
+he in the second sentence.
+So at this point we have to candidate
+reference John, Acura Integra,
+and dealership.
+So let's see what kind
+of scores they each get.
+They all get 100 points because they
+are in the most recent sentence.
+In addition to that John gets
+80 points for being the subject.
+Integra gets 50 points for
+being the object.
+None of them get any points for
+being in an existential phrase or
+being an indirect object because those
+are not present in that sentence.
+The three expressions also get bonus
+points for not being an adverbial phrase.
+And they also get bonus points for
+being the head.
+So the total number of points for John
+is 310, the total number of points for
+Integra is 280, and the total number
+of points for dealership is 230.
+So at this point, the algorithm is
+going to tell us that John is the most
+likely antecedent for the word he because
+it has the largest number of points.
+So at this point,
+we move to the second sentence.
+Now we have to disambiguate
+the pronoun it.
+Since we have crossed
+the sentence boundary,
+we have to halve the values for
+each of the antecedents.
+So John is still available as a candidate.
+However it's score gets dropped
+from 310 to 155 points.
+The score for Integra gets dropped
+in half and dealership as well.
+So since we have added he to
+the group that involves John,
+we now have a phrase cluster.
+John and he1.
+He1 means the first occurrence of he.
+And since he now is in
+the current sentence,
+that cluster is going to get the sum
+of the points for John and for he.
+So 310 plus 155.
+That's 465.
+So at this point John is still the most
+salient entity in the discourse.
+Now we are going to move
+to the next example.
+And we're going to disintegrate it.
+It's going to get a high score
+because it matches the right features.
+And in that case it is
+going to refer to Integra.
+It's new score is going to be added
+to the old score for Acura Integra,
+therefore raising it up to 420.
+So at this point, John is still in
+the lead and Integra is now close behind.
+But still,
+if we have to choose at this time,
+you would still go with John as
+the default instead of the Integra.
+And then after we have processed the rest
+of the pronouns we are going to get
+the sort of structure where Bill gets
+also an additional number of points,
+whereas dealership doesn't
+have any reference at all.
+So it's going to keep its lowest score.
+115 points.
+Then after we move to the end
+of the second sentence,
+we have to halve each
+of those score again.
+And that was going to keep
+the relative order but
+the absolute values
+are going to be smaller.
+And we can continue until we
+reach the end of the discourse.
+Okay.
+The next topic that we want to discuss is
+going to be about coherence, and
+that will be in our next slide.
+

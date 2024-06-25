@@ -1,0 +1,248 @@
+Okay, the next topic related to
+language modelling has to do with noisy
+channel models.
+So what is a noisy channel model and
+why is it so
+important in natural language processing?
+Let's look at an example first.
+Suppose that we have a hypothetical system
+that takes its input in written English.
+Let's call that X.
+And then we have some sort of an encoder
+that randomly garbles the input,
+converting it to Y,
+which is some sort of garbled English.
+So the output is now going to be
+what we call spoken English, or Y.
+And what does this garbling do?
+Well, it's just going to convert the
+original sequence of words in English as
+they are written into an audio signal
+that corresponds to the spoken English.
+Let's look at more examples.
+We can convert grammatical English X,
+to English with grammatical mistakes, Y.
+We can convert English X,
+to bit maps or characters that's Y.
+So, the most general case
+the noisy channel model is used to
+determine the connection between
+a joint probability of two sequences.
+As the product of the first sequence
+times the probability of the second one,
+given the first one.
+So, we can think of it as a process
+of encoding and decoding.
+So, given a foreign language chain we want
+to guess the English language version.
+So, we assume that E was converted to F
+using an encoder that converts E to F.
+And then we want to build
+a decoder that converts F into E.
+And here, I'm using this notation e with
+an apostrophe to indicate that this is
+just our estimate of e.
+That doesn't mean that
+it's the original e,
+it's just our best guess as to what e is.
+How do we determine e?
+Well e is going to be the value
+that maximizes the conditional
+probability of the English sentence
+given the foreign sentence.
+So the probability of e given f.
+And according to the previous
+example in the Bayesian formula,
+we can write this as the expression
+e that maximizes the product of
+the conditional probability f given e.
+That was a probability of e.
+So what are those two?
+Well, P(f|e) is a noisy channel model or
+also known as a translation model and
+P(e) is the language model.
+We already know what a language model
+looks like, it just takes a sequence of
+words in a given language and
+this case in English and
+it tells us how likely it is that that
+particular sequence is a valid sentence.
+Now we're going to introduce
+the translation model,
+which essentially tells us,
+given a certain sentence in English,
+what's the probability that
+this particular sentence in
+the foreign language corresponds
+to the sentence in English?
+So here's an example from French,
+we want to translate la maison
+blanche from French into English.
+For those of you who don't know French,
+this just means the white house.
+So, here are some possible translations.
+The first one is, we're going to
+translate this as, cat plays piano.
+While, obviously,
+the probability that this foreign string,
+la maison blanche, matched the English
+string, cat plays piano, is very low.
+We're going to put the minus in that box.
+What about the English language
+probability of cat plays piano, again,
+this is not a valid sentence.
+So we're going to get given
+the score of a low score.
+The next one is a little bit better.
+We have, as a possible translation,
+house white the.
+Well, this is not a grammatical sentence,
+but
+at least it matches the right
+words in the French.
+So we're going to give it a positive
+score for the translation model and
+a negative score for the language model.
+Next one is a little bit better.
+The house white.
+Again, it's not a grammatical sentence
+in English, but it matches the words in
+French so we're going to give it the same
+set of scores as the previous example.
+Now, let's look at two other examples.
+The red house.
+Well, red house is a valid
+sequence of words in English, but
+in French it doesn't
+match because the word,
+red, doesn't match any of the words
+in the original sentence in French.
+The small cat is also
+valid in this sentence.
+But it's not anything that
+matches the french words.
+So we're going to give both of
+those examples a negative score for
+the translation mode.
+And finally, the sequence the white house
+is going to have, obviously, a high score
+with both of those features is going to
+have a high language modeling probability
+because it's a valid non-phrase in English
+and it's going to have a high translation
+score because it has the same words
+as the original French sentence.
+So the idea of translation
+models like this to
+come up with all the possible sequences of
+words in English in the right length, and
+to try to figure out,
+based on the two probabilities and
+the two columns, which one is the best
+translation of the original sentence.
+So the good translation is going to have
+a high score on the language model, and
+also a high score on
+the translation model.
+And you have many phrases that have high
+scores on both of those, which is going to
+multiply those two probabilities and
+pick the one that has the highest product.
+So what is some possible uses
+of the noisy channel model?
+Well we mentioned machine translation but
+there are many others for
+example they can be used
+in handwriting recognition.
+In handwriting recognition the input is
+going to be a bitmap of what you write and
+the output is going to
+be an English sentence.
+It can also be used in text generation,
+in text summarization,
+in machine translation, and
+in spelling correction.
+So, for example,
+spelling correction, we can use it
+to model the probability that a certain
+type of mistake is going to be made.
+And we have a separate
+lecture on edit distance and
+text similarity that is going
+to talk about this problem.
+So, here's an example
+of spelling correction.
+This example comes from Peter Norvig.
+The idea here is that we have a word thew,
+T-H-E-W, that was clearly a mistake,
+there's no such word in English.
+And we want to predict which of
+the candidate words in the second column
+are the most likely substitutions.
+So the first one is the word the.
+The next one is to leave the word alone,
+the third one is to replace the e
+with an a, and get the word thaw.
+The next one is to insert an r,
+so we would have the word threw.
+And finally, we have our replacement
+that swaps for two adjacent letters, and
+gets another nonsensical word, t-h-w-e.
+So now, we need to figure out what
+are the conditions that make those
+substitutions possible?
+In the first example,
+we are looking at the probability that
+we are going to replace ew, with e.
+So the probability of this is very small.
+But the probability of c is very large.
+Why would we get those numbers?
+Well, it's very likely that we're going
+to insert a w in the middle of a word.
+But the word the is grammatical English.
+So, it's going to have
+a bit high school on TFC.
+The next one is thew,
+T-H-E-W, it gets a very typo
+ability in the first column because
+just means that no typo was made.
+However, the probability that this is
+a valid in English is very, very small.
+The third example,
+we have again different numbers.
+The probability of this mistake is
+going to happen, to replace the e
+with an a has a probability of one and
+a thousand and then the probability that
+thaw as an action English word is actively
+high because it's a real English word.
+And so on.
+We can add the missing values in the other
+cells in the table.
+And then, in the last column,
+we can multiply the two probabilities,
+the translation model probability with
+the language model probability in here for
+a client we're also going to
+multiply them with a billionth.
+So we're going to have
+numbers that are around one.
+In this case, the first suggested spelling
+correction is going to be to replace
+T-H-E-W with but
+the is going to have a score of 144.
+The second alternative is to keep
+it as it is with a score of 90.
+And then we have three more
+substitutions that are possible but
+have much lower probabilities.
+So the scores are respectively 0.7,
+0.03 and one in 10,000.
+So if you're interested in more detail
+about this you can look at Peter Norvig's
+section on n-grams in his book at this URL.
+So, this concludes the section
+on noise in language models, and
+we're going to continue now in the next
+topic on part of speech tagging.
+
